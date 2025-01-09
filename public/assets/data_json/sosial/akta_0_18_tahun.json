@@ -1,0 +1,72 @@
+[
+    {
+        "nama_daerah": "Bengkulu Selatan",
+        "jumlah_penduduk": "50,658",
+        "ada": "50,361",
+        "tahun": 2024,
+        "tidak_ada": "297"
+    },
+    {
+        "nama_daerah": "Rejang Lebong",
+        "jumlah_penduduk": "77,804",
+        "ada": "74,103",
+        "tahun": 2024,
+        "tidak_ada": "3,701"
+    },
+    {
+        "nama_daerah": "Bengkulu Utara",
+        "jumlah_penduduk": "90,997",
+        "ada": "90,824",
+        "tahun": 2024,
+        "tidak_ada": "173"
+    },
+    {
+        "nama_daerah": "Kaur",
+        "jumlah_penduduk": "38,466",
+        "ada": "37,178",
+        "tahun": 2024,
+        "tidak_ada": "1,288"
+    },
+    {
+        "nama_daerah": "Seluma",
+        "jumlah_penduduk": "60,704",
+        "ada": "60,007",
+        "tahun": 2024,
+        "tidak_ada": "697"
+    },
+    {
+        "nama_daerah": "Muko Muko",
+        "jumlah_penduduk": "64,998",
+        "ada": "64,279",
+        "tahun": 2024,
+        "tidak_ada": "719"
+    },
+    {
+        "nama_daerah": "Lebong",
+        "jumlah_penduduk": "31,825",
+        "ada": "31,600",
+        "tahun": 2024,
+        "tidak_ada": "225"
+    },
+    {
+        "nama_daerah": "Kepahiang",
+        "jumlah_penduduk": "42,930",
+        "ada": "41,964",
+        "tahun": 2024,
+        "tidak_ada": "966"
+    },
+    {
+        "nama_daerah": "Bengkulu Tengah",
+        "jumlah_penduduk": "37,805",
+        "ada": "36,277",
+        "tahun": 2024,
+        "tidak_ada": "1,528"
+    },
+    {
+        "nama_daerah": "Kota Bengkulu",
+        "jumlah_penduduk": "119,572",
+        "ada": "118,984",
+        "tahun": 2024,
+        "tidak_ada": "588"
+    }
+]

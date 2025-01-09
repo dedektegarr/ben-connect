@@ -1,0 +1,82 @@
+[
+    {
+        "nama_daerah": "Bengkulu Selatan",
+        "nasional": "106.53",
+        "provinsi": "123",
+        "kabupaten": "1280.97",
+        "total": "1510.5",
+        "tahun": "2023"
+    },
+    {
+        "nama_daerah": "Rejang Lebong",
+        "nasional": "65.42",
+        "provinsi": "126",
+        "kabupaten": "658.37",
+        "total": "849.79",
+        "tahun": "2023"
+    },
+    {
+        "nama_daerah": "Bengkulu Utara",
+        "nasional": "104.23",
+        "provinsi": "358",
+        "kabupaten": "514.34",
+        "total": "976.57",
+        "tahun": "2023"
+    },
+    {
+        "nama_daerah": "Kaur",
+        "nasional": "71.63",
+        "provinsi": "111",
+        "kabupaten": "578.54",
+        "total": "761.17",
+        "tahun": "2023"
+    },
+    {
+        "nama_daerah": "Seluma",
+        "nasional": "100.95",
+        "provinsi": "176",
+        "kabupaten": "668.83",
+        "total": "945.78",
+        "tahun": "2023"
+    },
+    {
+        "nama_daerah": "Mukomuko",
+        "nasional": "170.09",
+        "provinsi": "96",
+        "kabupaten": "686.78",
+        "total": "952.87",
+        "tahun": "2023"
+    },
+    {
+        "nama_daerah": "Lebong",
+        "nasional": "0",
+        "provinsi": "81",
+        "kabupaten": "499",
+        "total": "580",
+        "tahun": "2023"
+    },
+    {
+        "nama_daerah": "Kepahiang",
+        "nasional": "30.31",
+        "provinsi": "120",
+        "kabupaten": "529.76",
+        "total": "680.07",
+        "tahun": "2023"
+    },
+    {
+        "nama_daerah": "Bengkulu Tengah",
+        "nasional": "84.92",
+        "provinsi": "100",
+        "kabupaten": "413.65",
+        "total": "598.57",
+        "tahun": "2023"
+    },
+    {
+        "nama_daerah": "Kota Bengkulu",
+        "nasional": "47.91",
+        "provinsi": "39",
+        "kabupaten": "942.57",
+        "total": "1029.48",
+        "tahun": "2023"
+    }
+]

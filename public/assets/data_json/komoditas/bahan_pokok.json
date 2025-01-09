@@ -1,0 +1,9182 @@
+ [
+  {
+    "id_bahan": 6,
+    "id_komoditi": 4,
+    "bahan": "IR 64 (Beras Lokal Lampung)",
+    "satuan": "kg",
+    "harga": 12500,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 7,
+    "id_komoditi": 4,
+    "bahan": "IR 64 (Beras Lokal Bengkulu)",
+    "satuan": "kg",
+    "harga": 12500,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 8,
+    "id_komoditi": 5,
+    "bahan": "Gula DN",
+    "satuan": "kg",
+    "harga": 14500,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 9,
+    "id_komoditi": 4,
+    "bahan": "Manggis Manis (Premium)",
+    "satuan": "kg",
+    "harga": 15667,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 10,
+    "id_komoditi": 4,
+    "bahan": "Kembang Kol (Premium)",
+    "satuan": "kg",
+    "harga": 15167,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 11,
+    "id_komoditi": 4,
+    "bahan": "Termurah",
+    "satuan": "kg",
+    "harga": 12500,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 12,
+    "id_komoditi": 4,
+    "bahan": "Cap Bulog/Dolog",
+    "satuan": "kg",
+    "harga": 11500,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 14,
+    "id_komoditi": 6,
+    "bahan": "Minyak Goreng Curah",
+    "satuan": "liter",
+    "harga": 14400,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 15,
+    "id_komoditi": 6,
+    "bahan": "Kemasan Sederhana (Fortune)",
+    "satuan": "liter",
+    "harga": 15833,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 16,
+    "id_komoditi": 6,
+    "bahan": "Kemasan Premium (Fortune)",
+    "satuan": "liter",
+    "harga": 17500,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 17,
+    "id_komoditi": 7,
+    "bahan": "Tepung Terigu Kemasan Segitiga Biru",
+    "satuan": "kg",
+    "harga": 14500,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 18,
+    "id_komoditi": 7,
+    "bahan": "Cakra Kembar",
+    "satuan": "kg",
+    "harga": 15500,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 19,
+    "id_komoditi": 7,
+    "bahan": "Kunci Biru",
+    "satuan": "kg",
+    "harga": 14500,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 20,
+    "id_komoditi": 8,
+    "bahan": "Daging Sapi Lokal Paha Belakang",
+    "satuan": "kg",
+    "harga": 140000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 21,
+    "id_komoditi": 8,
+    "bahan": "Sapi Lokal Paha Depan",
+    "satuan": "kg",
+    "harga": 140000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 22,
+    "id_komoditi": 8,
+    "bahan": "Sandung Lamur",
+    "satuan": "kg",
+    "harga": 100000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 23,
+    "id_komoditi": 8,
+    "bahan": "Tetelan",
+    "satuan": "kg",
+    "harga": 60000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 24,
+    "id_komoditi": 8,
+    "bahan": "Has Dalam",
+    "satuan": "kg",
+    "harga": 140000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 25,
+    "id_komoditi": 8,
+    "bahan": "Has Luar",
+    "satuan": "kg",
+    "harga": 140000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 26,
+    "id_komoditi": 9,
+    "bahan": "Daging Ayam Broiler",
+    "satuan": "kg",
+    "harga": 32000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 27,
+    "id_komoditi": 9,
+    "bahan": "Kampung",
+    "satuan": "kg",
+    "harga": 65000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 28,
+    "id_komoditi": 10,
+    "bahan": "Telur Ayam Broiler",
+    "satuan": "kg",
+    "harga": 27333,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 29,
+    "id_komoditi": 10,
+    "bahan": "Kampung",
+    "satuan": "kg",
+    "harga": 52500,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 30,
+    "id_komoditi": 11,
+    "bahan": "Cabe Merah Kriting",
+    "satuan": "kg",
+    "harga": 36000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 31,
+    "id_komoditi": 12,
+    "bahan": "Cabe Rawit Merah",
+    "satuan": "kg",
+    "harga": 35000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 32,
+    "id_komoditi": 13,
+    "bahan": "Bawang Merah",
+    "satuan": "kg",
+    "harga": 25000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 33,
+    "id_komoditi": 14,
+    "bahan": "Bawang Putih Honan",
+    "satuan": "kg",
+    "harga": 37000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 34,
+    "id_komoditi": 15,
+    "bahan": "Susu Kental Manis Cap Bendera (370 gram)",
+    "satuan": "kaleng",
+    "harga": 13000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 35,
+    "id_komoditi": 15,
+    "bahan": "Cap Indomilk (370 gram)",
+    "satuan": "kaleng",
+    "harga": 12500,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 36,
+    "id_komoditi": 16,
+    "bahan": "Garam Beryodium Halus",
+    "satuan": "kg",
+    "harga": 15000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 37,
+    "id_komoditi": 17,
+    "bahan": "Kacang Kedelai Eks Import",
+    "satuan": "kg",
+    "harga": 16000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 38,
+    "id_komoditi": 18,
+    "bahan": "Kacang Tanah",
+    "satuan": "kg",
+    "harga": 28667,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 39,
+    "id_komoditi": 19,
+    "bahan": "Kacang Hijau",
+    "satuan": "kg",
+    "harga": 26000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 40,
+    "id_komoditi": 20,
+    "bahan": "Mie Instan Kari Ayam",
+    "satuan": "bks",
+    "harga": 3500,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 41,
+    "id_komoditi": 21,
+    "bahan": "Ikan Asin Teri",
+    "satuan": "kg",
+    "harga": 75000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 42,
+    "id_komoditi": 22,
+    "bahan": "Ikan Kembung",
+    "satuan": "kg",
+    "harga": 55000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 43,
+    "id_komoditi": 23,
+    "bahan": "Ketela Pohon",
+    "satuan": "kg",
+    "harga": 4000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 44,
+    "id_komoditi": 24,
+    "bahan": "Ikan Segar Tongkol",
+    "satuan": "kg",
+    "harga": 35000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 45,
+    "id_komoditi": 25,
+    "bahan": "Jagung Pipilan Kering",
+    "satuan": "kg",
+    "harga": 9000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 46,
+    "id_komoditi": 26,
+    "bahan": " IR 64 (Beras Lokal Lampung)",
+    "satuan": "kg",
+    "harga": 12600,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 47,
+    "id_komoditi": 26,
+    "bahan": "IR 64 (Beras Lokal Bengkulu)",
+    "satuan": "kg",
+    "harga": 11800,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 48,
+    "id_komoditi": 26,
+    "bahan": "Manggis Manis (Premium)",
+    "satuan": "kg",
+    "harga": 15250,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 49,
+    "id_komoditi": 26,
+    "bahan": "Kembang Kol (Premium)",
+    "satuan": "kg",
+    "harga": 15200,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 50,
+    "id_komoditi": 26,
+    "bahan": "Termurah",
+    "satuan": "kg",
+    "harga": 12000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 51,
+    "id_komoditi": 26,
+    "bahan": "Cap Bulog/Dolog",
+    "satuan": "kg",
+    "harga": 11500,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 52,
+    "id_komoditi": 27,
+    "bahan": "Gula DN",
+    "satuan": "kg",
+    "harga": 14000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 53,
+    "id_komoditi": 28,
+    "bahan": "Minyak Goreng Curah",
+    "satuan": "liter",
+    "harga": 14400,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 54,
+    "id_komoditi": 28,
+    "bahan": "Kemasan Sederhana (Fortune)",
+    "satuan": "liter",
+    "harga": 16500,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 55,
+    "id_komoditi": 28,
+    "bahan": "Kemasan Premium (Fortune)",
+    "satuan": "liter",
+    "harga": 17500,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 56,
+    "id_komoditi": 29,
+    "bahan": "Tepung Terigu Kemasan Segitiga Biru",
+    "satuan": "kg",
+    "harga": 16000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 57,
+    "id_komoditi": 29,
+    "bahan": "Cakra Kembar",
+    "satuan": "kg",
+    "harga": 17000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 58,
+    "id_komoditi": 29,
+    "bahan": "Kunci Biru",
+    "satuan": "kg",
+    "harga": 16000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 59,
+    "id_komoditi": 30,
+    "bahan": "Daging Sapi Lokal Paha Belakang",
+    "satuan": "kg",
+    "harga": 138300,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 60,
+    "id_komoditi": 30,
+    "bahan": "Sapi Lokal Paha Depan",
+    "satuan": "kg",
+    "harga": 138300,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 61,
+    "id_komoditi": 30,
+    "bahan": "Sandung Lamur",
+    "satuan": "kg",
+    "harga": 100000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 62,
+    "id_komoditi": 30,
+    "bahan": "Tetelan",
+    "satuan": "kg",
+    "harga": 60000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 63,
+    "id_komoditi": 30,
+    "bahan": "Has Dalam",
+    "satuan": "kg",
+    "harga": 138300,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 64,
+    "id_komoditi": 30,
+    "bahan": "Has Luar",
+    "satuan": "kg",
+    "harga": 138300,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 65,
+    "id_komoditi": 31,
+    "bahan": "Daging Ayam Broiler",
+    "satuan": "kg",
+    "harga": 34000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 66,
+    "id_komoditi": 31,
+    "bahan": "Kampung",
+    "satuan": "kg",
+    "harga": 65000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 67,
+    "id_komoditi": 32,
+    "bahan": "Telur Ayam Broiler",
+    "satuan": "kg",
+    "harga": 29300,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 68,
+    "id_komoditi": 32,
+    "bahan": "Kampung",
+    "satuan": "kg",
+    "harga": 52500,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 69,
+    "id_komoditi": 33,
+    "bahan": "Cabe Merah Kriting",
+    "satuan": "kg",
+    "harga": 33300,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 70,
+    "id_komoditi": 34,
+    "bahan": "Cabe Rawit Merah",
+    "satuan": "kg",
+    "harga": 28700,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 71,
+    "id_komoditi": 35,
+    "bahan": "Bawang Merah",
+    "satuan": "kg",
+    "harga": 21300,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 72,
+    "id_komoditi": 36,
+    "bahan": "Bawang Putih Honan",
+    "satuan": "kg",
+    "harga": 36000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 73,
+    "id_komoditi": 37,
+    "bahan": "Susu Kental Manis Cap Bendera (370 gram)",
+    "satuan": "kaleng",
+    "harga": 13000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 74,
+    "id_komoditi": 37,
+    "bahan": "Cap Indomilk (370 gram)",
+    "satuan": "kaleng",
+    "harga": 13000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 75,
+    "id_komoditi": 38,
+    "bahan": "Garam Beryodium Halus",
+    "satuan": "kg",
+    "harga": 13000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 76,
+    "id_komoditi": 39,
+    "bahan": "Kacang Kedelai Eks Import",
+    "satuan": "kg",
+    "harga": 16000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 77,
+    "id_komoditi": 40,
+    "bahan": "Kacang Tanah",
+    "satuan": "kg",
+    "harga": 29300,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 78,
+    "id_komoditi": 41,
+    "bahan": "Kacang Hijau",
+    "satuan": "kg",
+    "harga": 26000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 79,
+    "id_komoditi": 42,
+    "bahan": "Mie Instan Kari Ayam",
+    "satuan": "bks",
+    "harga": 3200,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 80,
+    "id_komoditi": 43,
+    "bahan": "Ikan Asin Teri",
+    "satuan": "kg",
+    "harga": 70000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 81,
+    "id_komoditi": 44,
+    "bahan": "Ikan Kembung",
+    "satuan": "kg",
+    "harga": 50000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 82,
+    "id_komoditi": 45,
+    "bahan": "Ketela Pohon",
+    "satuan": "kg",
+    "harga": 4000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 83,
+    "id_komoditi": 46,
+    "bahan": "Ikan Segar Tongkol",
+    "satuan": "kg",
+    "harga": 35000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 84,
+    "id_komoditi": 47,
+    "bahan": "Jagung Pipilan Kering",
+    "satuan": "kg",
+    "harga": 9000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 85,
+    "id_komoditi": 24,
+    "bahan": "Ikan Segar Tuna",
+    "satuan": "kg",
+    "harga": 45000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 86,
+    "id_komoditi": 17,
+    "bahan": "Tahu",
+    "satuan": "kg",
+    "harga": 10000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 87,
+    "id_komoditi": 17,
+    "bahan": "Tempe",
+    "satuan": "kg",
+    "harga": 14000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 89,
+    "id_komoditi": 14,
+    "bahan": "Bawang Bombay",
+    "satuan": "kg",
+    "harga": 35000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 90,
+    "id_komoditi": 12,
+    "bahan": "Cabe Rawit Hijau",
+    "satuan": "kg",
+    "harga": 31000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 91,
+    "id_komoditi": 34,
+    "bahan": "Cabe Rawit Hijau",
+    "satuan": "kg",
+    "harga": 27000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 92,
+    "id_komoditi": 36,
+    "bahan": "Bawang Bombay",
+    "satuan": "kg",
+    "harga": 36000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 93,
+    "id_komoditi": 39,
+    "bahan": "Tahu",
+    "satuan": "kg",
+    "harga": 12000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 94,
+    "id_komoditi": 39,
+    "bahan": "Tempe",
+    "satuan": "kg",
+    "harga": 14000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 95,
+    "id_komoditi": 46,
+    "bahan": "Ikan Segar Tuna",
+    "satuan": "kg",
+    "harga": 45000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 96,
+    "id_komoditi": 6,
+    "bahan": "Minyak Goreng Curah Rakyat",
+    "satuan": "liter",
+    "harga": 15000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 97,
+    "id_komoditi": 28,
+    "bahan": "Minyak Goreng Curah Rakyat",
+    "satuan": "liter",
+    "harga": 14900,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 98,
+    "id_komoditi": 48,
+    "bahan": "Udang Basah",
+    "satuan": "gr",
+    "harga": 80000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 99,
+    "id_komoditi": 49,
+    "bahan": "Pisang Ambon",
+    "satuan": "kg",
+    "harga": 6000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 100,
+    "id_komoditi": 50,
+    "bahan": "Jeruk Lokal",
+    "satuan": "kg",
+    "harga": 18000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 101,
+    "id_komoditi": 51,
+    "bahan": "Udang Basah",
+    "satuan": "gr",
+    "harga": 75000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 102,
+    "id_komoditi": 54,
+    "bahan": "Pisang Ambon",
+    "satuan": "kg",
+    "harga": 6000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 103,
+    "id_komoditi": 55,
+    "bahan": "Jeruk Lokal",
+    "satuan": "kg",
+    "harga": 15000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 104,
+    "id_komoditi": 56,
+    "bahan": "Dancow Vanilla 400 gram",
+    "satuan": "gr",
+    "harga": 53000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 105,
+    "id_komoditi": 57,
+    "bahan": "Frisian Flag 123 Vanilla",
+    "satuan": "gr",
+    "harga": 0,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 106,
+    "id_komoditi": 57,
+    "bahan": "SGM 400 gram",
+    "satuan": "gr",
+    "harga": 42300,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 107,
+    "id_komoditi": 58,
+    "bahan": "Dancow Vanilla 400 gram",
+    "satuan": "gr",
+    "harga": 49000,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 108,
+    "id_komoditi": 59,
+    "bahan": "Frisian Flag 123 Vanilla",
+    "satuan": "gr",
+    "harga": 0,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 109,
+    "id_komoditi": 59,
+    "bahan": "SGM 400 gram",
+    "satuan": "gr",
+    "harga": 42400,
+    "waktu": "2023-10-06+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 6,
+    "id_komoditi": 4,
+    "bahan": "IR 64 (Beras Lokal Lampung)",
+    "satuan": "kg",
+    "harga": 13100,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 7,
+    "id_komoditi": 4,
+    "bahan": "IR 64 (Beras Lokal Bengkulu)",
+    "satuan": "kg",
+    "harga": 13750,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 8,
+    "id_komoditi": 5,
+    "bahan": "Gula DN",
+    "satuan": "kg",
+    "harga": 17000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 9,
+    "id_komoditi": 4,
+    "bahan": "Manggis Manis (Premium)",
+    "satuan": "kg",
+    "harga": 15600,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 10,
+    "id_komoditi": 4,
+    "bahan": "Kembang Kol (Premium)",
+    "satuan": "kg",
+    "harga": 15100,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 11,
+    "id_komoditi": 4,
+    "bahan": "Termurah",
+    "satuan": "kg",
+    "harga": 13100,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 12,
+    "id_komoditi": 4,
+    "bahan": "Cap Bulog/Dolog",
+    "satuan": "kg",
+    "harga": 11500,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 14,
+    "id_komoditi": 6,
+    "bahan": "Minyak Goreng Curah",
+    "satuan": "liter",
+    "harga": 14500,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 15,
+    "id_komoditi": 6,
+    "bahan": "Kemasan Sederhana (Fortune)",
+    "satuan": "liter",
+    "harga": 15800,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 16,
+    "id_komoditi": 6,
+    "bahan": "Kemasan Premium (Fortune)",
+    "satuan": "liter",
+    "harga": 17500,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 17,
+    "id_komoditi": 7,
+    "bahan": "Tepung Terigu Kemasan Segitiga Biru",
+    "satuan": "kg",
+    "harga": 14500,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 18,
+    "id_komoditi": 7,
+    "bahan": "Cakra Kembar",
+    "satuan": "kg",
+    "harga": 15500,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 19,
+    "id_komoditi": 7,
+    "bahan": "Kunci Biru",
+    "satuan": "kg",
+    "harga": 14500,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 20,
+    "id_komoditi": 8,
+    "bahan": "Daging Sapi Lokal Paha Belakang",
+    "satuan": "kg",
+    "harga": 140000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 21,
+    "id_komoditi": 8,
+    "bahan": "Sapi Lokal Paha Depan",
+    "satuan": "kg",
+    "harga": 140000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 22,
+    "id_komoditi": 8,
+    "bahan": "Sandung Lamur",
+    "satuan": "kg",
+    "harga": 100000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 23,
+    "id_komoditi": 8,
+    "bahan": "Tetelan",
+    "satuan": "kg",
+    "harga": 60000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 24,
+    "id_komoditi": 8,
+    "bahan": "Has Dalam",
+    "satuan": "kg",
+    "harga": 140000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 25,
+    "id_komoditi": 8,
+    "bahan": "Has Luar",
+    "satuan": "kg",
+    "harga": 140000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 26,
+    "id_komoditi": 9,
+    "bahan": "Daging Ayam Broiler",
+    "satuan": "kg",
+    "harga": 30000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 27,
+    "id_komoditi": 9,
+    "bahan": "Kampung",
+    "satuan": "kg",
+    "harga": 65000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 28,
+    "id_komoditi": 10,
+    "bahan": "Telur Ayam Broiler",
+    "satuan": "kg",
+    "harga": 25000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 29,
+    "id_komoditi": 10,
+    "bahan": "Kampung",
+    "satuan": "kg",
+    "harga": 52500,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 30,
+    "id_komoditi": 11,
+    "bahan": "Cabe Merah Kriting",
+    "satuan": "kg",
+    "harga": 66000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 31,
+    "id_komoditi": 12,
+    "bahan": "Cabe Rawit Merah",
+    "satuan": "kg",
+    "harga": 75000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 32,
+    "id_komoditi": 13,
+    "bahan": "Bawang Merah",
+    "satuan": "kg",
+    "harga": 38000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 33,
+    "id_komoditi": 14,
+    "bahan": "Bawang Putih Honan",
+    "satuan": "kg",
+    "harga": 38000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 34,
+    "id_komoditi": 15,
+    "bahan": "Susu Kental Manis Cap Bendera (370 gram)",
+    "satuan": "kaleng",
+    "harga": 13000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 35,
+    "id_komoditi": 15,
+    "bahan": "Cap Indomilk (370 gram)",
+    "satuan": "kaleng",
+    "harga": 12500,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 36,
+    "id_komoditi": 16,
+    "bahan": "Garam Beryodium Halus",
+    "satuan": "kg",
+    "harga": 15000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 37,
+    "id_komoditi": 17,
+    "bahan": "Kacang Kedelai Eks Import",
+    "satuan": "kg",
+    "harga": 16000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 38,
+    "id_komoditi": 18,
+    "bahan": "Kacang Tanah",
+    "satuan": "kg",
+    "harga": 30000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 39,
+    "id_komoditi": 19,
+    "bahan": "Kacang Hijau",
+    "satuan": "kg",
+    "harga": 25000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 40,
+    "id_komoditi": 20,
+    "bahan": "Mie Instan Kari Ayam",
+    "satuan": "bks",
+    "harga": 3500,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 41,
+    "id_komoditi": 21,
+    "bahan": "Ikan Asin Teri",
+    "satuan": "kg",
+    "harga": 69000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 42,
+    "id_komoditi": 22,
+    "bahan": "Ikan Kembung",
+    "satuan": "kg",
+    "harga": 55000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 43,
+    "id_komoditi": 23,
+    "bahan": "Ketela Pohon",
+    "satuan": "kg",
+    "harga": 4000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 44,
+    "id_komoditi": 24,
+    "bahan": "Ikan Segar Tongkol",
+    "satuan": "kg",
+    "harga": 30000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 45,
+    "id_komoditi": 25,
+    "bahan": "Jagung Pipilan Kering",
+    "satuan": "kg",
+    "harga": 9000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 46,
+    "id_komoditi": 26,
+    "bahan": " IR 64 (Beras Lokal Lampung)",
+    "satuan": "kg",
+    "harga": 13200,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 47,
+    "id_komoditi": 26,
+    "bahan": "IR 64 (Beras Lokal Bengkulu)",
+    "satuan": "kg",
+    "harga": 13750,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 48,
+    "id_komoditi": 26,
+    "bahan": "Manggis Manis (Premium)",
+    "satuan": "kg",
+    "harga": 15500,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 49,
+    "id_komoditi": 26,
+    "bahan": "Kembang Kol (Premium)",
+    "satuan": "kg",
+    "harga": 15300,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 50,
+    "id_komoditi": 26,
+    "bahan": "Termurah",
+    "satuan": "kg",
+    "harga": 12500,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 51,
+    "id_komoditi": 26,
+    "bahan": "Cap Bulog/Dolog",
+    "satuan": "kg",
+    "harga": 11500,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 52,
+    "id_komoditi": 27,
+    "bahan": "Gula DN",
+    "satuan": "kg",
+    "harga": 17000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 53,
+    "id_komoditi": 28,
+    "bahan": "Minyak Goreng Curah",
+    "satuan": "liter",
+    "harga": 14400,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 54,
+    "id_komoditi": 28,
+    "bahan": "Kemasan Sederhana (Fortune)",
+    "satuan": "liter",
+    "harga": 16000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 55,
+    "id_komoditi": 28,
+    "bahan": "Kemasan Premium (Fortune)",
+    "satuan": "liter",
+    "harga": 17500,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 56,
+    "id_komoditi": 29,
+    "bahan": "Tepung Terigu Kemasan Segitiga Biru",
+    "satuan": "kg",
+    "harga": 16000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 57,
+    "id_komoditi": 29,
+    "bahan": "Cakra Kembar",
+    "satuan": "kg",
+    "harga": 16600,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 58,
+    "id_komoditi": 29,
+    "bahan": "Kunci Biru",
+    "satuan": "kg",
+    "harga": 16000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 59,
+    "id_komoditi": 30,
+    "bahan": "Daging Sapi Lokal Paha Belakang",
+    "satuan": "kg",
+    "harga": 136700,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 60,
+    "id_komoditi": 30,
+    "bahan": "Sapi Lokal Paha Depan",
+    "satuan": "kg",
+    "harga": 136700,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 61,
+    "id_komoditi": 30,
+    "bahan": "Sandung Lamur",
+    "satuan": "kg",
+    "harga": 100000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 62,
+    "id_komoditi": 30,
+    "bahan": "Tetelan",
+    "satuan": "kg",
+    "harga": 60000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 63,
+    "id_komoditi": 30,
+    "bahan": "Has Dalam",
+    "satuan": "kg",
+    "harga": 136700,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 64,
+    "id_komoditi": 30,
+    "bahan": "Has Luar",
+    "satuan": "kg",
+    "harga": 136700,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 65,
+    "id_komoditi": 31,
+    "bahan": "Daging Ayam Broiler",
+    "satuan": "kg",
+    "harga": 29000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 66,
+    "id_komoditi": 31,
+    "bahan": "Kampung",
+    "satuan": "kg",
+    "harga": 65500,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 67,
+    "id_komoditi": 32,
+    "bahan": "Telur Ayam Broiler",
+    "satuan": "kg",
+    "harga": 26600,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 68,
+    "id_komoditi": 32,
+    "bahan": "Kampung",
+    "satuan": "kg",
+    "harga": 52500,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 69,
+    "id_komoditi": 33,
+    "bahan": "Cabe Merah Kriting",
+    "satuan": "kg",
+    "harga": 60000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 70,
+    "id_komoditi": 34,
+    "bahan": "Cabe Rawit Merah",
+    "satuan": "kg",
+    "harga": 80000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 71,
+    "id_komoditi": 35,
+    "bahan": "Bawang Merah",
+    "satuan": "kg",
+    "harga": 37000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 72,
+    "id_komoditi": 36,
+    "bahan": "Bawang Putih Honan",
+    "satuan": "kg",
+    "harga": 38000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 73,
+    "id_komoditi": 37,
+    "bahan": "Susu Kental Manis Cap Bendera (370 gram)",
+    "satuan": "kaleng",
+    "harga": 13000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 74,
+    "id_komoditi": 37,
+    "bahan": "Cap Indomilk (370 gram)",
+    "satuan": "kaleng",
+    "harga": 13000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 75,
+    "id_komoditi": 38,
+    "bahan": "Garam Beryodium Halus",
+    "satuan": "kg",
+    "harga": 13000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 76,
+    "id_komoditi": 39,
+    "bahan": "Kacang Kedelai Eks Import",
+    "satuan": "kg",
+    "harga": 16000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 77,
+    "id_komoditi": 40,
+    "bahan": "Kacang Tanah",
+    "satuan": "kg",
+    "harga": 29300,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 78,
+    "id_komoditi": 41,
+    "bahan": "Kacang Hijau",
+    "satuan": "kg",
+    "harga": 26000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 79,
+    "id_komoditi": 42,
+    "bahan": "Mie Instan Kari Ayam",
+    "satuan": "bks",
+    "harga": 3200,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 80,
+    "id_komoditi": 43,
+    "bahan": "Ikan Asin Teri",
+    "satuan": "kg",
+    "harga": 65000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 81,
+    "id_komoditi": 44,
+    "bahan": "Ikan Kembung",
+    "satuan": "kg",
+    "harga": 51600,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 82,
+    "id_komoditi": 45,
+    "bahan": "Ketela Pohon",
+    "satuan": "kg",
+    "harga": 4000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 83,
+    "id_komoditi": 46,
+    "bahan": "Ikan Segar Tongkol",
+    "satuan": "kg",
+    "harga": 30000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 84,
+    "id_komoditi": 47,
+    "bahan": "Jagung Pipilan Kering",
+    "satuan": "kg",
+    "harga": 9000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 85,
+    "id_komoditi": 24,
+    "bahan": "Ikan Segar Tuna",
+    "satuan": "kg",
+    "harga": 35000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 86,
+    "id_komoditi": 17,
+    "bahan": "Tahu",
+    "satuan": "kg",
+    "harga": 10000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 87,
+    "id_komoditi": 17,
+    "bahan": "Tempe",
+    "satuan": "kg",
+    "harga": 14000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 89,
+    "id_komoditi": 14,
+    "bahan": "Bawang Bombay",
+    "satuan": "kg",
+    "harga": 35500,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 90,
+    "id_komoditi": 12,
+    "bahan": "Cabe Rawit Hijau",
+    "satuan": "kg",
+    "harga": 50000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 91,
+    "id_komoditi": 34,
+    "bahan": "Cabe Rawit Hijau",
+    "satuan": "kg",
+    "harga": 51600,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 92,
+    "id_komoditi": 36,
+    "bahan": "Bawang Bombay",
+    "satuan": "kg",
+    "harga": 33000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 93,
+    "id_komoditi": 39,
+    "bahan": "Tahu",
+    "satuan": "kg",
+    "harga": 10000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 94,
+    "id_komoditi": 39,
+    "bahan": "Tempe",
+    "satuan": "kg",
+    "harga": 14000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 95,
+    "id_komoditi": 46,
+    "bahan": "Ikan Segar Tuna",
+    "satuan": "kg",
+    "harga": 35000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 96,
+    "id_komoditi": 6,
+    "bahan": "Minyak Goreng Curah Rakyat",
+    "satuan": "liter",
+    "harga": 14300,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 97,
+    "id_komoditi": 28,
+    "bahan": "Minyak Goreng Curah Rakyat",
+    "satuan": "liter",
+    "harga": 14100,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 98,
+    "id_komoditi": 48,
+    "bahan": "Udang Basah",
+    "satuan": "gr",
+    "harga": 75000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 99,
+    "id_komoditi": 49,
+    "bahan": "Pisang Ambon",
+    "satuan": "kg",
+    "harga": 6000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 100,
+    "id_komoditi": 50,
+    "bahan": "Jeruk Lokal",
+    "satuan": "kg",
+    "harga": 18000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 101,
+    "id_komoditi": 51,
+    "bahan": "Udang Basah",
+    "satuan": "gr",
+    "harga": 75000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 102,
+    "id_komoditi": 54,
+    "bahan": "Pisang Ambon",
+    "satuan": "kg",
+    "harga": 6000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 103,
+    "id_komoditi": 55,
+    "bahan": "Jeruk Lokal",
+    "satuan": "kg",
+    "harga": 15000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 104,
+    "id_komoditi": 56,
+    "bahan": "Dancow Vanilla 400 gram",
+    "satuan": "gr",
+    "harga": 53000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 105,
+    "id_komoditi": 57,
+    "bahan": "Frisian Flag 123 Vanilla",
+    "satuan": "gr",
+    "harga": 0,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 106,
+    "id_komoditi": 57,
+    "bahan": "SGM 400 gram",
+    "satuan": "gr",
+    "harga": 42300,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 107,
+    "id_komoditi": 58,
+    "bahan": "Dancow Vanilla 400 gram",
+    "satuan": "gr",
+    "harga": 49000,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 108,
+    "id_komoditi": 59,
+    "bahan": "Frisian Flag 123 Vanilla",
+    "satuan": "gr",
+    "harga": 0,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 109,
+    "id_komoditi": 59,
+    "bahan": "SGM 400 gram",
+    "satuan": "gr",
+    "harga": 42400,
+    "waktu": "2023-12-19+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 6,
+    "id_komoditi": 4,
+    "bahan": "IR 64 (Beras Lokal Lampung)",
+    "satuan": "kg",
+    "harga": 13100,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 7,
+    "id_komoditi": 4,
+    "bahan": "IR 64 (Beras Lokal Bengkulu)",
+    "satuan": "kg",
+    "harga": 13750,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 8,
+    "id_komoditi": 5,
+    "bahan": "Gula DN",
+    "satuan": "kg",
+    "harga": 17000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 9,
+    "id_komoditi": 4,
+    "bahan": "Manggis Manis (Premium)",
+    "satuan": "kg",
+    "harga": 15600,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 10,
+    "id_komoditi": 4,
+    "bahan": "Kembang Kol (Premium)",
+    "satuan": "kg",
+    "harga": 15100,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 11,
+    "id_komoditi": 4,
+    "bahan": "Termurah",
+    "satuan": "kg",
+    "harga": 13100,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 12,
+    "id_komoditi": 4,
+    "bahan": "Cap Bulog/Dolog",
+    "satuan": "kg",
+    "harga": 11500,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 96,
+    "id_komoditi": 6,
+    "bahan": "Minyak Goreng Curah Rakyat",
+    "satuan": "liter",
+    "harga": 14300,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 14,
+    "id_komoditi": 6,
+    "bahan": "Minyak Goreng Curah",
+    "satuan": "liter",
+    "harga": 14500,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 15,
+    "id_komoditi": 6,
+    "bahan": "Kemasan Sederhana (Fortune)",
+    "satuan": "liter",
+    "harga": 15800,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 16,
+    "id_komoditi": 6,
+    "bahan": "Kemasan Premium (Fortune)",
+    "satuan": "liter",
+    "harga": 17500,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 17,
+    "id_komoditi": 7,
+    "bahan": "Tepung Terigu Kemasan Segitiga Biru",
+    "satuan": "kg",
+    "harga": 14500,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 18,
+    "id_komoditi": 7,
+    "bahan": "Cakra Kembar",
+    "satuan": "kg",
+    "harga": 15500,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 19,
+    "id_komoditi": 7,
+    "bahan": "Kunci Biru",
+    "satuan": "kg",
+    "harga": 14500,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 20,
+    "id_komoditi": 8,
+    "bahan": "Daging Sapi Lokal Paha Belakang",
+    "satuan": "kg",
+    "harga": 140000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 21,
+    "id_komoditi": 8,
+    "bahan": "Sapi Lokal Paha Depan",
+    "satuan": "kg",
+    "harga": 140000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 22,
+    "id_komoditi": 8,
+    "bahan": "Sandung Lamur",
+    "satuan": "kg",
+    "harga": 100000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 23,
+    "id_komoditi": 8,
+    "bahan": "Tetelan",
+    "satuan": "kg",
+    "harga": 60000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 24,
+    "id_komoditi": 8,
+    "bahan": "Has Dalam",
+    "satuan": "kg",
+    "harga": 140000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 25,
+    "id_komoditi": 8,
+    "bahan": "Has Luar",
+    "satuan": "kg",
+    "harga": 140000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 26,
+    "id_komoditi": 9,
+    "bahan": "Daging Ayam Broiler",
+    "satuan": "kg",
+    "harga": 30000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 27,
+    "id_komoditi": 9,
+    "bahan": "Kampung",
+    "satuan": "kg",
+    "harga": 65000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 28,
+    "id_komoditi": 10,
+    "bahan": "Telur Ayam Broiler",
+    "satuan": "kg",
+    "harga": 25000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 29,
+    "id_komoditi": 10,
+    "bahan": "Kampung",
+    "satuan": "kg",
+    "harga": 52500,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 30,
+    "id_komoditi": 11,
+    "bahan": "Cabe Merah Kriting",
+    "satuan": "kg",
+    "harga": 66000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 31,
+    "id_komoditi": 12,
+    "bahan": "Cabe Rawit Merah",
+    "satuan": "kg",
+    "harga": 75000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 90,
+    "id_komoditi": 12,
+    "bahan": "Cabe Rawit Hijau",
+    "satuan": "kg",
+    "harga": 50000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 32,
+    "id_komoditi": 13,
+    "bahan": "Bawang Merah",
+    "satuan": "kg",
+    "harga": 38000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 33,
+    "id_komoditi": 14,
+    "bahan": "Bawang Putih Honan",
+    "satuan": "kg",
+    "harga": 38000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 89,
+    "id_komoditi": 14,
+    "bahan": "Bawang Bombay",
+    "satuan": "kg",
+    "harga": 35500,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 34,
+    "id_komoditi": 15,
+    "bahan": "Susu Kental Manis Cap Bendera (370 gram)",
+    "satuan": "kaleng",
+    "harga": 13000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 35,
+    "id_komoditi": 15,
+    "bahan": "Cap Indomilk (370 gram)",
+    "satuan": "kaleng",
+    "harga": 12500,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 104,
+    "id_komoditi": 56,
+    "bahan": "Dancow Vanilla 400 gram",
+    "satuan": "gr",
+    "harga": 53000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 105,
+    "id_komoditi": 57,
+    "bahan": "Frisian Flag 123 Vanilla",
+    "satuan": "gr",
+    "harga": 0,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 106,
+    "id_komoditi": 57,
+    "bahan": "SGM 400 gram",
+    "satuan": "gr",
+    "harga": 42300,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 36,
+    "id_komoditi": 16,
+    "bahan": "Garam Beryodium Halus",
+    "satuan": "kg",
+    "harga": 15000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 37,
+    "id_komoditi": 17,
+    "bahan": "Kacang Kedelai Eks Import",
+    "satuan": "kg",
+    "harga": 16000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 86,
+    "id_komoditi": 17,
+    "bahan": "Tahu",
+    "satuan": "kg",
+    "harga": 10000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 87,
+    "id_komoditi": 17,
+    "bahan": "Tempe",
+    "satuan": "kg",
+    "harga": 14000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 38,
+    "id_komoditi": 18,
+    "bahan": "Kacang Tanah",
+    "satuan": "kg",
+    "harga": 30000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 39,
+    "id_komoditi": 19,
+    "bahan": "Kacang Hijau",
+    "satuan": "kg",
+    "harga": 25000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 40,
+    "id_komoditi": 20,
+    "bahan": "Mie Instan Kari Ayam",
+    "satuan": "bks",
+    "harga": 3500,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 41,
+    "id_komoditi": 21,
+    "bahan": "Ikan Asin Teri",
+    "satuan": "kg",
+    "harga": 69000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 42,
+    "id_komoditi": 22,
+    "bahan": "Ikan Kembung",
+    "satuan": "kg",
+    "harga": 55000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 43,
+    "id_komoditi": 23,
+    "bahan": "Ketela Pohon",
+    "satuan": "kg",
+    "harga": 4000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 44,
+    "id_komoditi": 24,
+    "bahan": "Ikan Segar Tongkol",
+    "satuan": "kg",
+    "harga": 30000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 85,
+    "id_komoditi": 24,
+    "bahan": "Ikan Segar Tuna",
+    "satuan": "kg",
+    "harga": 35000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 98,
+    "id_komoditi": 48,
+    "bahan": "Udang Basah",
+    "satuan": "gr",
+    "harga": 75000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 99,
+    "id_komoditi": 49,
+    "bahan": "Pisang Ambon",
+    "satuan": "kg",
+    "harga": 6000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 100,
+    "id_komoditi": 50,
+    "bahan": "Jeruk Lokal",
+    "satuan": "kg",
+    "harga": 18000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 45,
+    "id_komoditi": 25,
+    "bahan": "Jagung Pipilan Kering",
+    "satuan": "kg",
+    "harga": 9000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 46,
+    "id_komoditi": 26,
+    "bahan": " IR 64 (Beras Lokal Lampung)",
+    "satuan": "kg",
+    "harga": 13200,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 47,
+    "id_komoditi": 26,
+    "bahan": "IR 64 (Beras Lokal Bengkulu)",
+    "satuan": "kg",
+    "harga": 13750,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 48,
+    "id_komoditi": 26,
+    "bahan": "Manggis Manis (Premium)",
+    "satuan": "kg",
+    "harga": 15500,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 49,
+    "id_komoditi": 26,
+    "bahan": "Kembang Kol (Premium)",
+    "satuan": "kg",
+    "harga": 15300,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 50,
+    "id_komoditi": 26,
+    "bahan": "Termurah",
+    "satuan": "kg",
+    "harga": 12500,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 51,
+    "id_komoditi": 26,
+    "bahan": "Cap Bulog/Dolog",
+    "satuan": "kg",
+    "harga": 11500,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 52,
+    "id_komoditi": 27,
+    "bahan": "Gula DN",
+    "satuan": "kg",
+    "harga": 17000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 97,
+    "id_komoditi": 28,
+    "bahan": "Minyak Goreng Curah Rakyat",
+    "satuan": "liter",
+    "harga": 14100,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 53,
+    "id_komoditi": 28,
+    "bahan": "Minyak Goreng Curah",
+    "satuan": "liter",
+    "harga": 14400,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 54,
+    "id_komoditi": 28,
+    "bahan": "Kemasan Sederhana (Fortune)",
+    "satuan": "liter",
+    "harga": 16000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 55,
+    "id_komoditi": 28,
+    "bahan": "Kemasan Premium (Fortune)",
+    "satuan": "liter",
+    "harga": 17500,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 56,
+    "id_komoditi": 29,
+    "bahan": "Tepung Terigu Kemasan Segitiga Biru",
+    "satuan": "kg",
+    "harga": 16000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 57,
+    "id_komoditi": 29,
+    "bahan": "Cakra Kembar",
+    "satuan": "kg",
+    "harga": 16600,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 58,
+    "id_komoditi": 29,
+    "bahan": "Kunci Biru",
+    "satuan": "kg",
+    "harga": 16000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 59,
+    "id_komoditi": 30,
+    "bahan": "Daging Sapi Lokal Paha Belakang",
+    "satuan": "kg",
+    "harga": 136700,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 60,
+    "id_komoditi": 30,
+    "bahan": "Sapi Lokal Paha Depan",
+    "satuan": "kg",
+    "harga": 136700,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 61,
+    "id_komoditi": 30,
+    "bahan": "Sandung Lamur",
+    "satuan": "kg",
+    "harga": 100000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 62,
+    "id_komoditi": 30,
+    "bahan": "Tetelan",
+    "satuan": "kg",
+    "harga": 60000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 63,
+    "id_komoditi": 30,
+    "bahan": "Has Dalam",
+    "satuan": "kg",
+    "harga": 136700,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 64,
+    "id_komoditi": 30,
+    "bahan": "Has Luar",
+    "satuan": "kg",
+    "harga": 136700,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 65,
+    "id_komoditi": 31,
+    "bahan": "Daging Ayam Broiler",
+    "satuan": "kg",
+    "harga": 29000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 66,
+    "id_komoditi": 31,
+    "bahan": "Kampung",
+    "satuan": "kg",
+    "harga": 65500,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 67,
+    "id_komoditi": 32,
+    "bahan": "Telur Ayam Broiler",
+    "satuan": "kg",
+    "harga": 26600,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 68,
+    "id_komoditi": 32,
+    "bahan": "Kampung",
+    "satuan": "kg",
+    "harga": 52500,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 69,
+    "id_komoditi": 33,
+    "bahan": "Cabe Merah Kriting",
+    "satuan": "kg",
+    "harga": 60000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 70,
+    "id_komoditi": 34,
+    "bahan": "Cabe Rawit Merah",
+    "satuan": "kg",
+    "harga": 80000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 91,
+    "id_komoditi": 34,
+    "bahan": "Cabe Rawit Hijau",
+    "satuan": "kg",
+    "harga": 51600,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 71,
+    "id_komoditi": 35,
+    "bahan": "Bawang Merah",
+    "satuan": "kg",
+    "harga": 37000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 72,
+    "id_komoditi": 36,
+    "bahan": "Bawang Putih Honan",
+    "satuan": "kg",
+    "harga": 38000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 92,
+    "id_komoditi": 36,
+    "bahan": "Bawang Bombay",
+    "satuan": "kg",
+    "harga": 33000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 73,
+    "id_komoditi": 37,
+    "bahan": "Susu Kental Manis Cap Bendera (370 gram)",
+    "satuan": "kaleng",
+    "harga": 13000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 74,
+    "id_komoditi": 37,
+    "bahan": "Cap Indomilk (370 gram)",
+    "satuan": "kaleng",
+    "harga": 13000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 107,
+    "id_komoditi": 58,
+    "bahan": "Dancow Vanilla 400 gram",
+    "satuan": "gr",
+    "harga": 49000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 108,
+    "id_komoditi": 59,
+    "bahan": "Frisian Flag 123 Vanilla",
+    "satuan": "gr",
+    "harga": 0,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 109,
+    "id_komoditi": 59,
+    "bahan": "SGM 400 gram",
+    "satuan": "gr",
+    "harga": 42400,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 75,
+    "id_komoditi": 38,
+    "bahan": "Garam Beryodium Halus",
+    "satuan": "kg",
+    "harga": 13000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 76,
+    "id_komoditi": 39,
+    "bahan": "Kacang Kedelai Eks Import",
+    "satuan": "kg",
+    "harga": 16000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 93,
+    "id_komoditi": 39,
+    "bahan": "Tahu",
+    "satuan": "kg",
+    "harga": 12000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 94,
+    "id_komoditi": 39,
+    "bahan": "Tempe",
+    "satuan": "kg",
+    "harga": 14000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 77,
+    "id_komoditi": 40,
+    "bahan": "Kacang Tanah",
+    "satuan": "kg",
+    "harga": 29300,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 78,
+    "id_komoditi": 41,
+    "bahan": "Kacang Hijau",
+    "satuan": "kg",
+    "harga": 26000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 79,
+    "id_komoditi": 42,
+    "bahan": "Mie Instan Kari Ayam",
+    "satuan": "bks",
+    "harga": 3200,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 80,
+    "id_komoditi": 43,
+    "bahan": "Ikan Asin Teri",
+    "satuan": "kg",
+    "harga": 65000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 81,
+    "id_komoditi": 44,
+    "bahan": "Ikan Kembung",
+    "satuan": "kg",
+    "harga": 51600,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 82,
+    "id_komoditi": 45,
+    "bahan": "Ketela Pohon",
+    "satuan": "kg",
+    "harga": 4000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 83,
+    "id_komoditi": 46,
+    "bahan": "Ikan Segar Tongkol",
+    "satuan": "kg",
+    "harga": 30000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 95,
+    "id_komoditi": 46,
+    "bahan": "Ikan Segar Tuna",
+    "satuan": "kg",
+    "harga": 35000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 101,
+    "id_komoditi": 51,
+    "bahan": "Udang Basah",
+    "satuan": "gr",
+    "harga": 75000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 102,
+    "id_komoditi": 54,
+    "bahan": "Pisang Ambon",
+    "satuan": "kg",
+    "harga": 6000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 103,
+    "id_komoditi": 55,
+    "bahan": "Jeruk Lokal",
+    "satuan": "kg",
+    "harga": 15000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 84,
+    "id_komoditi": 47,
+    "bahan": "Jagung Pipilan Kering",
+    "satuan": "kg",
+    "harga": 9000,
+    "waktu": "2023-12-18+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 6,
+    "id_komoditi": 4,
+    "bahan": "IR 64 (Beras Lokal Lampung)",
+    "satuan": "kg",
+    "harga": 13100,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 7,
+    "id_komoditi": 4,
+    "bahan": "IR 64 (Beras Lokal Bengkulu)",
+    "satuan": "kg",
+    "harga": 13750,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 9,
+    "id_komoditi": 4,
+    "bahan": "Manggis Manis (Premium)",
+    "satuan": "kg",
+    "harga": 15600,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 10,
+    "id_komoditi": 4,
+    "bahan": "Kembang Kol (Premium)",
+    "satuan": "kg",
+    "harga": 15100,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 11,
+    "id_komoditi": 4,
+    "bahan": "Termurah",
+    "satuan": "kg",
+    "harga": 13100,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 12,
+    "id_komoditi": 4,
+    "bahan": "Cap Bulog/Dolog",
+    "satuan": "kg",
+    "harga": 11500,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 8,
+    "id_komoditi": 5,
+    "bahan": "Gula DN",
+    "satuan": "kg",
+    "harga": 17000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 96,
+    "id_komoditi": 6,
+    "bahan": "Minyak Goreng Curah Rakyat",
+    "satuan": "liter",
+    "harga": 14300,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 14,
+    "id_komoditi": 6,
+    "bahan": "Minyak Goreng Curah",
+    "satuan": "liter",
+    "harga": 14500,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 15,
+    "id_komoditi": 6,
+    "bahan": "Kemasan Sederhana (Fortune)",
+    "satuan": "liter",
+    "harga": 15800,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 16,
+    "id_komoditi": 6,
+    "bahan": "Kemasan Premium (Fortune)",
+    "satuan": "liter",
+    "harga": 17500,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 17,
+    "id_komoditi": 7,
+    "bahan": "Tepung Terigu Kemasan Segitiga Biru",
+    "satuan": "kg",
+    "harga": 14500,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 18,
+    "id_komoditi": 7,
+    "bahan": "Cakra Kembar",
+    "satuan": "kg",
+    "harga": 15500,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 19,
+    "id_komoditi": 7,
+    "bahan": "Kunci Biru",
+    "satuan": "kg",
+    "harga": 14500,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 20,
+    "id_komoditi": 8,
+    "bahan": "Daging Sapi Lokal Paha Belakang",
+    "satuan": "kg",
+    "harga": 140000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 21,
+    "id_komoditi": 8,
+    "bahan": "Sapi Lokal Paha Depan",
+    "satuan": "kg",
+    "harga": 140000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 22,
+    "id_komoditi": 8,
+    "bahan": "Sandung Lamur",
+    "satuan": "kg",
+    "harga": 100000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 23,
+    "id_komoditi": 8,
+    "bahan": "Tetelan",
+    "satuan": "kg",
+    "harga": 60000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 24,
+    "id_komoditi": 8,
+    "bahan": "Has Dalam",
+    "satuan": "kg",
+    "harga": 140000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 25,
+    "id_komoditi": 8,
+    "bahan": "Has Luar",
+    "satuan": "kg",
+    "harga": 140000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 26,
+    "id_komoditi": 9,
+    "bahan": "Daging Ayam Broiler",
+    "satuan": "kg",
+    "harga": 30000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 27,
+    "id_komoditi": 9,
+    "bahan": "Kampung",
+    "satuan": "kg",
+    "harga": 65000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 28,
+    "id_komoditi": 10,
+    "bahan": "Telur Ayam Broiler",
+    "satuan": "kg",
+    "harga": 25000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 29,
+    "id_komoditi": 10,
+    "bahan": "Kampung",
+    "satuan": "kg",
+    "harga": 52500,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 30,
+    "id_komoditi": 11,
+    "bahan": "Cabe Merah Kriting",
+    "satuan": "kg",
+    "harga": 86600,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 31,
+    "id_komoditi": 12,
+    "bahan": "Cabe Rawit Merah",
+    "satuan": "kg",
+    "harga": 100000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 90,
+    "id_komoditi": 12,
+    "bahan": "Cabe Rawit Hijau",
+    "satuan": "kg",
+    "harga": 75000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 32,
+    "id_komoditi": 13,
+    "bahan": "Bawang Merah",
+    "satuan": "kg",
+    "harga": 38000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 33,
+    "id_komoditi": 14,
+    "bahan": "Bawang Putih Honan",
+    "satuan": "kg",
+    "harga": 38000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 89,
+    "id_komoditi": 14,
+    "bahan": "Bawang Bombay",
+    "satuan": "kg",
+    "harga": 35500,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 34,
+    "id_komoditi": 15,
+    "bahan": "Susu Kental Manis Cap Bendera (370 gram)",
+    "satuan": "kaleng",
+    "harga": 13000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 35,
+    "id_komoditi": 15,
+    "bahan": "Cap Indomilk (370 gram)",
+    "satuan": "kaleng",
+    "harga": 12500,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 104,
+    "id_komoditi": 56,
+    "bahan": "Dancow Vanilla 400 gram",
+    "satuan": "gr",
+    "harga": 53000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 105,
+    "id_komoditi": 57,
+    "bahan": "Frisian Flag 123 Vanilla",
+    "satuan": "gr",
+    "harga": 0,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 106,
+    "id_komoditi": 57,
+    "bahan": "SGM 400 gram",
+    "satuan": "gr",
+    "harga": 42300,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 36,
+    "id_komoditi": 16,
+    "bahan": "Garam Beryodium Halus",
+    "satuan": "kg",
+    "harga": 15000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 37,
+    "id_komoditi": 17,
+    "bahan": "Kacang Kedelai Eks Import",
+    "satuan": "kg",
+    "harga": 16000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 86,
+    "id_komoditi": 17,
+    "bahan": "Tahu",
+    "satuan": "kg",
+    "harga": 10000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 87,
+    "id_komoditi": 17,
+    "bahan": "Tempe",
+    "satuan": "kg",
+    "harga": 14000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 38,
+    "id_komoditi": 18,
+    "bahan": "Kacang Tanah",
+    "satuan": "kg",
+    "harga": 30000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 39,
+    "id_komoditi": 19,
+    "bahan": "Kacang Hijau",
+    "satuan": "kg",
+    "harga": 25000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 40,
+    "id_komoditi": 20,
+    "bahan": "Mie Instan Kari Ayam",
+    "satuan": "bks",
+    "harga": 3500,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 41,
+    "id_komoditi": 21,
+    "bahan": "Ikan Asin Teri",
+    "satuan": "kg",
+    "harga": 69000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 42,
+    "id_komoditi": 22,
+    "bahan": "Ikan Kembung",
+    "satuan": "kg",
+    "harga": 55000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 43,
+    "id_komoditi": 23,
+    "bahan": "Ketela Pohon",
+    "satuan": "kg",
+    "harga": 4000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 44,
+    "id_komoditi": 24,
+    "bahan": "Ikan Segar Tongkol",
+    "satuan": "kg",
+    "harga": 30000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 85,
+    "id_komoditi": 24,
+    "bahan": "Ikan Segar Tuna",
+    "satuan": "kg",
+    "harga": 35000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 98,
+    "id_komoditi": 48,
+    "bahan": "Udang Basah",
+    "satuan": "gr",
+    "harga": 75000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 99,
+    "id_komoditi": 49,
+    "bahan": "Pisang Ambon",
+    "satuan": "kg",
+    "harga": 6000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 100,
+    "id_komoditi": 50,
+    "bahan": "Jeruk Lokal",
+    "satuan": "kg",
+    "harga": 18000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 45,
+    "id_komoditi": 25,
+    "bahan": "Jagung Pipilan Kering",
+    "satuan": "kg",
+    "harga": 9000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 46,
+    "id_komoditi": 26,
+    "bahan": " IR 64 (Beras Lokal Lampung)",
+    "satuan": "kg",
+    "harga": 13200,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 47,
+    "id_komoditi": 26,
+    "bahan": "IR 64 (Beras Lokal Bengkulu)",
+    "satuan": "kg",
+    "harga": 13750,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 48,
+    "id_komoditi": 26,
+    "bahan": "Manggis Manis (Premium)",
+    "satuan": "kg",
+    "harga": 15500,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 49,
+    "id_komoditi": 26,
+    "bahan": "Kembang Kol (Premium)",
+    "satuan": "kg",
+    "harga": 15300,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 50,
+    "id_komoditi": 26,
+    "bahan": "Termurah",
+    "satuan": "kg",
+    "harga": 12500,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 51,
+    "id_komoditi": 26,
+    "bahan": "Cap Bulog/Dolog",
+    "satuan": "kg",
+    "harga": 11500,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 52,
+    "id_komoditi": 27,
+    "bahan": "Gula DN",
+    "satuan": "kg",
+    "harga": 17000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 97,
+    "id_komoditi": 28,
+    "bahan": "Minyak Goreng Curah Rakyat",
+    "satuan": "liter",
+    "harga": 14100,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 53,
+    "id_komoditi": 28,
+    "bahan": "Minyak Goreng Curah",
+    "satuan": "liter",
+    "harga": 14400,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 54,
+    "id_komoditi": 28,
+    "bahan": "Kemasan Sederhana (Fortune)",
+    "satuan": "liter",
+    "harga": 16000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 55,
+    "id_komoditi": 28,
+    "bahan": "Kemasan Premium (Fortune)",
+    "satuan": "liter",
+    "harga": 17500,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 56,
+    "id_komoditi": 29,
+    "bahan": "Tepung Terigu Kemasan Segitiga Biru",
+    "satuan": "kg",
+    "harga": 16000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 57,
+    "id_komoditi": 29,
+    "bahan": "Cakra Kembar",
+    "satuan": "kg",
+    "harga": 16600,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 58,
+    "id_komoditi": 29,
+    "bahan": "Kunci Biru",
+    "satuan": "kg",
+    "harga": 16000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 59,
+    "id_komoditi": 30,
+    "bahan": "Daging Sapi Lokal Paha Belakang",
+    "satuan": "kg",
+    "harga": 136700,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 60,
+    "id_komoditi": 30,
+    "bahan": "Sapi Lokal Paha Depan",
+    "satuan": "kg",
+    "harga": 136700,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 61,
+    "id_komoditi": 30,
+    "bahan": "Sandung Lamur",
+    "satuan": "kg",
+    "harga": 100000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 62,
+    "id_komoditi": 30,
+    "bahan": "Tetelan",
+    "satuan": "kg",
+    "harga": 60000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 63,
+    "id_komoditi": 30,
+    "bahan": "Has Dalam",
+    "satuan": "kg",
+    "harga": 136700,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 64,
+    "id_komoditi": 30,
+    "bahan": "Has Luar",
+    "satuan": "kg",
+    "harga": 136700,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 65,
+    "id_komoditi": 31,
+    "bahan": "Daging Ayam Broiler",
+    "satuan": "kg",
+    "harga": 27000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 66,
+    "id_komoditi": 31,
+    "bahan": "Kampung",
+    "satuan": "kg",
+    "harga": 65500,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 67,
+    "id_komoditi": 32,
+    "bahan": "Telur Ayam Broiler",
+    "satuan": "kg",
+    "harga": 26600,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 68,
+    "id_komoditi": 32,
+    "bahan": "Kampung",
+    "satuan": "kg",
+    "harga": 52500,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 69,
+    "id_komoditi": 33,
+    "bahan": "Cabe Merah Kriting",
+    "satuan": "kg",
+    "harga": 86600,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 70,
+    "id_komoditi": 34,
+    "bahan": "Cabe Rawit Merah",
+    "satuan": "kg",
+    "harga": 100000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 91,
+    "id_komoditi": 34,
+    "bahan": "Cabe Rawit Hijau",
+    "satuan": "kg",
+    "harga": 76600,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 71,
+    "id_komoditi": 35,
+    "bahan": "Bawang Merah",
+    "satuan": "kg",
+    "harga": 37000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 72,
+    "id_komoditi": 36,
+    "bahan": "Bawang Putih Honan",
+    "satuan": "kg",
+    "harga": 38000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 92,
+    "id_komoditi": 36,
+    "bahan": "Bawang Bombay",
+    "satuan": "kg",
+    "harga": 33000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 73,
+    "id_komoditi": 37,
+    "bahan": "Susu Kental Manis Cap Bendera (370 gram)",
+    "satuan": "kaleng",
+    "harga": 13000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 74,
+    "id_komoditi": 37,
+    "bahan": "Cap Indomilk (370 gram)",
+    "satuan": "kaleng",
+    "harga": 13000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 107,
+    "id_komoditi": 58,
+    "bahan": "Dancow Vanilla 400 gram",
+    "satuan": "gr",
+    "harga": 49000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 108,
+    "id_komoditi": 59,
+    "bahan": "Frisian Flag 123 Vanilla",
+    "satuan": "gr",
+    "harga": 0,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 109,
+    "id_komoditi": 59,
+    "bahan": "SGM 400 gram",
+    "satuan": "gr",
+    "harga": 42400,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 75,
+    "id_komoditi": 38,
+    "bahan": "Garam Beryodium Halus",
+    "satuan": "kg",
+    "harga": 13000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 76,
+    "id_komoditi": 39,
+    "bahan": "Kacang Kedelai Eks Import",
+    "satuan": "kg",
+    "harga": 16000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 93,
+    "id_komoditi": 39,
+    "bahan": "Tahu",
+    "satuan": "kg",
+    "harga": 12000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 94,
+    "id_komoditi": 39,
+    "bahan": "Tempe",
+    "satuan": "kg",
+    "harga": 14000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 77,
+    "id_komoditi": 40,
+    "bahan": "Kacang Tanah",
+    "satuan": "kg",
+    "harga": 29300,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 78,
+    "id_komoditi": 41,
+    "bahan": "Kacang Hijau",
+    "satuan": "kg",
+    "harga": 26000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 79,
+    "id_komoditi": 42,
+    "bahan": "Mie Instan Kari Ayam",
+    "satuan": "bks",
+    "harga": 3200,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 80,
+    "id_komoditi": 43,
+    "bahan": "Ikan Asin Teri",
+    "satuan": "kg",
+    "harga": 65000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 81,
+    "id_komoditi": 44,
+    "bahan": "Ikan Kembung",
+    "satuan": "kg",
+    "harga": 51600,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 82,
+    "id_komoditi": 45,
+    "bahan": "Ketela Pohon",
+    "satuan": "kg",
+    "harga": 4000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 83,
+    "id_komoditi": 46,
+    "bahan": "Ikan Segar Tongkol",
+    "satuan": "kg",
+    "harga": 30000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 95,
+    "id_komoditi": 46,
+    "bahan": "Ikan Segar Tuna",
+    "satuan": "kg",
+    "harga": 35000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 101,
+    "id_komoditi": 51,
+    "bahan": "Udang Basah",
+    "satuan": "gr",
+    "harga": 75000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 102,
+    "id_komoditi": 54,
+    "bahan": "Pisang Ambon",
+    "satuan": "kg",
+    "harga": 6000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 103,
+    "id_komoditi": 55,
+    "bahan": "Jeruk Lokal",
+    "satuan": "kg",
+    "harga": 15000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 84,
+    "id_komoditi": 47,
+    "bahan": "Jagung Pipilan Kering",
+    "satuan": "kg",
+    "harga": 9000,
+    "waktu": "2023-12-15+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 6,
+    "id_komoditi": 4,
+    "bahan": "IR 64 (Beras Lokal Lampung)",
+    "satuan": "kg",
+    "harga": 13100,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 7,
+    "id_komoditi": 4,
+    "bahan": "IR 64 (Beras Lokal Bengkulu)",
+    "satuan": "kg",
+    "harga": 13750,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 9,
+    "id_komoditi": 4,
+    "bahan": "Manggis Manis (Premium)",
+    "satuan": "kg",
+    "harga": 15600,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 10,
+    "id_komoditi": 4,
+    "bahan": "Kembang Kol (Premium)",
+    "satuan": "kg",
+    "harga": 15100,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 11,
+    "id_komoditi": 4,
+    "bahan": "Termurah",
+    "satuan": "kg",
+    "harga": 13100,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 12,
+    "id_komoditi": 4,
+    "bahan": "Cap Bulog/Dolog",
+    "satuan": "kg",
+    "harga": 11500,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 8,
+    "id_komoditi": 5,
+    "bahan": "Gula DN",
+    "satuan": "kg",
+    "harga": 17000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 96,
+    "id_komoditi": 6,
+    "bahan": "Minyak Goreng Curah Rakyat",
+    "satuan": "liter",
+    "harga": 14300,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 14,
+    "id_komoditi": 6,
+    "bahan": "Minyak Goreng Curah",
+    "satuan": "liter",
+    "harga": 14500,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 15,
+    "id_komoditi": 6,
+    "bahan": "Kemasan Sederhana (Fortune)",
+    "satuan": "liter",
+    "harga": 15800,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 16,
+    "id_komoditi": 6,
+    "bahan": "Kemasan Premium (Fortune)",
+    "satuan": "liter",
+    "harga": 17500,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 17,
+    "id_komoditi": 7,
+    "bahan": "Tepung Terigu Kemasan Segitiga Biru",
+    "satuan": "kg",
+    "harga": 14500,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 18,
+    "id_komoditi": 7,
+    "bahan": "Cakra Kembar",
+    "satuan": "kg",
+    "harga": 15500,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 19,
+    "id_komoditi": 7,
+    "bahan": "Kunci Biru",
+    "satuan": "kg",
+    "harga": 14500,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 20,
+    "id_komoditi": 8,
+    "bahan": "Daging Sapi Lokal Paha Belakang",
+    "satuan": "kg",
+    "harga": 140000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 21,
+    "id_komoditi": 8,
+    "bahan": "Sapi Lokal Paha Depan",
+    "satuan": "kg",
+    "harga": 140000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 22,
+    "id_komoditi": 8,
+    "bahan": "Sandung Lamur",
+    "satuan": "kg",
+    "harga": 100000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 23,
+    "id_komoditi": 8,
+    "bahan": "Tetelan",
+    "satuan": "kg",
+    "harga": 60000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 24,
+    "id_komoditi": 8,
+    "bahan": "Has Dalam",
+    "satuan": "kg",
+    "harga": 140000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 25,
+    "id_komoditi": 8,
+    "bahan": "Has Luar",
+    "satuan": "kg",
+    "harga": 140000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 26,
+    "id_komoditi": 9,
+    "bahan": "Daging Ayam Broiler",
+    "satuan": "kg",
+    "harga": 30000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 27,
+    "id_komoditi": 9,
+    "bahan": "Kampung",
+    "satuan": "kg",
+    "harga": 65000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 28,
+    "id_komoditi": 10,
+    "bahan": "Telur Ayam Broiler",
+    "satuan": "kg",
+    "harga": 25000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 29,
+    "id_komoditi": 10,
+    "bahan": "Kampung",
+    "satuan": "kg",
+    "harga": 52500,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 30,
+    "id_komoditi": 11,
+    "bahan": "Cabe Merah Kriting",
+    "satuan": "kg",
+    "harga": 86600,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 31,
+    "id_komoditi": 12,
+    "bahan": "Cabe Rawit Merah",
+    "satuan": "kg",
+    "harga": 100000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 90,
+    "id_komoditi": 12,
+    "bahan": "Cabe Rawit Hijau",
+    "satuan": "kg",
+    "harga": 75000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 32,
+    "id_komoditi": 13,
+    "bahan": "Bawang Merah",
+    "satuan": "kg",
+    "harga": 38000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 33,
+    "id_komoditi": 14,
+    "bahan": "Bawang Putih Honan",
+    "satuan": "kg",
+    "harga": 38000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 89,
+    "id_komoditi": 14,
+    "bahan": "Bawang Bombay",
+    "satuan": "kg",
+    "harga": 35500,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 34,
+    "id_komoditi": 15,
+    "bahan": "Susu Kental Manis Cap Bendera (370 gram)",
+    "satuan": "kaleng",
+    "harga": 13000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 35,
+    "id_komoditi": 15,
+    "bahan": "Cap Indomilk (370 gram)",
+    "satuan": "kaleng",
+    "harga": 12500,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 104,
+    "id_komoditi": 56,
+    "bahan": "Dancow Vanilla 400 gram",
+    "satuan": "gr",
+    "harga": 53000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 105,
+    "id_komoditi": 57,
+    "bahan": "Frisian Flag 123 Vanilla",
+    "satuan": "gr",
+    "harga": 0,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 106,
+    "id_komoditi": 57,
+    "bahan": "SGM 400 gram",
+    "satuan": "gr",
+    "harga": 42300,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 36,
+    "id_komoditi": 16,
+    "bahan": "Garam Beryodium Halus",
+    "satuan": "kg",
+    "harga": 15000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 37,
+    "id_komoditi": 17,
+    "bahan": "Kacang Kedelai Eks Import",
+    "satuan": "kg",
+    "harga": 16000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 86,
+    "id_komoditi": 17,
+    "bahan": "Tahu",
+    "satuan": "kg",
+    "harga": 10000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 87,
+    "id_komoditi": 17,
+    "bahan": "Tempe",
+    "satuan": "kg",
+    "harga": 14000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 38,
+    "id_komoditi": 18,
+    "bahan": "Kacang Tanah",
+    "satuan": "kg",
+    "harga": 30000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 39,
+    "id_komoditi": 19,
+    "bahan": "Kacang Hijau",
+    "satuan": "kg",
+    "harga": 25000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 40,
+    "id_komoditi": 20,
+    "bahan": "Mie Instan Kari Ayam",
+    "satuan": "bks",
+    "harga": 3500,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 41,
+    "id_komoditi": 21,
+    "bahan": "Ikan Asin Teri",
+    "satuan": "kg",
+    "harga": 69000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 42,
+    "id_komoditi": 22,
+    "bahan": "Ikan Kembung",
+    "satuan": "kg",
+    "harga": 55000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 43,
+    "id_komoditi": 23,
+    "bahan": "Ketela Pohon",
+    "satuan": "kg",
+    "harga": 4000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 44,
+    "id_komoditi": 24,
+    "bahan": "Ikan Segar Tongkol",
+    "satuan": "kg",
+    "harga": 30000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 85,
+    "id_komoditi": 24,
+    "bahan": "Ikan Segar Tuna",
+    "satuan": "kg",
+    "harga": 35000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 98,
+    "id_komoditi": 48,
+    "bahan": "Udang Basah",
+    "satuan": "gr",
+    "harga": 75000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 99,
+    "id_komoditi": 49,
+    "bahan": "Pisang Ambon",
+    "satuan": "kg",
+    "harga": 6000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 100,
+    "id_komoditi": 50,
+    "bahan": "Jeruk Lokal",
+    "satuan": "kg",
+    "harga": 18000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 45,
+    "id_komoditi": 25,
+    "bahan": "Jagung Pipilan Kering",
+    "satuan": "kg",
+    "harga": 9000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 46,
+    "id_komoditi": 26,
+    "bahan": " IR 64 (Beras Lokal Lampung)",
+    "satuan": "kg",
+    "harga": 13200,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 47,
+    "id_komoditi": 26,
+    "bahan": "IR 64 (Beras Lokal Bengkulu)",
+    "satuan": "kg",
+    "harga": 13750,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 48,
+    "id_komoditi": 26,
+    "bahan": "Manggis Manis (Premium)",
+    "satuan": "kg",
+    "harga": 15500,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 49,
+    "id_komoditi": 26,
+    "bahan": "Kembang Kol (Premium)",
+    "satuan": "kg",
+    "harga": 15300,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 50,
+    "id_komoditi": 26,
+    "bahan": "Termurah",
+    "satuan": "kg",
+    "harga": 12500,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 51,
+    "id_komoditi": 26,
+    "bahan": "Cap Bulog/Dolog",
+    "satuan": "kg",
+    "harga": 11500,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 52,
+    "id_komoditi": 27,
+    "bahan": "Gula DN",
+    "satuan": "kg",
+    "harga": 17000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 97,
+    "id_komoditi": 28,
+    "bahan": "Minyak Goreng Curah Rakyat",
+    "satuan": "liter",
+    "harga": 14100,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 53,
+    "id_komoditi": 28,
+    "bahan": "Minyak Goreng Curah",
+    "satuan": "liter",
+    "harga": 14400,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 54,
+    "id_komoditi": 28,
+    "bahan": "Kemasan Sederhana (Fortune)",
+    "satuan": "liter",
+    "harga": 16000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 55,
+    "id_komoditi": 28,
+    "bahan": "Kemasan Premium (Fortune)",
+    "satuan": "liter",
+    "harga": 17500,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 56,
+    "id_komoditi": 29,
+    "bahan": "Tepung Terigu Kemasan Segitiga Biru",
+    "satuan": "kg",
+    "harga": 16000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 57,
+    "id_komoditi": 29,
+    "bahan": "Cakra Kembar",
+    "satuan": "kg",
+    "harga": 16600,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 58,
+    "id_komoditi": 29,
+    "bahan": "Kunci Biru",
+    "satuan": "kg",
+    "harga": 16000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 59,
+    "id_komoditi": 30,
+    "bahan": "Daging Sapi Lokal Paha Belakang",
+    "satuan": "kg",
+    "harga": 136700,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 60,
+    "id_komoditi": 30,
+    "bahan": "Sapi Lokal Paha Depan",
+    "satuan": "kg",
+    "harga": 136700,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 61,
+    "id_komoditi": 30,
+    "bahan": "Sandung Lamur",
+    "satuan": "kg",
+    "harga": 100000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 62,
+    "id_komoditi": 30,
+    "bahan": "Tetelan",
+    "satuan": "kg",
+    "harga": 60000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 63,
+    "id_komoditi": 30,
+    "bahan": "Has Dalam",
+    "satuan": "kg",
+    "harga": 136700,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 64,
+    "id_komoditi": 30,
+    "bahan": "Has Luar",
+    "satuan": "kg",
+    "harga": 136700,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 65,
+    "id_komoditi": 31,
+    "bahan": "Daging Ayam Broiler",
+    "satuan": "kg",
+    "harga": 27000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 66,
+    "id_komoditi": 31,
+    "bahan": "Kampung",
+    "satuan": "kg",
+    "harga": 65500,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 67,
+    "id_komoditi": 32,
+    "bahan": "Telur Ayam Broiler",
+    "satuan": "kg",
+    "harga": 26600,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 68,
+    "id_komoditi": 32,
+    "bahan": "Kampung",
+    "satuan": "kg",
+    "harga": 52500,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 69,
+    "id_komoditi": 33,
+    "bahan": "Cabe Merah Kriting",
+    "satuan": "kg",
+    "harga": 86600,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 70,
+    "id_komoditi": 34,
+    "bahan": "Cabe Rawit Merah",
+    "satuan": "kg",
+    "harga": 100000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 91,
+    "id_komoditi": 34,
+    "bahan": "Cabe Rawit Hijau",
+    "satuan": "kg",
+    "harga": 76600,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 71,
+    "id_komoditi": 35,
+    "bahan": "Bawang Merah",
+    "satuan": "kg",
+    "harga": 37000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 72,
+    "id_komoditi": 36,
+    "bahan": "Bawang Putih Honan",
+    "satuan": "kg",
+    "harga": 38000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 92,
+    "id_komoditi": 36,
+    "bahan": "Bawang Bombay",
+    "satuan": "kg",
+    "harga": 33000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 73,
+    "id_komoditi": 37,
+    "bahan": "Susu Kental Manis Cap Bendera (370 gram)",
+    "satuan": "kaleng",
+    "harga": 13000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 74,
+    "id_komoditi": 37,
+    "bahan": "Cap Indomilk (370 gram)",
+    "satuan": "kaleng",
+    "harga": 13000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 107,
+    "id_komoditi": 58,
+    "bahan": "Dancow Vanilla 400 gram",
+    "satuan": "gr",
+    "harga": 49000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 108,
+    "id_komoditi": 59,
+    "bahan": "Frisian Flag 123 Vanilla",
+    "satuan": "gr",
+    "harga": 0,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 109,
+    "id_komoditi": 59,
+    "bahan": "SGM 400 gram",
+    "satuan": "gr",
+    "harga": 42400,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 75,
+    "id_komoditi": 38,
+    "bahan": "Garam Beryodium Halus",
+    "satuan": "kg",
+    "harga": 13000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 76,
+    "id_komoditi": 39,
+    "bahan": "Kacang Kedelai Eks Import",
+    "satuan": "kg",
+    "harga": 16000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 93,
+    "id_komoditi": 39,
+    "bahan": "Tahu",
+    "satuan": "kg",
+    "harga": 12000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 94,
+    "id_komoditi": 39,
+    "bahan": "Tempe",
+    "satuan": "kg",
+    "harga": 14000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 77,
+    "id_komoditi": 40,
+    "bahan": "Kacang Tanah",
+    "satuan": "kg",
+    "harga": 29300,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 78,
+    "id_komoditi": 41,
+    "bahan": "Kacang Hijau",
+    "satuan": "kg",
+    "harga": 26000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 79,
+    "id_komoditi": 42,
+    "bahan": "Mie Instan Kari Ayam",
+    "satuan": "bks",
+    "harga": 3200,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 80,
+    "id_komoditi": 43,
+    "bahan": "Ikan Asin Teri",
+    "satuan": "kg",
+    "harga": 65000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 81,
+    "id_komoditi": 44,
+    "bahan": "Ikan Kembung",
+    "satuan": "kg",
+    "harga": 51600,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 82,
+    "id_komoditi": 45,
+    "bahan": "Ketela Pohon",
+    "satuan": "kg",
+    "harga": 4000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 83,
+    "id_komoditi": 46,
+    "bahan": "Ikan Segar Tongkol",
+    "satuan": "kg",
+    "harga": 30000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 95,
+    "id_komoditi": 46,
+    "bahan": "Ikan Segar Tuna",
+    "satuan": "kg",
+    "harga": 35000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 101,
+    "id_komoditi": 51,
+    "bahan": "Udang Basah",
+    "satuan": "gr",
+    "harga": 75000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 102,
+    "id_komoditi": 54,
+    "bahan": "Pisang Ambon",
+    "satuan": "kg",
+    "harga": 6000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 103,
+    "id_komoditi": 55,
+    "bahan": "Jeruk Lokal",
+    "satuan": "kg",
+    "harga": 15000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 84,
+    "id_komoditi": 47,
+    "bahan": "Jagung Pipilan Kering",
+    "satuan": "kg",
+    "harga": 9000,
+    "waktu": "2023-12-14+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 6,
+    "id_komoditi": 4,
+    "bahan": "IR 64 (Beras Lokal Lampung)",
+    "satuan": "kg",
+    "harga": 13100,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 7,
+    "id_komoditi": 4,
+    "bahan": "IR 64 (Beras Lokal Bengkulu)",
+    "satuan": "kg",
+    "harga": 13750,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 9,
+    "id_komoditi": 4,
+    "bahan": "Manggis Manis (Premium)",
+    "satuan": "kg",
+    "harga": 15600,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 10,
+    "id_komoditi": 4,
+    "bahan": "Kembang Kol (Premium)",
+    "satuan": "kg",
+    "harga": 15100,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 11,
+    "id_komoditi": 4,
+    "bahan": "Termurah",
+    "satuan": "kg",
+    "harga": 13100,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 12,
+    "id_komoditi": 4,
+    "bahan": "Cap Bulog/Dolog",
+    "satuan": "kg",
+    "harga": 11500,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 8,
+    "id_komoditi": 5,
+    "bahan": "Gula DN",
+    "satuan": "kg",
+    "harga": 17000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 96,
+    "id_komoditi": 6,
+    "bahan": "Minyak Goreng Curah Rakyat",
+    "satuan": "liter",
+    "harga": 14300,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 14,
+    "id_komoditi": 6,
+    "bahan": "Minyak Goreng Curah",
+    "satuan": "liter",
+    "harga": 14500,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 15,
+    "id_komoditi": 6,
+    "bahan": "Kemasan Sederhana (Fortune)",
+    "satuan": "liter",
+    "harga": 15800,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 16,
+    "id_komoditi": 6,
+    "bahan": "Kemasan Premium (Fortune)",
+    "satuan": "liter",
+    "harga": 17500,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 17,
+    "id_komoditi": 7,
+    "bahan": "Tepung Terigu Kemasan Segitiga Biru",
+    "satuan": "kg",
+    "harga": 14500,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 18,
+    "id_komoditi": 7,
+    "bahan": "Cakra Kembar",
+    "satuan": "kg",
+    "harga": 15500,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 19,
+    "id_komoditi": 7,
+    "bahan": "Kunci Biru",
+    "satuan": "kg",
+    "harga": 14500,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 20,
+    "id_komoditi": 8,
+    "bahan": "Daging Sapi Lokal Paha Belakang",
+    "satuan": "kg",
+    "harga": 140000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 21,
+    "id_komoditi": 8,
+    "bahan": "Sapi Lokal Paha Depan",
+    "satuan": "kg",
+    "harga": 140000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 22,
+    "id_komoditi": 8,
+    "bahan": "Sandung Lamur",
+    "satuan": "kg",
+    "harga": 100000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 23,
+    "id_komoditi": 8,
+    "bahan": "Tetelan",
+    "satuan": "kg",
+    "harga": 60000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 24,
+    "id_komoditi": 8,
+    "bahan": "Has Dalam",
+    "satuan": "kg",
+    "harga": 140000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 25,
+    "id_komoditi": 8,
+    "bahan": "Has Luar",
+    "satuan": "kg",
+    "harga": 140000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 26,
+    "id_komoditi": 9,
+    "bahan": "Daging Ayam Broiler",
+    "satuan": "kg",
+    "harga": 30000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 27,
+    "id_komoditi": 9,
+    "bahan": "Kampung",
+    "satuan": "kg",
+    "harga": 65000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 28,
+    "id_komoditi": 10,
+    "bahan": "Telur Ayam Broiler",
+    "satuan": "kg",
+    "harga": 25000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 29,
+    "id_komoditi": 10,
+    "bahan": "Kampung",
+    "satuan": "kg",
+    "harga": 52500,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 30,
+    "id_komoditi": 11,
+    "bahan": "Cabe Merah Kriting",
+    "satuan": "kg",
+    "harga": 86600,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 31,
+    "id_komoditi": 12,
+    "bahan": "Cabe Rawit Merah",
+    "satuan": "kg",
+    "harga": 100000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 90,
+    "id_komoditi": 12,
+    "bahan": "Cabe Rawit Hijau",
+    "satuan": "kg",
+    "harga": 75000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 32,
+    "id_komoditi": 13,
+    "bahan": "Bawang Merah",
+    "satuan": "kg",
+    "harga": 38000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 33,
+    "id_komoditi": 14,
+    "bahan": "Bawang Putih Honan",
+    "satuan": "kg",
+    "harga": 38000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 89,
+    "id_komoditi": 14,
+    "bahan": "Bawang Bombay",
+    "satuan": "kg",
+    "harga": 35500,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 34,
+    "id_komoditi": 15,
+    "bahan": "Susu Kental Manis Cap Bendera (370 gram)",
+    "satuan": "kaleng",
+    "harga": 13000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 35,
+    "id_komoditi": 15,
+    "bahan": "Cap Indomilk (370 gram)",
+    "satuan": "kaleng",
+    "harga": 12500,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 104,
+    "id_komoditi": 56,
+    "bahan": "Dancow Vanilla 400 gram",
+    "satuan": "gr",
+    "harga": 53000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 105,
+    "id_komoditi": 57,
+    "bahan": "Frisian Flag 123 Vanilla",
+    "satuan": "gr",
+    "harga": 0,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 106,
+    "id_komoditi": 57,
+    "bahan": "SGM 400 gram",
+    "satuan": "gr",
+    "harga": 42300,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 36,
+    "id_komoditi": 16,
+    "bahan": "Garam Beryodium Halus",
+    "satuan": "kg",
+    "harga": 15000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 37,
+    "id_komoditi": 17,
+    "bahan": "Kacang Kedelai Eks Import",
+    "satuan": "kg",
+    "harga": 16000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 86,
+    "id_komoditi": 17,
+    "bahan": "Tahu",
+    "satuan": "kg",
+    "harga": 10000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 87,
+    "id_komoditi": 17,
+    "bahan": "Tempe",
+    "satuan": "kg",
+    "harga": 14000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 38,
+    "id_komoditi": 18,
+    "bahan": "Kacang Tanah",
+    "satuan": "kg",
+    "harga": 30000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 39,
+    "id_komoditi": 19,
+    "bahan": "Kacang Hijau",
+    "satuan": "kg",
+    "harga": 25000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 40,
+    "id_komoditi": 20,
+    "bahan": "Mie Instan Kari Ayam",
+    "satuan": "bks",
+    "harga": 3500,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 41,
+    "id_komoditi": 21,
+    "bahan": "Ikan Asin Teri",
+    "satuan": "kg",
+    "harga": 69000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 42,
+    "id_komoditi": 22,
+    "bahan": "Ikan Kembung",
+    "satuan": "kg",
+    "harga": 55000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 43,
+    "id_komoditi": 23,
+    "bahan": "Ketela Pohon",
+    "satuan": "kg",
+    "harga": 4000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 44,
+    "id_komoditi": 24,
+    "bahan": "Ikan Segar Tongkol",
+    "satuan": "kg",
+    "harga": 30000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 85,
+    "id_komoditi": 24,
+    "bahan": "Ikan Segar Tuna",
+    "satuan": "kg",
+    "harga": 35000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 98,
+    "id_komoditi": 48,
+    "bahan": "Udang Basah",
+    "satuan": "gr",
+    "harga": 75000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 99,
+    "id_komoditi": 49,
+    "bahan": "Pisang Ambon",
+    "satuan": "kg",
+    "harga": 6000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 100,
+    "id_komoditi": 50,
+    "bahan": "Jeruk Lokal",
+    "satuan": "kg",
+    "harga": 18000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 45,
+    "id_komoditi": 25,
+    "bahan": "Jagung Pipilan Kering",
+    "satuan": "kg",
+    "harga": 9000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 46,
+    "id_komoditi": 26,
+    "bahan": " IR 64 (Beras Lokal Lampung)",
+    "satuan": "kg",
+    "harga": 13200,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 47,
+    "id_komoditi": 26,
+    "bahan": "IR 64 (Beras Lokal Bengkulu)",
+    "satuan": "kg",
+    "harga": 13750,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 48,
+    "id_komoditi": 26,
+    "bahan": "Manggis Manis (Premium)",
+    "satuan": "kg",
+    "harga": 15500,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 49,
+    "id_komoditi": 26,
+    "bahan": "Kembang Kol (Premium)",
+    "satuan": "kg",
+    "harga": 15300,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 50,
+    "id_komoditi": 26,
+    "bahan": "Termurah",
+    "satuan": "kg",
+    "harga": 12500,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 51,
+    "id_komoditi": 26,
+    "bahan": "Cap Bulog/Dolog",
+    "satuan": "kg",
+    "harga": 11500,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 52,
+    "id_komoditi": 27,
+    "bahan": "Gula DN",
+    "satuan": "kg",
+    "harga": 17000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 97,
+    "id_komoditi": 28,
+    "bahan": "Minyak Goreng Curah Rakyat",
+    "satuan": "liter",
+    "harga": 14100,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 53,
+    "id_komoditi": 28,
+    "bahan": "Minyak Goreng Curah",
+    "satuan": "liter",
+    "harga": 14400,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 54,
+    "id_komoditi": 28,
+    "bahan": "Kemasan Sederhana (Fortune)",
+    "satuan": "liter",
+    "harga": 16000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 55,
+    "id_komoditi": 28,
+    "bahan": "Kemasan Premium (Fortune)",
+    "satuan": "liter",
+    "harga": 17500,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 56,
+    "id_komoditi": 29,
+    "bahan": "Tepung Terigu Kemasan Segitiga Biru",
+    "satuan": "kg",
+    "harga": 16000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 57,
+    "id_komoditi": 29,
+    "bahan": "Cakra Kembar",
+    "satuan": "kg",
+    "harga": 16600,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 58,
+    "id_komoditi": 29,
+    "bahan": "Kunci Biru",
+    "satuan": "kg",
+    "harga": 16000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 59,
+    "id_komoditi": 30,
+    "bahan": "Daging Sapi Lokal Paha Belakang",
+    "satuan": "kg",
+    "harga": 136700,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 60,
+    "id_komoditi": 30,
+    "bahan": "Sapi Lokal Paha Depan",
+    "satuan": "kg",
+    "harga": 136700,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 61,
+    "id_komoditi": 30,
+    "bahan": "Sandung Lamur",
+    "satuan": "kg",
+    "harga": 100000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 62,
+    "id_komoditi": 30,
+    "bahan": "Tetelan",
+    "satuan": "kg",
+    "harga": 60000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 63,
+    "id_komoditi": 30,
+    "bahan": "Has Dalam",
+    "satuan": "kg",
+    "harga": 136700,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 64,
+    "id_komoditi": 30,
+    "bahan": "Has Luar",
+    "satuan": "kg",
+    "harga": 136700,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 65,
+    "id_komoditi": 31,
+    "bahan": "Daging Ayam Broiler",
+    "satuan": "kg",
+    "harga": 27000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 66,
+    "id_komoditi": 31,
+    "bahan": "Kampung",
+    "satuan": "kg",
+    "harga": 65500,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 67,
+    "id_komoditi": 32,
+    "bahan": "Telur Ayam Broiler",
+    "satuan": "kg",
+    "harga": 26600,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 68,
+    "id_komoditi": 32,
+    "bahan": "Kampung",
+    "satuan": "kg",
+    "harga": 52500,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 69,
+    "id_komoditi": 33,
+    "bahan": "Cabe Merah Kriting",
+    "satuan": "kg",
+    "harga": 86600,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 70,
+    "id_komoditi": 34,
+    "bahan": "Cabe Rawit Merah",
+    "satuan": "kg",
+    "harga": 100000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 91,
+    "id_komoditi": 34,
+    "bahan": "Cabe Rawit Hijau",
+    "satuan": "kg",
+    "harga": 76600,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 71,
+    "id_komoditi": 35,
+    "bahan": "Bawang Merah",
+    "satuan": "kg",
+    "harga": 37000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 72,
+    "id_komoditi": 36,
+    "bahan": "Bawang Putih Honan",
+    "satuan": "kg",
+    "harga": 38000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 92,
+    "id_komoditi": 36,
+    "bahan": "Bawang Bombay",
+    "satuan": "kg",
+    "harga": 33000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 73,
+    "id_komoditi": 37,
+    "bahan": "Susu Kental Manis Cap Bendera (370 gram)",
+    "satuan": "kaleng",
+    "harga": 13000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 74,
+    "id_komoditi": 37,
+    "bahan": "Cap Indomilk (370 gram)",
+    "satuan": "kaleng",
+    "harga": 13000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 107,
+    "id_komoditi": 58,
+    "bahan": "Dancow Vanilla 400 gram",
+    "satuan": "gr",
+    "harga": 49000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 108,
+    "id_komoditi": 59,
+    "bahan": "Frisian Flag 123 Vanilla",
+    "satuan": "gr",
+    "harga": 0,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 109,
+    "id_komoditi": 59,
+    "bahan": "SGM 400 gram",
+    "satuan": "gr",
+    "harga": 42400,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 75,
+    "id_komoditi": 38,
+    "bahan": "Garam Beryodium Halus",
+    "satuan": "kg",
+    "harga": 13000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 76,
+    "id_komoditi": 39,
+    "bahan": "Kacang Kedelai Eks Import",
+    "satuan": "kg",
+    "harga": 16000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 93,
+    "id_komoditi": 39,
+    "bahan": "Tahu",
+    "satuan": "kg",
+    "harga": 12000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 94,
+    "id_komoditi": 39,
+    "bahan": "Tempe",
+    "satuan": "kg",
+    "harga": 14000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 77,
+    "id_komoditi": 40,
+    "bahan": "Kacang Tanah",
+    "satuan": "kg",
+    "harga": 29300,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 78,
+    "id_komoditi": 41,
+    "bahan": "Kacang Hijau",
+    "satuan": "kg",
+    "harga": 26000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 79,
+    "id_komoditi": 42,
+    "bahan": "Mie Instan Kari Ayam",
+    "satuan": "bks",
+    "harga": 3200,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 80,
+    "id_komoditi": 43,
+    "bahan": "Ikan Asin Teri",
+    "satuan": "kg",
+    "harga": 65000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 81,
+    "id_komoditi": 44,
+    "bahan": "Ikan Kembung",
+    "satuan": "kg",
+    "harga": 51600,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 82,
+    "id_komoditi": 45,
+    "bahan": "Ketela Pohon",
+    "satuan": "kg",
+    "harga": 4000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 83,
+    "id_komoditi": 46,
+    "bahan": "Ikan Segar Tongkol",
+    "satuan": "kg",
+    "harga": 30000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 95,
+    "id_komoditi": 46,
+    "bahan": "Ikan Segar Tuna",
+    "satuan": "kg",
+    "harga": 35000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 101,
+    "id_komoditi": 51,
+    "bahan": "Udang Basah",
+    "satuan": "gr",
+    "harga": 75000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 102,
+    "id_komoditi": 54,
+    "bahan": "Pisang Ambon",
+    "satuan": "kg",
+    "harga": 6000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 103,
+    "id_komoditi": 55,
+    "bahan": "Jeruk Lokal",
+    "satuan": "kg",
+    "harga": 15000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 84,
+    "id_komoditi": 47,
+    "bahan": "Jagung Pipilan Kering",
+    "satuan": "kg",
+    "harga": 9000,
+    "waktu": "2023-12-13+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 6,
+    "id_komoditi": 4,
+    "bahan": "IR 64 (Beras Lokal Lampung)",
+    "satuan": "kg",
+    "harga": 13100,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 7,
+    "id_komoditi": 4,
+    "bahan": "IR 64 (Beras Lokal Bengkulu)",
+    "satuan": "kg",
+    "harga": 13750,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 9,
+    "id_komoditi": 4,
+    "bahan": "Manggis Manis (Premium)",
+    "satuan": "kg",
+    "harga": 15600,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 10,
+    "id_komoditi": 4,
+    "bahan": "Kembang Kol (Premium)",
+    "satuan": "kg",
+    "harga": 15100,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 11,
+    "id_komoditi": 4,
+    "bahan": "Termurah",
+    "satuan": "kg",
+    "harga": 13100,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 12,
+    "id_komoditi": 4,
+    "bahan": "Cap Bulog/Dolog",
+    "satuan": "kg",
+    "harga": 11500,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 8,
+    "id_komoditi": 5,
+    "bahan": "Gula DN",
+    "satuan": "kg",
+    "harga": 17000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 96,
+    "id_komoditi": 6,
+    "bahan": "Minyak Goreng Curah Rakyat",
+    "satuan": "liter",
+    "harga": 14300,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 14,
+    "id_komoditi": 6,
+    "bahan": "Minyak Goreng Curah",
+    "satuan": "liter",
+    "harga": 14500,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 15,
+    "id_komoditi": 6,
+    "bahan": "Kemasan Sederhana (Fortune)",
+    "satuan": "liter",
+    "harga": 15800,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 16,
+    "id_komoditi": 6,
+    "bahan": "Kemasan Premium (Fortune)",
+    "satuan": "liter",
+    "harga": 17500,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 17,
+    "id_komoditi": 7,
+    "bahan": "Tepung Terigu Kemasan Segitiga Biru",
+    "satuan": "kg",
+    "harga": 14500,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 18,
+    "id_komoditi": 7,
+    "bahan": "Cakra Kembar",
+    "satuan": "kg",
+    "harga": 15500,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 19,
+    "id_komoditi": 7,
+    "bahan": "Kunci Biru",
+    "satuan": "kg",
+    "harga": 14500,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 20,
+    "id_komoditi": 8,
+    "bahan": "Daging Sapi Lokal Paha Belakang",
+    "satuan": "kg",
+    "harga": 140000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 21,
+    "id_komoditi": 8,
+    "bahan": "Sapi Lokal Paha Depan",
+    "satuan": "kg",
+    "harga": 140000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 22,
+    "id_komoditi": 8,
+    "bahan": "Sandung Lamur",
+    "satuan": "kg",
+    "harga": 100000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 23,
+    "id_komoditi": 8,
+    "bahan": "Tetelan",
+    "satuan": "kg",
+    "harga": 60000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 24,
+    "id_komoditi": 8,
+    "bahan": "Has Dalam",
+    "satuan": "kg",
+    "harga": 140000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 25,
+    "id_komoditi": 8,
+    "bahan": "Has Luar",
+    "satuan": "kg",
+    "harga": 140000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 26,
+    "id_komoditi": 9,
+    "bahan": "Daging Ayam Broiler",
+    "satuan": "kg",
+    "harga": 30000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 27,
+    "id_komoditi": 9,
+    "bahan": "Kampung",
+    "satuan": "kg",
+    "harga": 65000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 28,
+    "id_komoditi": 10,
+    "bahan": "Telur Ayam Broiler",
+    "satuan": "kg",
+    "harga": 25000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 29,
+    "id_komoditi": 10,
+    "bahan": "Kampung",
+    "satuan": "kg",
+    "harga": 52500,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 30,
+    "id_komoditi": 11,
+    "bahan": "Cabe Merah Kriting",
+    "satuan": "kg",
+    "harga": 86600,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 31,
+    "id_komoditi": 12,
+    "bahan": "Cabe Rawit Merah",
+    "satuan": "kg",
+    "harga": 100000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 90,
+    "id_komoditi": 12,
+    "bahan": "Cabe Rawit Hijau",
+    "satuan": "kg",
+    "harga": 75000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 32,
+    "id_komoditi": 13,
+    "bahan": "Bawang Merah",
+    "satuan": "kg",
+    "harga": 38000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 33,
+    "id_komoditi": 14,
+    "bahan": "Bawang Putih Honan",
+    "satuan": "kg",
+    "harga": 38000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 89,
+    "id_komoditi": 14,
+    "bahan": "Bawang Bombay",
+    "satuan": "kg",
+    "harga": 35500,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 34,
+    "id_komoditi": 15,
+    "bahan": "Susu Kental Manis Cap Bendera (370 gram)",
+    "satuan": "kaleng",
+    "harga": 13000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 35,
+    "id_komoditi": 15,
+    "bahan": "Cap Indomilk (370 gram)",
+    "satuan": "kaleng",
+    "harga": 12500,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 104,
+    "id_komoditi": 56,
+    "bahan": "Dancow Vanilla 400 gram",
+    "satuan": "gr",
+    "harga": 53000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 105,
+    "id_komoditi": 57,
+    "bahan": "Frisian Flag 123 Vanilla",
+    "satuan": "gr",
+    "harga": 0,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 106,
+    "id_komoditi": 57,
+    "bahan": "SGM 400 gram",
+    "satuan": "gr",
+    "harga": 42300,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 36,
+    "id_komoditi": 16,
+    "bahan": "Garam Beryodium Halus",
+    "satuan": "kg",
+    "harga": 15000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 37,
+    "id_komoditi": 17,
+    "bahan": "Kacang Kedelai Eks Import",
+    "satuan": "kg",
+    "harga": 16000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 86,
+    "id_komoditi": 17,
+    "bahan": "Tahu",
+    "satuan": "kg",
+    "harga": 10000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 87,
+    "id_komoditi": 17,
+    "bahan": "Tempe",
+    "satuan": "kg",
+    "harga": 14000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 38,
+    "id_komoditi": 18,
+    "bahan": "Kacang Tanah",
+    "satuan": "kg",
+    "harga": 30000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 39,
+    "id_komoditi": 19,
+    "bahan": "Kacang Hijau",
+    "satuan": "kg",
+    "harga": 25000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 40,
+    "id_komoditi": 20,
+    "bahan": "Mie Instan Kari Ayam",
+    "satuan": "bks",
+    "harga": 3500,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 41,
+    "id_komoditi": 21,
+    "bahan": "Ikan Asin Teri",
+    "satuan": "kg",
+    "harga": 69000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 42,
+    "id_komoditi": 22,
+    "bahan": "Ikan Kembung",
+    "satuan": "kg",
+    "harga": 55000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 43,
+    "id_komoditi": 23,
+    "bahan": "Ketela Pohon",
+    "satuan": "kg",
+    "harga": 4000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 44,
+    "id_komoditi": 24,
+    "bahan": "Ikan Segar Tongkol",
+    "satuan": "kg",
+    "harga": 30000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 85,
+    "id_komoditi": 24,
+    "bahan": "Ikan Segar Tuna",
+    "satuan": "kg",
+    "harga": 35000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 98,
+    "id_komoditi": 48,
+    "bahan": "Udang Basah",
+    "satuan": "gr",
+    "harga": 75000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 99,
+    "id_komoditi": 49,
+    "bahan": "Pisang Ambon",
+    "satuan": "kg",
+    "harga": 6000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 100,
+    "id_komoditi": 50,
+    "bahan": "Jeruk Lokal",
+    "satuan": "kg",
+    "harga": 18000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 45,
+    "id_komoditi": 25,
+    "bahan": "Jagung Pipilan Kering",
+    "satuan": "kg",
+    "harga": 9000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 46,
+    "id_komoditi": 26,
+    "bahan": " IR 64 (Beras Lokal Lampung)",
+    "satuan": "kg",
+    "harga": 13200,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 47,
+    "id_komoditi": 26,
+    "bahan": "IR 64 (Beras Lokal Bengkulu)",
+    "satuan": "kg",
+    "harga": 13750,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 48,
+    "id_komoditi": 26,
+    "bahan": "Manggis Manis (Premium)",
+    "satuan": "kg",
+    "harga": 15500,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 49,
+    "id_komoditi": 26,
+    "bahan": "Kembang Kol (Premium)",
+    "satuan": "kg",
+    "harga": 15300,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 50,
+    "id_komoditi": 26,
+    "bahan": "Termurah",
+    "satuan": "kg",
+    "harga": 12500,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 51,
+    "id_komoditi": 26,
+    "bahan": "Cap Bulog/Dolog",
+    "satuan": "kg",
+    "harga": 11500,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 52,
+    "id_komoditi": 27,
+    "bahan": "Gula DN",
+    "satuan": "kg",
+    "harga": 17000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 97,
+    "id_komoditi": 28,
+    "bahan": "Minyak Goreng Curah Rakyat",
+    "satuan": "liter",
+    "harga": 14100,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 53,
+    "id_komoditi": 28,
+    "bahan": "Minyak Goreng Curah",
+    "satuan": "liter",
+    "harga": 14400,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 54,
+    "id_komoditi": 28,
+    "bahan": "Kemasan Sederhana (Fortune)",
+    "satuan": "liter",
+    "harga": 16000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 55,
+    "id_komoditi": 28,
+    "bahan": "Kemasan Premium (Fortune)",
+    "satuan": "liter",
+    "harga": 17500,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 56,
+    "id_komoditi": 29,
+    "bahan": "Tepung Terigu Kemasan Segitiga Biru",
+    "satuan": "kg",
+    "harga": 16000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 57,
+    "id_komoditi": 29,
+    "bahan": "Cakra Kembar",
+    "satuan": "kg",
+    "harga": 16600,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 58,
+    "id_komoditi": 29,
+    "bahan": "Kunci Biru",
+    "satuan": "kg",
+    "harga": 16000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 59,
+    "id_komoditi": 30,
+    "bahan": "Daging Sapi Lokal Paha Belakang",
+    "satuan": "kg",
+    "harga": 136700,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 60,
+    "id_komoditi": 30,
+    "bahan": "Sapi Lokal Paha Depan",
+    "satuan": "kg",
+    "harga": 136700,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 61,
+    "id_komoditi": 30,
+    "bahan": "Sandung Lamur",
+    "satuan": "kg",
+    "harga": 100000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 62,
+    "id_komoditi": 30,
+    "bahan": "Tetelan",
+    "satuan": "kg",
+    "harga": 60000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 63,
+    "id_komoditi": 30,
+    "bahan": "Has Dalam",
+    "satuan": "kg",
+    "harga": 136700,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 64,
+    "id_komoditi": 30,
+    "bahan": "Has Luar",
+    "satuan": "kg",
+    "harga": 136700,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 65,
+    "id_komoditi": 31,
+    "bahan": "Daging Ayam Broiler",
+    "satuan": "kg",
+    "harga": 27000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 66,
+    "id_komoditi": 31,
+    "bahan": "Kampung",
+    "satuan": "kg",
+    "harga": 65500,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 67,
+    "id_komoditi": 32,
+    "bahan": "Telur Ayam Broiler",
+    "satuan": "kg",
+    "harga": 26600,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 68,
+    "id_komoditi": 32,
+    "bahan": "Kampung",
+    "satuan": "kg",
+    "harga": 52500,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 69,
+    "id_komoditi": 33,
+    "bahan": "Cabe Merah Kriting",
+    "satuan": "kg",
+    "harga": 86600,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 70,
+    "id_komoditi": 34,
+    "bahan": "Cabe Rawit Merah",
+    "satuan": "kg",
+    "harga": 100000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 91,
+    "id_komoditi": 34,
+    "bahan": "Cabe Rawit Hijau",
+    "satuan": "kg",
+    "harga": 76600,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 71,
+    "id_komoditi": 35,
+    "bahan": "Bawang Merah",
+    "satuan": "kg",
+    "harga": 37000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 72,
+    "id_komoditi": 36,
+    "bahan": "Bawang Putih Honan",
+    "satuan": "kg",
+    "harga": 38000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 92,
+    "id_komoditi": 36,
+    "bahan": "Bawang Bombay",
+    "satuan": "kg",
+    "harga": 33000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 73,
+    "id_komoditi": 37,
+    "bahan": "Susu Kental Manis Cap Bendera (370 gram)",
+    "satuan": "kaleng",
+    "harga": 13000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 74,
+    "id_komoditi": 37,
+    "bahan": "Cap Indomilk (370 gram)",
+    "satuan": "kaleng",
+    "harga": 13000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 107,
+    "id_komoditi": 58,
+    "bahan": "Dancow Vanilla 400 gram",
+    "satuan": "gr",
+    "harga": 49000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 108,
+    "id_komoditi": 59,
+    "bahan": "Frisian Flag 123 Vanilla",
+    "satuan": "gr",
+    "harga": 0,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 109,
+    "id_komoditi": 59,
+    "bahan": "SGM 400 gram",
+    "satuan": "gr",
+    "harga": 42400,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 75,
+    "id_komoditi": 38,
+    "bahan": "Garam Beryodium Halus",
+    "satuan": "kg",
+    "harga": 13000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 76,
+    "id_komoditi": 39,
+    "bahan": "Kacang Kedelai Eks Import",
+    "satuan": "kg",
+    "harga": 16000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 93,
+    "id_komoditi": 39,
+    "bahan": "Tahu",
+    "satuan": "kg",
+    "harga": 12000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 94,
+    "id_komoditi": 39,
+    "bahan": "Tempe",
+    "satuan": "kg",
+    "harga": 14000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 77,
+    "id_komoditi": 40,
+    "bahan": "Kacang Tanah",
+    "satuan": "kg",
+    "harga": 29300,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 78,
+    "id_komoditi": 41,
+    "bahan": "Kacang Hijau",
+    "satuan": "kg",
+    "harga": 26000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 79,
+    "id_komoditi": 42,
+    "bahan": "Mie Instan Kari Ayam",
+    "satuan": "bks",
+    "harga": 3200,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 80,
+    "id_komoditi": 43,
+    "bahan": "Ikan Asin Teri",
+    "satuan": "kg",
+    "harga": 65000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 81,
+    "id_komoditi": 44,
+    "bahan": "Ikan Kembung",
+    "satuan": "kg",
+    "harga": 51600,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 82,
+    "id_komoditi": 45,
+    "bahan": "Ketela Pohon",
+    "satuan": "kg",
+    "harga": 4000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 83,
+    "id_komoditi": 46,
+    "bahan": "Ikan Segar Tongkol",
+    "satuan": "kg",
+    "harga": 30000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 95,
+    "id_komoditi": 46,
+    "bahan": "Ikan Segar Tuna",
+    "satuan": "kg",
+    "harga": 35000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 101,
+    "id_komoditi": 51,
+    "bahan": "Udang Basah",
+    "satuan": "gr",
+    "harga": 75000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 102,
+    "id_komoditi": 54,
+    "bahan": "Pisang Ambon",
+    "satuan": "kg",
+    "harga": 6000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 103,
+    "id_komoditi": 55,
+    "bahan": "Jeruk Lokal",
+    "satuan": "kg",
+    "harga": 15000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 84,
+    "id_komoditi": 47,
+    "bahan": "Jagung Pipilan Kering",
+    "satuan": "kg",
+    "harga": 9000,
+    "waktu": "2023-12-12+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 6,
+    "id_komoditi": 4,
+    "bahan": "IR 64 (Beras Lokal Lampung)",
+    "satuan": "kg",
+    "harga": 13100,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 7,
+    "id_komoditi": 4,
+    "bahan": "IR 64 (Beras Lokal Bengkulu)",
+    "satuan": "kg",
+    "harga": 13750,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 9,
+    "id_komoditi": 4,
+    "bahan": "Manggis Manis (Premium)",
+    "satuan": "kg",
+    "harga": 15600,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 10,
+    "id_komoditi": 4,
+    "bahan": "Kembang Kol (Premium)",
+    "satuan": "kg",
+    "harga": 15100,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 11,
+    "id_komoditi": 4,
+    "bahan": "Termurah",
+    "satuan": "kg",
+    "harga": 13100,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 12,
+    "id_komoditi": 4,
+    "bahan": "Cap Bulog/Dolog",
+    "satuan": "kg",
+    "harga": 11500,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 8,
+    "id_komoditi": 5,
+    "bahan": "Gula DN",
+    "satuan": "kg",
+    "harga": 17000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 96,
+    "id_komoditi": 6,
+    "bahan": "Minyak Goreng Curah Rakyat",
+    "satuan": "liter",
+    "harga": 14300,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 14,
+    "id_komoditi": 6,
+    "bahan": "Minyak Goreng Curah",
+    "satuan": "liter",
+    "harga": 14500,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 15,
+    "id_komoditi": 6,
+    "bahan": "Kemasan Sederhana (Fortune)",
+    "satuan": "liter",
+    "harga": 15800,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 16,
+    "id_komoditi": 6,
+    "bahan": "Kemasan Premium (Fortune)",
+    "satuan": "liter",
+    "harga": 17500,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 17,
+    "id_komoditi": 7,
+    "bahan": "Tepung Terigu Kemasan Segitiga Biru",
+    "satuan": "kg",
+    "harga": 14500,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 18,
+    "id_komoditi": 7,
+    "bahan": "Cakra Kembar",
+    "satuan": "kg",
+    "harga": 15500,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 19,
+    "id_komoditi": 7,
+    "bahan": "Kunci Biru",
+    "satuan": "kg",
+    "harga": 14500,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 20,
+    "id_komoditi": 8,
+    "bahan": "Daging Sapi Lokal Paha Belakang",
+    "satuan": "kg",
+    "harga": 140000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 21,
+    "id_komoditi": 8,
+    "bahan": "Sapi Lokal Paha Depan",
+    "satuan": "kg",
+    "harga": 140000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 22,
+    "id_komoditi": 8,
+    "bahan": "Sandung Lamur",
+    "satuan": "kg",
+    "harga": 100000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 23,
+    "id_komoditi": 8,
+    "bahan": "Tetelan",
+    "satuan": "kg",
+    "harga": 60000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 24,
+    "id_komoditi": 8,
+    "bahan": "Has Dalam",
+    "satuan": "kg",
+    "harga": 140000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 25,
+    "id_komoditi": 8,
+    "bahan": "Has Luar",
+    "satuan": "kg",
+    "harga": 140000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 26,
+    "id_komoditi": 9,
+    "bahan": "Daging Ayam Broiler",
+    "satuan": "kg",
+    "harga": 30000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 27,
+    "id_komoditi": 9,
+    "bahan": "Kampung",
+    "satuan": "kg",
+    "harga": 65000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 28,
+    "id_komoditi": 10,
+    "bahan": "Telur Ayam Broiler",
+    "satuan": "kg",
+    "harga": 25000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 29,
+    "id_komoditi": 10,
+    "bahan": "Kampung",
+    "satuan": "kg",
+    "harga": 52500,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 30,
+    "id_komoditi": 11,
+    "bahan": "Cabe Merah Kriting",
+    "satuan": "kg",
+    "harga": 86600,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 31,
+    "id_komoditi": 12,
+    "bahan": "Cabe Rawit Merah",
+    "satuan": "kg",
+    "harga": 100000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 90,
+    "id_komoditi": 12,
+    "bahan": "Cabe Rawit Hijau",
+    "satuan": "kg",
+    "harga": 75000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 32,
+    "id_komoditi": 13,
+    "bahan": "Bawang Merah",
+    "satuan": "kg",
+    "harga": 38000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 33,
+    "id_komoditi": 14,
+    "bahan": "Bawang Putih Honan",
+    "satuan": "kg",
+    "harga": 38000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 89,
+    "id_komoditi": 14,
+    "bahan": "Bawang Bombay",
+    "satuan": "kg",
+    "harga": 35500,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 34,
+    "id_komoditi": 15,
+    "bahan": "Susu Kental Manis Cap Bendera (370 gram)",
+    "satuan": "kaleng",
+    "harga": 13000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 35,
+    "id_komoditi": 15,
+    "bahan": "Cap Indomilk (370 gram)",
+    "satuan": "kaleng",
+    "harga": 12500,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 104,
+    "id_komoditi": 56,
+    "bahan": "Dancow Vanilla 400 gram",
+    "satuan": "gr",
+    "harga": 53000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 105,
+    "id_komoditi": 57,
+    "bahan": "Frisian Flag 123 Vanilla",
+    "satuan": "gr",
+    "harga": 0,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 106,
+    "id_komoditi": 57,
+    "bahan": "SGM 400 gram",
+    "satuan": "gr",
+    "harga": 42300,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 36,
+    "id_komoditi": 16,
+    "bahan": "Garam Beryodium Halus",
+    "satuan": "kg",
+    "harga": 15000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 37,
+    "id_komoditi": 17,
+    "bahan": "Kacang Kedelai Eks Import",
+    "satuan": "kg",
+    "harga": 16000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 86,
+    "id_komoditi": 17,
+    "bahan": "Tahu",
+    "satuan": "kg",
+    "harga": 10000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 87,
+    "id_komoditi": 17,
+    "bahan": "Tempe",
+    "satuan": "kg",
+    "harga": 14000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 38,
+    "id_komoditi": 18,
+    "bahan": "Kacang Tanah",
+    "satuan": "kg",
+    "harga": 30000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 39,
+    "id_komoditi": 19,
+    "bahan": "Kacang Hijau",
+    "satuan": "kg",
+    "harga": 25000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 40,
+    "id_komoditi": 20,
+    "bahan": "Mie Instan Kari Ayam",
+    "satuan": "bks",
+    "harga": 3500,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 41,
+    "id_komoditi": 21,
+    "bahan": "Ikan Asin Teri",
+    "satuan": "kg",
+    "harga": 69000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 42,
+    "id_komoditi": 22,
+    "bahan": "Ikan Kembung",
+    "satuan": "kg",
+    "harga": 55000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 43,
+    "id_komoditi": 23,
+    "bahan": "Ketela Pohon",
+    "satuan": "kg",
+    "harga": 4000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 44,
+    "id_komoditi": 24,
+    "bahan": "Ikan Segar Tongkol",
+    "satuan": "kg",
+    "harga": 30000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 85,
+    "id_komoditi": 24,
+    "bahan": "Ikan Segar Tuna",
+    "satuan": "kg",
+    "harga": 35000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 98,
+    "id_komoditi": 48,
+    "bahan": "Udang Basah",
+    "satuan": "gr",
+    "harga": 75000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 99,
+    "id_komoditi": 49,
+    "bahan": "Pisang Ambon",
+    "satuan": "kg",
+    "harga": 6000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 100,
+    "id_komoditi": 50,
+    "bahan": "Jeruk Lokal",
+    "satuan": "kg",
+    "harga": 18000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 45,
+    "id_komoditi": 25,
+    "bahan": "Jagung Pipilan Kering",
+    "satuan": "kg",
+    "harga": 9000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 46,
+    "id_komoditi": 26,
+    "bahan": " IR 64 (Beras Lokal Lampung)",
+    "satuan": "kg",
+    "harga": 13200,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 47,
+    "id_komoditi": 26,
+    "bahan": "IR 64 (Beras Lokal Bengkulu)",
+    "satuan": "kg",
+    "harga": 13750,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 48,
+    "id_komoditi": 26,
+    "bahan": "Manggis Manis (Premium)",
+    "satuan": "kg",
+    "harga": 15500,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 49,
+    "id_komoditi": 26,
+    "bahan": "Kembang Kol (Premium)",
+    "satuan": "kg",
+    "harga": 15300,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 50,
+    "id_komoditi": 26,
+    "bahan": "Termurah",
+    "satuan": "kg",
+    "harga": 12500,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 51,
+    "id_komoditi": 26,
+    "bahan": "Cap Bulog/Dolog",
+    "satuan": "kg",
+    "harga": 11500,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 52,
+    "id_komoditi": 27,
+    "bahan": "Gula DN",
+    "satuan": "kg",
+    "harga": 17000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 97,
+    "id_komoditi": 28,
+    "bahan": "Minyak Goreng Curah Rakyat",
+    "satuan": "liter",
+    "harga": 14100,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 53,
+    "id_komoditi": 28,
+    "bahan": "Minyak Goreng Curah",
+    "satuan": "liter",
+    "harga": 14400,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 54,
+    "id_komoditi": 28,
+    "bahan": "Kemasan Sederhana (Fortune)",
+    "satuan": "liter",
+    "harga": 16000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 55,
+    "id_komoditi": 28,
+    "bahan": "Kemasan Premium (Fortune)",
+    "satuan": "liter",
+    "harga": 17500,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 56,
+    "id_komoditi": 29,
+    "bahan": "Tepung Terigu Kemasan Segitiga Biru",
+    "satuan": "kg",
+    "harga": 16000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 57,
+    "id_komoditi": 29,
+    "bahan": "Cakra Kembar",
+    "satuan": "kg",
+    "harga": 16600,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 58,
+    "id_komoditi": 29,
+    "bahan": "Kunci Biru",
+    "satuan": "kg",
+    "harga": 16000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 59,
+    "id_komoditi": 30,
+    "bahan": "Daging Sapi Lokal Paha Belakang",
+    "satuan": "kg",
+    "harga": 136700,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 60,
+    "id_komoditi": 30,
+    "bahan": "Sapi Lokal Paha Depan",
+    "satuan": "kg",
+    "harga": 136700,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 61,
+    "id_komoditi": 30,
+    "bahan": "Sandung Lamur",
+    "satuan": "kg",
+    "harga": 100000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 62,
+    "id_komoditi": 30,
+    "bahan": "Tetelan",
+    "satuan": "kg",
+    "harga": 60000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 63,
+    "id_komoditi": 30,
+    "bahan": "Has Dalam",
+    "satuan": "kg",
+    "harga": 136700,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 64,
+    "id_komoditi": 30,
+    "bahan": "Has Luar",
+    "satuan": "kg",
+    "harga": 136700,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 65,
+    "id_komoditi": 31,
+    "bahan": "Daging Ayam Broiler",
+    "satuan": "kg",
+    "harga": 27000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 66,
+    "id_komoditi": 31,
+    "bahan": "Kampung",
+    "satuan": "kg",
+    "harga": 65500,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 67,
+    "id_komoditi": 32,
+    "bahan": "Telur Ayam Broiler",
+    "satuan": "kg",
+    "harga": 26600,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 68,
+    "id_komoditi": 32,
+    "bahan": "Kampung",
+    "satuan": "kg",
+    "harga": 52500,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 69,
+    "id_komoditi": 33,
+    "bahan": "Cabe Merah Kriting",
+    "satuan": "kg",
+    "harga": 86600,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 70,
+    "id_komoditi": 34,
+    "bahan": "Cabe Rawit Merah",
+    "satuan": "kg",
+    "harga": 100000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 91,
+    "id_komoditi": 34,
+    "bahan": "Cabe Rawit Hijau",
+    "satuan": "kg",
+    "harga": 76600,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 71,
+    "id_komoditi": 35,
+    "bahan": "Bawang Merah",
+    "satuan": "kg",
+    "harga": 37000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 72,
+    "id_komoditi": 36,
+    "bahan": "Bawang Putih Honan",
+    "satuan": "kg",
+    "harga": 38000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 92,
+    "id_komoditi": 36,
+    "bahan": "Bawang Bombay",
+    "satuan": "kg",
+    "harga": 33000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 73,
+    "id_komoditi": 37,
+    "bahan": "Susu Kental Manis Cap Bendera (370 gram)",
+    "satuan": "kaleng",
+    "harga": 13000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 74,
+    "id_komoditi": 37,
+    "bahan": "Cap Indomilk (370 gram)",
+    "satuan": "kaleng",
+    "harga": 13000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 107,
+    "id_komoditi": 58,
+    "bahan": "Dancow Vanilla 400 gram",
+    "satuan": "gr",
+    "harga": 49000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 108,
+    "id_komoditi": 59,
+    "bahan": "Frisian Flag 123 Vanilla",
+    "satuan": "gr",
+    "harga": 0,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 109,
+    "id_komoditi": 59,
+    "bahan": "SGM 400 gram",
+    "satuan": "gr",
+    "harga": 42400,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 75,
+    "id_komoditi": 38,
+    "bahan": "Garam Beryodium Halus",
+    "satuan": "kg",
+    "harga": 13000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 76,
+    "id_komoditi": 39,
+    "bahan": "Kacang Kedelai Eks Import",
+    "satuan": "kg",
+    "harga": 16000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 93,
+    "id_komoditi": 39,
+    "bahan": "Tahu",
+    "satuan": "kg",
+    "harga": 12000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 94,
+    "id_komoditi": 39,
+    "bahan": "Tempe",
+    "satuan": "kg",
+    "harga": 14000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 77,
+    "id_komoditi": 40,
+    "bahan": "Kacang Tanah",
+    "satuan": "kg",
+    "harga": 29300,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 78,
+    "id_komoditi": 41,
+    "bahan": "Kacang Hijau",
+    "satuan": "kg",
+    "harga": 26000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 79,
+    "id_komoditi": 42,
+    "bahan": "Mie Instan Kari Ayam",
+    "satuan": "bks",
+    "harga": 3200,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 80,
+    "id_komoditi": 43,
+    "bahan": "Ikan Asin Teri",
+    "satuan": "kg",
+    "harga": 65000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 81,
+    "id_komoditi": 44,
+    "bahan": "Ikan Kembung",
+    "satuan": "kg",
+    "harga": 51600,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 82,
+    "id_komoditi": 45,
+    "bahan": "Ketela Pohon",
+    "satuan": "kg",
+    "harga": 4000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 83,
+    "id_komoditi": 46,
+    "bahan": "Ikan Segar Tongkol",
+    "satuan": "kg",
+    "harga": 30000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 95,
+    "id_komoditi": 46,
+    "bahan": "Ikan Segar Tuna",
+    "satuan": "kg",
+    "harga": 35000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 101,
+    "id_komoditi": 51,
+    "bahan": "Udang Basah",
+    "satuan": "gr",
+    "harga": 75000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 102,
+    "id_komoditi": 54,
+    "bahan": "Pisang Ambon",
+    "satuan": "kg",
+    "harga": 6000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 103,
+    "id_komoditi": 55,
+    "bahan": "Jeruk Lokal",
+    "satuan": "kg",
+    "harga": 15000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 84,
+    "id_komoditi": 47,
+    "bahan": "Jagung Pipilan Kering",
+    "satuan": "kg",
+    "harga": 9000,
+    "waktu": "2023-12-11+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 6,
+    "id_komoditi": 4,
+    "bahan": "IR 64 (Beras Lokal Lampung)",
+    "satuan": "kg",
+    "harga": 13100,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 7,
+    "id_komoditi": 4,
+    "bahan": "IR 64 (Beras Lokal Bengkulu)",
+    "satuan": "kg",
+    "harga": 13750,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 9,
+    "id_komoditi": 4,
+    "bahan": "Manggis Manis (Premium)",
+    "satuan": "kg",
+    "harga": 15600,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 10,
+    "id_komoditi": 4,
+    "bahan": "Kembang Kol (Premium)",
+    "satuan": "kg",
+    "harga": 15100,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 11,
+    "id_komoditi": 4,
+    "bahan": "Termurah",
+    "satuan": "kg",
+    "harga": 13100,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 12,
+    "id_komoditi": 4,
+    "bahan": "Cap Bulog/Dolog",
+    "satuan": "kg",
+    "harga": 11500,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 8,
+    "id_komoditi": 5,
+    "bahan": "Gula DN",
+    "satuan": "kg",
+    "harga": 17000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 96,
+    "id_komoditi": 6,
+    "bahan": "Minyak Goreng Curah Rakyat",
+    "satuan": "liter",
+    "harga": 14300,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 14,
+    "id_komoditi": 6,
+    "bahan": "Minyak Goreng Curah",
+    "satuan": "liter",
+    "harga": 14500,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 15,
+    "id_komoditi": 6,
+    "bahan": "Kemasan Sederhana (Fortune)",
+    "satuan": "liter",
+    "harga": 15800,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 16,
+    "id_komoditi": 6,
+    "bahan": "Kemasan Premium (Fortune)",
+    "satuan": "liter",
+    "harga": 17500,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 17,
+    "id_komoditi": 7,
+    "bahan": "Tepung Terigu Kemasan Segitiga Biru",
+    "satuan": "kg",
+    "harga": 14500,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 18,
+    "id_komoditi": 7,
+    "bahan": "Cakra Kembar",
+    "satuan": "kg",
+    "harga": 15500,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 19,
+    "id_komoditi": 7,
+    "bahan": "Kunci Biru",
+    "satuan": "kg",
+    "harga": 14500,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 20,
+    "id_komoditi": 8,
+    "bahan": "Daging Sapi Lokal Paha Belakang",
+    "satuan": "kg",
+    "harga": 140000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 21,
+    "id_komoditi": 8,
+    "bahan": "Sapi Lokal Paha Depan",
+    "satuan": "kg",
+    "harga": 140000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 22,
+    "id_komoditi": 8,
+    "bahan": "Sandung Lamur",
+    "satuan": "kg",
+    "harga": 100000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 23,
+    "id_komoditi": 8,
+    "bahan": "Tetelan",
+    "satuan": "kg",
+    "harga": 60000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 24,
+    "id_komoditi": 8,
+    "bahan": "Has Dalam",
+    "satuan": "kg",
+    "harga": 140000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 25,
+    "id_komoditi": 8,
+    "bahan": "Has Luar",
+    "satuan": "kg",
+    "harga": 140000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 26,
+    "id_komoditi": 9,
+    "bahan": "Daging Ayam Broiler",
+    "satuan": "kg",
+    "harga": 27600,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 27,
+    "id_komoditi": 9,
+    "bahan": "Kampung",
+    "satuan": "kg",
+    "harga": 65000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 28,
+    "id_komoditi": 10,
+    "bahan": "Telur Ayam Broiler",
+    "satuan": "kg",
+    "harga": 25000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 29,
+    "id_komoditi": 10,
+    "bahan": "Kampung",
+    "satuan": "kg",
+    "harga": 52500,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 30,
+    "id_komoditi": 11,
+    "bahan": "Cabe Merah Kriting",
+    "satuan": "kg",
+    "harga": 85000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 31,
+    "id_komoditi": 12,
+    "bahan": "Cabe Rawit Merah",
+    "satuan": "kg",
+    "harga": 100000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 90,
+    "id_komoditi": 12,
+    "bahan": "Cabe Rawit Hijau",
+    "satuan": "kg",
+    "harga": 75000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 32,
+    "id_komoditi": 13,
+    "bahan": "Bawang Merah",
+    "satuan": "kg",
+    "harga": 34000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 33,
+    "id_komoditi": 14,
+    "bahan": "Bawang Putih Honan",
+    "satuan": "kg",
+    "harga": 35000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 89,
+    "id_komoditi": 14,
+    "bahan": "Bawang Bombay",
+    "satuan": "kg",
+    "harga": 35500,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 34,
+    "id_komoditi": 15,
+    "bahan": "Susu Kental Manis Cap Bendera (370 gram)",
+    "satuan": "kaleng",
+    "harga": 13000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 35,
+    "id_komoditi": 15,
+    "bahan": "Cap Indomilk (370 gram)",
+    "satuan": "kaleng",
+    "harga": 12500,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 104,
+    "id_komoditi": 56,
+    "bahan": "Dancow Vanilla 400 gram",
+    "satuan": "gr",
+    "harga": 53000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 105,
+    "id_komoditi": 57,
+    "bahan": "Frisian Flag 123 Vanilla",
+    "satuan": "gr",
+    "harga": 0,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 106,
+    "id_komoditi": 57,
+    "bahan": "SGM 400 gram",
+    "satuan": "gr",
+    "harga": 42300,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 36,
+    "id_komoditi": 16,
+    "bahan": "Garam Beryodium Halus",
+    "satuan": "kg",
+    "harga": 15000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 37,
+    "id_komoditi": 17,
+    "bahan": "Kacang Kedelai Eks Import",
+    "satuan": "kg",
+    "harga": 16000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 86,
+    "id_komoditi": 17,
+    "bahan": "Tahu",
+    "satuan": "kg",
+    "harga": 10000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 87,
+    "id_komoditi": 17,
+    "bahan": "Tempe",
+    "satuan": "kg",
+    "harga": 14000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 38,
+    "id_komoditi": 18,
+    "bahan": "Kacang Tanah",
+    "satuan": "kg",
+    "harga": 30000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 39,
+    "id_komoditi": 19,
+    "bahan": "Kacang Hijau",
+    "satuan": "kg",
+    "harga": 25000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 40,
+    "id_komoditi": 20,
+    "bahan": "Mie Instan Kari Ayam",
+    "satuan": "bks",
+    "harga": 3500,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 41,
+    "id_komoditi": 21,
+    "bahan": "Ikan Asin Teri",
+    "satuan": "kg",
+    "harga": 69000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 42,
+    "id_komoditi": 22,
+    "bahan": "Ikan Kembung",
+    "satuan": "kg",
+    "harga": 55000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 43,
+    "id_komoditi": 23,
+    "bahan": "Ketela Pohon",
+    "satuan": "kg",
+    "harga": 4000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 44,
+    "id_komoditi": 24,
+    "bahan": "Ikan Segar Tongkol",
+    "satuan": "kg",
+    "harga": 30000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 85,
+    "id_komoditi": 24,
+    "bahan": "Ikan Segar Tuna",
+    "satuan": "kg",
+    "harga": 35000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 98,
+    "id_komoditi": 48,
+    "bahan": "Udang Basah",
+    "satuan": "gr",
+    "harga": 75000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 99,
+    "id_komoditi": 49,
+    "bahan": "Pisang Ambon",
+    "satuan": "kg",
+    "harga": 6000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 100,
+    "id_komoditi": 50,
+    "bahan": "Jeruk Lokal",
+    "satuan": "kg",
+    "harga": 18000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 45,
+    "id_komoditi": 25,
+    "bahan": "Jagung Pipilan Kering",
+    "satuan": "kg",
+    "harga": 9000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 46,
+    "id_komoditi": 26,
+    "bahan": " IR 64 (Beras Lokal Lampung)",
+    "satuan": "kg",
+    "harga": 13200,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 47,
+    "id_komoditi": 26,
+    "bahan": "IR 64 (Beras Lokal Bengkulu)",
+    "satuan": "kg",
+    "harga": 13750,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 48,
+    "id_komoditi": 26,
+    "bahan": "Manggis Manis (Premium)",
+    "satuan": "kg",
+    "harga": 15500,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 49,
+    "id_komoditi": 26,
+    "bahan": "Kembang Kol (Premium)",
+    "satuan": "kg",
+    "harga": 15300,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 50,
+    "id_komoditi": 26,
+    "bahan": "Termurah",
+    "satuan": "kg",
+    "harga": 12500,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 51,
+    "id_komoditi": 26,
+    "bahan": "Cap Bulog/Dolog",
+    "satuan": "kg",
+    "harga": 11500,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 52,
+    "id_komoditi": 27,
+    "bahan": "Gula DN",
+    "satuan": "kg",
+    "harga": 17000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 97,
+    "id_komoditi": 28,
+    "bahan": "Minyak Goreng Curah Rakyat",
+    "satuan": "liter",
+    "harga": 14100,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 53,
+    "id_komoditi": 28,
+    "bahan": "Minyak Goreng Curah",
+    "satuan": "liter",
+    "harga": 14400,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 54,
+    "id_komoditi": 28,
+    "bahan": "Kemasan Sederhana (Fortune)",
+    "satuan": "liter",
+    "harga": 16000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 55,
+    "id_komoditi": 28,
+    "bahan": "Kemasan Premium (Fortune)",
+    "satuan": "liter",
+    "harga": 17500,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 56,
+    "id_komoditi": 29,
+    "bahan": "Tepung Terigu Kemasan Segitiga Biru",
+    "satuan": "kg",
+    "harga": 16000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 57,
+    "id_komoditi": 29,
+    "bahan": "Cakra Kembar",
+    "satuan": "kg",
+    "harga": 16600,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 58,
+    "id_komoditi": 29,
+    "bahan": "Kunci Biru",
+    "satuan": "kg",
+    "harga": 16000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 59,
+    "id_komoditi": 30,
+    "bahan": "Daging Sapi Lokal Paha Belakang",
+    "satuan": "kg",
+    "harga": 136700,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 60,
+    "id_komoditi": 30,
+    "bahan": "Sapi Lokal Paha Depan",
+    "satuan": "kg",
+    "harga": 136700,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 61,
+    "id_komoditi": 30,
+    "bahan": "Sandung Lamur",
+    "satuan": "kg",
+    "harga": 100000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 62,
+    "id_komoditi": 30,
+    "bahan": "Tetelan",
+    "satuan": "kg",
+    "harga": 60000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 63,
+    "id_komoditi": 30,
+    "bahan": "Has Dalam",
+    "satuan": "kg",
+    "harga": 136700,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 64,
+    "id_komoditi": 30,
+    "bahan": "Has Luar",
+    "satuan": "kg",
+    "harga": 136700,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 65,
+    "id_komoditi": 31,
+    "bahan": "Daging Ayam Broiler",
+    "satuan": "kg",
+    "harga": 27000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 66,
+    "id_komoditi": 31,
+    "bahan": "Kampung",
+    "satuan": "kg",
+    "harga": 65000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 67,
+    "id_komoditi": 32,
+    "bahan": "Telur Ayam Broiler",
+    "satuan": "kg",
+    "harga": 26600,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 68,
+    "id_komoditi": 32,
+    "bahan": "Kampung",
+    "satuan": "kg",
+    "harga": 52500,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 69,
+    "id_komoditi": 33,
+    "bahan": "Cabe Merah Kriting",
+    "satuan": "kg",
+    "harga": 86600,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 70,
+    "id_komoditi": 34,
+    "bahan": "Cabe Rawit Merah",
+    "satuan": "kg",
+    "harga": 100000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 91,
+    "id_komoditi": 34,
+    "bahan": "Cabe Rawit Hijau",
+    "satuan": "kg",
+    "harga": 76600,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 71,
+    "id_komoditi": 35,
+    "bahan": "Bawang Merah",
+    "satuan": "kg",
+    "harga": 34000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 72,
+    "id_komoditi": 36,
+    "bahan": "Bawang Putih Honan",
+    "satuan": "kg",
+    "harga": 37500,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 92,
+    "id_komoditi": 36,
+    "bahan": "Bawang Bombay",
+    "satuan": "kg",
+    "harga": 33000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 73,
+    "id_komoditi": 37,
+    "bahan": "Susu Kental Manis Cap Bendera (370 gram)",
+    "satuan": "kaleng",
+    "harga": 13000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 74,
+    "id_komoditi": 37,
+    "bahan": "Cap Indomilk (370 gram)",
+    "satuan": "kaleng",
+    "harga": 13000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 107,
+    "id_komoditi": 58,
+    "bahan": "Dancow Vanilla 400 gram",
+    "satuan": "gr",
+    "harga": 49000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 108,
+    "id_komoditi": 59,
+    "bahan": "Frisian Flag 123 Vanilla",
+    "satuan": "gr",
+    "harga": 0,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 109,
+    "id_komoditi": 59,
+    "bahan": "SGM 400 gram",
+    "satuan": "gr",
+    "harga": 42400,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 75,
+    "id_komoditi": 38,
+    "bahan": "Garam Beryodium Halus",
+    "satuan": "kg",
+    "harga": 13000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 76,
+    "id_komoditi": 39,
+    "bahan": "Kacang Kedelai Eks Import",
+    "satuan": "kg",
+    "harga": 16000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 93,
+    "id_komoditi": 39,
+    "bahan": "Tahu",
+    "satuan": "kg",
+    "harga": 12000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 94,
+    "id_komoditi": 39,
+    "bahan": "Tempe",
+    "satuan": "kg",
+    "harga": 14000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 77,
+    "id_komoditi": 40,
+    "bahan": "Kacang Tanah",
+    "satuan": "kg",
+    "harga": 29300,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 78,
+    "id_komoditi": 41,
+    "bahan": "Kacang Hijau",
+    "satuan": "kg",
+    "harga": 26000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 79,
+    "id_komoditi": 42,
+    "bahan": "Mie Instan Kari Ayam",
+    "satuan": "bks",
+    "harga": 3200,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 80,
+    "id_komoditi": 43,
+    "bahan": "Ikan Asin Teri",
+    "satuan": "kg",
+    "harga": 65000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 81,
+    "id_komoditi": 44,
+    "bahan": "Ikan Kembung",
+    "satuan": "kg",
+    "harga": 51600,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 82,
+    "id_komoditi": 45,
+    "bahan": "Ketela Pohon",
+    "satuan": "kg",
+    "harga": 4000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 83,
+    "id_komoditi": 46,
+    "bahan": "Ikan Segar Tongkol",
+    "satuan": "kg",
+    "harga": 30000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 95,
+    "id_komoditi": 46,
+    "bahan": "Ikan Segar Tuna",
+    "satuan": "kg",
+    "harga": 35000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 101,
+    "id_komoditi": 51,
+    "bahan": "Udang Basah",
+    "satuan": "gr",
+    "harga": 75000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 102,
+    "id_komoditi": 54,
+    "bahan": "Pisang Ambon",
+    "satuan": "kg",
+    "harga": 6000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 103,
+    "id_komoditi": 55,
+    "bahan": "Jeruk Lokal",
+    "satuan": "kg",
+    "harga": 15000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 84,
+    "id_komoditi": 47,
+    "bahan": "Jagung Pipilan Kering",
+    "satuan": "kg",
+    "harga": 9000,
+    "waktu": "2023-12-04+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 6,
+    "id_komoditi": 4,
+    "bahan": "IR 64 (Beras Lokal Lampung)",
+    "satuan": "kg",
+    "harga": 13100,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 7,
+    "id_komoditi": 4,
+    "bahan": "IR 64 (Beras Lokal Bengkulu)",
+    "satuan": "kg",
+    "harga": 13750,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 9,
+    "id_komoditi": 4,
+    "bahan": "Manggis Manis (Premium)",
+    "satuan": "kg",
+    "harga": 15600,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 10,
+    "id_komoditi": 4,
+    "bahan": "Kembang Kol (Premium)",
+    "satuan": "kg",
+    "harga": 15100,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 11,
+    "id_komoditi": 4,
+    "bahan": "Termurah",
+    "satuan": "kg",
+    "harga": 13100,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 12,
+    "id_komoditi": 4,
+    "bahan": "Cap Bulog/Dolog",
+    "satuan": "kg",
+    "harga": 11500,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 8,
+    "id_komoditi": 5,
+    "bahan": "Gula DN",
+    "satuan": "kg",
+    "harga": 17000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 96,
+    "id_komoditi": 6,
+    "bahan": "Minyak Goreng Curah Rakyat",
+    "satuan": "liter",
+    "harga": 14300,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 14,
+    "id_komoditi": 6,
+    "bahan": "Minyak Goreng Curah",
+    "satuan": "liter",
+    "harga": 14500,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 15,
+    "id_komoditi": 6,
+    "bahan": "Kemasan Sederhana (Fortune)",
+    "satuan": "liter",
+    "harga": 15800,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 16,
+    "id_komoditi": 6,
+    "bahan": "Kemasan Premium (Fortune)",
+    "satuan": "liter",
+    "harga": 17500,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 17,
+    "id_komoditi": 7,
+    "bahan": "Tepung Terigu Kemasan Segitiga Biru",
+    "satuan": "kg",
+    "harga": 14500,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 18,
+    "id_komoditi": 7,
+    "bahan": "Cakra Kembar",
+    "satuan": "kg",
+    "harga": 15500,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 19,
+    "id_komoditi": 7,
+    "bahan": "Kunci Biru",
+    "satuan": "kg",
+    "harga": 14500,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 20,
+    "id_komoditi": 8,
+    "bahan": "Daging Sapi Lokal Paha Belakang",
+    "satuan": "kg",
+    "harga": 140000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 21,
+    "id_komoditi": 8,
+    "bahan": "Sapi Lokal Paha Depan",
+    "satuan": "kg",
+    "harga": 140000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 22,
+    "id_komoditi": 8,
+    "bahan": "Sandung Lamur",
+    "satuan": "kg",
+    "harga": 100000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 23,
+    "id_komoditi": 8,
+    "bahan": "Tetelan",
+    "satuan": "kg",
+    "harga": 60000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 24,
+    "id_komoditi": 8,
+    "bahan": "Has Dalam",
+    "satuan": "kg",
+    "harga": 140000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 25,
+    "id_komoditi": 8,
+    "bahan": "Has Luar",
+    "satuan": "kg",
+    "harga": 140000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 26,
+    "id_komoditi": 9,
+    "bahan": "Daging Ayam Broiler",
+    "satuan": "kg",
+    "harga": 30000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 27,
+    "id_komoditi": 9,
+    "bahan": "Kampung",
+    "satuan": "kg",
+    "harga": 65000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 28,
+    "id_komoditi": 10,
+    "bahan": "Telur Ayam Broiler",
+    "satuan": "kg",
+    "harga": 25000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 29,
+    "id_komoditi": 10,
+    "bahan": "Kampung",
+    "satuan": "kg",
+    "harga": 52500,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 30,
+    "id_komoditi": 11,
+    "bahan": "Cabe Merah Kriting",
+    "satuan": "kg",
+    "harga": 80000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 31,
+    "id_komoditi": 12,
+    "bahan": "Cabe Rawit Merah",
+    "satuan": "kg",
+    "harga": 100000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 90,
+    "id_komoditi": 12,
+    "bahan": "Cabe Rawit Hijau",
+    "satuan": "kg",
+    "harga": 80000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 32,
+    "id_komoditi": 13,
+    "bahan": "Bawang Merah",
+    "satuan": "kg",
+    "harga": 35000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 33,
+    "id_komoditi": 14,
+    "bahan": "Bawang Putih Honan",
+    "satuan": "kg",
+    "harga": 35000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 89,
+    "id_komoditi": 14,
+    "bahan": "Bawang Bombay",
+    "satuan": "kg",
+    "harga": 35500,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 34,
+    "id_komoditi": 15,
+    "bahan": "Susu Kental Manis Cap Bendera (370 gram)",
+    "satuan": "kaleng",
+    "harga": 13000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 35,
+    "id_komoditi": 15,
+    "bahan": "Cap Indomilk (370 gram)",
+    "satuan": "kaleng",
+    "harga": 12500,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 104,
+    "id_komoditi": 56,
+    "bahan": "Dancow Vanilla 400 gram",
+    "satuan": "gr",
+    "harga": 53000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 105,
+    "id_komoditi": 57,
+    "bahan": "Frisian Flag 123 Vanilla",
+    "satuan": "gr",
+    "harga": 0,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 106,
+    "id_komoditi": 57,
+    "bahan": "SGM 400 gram",
+    "satuan": "gr",
+    "harga": 42300,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 36,
+    "id_komoditi": 16,
+    "bahan": "Garam Beryodium Halus",
+    "satuan": "kg",
+    "harga": 15000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 37,
+    "id_komoditi": 17,
+    "bahan": "Kacang Kedelai Eks Import",
+    "satuan": "kg",
+    "harga": 16000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 86,
+    "id_komoditi": 17,
+    "bahan": "Tahu",
+    "satuan": "kg",
+    "harga": 10000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 87,
+    "id_komoditi": 17,
+    "bahan": "Tempe",
+    "satuan": "kg",
+    "harga": 14000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 38,
+    "id_komoditi": 18,
+    "bahan": "Kacang Tanah",
+    "satuan": "kg",
+    "harga": 30000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 39,
+    "id_komoditi": 19,
+    "bahan": "Kacang Hijau",
+    "satuan": "kg",
+    "harga": 25000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 40,
+    "id_komoditi": 20,
+    "bahan": "Mie Instan Kari Ayam",
+    "satuan": "bks",
+    "harga": 3500,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 41,
+    "id_komoditi": 21,
+    "bahan": "Ikan Asin Teri",
+    "satuan": "kg",
+    "harga": 69000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 42,
+    "id_komoditi": 22,
+    "bahan": "Ikan Kembung",
+    "satuan": "kg",
+    "harga": 55000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 43,
+    "id_komoditi": 23,
+    "bahan": "Ketela Pohon",
+    "satuan": "kg",
+    "harga": 4000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 44,
+    "id_komoditi": 24,
+    "bahan": "Ikan Segar Tongkol",
+    "satuan": "kg",
+    "harga": 30000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 85,
+    "id_komoditi": 24,
+    "bahan": "Ikan Segar Tuna",
+    "satuan": "kg",
+    "harga": 35000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 98,
+    "id_komoditi": 48,
+    "bahan": "Udang Basah",
+    "satuan": "gr",
+    "harga": 78000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 99,
+    "id_komoditi": 49,
+    "bahan": "Pisang Ambon",
+    "satuan": "kg",
+    "harga": 6000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 100,
+    "id_komoditi": 50,
+    "bahan": "Jeruk Lokal",
+    "satuan": "kg",
+    "harga": 18000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 45,
+    "id_komoditi": 25,
+    "bahan": "Jagung Pipilan Kering",
+    "satuan": "kg",
+    "harga": 9000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "minggu"
+  },
+  {
+    "id_bahan": 46,
+    "id_komoditi": 26,
+    "bahan": " IR 64 (Beras Lokal Lampung)",
+    "satuan": "kg",
+    "harga": 13200,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 47,
+    "id_komoditi": 26,
+    "bahan": "IR 64 (Beras Lokal Bengkulu)",
+    "satuan": "kg",
+    "harga": 13750,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 48,
+    "id_komoditi": 26,
+    "bahan": "Manggis Manis (Premium)",
+    "satuan": "kg",
+    "harga": 15500,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 49,
+    "id_komoditi": 26,
+    "bahan": "Kembang Kol (Premium)",
+    "satuan": "kg",
+    "harga": 15300,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 50,
+    "id_komoditi": 26,
+    "bahan": "Termurah",
+    "satuan": "kg",
+    "harga": 12500,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 51,
+    "id_komoditi": 26,
+    "bahan": "Cap Bulog/Dolog",
+    "satuan": "kg",
+    "harga": 11500,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 52,
+    "id_komoditi": 27,
+    "bahan": "Gula DN",
+    "satuan": "kg",
+    "harga": 17000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 97,
+    "id_komoditi": 28,
+    "bahan": "Minyak Goreng Curah Rakyat",
+    "satuan": "liter",
+    "harga": 14100,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 53,
+    "id_komoditi": 28,
+    "bahan": "Minyak Goreng Curah",
+    "satuan": "liter",
+    "harga": 14400,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 54,
+    "id_komoditi": 28,
+    "bahan": "Kemasan Sederhana (Fortune)",
+    "satuan": "liter",
+    "harga": 16000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 55,
+    "id_komoditi": 28,
+    "bahan": "Kemasan Premium (Fortune)",
+    "satuan": "liter",
+    "harga": 17500,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 56,
+    "id_komoditi": 29,
+    "bahan": "Tepung Terigu Kemasan Segitiga Biru",
+    "satuan": "kg",
+    "harga": 16000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 57,
+    "id_komoditi": 29,
+    "bahan": "Cakra Kembar",
+    "satuan": "kg",
+    "harga": 16600,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 58,
+    "id_komoditi": 29,
+    "bahan": "Kunci Biru",
+    "satuan": "kg",
+    "harga": 16000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 59,
+    "id_komoditi": 30,
+    "bahan": "Daging Sapi Lokal Paha Belakang",
+    "satuan": "kg",
+    "harga": 136700,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 60,
+    "id_komoditi": 30,
+    "bahan": "Sapi Lokal Paha Depan",
+    "satuan": "kg",
+    "harga": 136700,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 61,
+    "id_komoditi": 30,
+    "bahan": "Sandung Lamur",
+    "satuan": "kg",
+    "harga": 100000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 62,
+    "id_komoditi": 30,
+    "bahan": "Tetelan",
+    "satuan": "kg",
+    "harga": 60000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 63,
+    "id_komoditi": 30,
+    "bahan": "Has Dalam",
+    "satuan": "kg",
+    "harga": 136700,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 64,
+    "id_komoditi": 30,
+    "bahan": "Has Luar",
+    "satuan": "kg",
+    "harga": 136700,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 65,
+    "id_komoditi": 31,
+    "bahan": "Daging Ayam Broiler",
+    "satuan": "kg",
+    "harga": 30000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 66,
+    "id_komoditi": 31,
+    "bahan": "Kampung",
+    "satuan": "kg",
+    "harga": 65500,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 67,
+    "id_komoditi": 32,
+    "bahan": "Telur Ayam Broiler",
+    "satuan": "kg",
+    "harga": 26600,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 68,
+    "id_komoditi": 32,
+    "bahan": "Kampung",
+    "satuan": "kg",
+    "harga": 52500,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 69,
+    "id_komoditi": 33,
+    "bahan": "Cabe Merah Kriting",
+    "satuan": "kg",
+    "harga": 75000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 70,
+    "id_komoditi": 34,
+    "bahan": "Cabe Rawit Merah",
+    "satuan": "kg",
+    "harga": 90000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 91,
+    "id_komoditi": 34,
+    "bahan": "Cabe Rawit Hijau",
+    "satuan": "kg",
+    "harga": 75000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 71,
+    "id_komoditi": 35,
+    "bahan": "Bawang Merah",
+    "satuan": "kg",
+    "harga": 33000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 72,
+    "id_komoditi": 36,
+    "bahan": "Bawang Putih Honan",
+    "satuan": "kg",
+    "harga": 37500,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 92,
+    "id_komoditi": 36,
+    "bahan": "Bawang Bombay",
+    "satuan": "kg",
+    "harga": 33000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 73,
+    "id_komoditi": 37,
+    "bahan": "Susu Kental Manis Cap Bendera (370 gram)",
+    "satuan": "kaleng",
+    "harga": 13000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 74,
+    "id_komoditi": 37,
+    "bahan": "Cap Indomilk (370 gram)",
+    "satuan": "kaleng",
+    "harga": 13000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 107,
+    "id_komoditi": 58,
+    "bahan": "Dancow Vanilla 400 gram",
+    "satuan": "gr",
+    "harga": 49000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 108,
+    "id_komoditi": 59,
+    "bahan": "Frisian Flag 123 Vanilla",
+    "satuan": "gr",
+    "harga": 0,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 109,
+    "id_komoditi": 59,
+    "bahan": "SGM 400 gram",
+    "satuan": "gr",
+    "harga": 42400,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 75,
+    "id_komoditi": 38,
+    "bahan": "Garam Beryodium Halus",
+    "satuan": "kg",
+    "harga": 13000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 76,
+    "id_komoditi": 39,
+    "bahan": "Kacang Kedelai Eks Import",
+    "satuan": "kg",
+    "harga": 16000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 93,
+    "id_komoditi": 39,
+    "bahan": "Tahu",
+    "satuan": "kg",
+    "harga": 12000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 94,
+    "id_komoditi": 39,
+    "bahan": "Tempe",
+    "satuan": "kg",
+    "harga": 14000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 77,
+    "id_komoditi": 40,
+    "bahan": "Kacang Tanah",
+    "satuan": "kg",
+    "harga": 29300,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 78,
+    "id_komoditi": 41,
+    "bahan": "Kacang Hijau",
+    "satuan": "kg",
+    "harga": 26000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 79,
+    "id_komoditi": 42,
+    "bahan": "Mie Instan Kari Ayam",
+    "satuan": "bks",
+    "harga": 3200,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 80,
+    "id_komoditi": 43,
+    "bahan": "Ikan Asin Teri",
+    "satuan": "kg",
+    "harga": 65000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 81,
+    "id_komoditi": 44,
+    "bahan": "Ikan Kembung",
+    "satuan": "kg",
+    "harga": 51600,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 82,
+    "id_komoditi": 45,
+    "bahan": "Ketela Pohon",
+    "satuan": "kg",
+    "harga": 4000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 83,
+    "id_komoditi": 46,
+    "bahan": "Ikan Segar Tongkol",
+    "satuan": "kg",
+    "harga": 30000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 95,
+    "id_komoditi": 46,
+    "bahan": "Ikan Segar Tuna",
+    "satuan": "kg",
+    "harga": 35000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 101,
+    "id_komoditi": 51,
+    "bahan": "Udang Basah",
+    "satuan": "gr",
+    "harga": 75000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 102,
+    "id_komoditi": 54,
+    "bahan": "Pisang Ambon",
+    "satuan": "kg",
+    "harga": 6000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 103,
+    "id_komoditi": 55,
+    "bahan": "Jeruk Lokal",
+    "satuan": "kg",
+    "harga": 15000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  },
+  {
+    "id_bahan": 84,
+    "id_komoditi": 47,
+    "bahan": "Jagung Pipilan Kering",
+    "satuan": "kg",
+    "harga": 9000,
+    "waktu": "2023-11-27+00:00",
+    "pasar": "panorama"
+  }
+]

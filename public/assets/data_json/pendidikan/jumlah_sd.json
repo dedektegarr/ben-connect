@@ -1,0 +1,242 @@
+[
+    {
+        "id": 6,
+        "created_at": "2023-12-10 04:53:24",
+        "updated_at": "2023-12-10 04:53:24",
+        "nama_daerah": "Kota Bengkulu",
+        "kategori": "sekolah",
+        "jumlah": 112
+    },
+    {
+        "id": 8,
+        "created_at": "2023-12-10 04:54:27",
+        "updated_at": "2023-12-10 04:54:27",
+        "nama_daerah": "Bengkulu Tengah",
+        "kategori": "sekolah",
+        "jumlah": 93
+    },
+    {
+        "id": 9,
+        "created_at": "2023-12-10 04:54:41",
+        "updated_at": "2023-12-10 04:54:41",
+        "nama_daerah": "Bengkulu Selatan",
+        "kategori": "sekolah",
+        "jumlah": 120
+    },
+    {
+        "id": 10,
+        "created_at": "2023-12-10 04:55:00",
+        "updated_at": "2023-12-10 04:55:00",
+        "nama_daerah": "Bengkulu Utara",
+        "kategori": "sekolah",
+        "jumlah": 239
+    },
+    {
+        "id": 12,
+        "created_at": "2023-12-10 04:56:15",
+        "updated_at": "2023-12-10 04:56:15",
+        "nama_daerah": "Seluma",
+        "kategori": "sekolah",
+        "jumlah": 186
+    },
+    {
+        "id": 13,
+        "created_at": "2023-12-10 04:56:48",
+        "updated_at": "2023-12-10 04:56:48",
+        "nama_daerah": "Kaur",
+        "kategori": "sekolah",
+        "jumlah": 137
+    },
+    {
+        "id": 14,
+        "created_at": "2023-12-10 04:57:03",
+        "updated_at": "2023-12-10 04:57:03",
+        "nama_daerah": "Kepahiang",
+        "kategori": "sekolah",
+        "jumlah": 102
+    },
+    {
+        "id": 15,
+        "created_at": "2023-12-10 04:57:21",
+        "updated_at": "2023-12-10 04:57:21",
+        "nama_daerah": "Mukomuko",
+        "kategori": "sekolah",
+        "jumlah": 138
+    },
+    {
+        "id": 16,
+        "created_at": "2023-12-10 04:57:44",
+        "updated_at": "2023-12-10 04:57:44",
+        "nama_daerah": "Lebong",
+        "kategori": "sekolah",
+        "jumlah": 93
+    },
+    {
+        "id": 17,
+        "created_at": "2023-12-10 04:58:00",
+        "updated_at": "2023-12-10 04:58:00",
+        "nama_daerah": "Rejang Lebong",
+        "kategori": "sekolah",
+        "jumlah": 178
+    },
+    {
+        "id": 19,
+        "created_at": "2023-12-10 05:06:55",
+        "updated_at": "2023-12-10 05:06:55",
+        "nama_daerah": "Kota Bengkulu",
+        "kategori": "guru",
+        "jumlah": 2099
+    },
+    {
+        "id": 20,
+        "created_at": "2023-12-10 05:07:13",
+        "updated_at": "2023-12-10 05:07:13",
+        "nama_daerah": "Bengkulu Tengah",
+        "kategori": "guru",
+        "jumlah": 989
+    },
+    {
+        "id": 21,
+        "created_at": "2023-12-10 05:07:39",
+        "updated_at": "2023-12-10 05:07:39",
+        "nama_daerah": "Bengkulu Selatan",
+        "kategori": "guru",
+        "jumlah": 1528
+    },
+    {
+        "id": 22,
+        "created_at": "2023-12-10 05:08:02",
+        "updated_at": "2023-12-10 05:08:02",
+        "nama_daerah": "Bengkulu Utara",
+        "kategori": "guru",
+        "jumlah": 2591
+    },
+    {
+        "id": 23,
+        "created_at": "2023-12-10 05:08:17",
+        "updated_at": "2023-12-10 05:08:17",
+        "nama_daerah": "Seluma",
+        "kategori": "guru",
+        "jumlah": 1804
+    },
+    {
+        "id": 24,
+        "created_at": "2023-12-10 05:08:30",
+        "updated_at": "2023-12-10 05:08:30",
+        "nama_daerah": "Kaur",
+        "kategori": "guru",
+        "jumlah": 1380
+    },
+    {
+        "id": 25,
+        "created_at": "2023-12-10 05:08:47",
+        "updated_at": "2023-12-10 05:08:47",
+        "nama_daerah": "Kepahiang",
+        "kategori": "guru",
+        "jumlah": 1172
+    },
+    {
+        "id": 26,
+        "created_at": "2023-12-10 05:09:06",
+        "updated_at": "2023-12-10 05:09:06",
+        "nama_daerah": "Mukomuko",
+        "kategori": "guru",
+        "jumlah": 1586
+    },
+    {
+        "id": 27,
+        "created_at": "2023-12-10 05:09:20",
+        "updated_at": "2023-12-10 05:09:20",
+        "nama_daerah": "Lebong",
+        "kategori": "guru",
+        "jumlah": 929
+    },
+    {
+        "id": 28,
+        "created_at": "2023-12-10 05:09:34",
+        "updated_at": "2023-12-10 05:09:34",
+        "nama_daerah": "Rejang Lebong",
+        "kategori": "guru",
+        "jumlah": 1957
+    },
+    {
+        "id": 29,
+        "created_at": "2023-12-10 05:10:26",
+        "updated_at": "2023-12-10 05:10:26",
+        "nama_daerah": "Kota Bengkulu",
+        "kategori": "siswa",
+        "jumlah": 35254
+    },
+    {
+        "id": 30,
+        "created_at": "2023-12-10 05:10:47",
+        "updated_at": "2023-12-10 05:10:47",
+        "nama_daerah": "Bengkulu Tengah",
+        "kategori": "siswa",
+        "jumlah": 10886
+    },
+    {
+        "id": 31,
+        "created_at": "2023-12-10 05:11:49",
+        "updated_at": "2023-12-10 05:11:49",
+        "nama_daerah": "Bengkulu Selatan",
+        "kategori": "siswa",
+        "jumlah": 15317
+    },
+    {
+        "id": 32,
+        "created_at": "2023-12-10 05:12:03",
+        "updated_at": "2023-12-10 05:12:03",
+        "nama_daerah": "Bengkulu Utara",
+        "kategori": "siswa",
+        "jumlah": 31047
+    },
+    {
+        "id": 33,
+        "created_at": "2023-12-10 05:12:29",
+        "updated_at": "2023-12-10 05:12:29",
+        "nama_daerah": "Seluma",
+        "kategori": "siswa",
+        "jumlah": 20133
+    },
+    {
+        "id": 34,
+        "created_at": "2023-12-10 05:12:45",
+        "updated_at": "2023-12-10 05:12:45",
+        "nama_daerah": "Kaur",
+        "kategori": "siswa",
+        "jumlah": 12503
+    },
+    {
+        "id": 35,
+        "created_at": "2023-12-10 05:13:00",
+        "updated_at": "2023-12-10 05:13:00",
+        "nama_daerah": "Kepahiang",
+        "kategori": "siswa",
+        "jumlah": 12167
+    },
+    {
+        "id": 36,
+        "created_at": "2023-12-10 05:13:15",
+        "updated_at": "2023-12-10 05:13:15",
+        "nama_daerah": "Mukomuko",
+        "kategori": "siswa",
+        "jumlah": 20529
+    },
+    {
+        "id": 37,
+        "created_at": "2023-12-10 05:13:33",
+        "updated_at": "2023-12-10 05:13:33",
+        "nama_daerah": "Lebong",
+        "kategori": "siswa",
+        "jumlah": 9834
+    },
+    {
+        "id": 38,
+        "created_at": "2023-12-10 05:13:45",
+        "updated_at": "2023-12-10 05:13:45",
+        "nama_daerah": "Rejang Lebong",
+        "kategori": "siswa",
+        "jumlah": 26711
+    }
+]

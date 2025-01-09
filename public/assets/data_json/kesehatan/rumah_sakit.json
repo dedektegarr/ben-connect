@@ -1,0 +1,46 @@
+[
+    {
+        "id": "1",
+        "lat": "-3.838682",
+        "long": "102.299981",
+        "Kode_RS": "1771009",
+        "Nama_Rumah_Sakit": "RS Gading Medika",
+        "Jenis_RS": "RSU",
+        "Kelas_RS": "C",
+        "Pemilik": "Swasta",
+        "Total_Ranjang": "112"
+    },
+    {
+        "id": "2",
+        "lat": "-3.8272572",
+        "long": "102.3186174",
+        "Kode_RS": "1771007",
+        "Nama_Rumah_Sakit": "RS Umum Ummi",
+        "Jenis_RS": "RSU",
+        "Kelas_RS": "C",
+        "Pemilik": "Swasta",
+        "Total_Ranjang": "53"
+    },
+    {
+        "id": "3",
+        "lat": "-3.798472",
+        "long": "102.261891",
+        "Kode_RS": "1771002",
+        "Nama_Rumah_Sakit": "RSUD Harapan dan Doa",
+        "Jenis_RS": "RSU",
+        "Kelas_RS": "C",
+        "Pemilik": "Pemkot",
+        "Total_Ranjang": "94"
+    },
+    {
+        "id": "4",
+        "lat": "-3.792453",
+        "long": "102.267991",
+        "Kode_RS": "1771062",
+        "Nama_Rumah_Sakit": "RS Tiara Sella",
+        "Jenis_RS": "RSU",
+        "Kelas_RS": "C",
+        "Pemilik": "Swasta",
+        "Total_Ranjang": "77"
+    }
+]

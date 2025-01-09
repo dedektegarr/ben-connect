@@ -1,0 +1,162 @@
+[
+    {
+        "id": 4,
+        "created_at": "2023-12-05 23:34:37",
+        "updated_at": "2023-12-05 23:34:37",
+        "nama_daerah": "Kota Bengkulu",
+        "tanggal_terbit": "2022-12-01",
+        "jumlah": 15.73
+    },
+    {
+        "id": 5,
+        "created_at": "2023-12-05 23:35:35",
+        "updated_at": "2023-12-05 23:35:35",
+        "nama_daerah": "Bengkulu Tengah",
+        "tanggal_terbit": "2022-12-01",
+        "jumlah": 9.76
+    },
+    {
+        "id": 6,
+        "created_at": "2023-12-05 23:35:54",
+        "updated_at": "2023-12-05 23:35:54",
+        "nama_daerah": "Bengkulu Selatan",
+        "tanggal_terbit": "2022-12-01",
+        "jumlah": 17.86
+    },
+    {
+        "id": 7,
+        "created_at": "2023-12-05 23:36:10",
+        "updated_at": "2023-12-05 23:36:10",
+        "nama_daerah": "Bengkulu Utara",
+        "tanggal_terbit": "2022-12-01",
+        "jumlah": 11.48
+    },
+    {
+        "id": 8,
+        "created_at": "2023-12-05 23:36:30",
+        "updated_at": "2023-12-05 23:36:30",
+        "nama_daerah": "Seluma",
+        "tanggal_terbit": "2022-12-01",
+        "jumlah": 18.36
+    },
+    {
+        "id": 9,
+        "created_at": "2023-12-05 23:37:02",
+        "updated_at": "2023-12-05 23:37:02",
+        "nama_daerah": "Kaur",
+        "tanggal_terbit": "2022-12-01",
+        "jumlah": 18.1
+    },
+    {
+        "id": 10,
+        "created_at": "2023-12-05 23:37:15",
+        "updated_at": "2023-12-05 23:37:15",
+        "nama_daerah": "Kepahiang",
+        "tanggal_terbit": "2022-12-01",
+        "jumlah": 14.53
+    },
+    {
+        "id": 12,
+        "created_at": "2023-12-05 23:38:19",
+        "updated_at": "2023-12-05 23:38:19",
+        "nama_daerah": "Mukomuko",
+        "tanggal_terbit": "2022-12-01",
+        "jumlah": 11.44
+    },
+    {
+        "id": 13,
+        "created_at": "2023-12-05 23:38:30",
+        "updated_at": "2023-12-05 23:38:30",
+        "nama_daerah": "Lebong",
+        "tanggal_terbit": "2022-12-01",
+        "jumlah": 12.03
+    },
+    {
+        "id": 14,
+        "created_at": "2023-12-05 23:38:57",
+        "updated_at": "2023-12-05 23:38:57",
+        "nama_daerah": "Rejang Lebong",
+        "tanggal_terbit": "2022-12-01",
+        "jumlah": 15.65
+    },
+    {
+        "id": 15,
+        "created_at": "2023-12-05 23:40:45",
+        "updated_at": "2023-12-05 23:40:45",
+        "nama_daerah": "Kota Bengkulu",
+        "tanggal_terbit": "2021-03-01",
+        "jumlah": 17.89
+    },
+    {
+        "id": 16,
+        "created_at": "2023-12-05 23:41:07",
+        "updated_at": "2023-12-05 23:41:07",
+        "nama_daerah": "Bengkulu Tengah",
+        "tanggal_terbit": "2021-03-01",
+        "jumlah": 9.68
+    },
+    {
+        "id": 17,
+        "created_at": "2023-12-05 23:41:33",
+        "updated_at": "2023-12-05 23:45:29",
+        "nama_daerah": "Bengkulu Selatan",
+        "tanggal_terbit": "2021-03-01",
+        "jumlah": 18.16
+    },
+    {
+        "id": 18,
+        "created_at": "2023-12-05 23:41:54",
+        "updated_at": "2023-12-05 23:41:54",
+        "nama_daerah": "Bengkulu Utara",
+        "tanggal_terbit": "2021-03-01",
+        "jumlah": 11.61
+    },
+    {
+        "id": 19,
+        "created_at": "2023-12-05 23:42:13",
+        "updated_at": "2023-12-05 23:42:13",
+        "nama_daerah": "Seluma",
+        "tanggal_terbit": "2021-03-01",
+        "jumlah": 18.72
+    },
+    {
+        "id": 20,
+        "created_at": "2023-12-05 23:42:36",
+        "updated_at": "2023-12-05 23:42:36",
+        "nama_daerah": "Kaur",
+        "tanggal_terbit": "2021-03-01",
+        "jumlah": 18.62
+    },
+    {
+        "id": 21,
+        "created_at": "2023-12-05 23:42:53",
+        "updated_at": "2023-12-05 23:42:53",
+        "nama_daerah": "Kepahiang",
+        "tanggal_terbit": "2021-03-01",
+        "jumlah": 14.83
+    },
+    {
+        "id": 22,
+        "created_at": "2023-12-05 23:43:08",
+        "updated_at": "2023-12-05 23:43:08",
+        "nama_daerah": "Mukomuko",
+        "tanggal_terbit": "2021-03-01",
+        "jumlah": 11.93
+    },
+    {
+        "id": 23,
+        "created_at": "2023-12-05 23:43:28",
+        "updated_at": "2023-12-05 23:43:28",
+        "nama_daerah": "Lebong",
+        "tanggal_terbit": "2021-03-01",
+        "jumlah": 12.0
+    },
+    {
+        "id": 24,
+        "created_at": "2023-12-05 23:43:49",
+        "updated_at": "2023-12-05 23:43:49",
+        "nama_daerah": "Rejang Lebong",
+        "tanggal_terbit": "2021-03-01",
+        "jumlah": 15.85
+    }
+]

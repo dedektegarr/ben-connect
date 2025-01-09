@@ -1,0 +1,326 @@
+ [
+  {
+    "id_komoditi": 4,
+    "komoditi": "Beras",
+    "color": "#4f4fff",
+    "pasar": "minggu"
+  },
+  {
+    "id_komoditi": 5,
+    "komoditi": "Gula Pasir",
+    "color": "#b95c00",
+    "pasar": "minggu"
+  },
+  {
+    "id_komoditi": 6,
+    "komoditi": "Minyak Goreng",
+    "color": "#e6e600",
+    "pasar": "minggu"
+  },
+  {
+    "id_komoditi": 7,
+    "komoditi": "Tepung Terigu Kemasan",
+    "color": "#ff0000",
+    "pasar": "minggu"
+  },
+  {
+    "id_komoditi": 8,
+    "komoditi": "Daging Sapi",
+    "color": "#00ffff",
+    "pasar": "minggu"
+  },
+  {
+    "id_komoditi": 9,
+    "komoditi": "Daging Ayam",
+    "color": "#000000",
+    "pasar": "minggu"
+  },
+  {
+    "id_komoditi": 10,
+    "komoditi": "Telur",
+    "color": "#0000ff",
+    "pasar": "minggu"
+  },
+  {
+    "id_komoditi": 11,
+    "komoditi": "Cabe Merah",
+    "color": "#00ff00",
+    "pasar": "minggu"
+  },
+  {
+    "id_komoditi": 12,
+    "komoditi": "Cabe Rawit",
+    "color": "#e6e600",
+    "pasar": "minggu"
+  },
+  {
+    "id_komoditi": 13,
+    "komoditi": "Bawang Merah",
+    "color": "#ff00ff",
+    "pasar": "minggu"
+  },
+  {
+    "id_komoditi": 14,
+    "komoditi": "Bawang Putih",
+    "color": "#000000",
+    "pasar": "minggu"
+  },
+  {
+    "id_komoditi": 15,
+    "komoditi": "Susu Kental Manis",
+    "color": "#00ffff",
+    "pasar": "minggu"
+  },
+  {
+    "id_komoditi": 16,
+    "komoditi": "Garam Beryodium",
+    "color": "#ff0000",
+    "pasar": "minggu"
+  },
+  {
+    "id_komoditi": 17,
+    "komoditi": "Kacang Kedelai",
+    "color": "#00ff00",
+    "pasar": "minggu"
+  },
+  {
+    "id_komoditi": 18,
+    "komoditi": "Kacang Tanah",
+    "color": "#ffff00",
+    "pasar": "minggu"
+  },
+  {
+    "id_komoditi": 19,
+    "komoditi": "Kacang Hijau",
+    "color": "#ff00ff",
+    "pasar": "minggu"
+  },
+  {
+    "id_komoditi": 20,
+    "komoditi": "Mie Instan Kari Ayam",
+    "color": "#000000",
+    "pasar": "minggu"
+  },
+  {
+    "id_komoditi": 21,
+    "komoditi": "Ikan Asin Teri",
+    "color": "#ff0000",
+    "pasar": "minggu"
+  },
+  {
+    "id_komoditi": 22,
+    "komoditi": "Ikan Kembung",
+    "color": "#00ffff",
+    "pasar": "minggu"
+  },
+  {
+    "id_komoditi": 23,
+    "komoditi": "Ketela Pohon",
+    "color": "#00ff00",
+    "pasar": "minggu"
+  },
+  {
+    "id_komoditi": 24,
+    "komoditi": "Ikan Segar",
+    "color": "#ffff00",
+    "pasar": "minggu"
+  },
+  {
+    "id_komoditi": 25,
+    "komoditi": "Jagung Pipilan Kering",
+    "color": "#ff0000",
+    "pasar": "minggu"
+  },
+  {
+    "id_komoditi": 26,
+    "komoditi": "Beras",
+    "color": "#4f4fff",
+    "pasar": "panorama"
+  },
+  {
+    "id_komoditi": 27,
+    "komoditi": "Gula Pasir",
+    "color": "#b95c00",
+    "pasar": "panorama"
+  },
+  {
+    "id_komoditi": 28,
+    "komoditi": "Minyak Goreng",
+    "color": "#e6e600",
+    "pasar": "panorama"
+  },
+  {
+    "id_komoditi": 29,
+    "komoditi": "Tepung Terigu Kemasan",
+    "color": "#ff0000",
+    "pasar": "panorama"
+  },
+  {
+    "id_komoditi": 30,
+    "komoditi": "Daging Sapi",
+    "color": "#00ffff",
+    "pasar": "panorama"
+  },
+  {
+    "id_komoditi": 31,
+    "komoditi": "Daging Ayam",
+    "color": "#000000",
+    "pasar": "panorama"
+  },
+  {
+    "id_komoditi": 32,
+    "komoditi": "Telur",
+    "color": "#0000ff",
+    "pasar": "panorama"
+  },
+  {
+    "id_komoditi": 33,
+    "komoditi": "Cabe Merah",
+    "color": "#00ff00",
+    "pasar": "panorama"
+  },
+  {
+    "id_komoditi": 34,
+    "komoditi": "Cabe Rawit",
+    "color": "#e6e600",
+    "pasar": "panorama"
+  },
+  {
+    "id_komoditi": 35,
+    "komoditi": "Bawang Merah",
+    "color": "#ff00ff",
+    "pasar": "panorama"
+  },
+  {
+    "id_komoditi": 36,
+    "komoditi": "Bawang Putih",
+    "color": "#000000",
+    "pasar": "panorama"
+  },
+  {
+    "id_komoditi": 37,
+    "komoditi": "Susu Kental Manis",
+    "color": "#00ffff",
+    "pasar": "panorama"
+  },
+  {
+    "id_komoditi": 38,
+    "komoditi": "Garam Beryodium",
+    "color": "#ff0000",
+    "pasar": "panorama"
+  },
+  {
+    "id_komoditi": 39,
+    "komoditi": "Kacang Kedelai",
+    "color": "#00ff00",
+    "pasar": "panorama"
+  },
+  {
+    "id_komoditi": 40,
+    "komoditi": "Kacang Tanah",
+    "color": "#ffff00",
+    "pasar": "panorama"
+  },
+  {
+    "id_komoditi": 41,
+    "komoditi": "Kacang Hijau",
+    "color": "#ff00ff",
+    "pasar": "panorama"
+  },
+  {
+    "id_komoditi": 42,
+    "komoditi": "Mie Instan Kari Ayam",
+    "color": "#000000",
+    "pasar": "panorama"
+  },
+  {
+    "id_komoditi": 43,
+    "komoditi": "Ikan Asin Teri",
+    "color": "#ff0000",
+    "pasar": "panorama"
+  },
+  {
+    "id_komoditi": 44,
+    "komoditi": "Ikan Kembung",
+    "color": "#00ffff",
+    "pasar": "panorama"
+  },
+  {
+    "id_komoditi": 45,
+    "komoditi": "Ketela Pohon",
+    "color": "#00ff00",
+    "pasar": "panorama"
+  },
+  {
+    "id_komoditi": 46,
+    "komoditi": "Ikan Segar",
+    "color": "#ffff00",
+    "pasar": "panorama"
+  },
+  {
+    "id_komoditi": 47,
+    "komoditi": "Jagung Pipilan Kering",
+    "color": "#ff0000",
+    "pasar": "panorama"
+  },
+  {
+    "id_komoditi": 48,
+    "komoditi": "Udang Basah",
+    "color": "#a53b3b",
+    "pasar": "minggu"
+  },
+  {
+    "id_komoditi": 49,
+    "komoditi": "Pisang Ambon",
+    "color": "#596a06",
+    "pasar": "minggu"
+  },
+  {
+    "id_komoditi": 50,
+    "komoditi": "Jeruk Lokal",
+    "color": null,
+    "pasar": "minggu"
+  },
+  {
+    "id_komoditi": 51,
+    "komoditi": "Udang Basah",
+    "color": null,
+    "pasar": "panorama"
+  },
+  {
+    "id_komoditi": 54,
+    "komoditi": "Pisang Ambon",
+    "color": null,
+    "pasar": "panorama"
+  },
+  {
+    "id_komoditi": 55,
+    "komoditi": "Jeruk Lokal",
+    "color": null,
+    "pasar": "panorama"
+  },
+  {
+    "id_komoditi": 56,
+    "komoditi": "Susu Bubuk ",
+    "color": null,
+    "pasar": "minggu"
+  },
+  {
+    "id_komoditi": 57,
+    "komoditi": "Susu Bubuk Balita",
+    "color": null,
+    "pasar": "minggu"
+  },
+  {
+    "id_komoditi": 58,
+    "komoditi": "Susu Bubuk ",
+    "color": null,
+    "pasar": "panorama"
+  },
+  {
+    "id_komoditi": 59,
+    "komoditi": "Susu Bubuk Balita",
+    "color": null,
+    "pasar": "panorama"
+  }
+]

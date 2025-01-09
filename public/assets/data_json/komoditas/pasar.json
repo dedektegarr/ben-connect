@@ -1,0 +1,14 @@
+[
+    {
+      "id_pasar": 1,
+      "latitude": "-3.7934642363515483",
+      "longitude": "102.26671685198365",
+      "pasar": "Minggu"
+    },
+    {
+      "id_pasar": 2,
+      "latitude": "-3.8154591595070055",
+      "longitude": "102.29984964031915",
+      "pasar": "Panorama"
+    }
+  ]
