@@ -25,9 +25,9 @@ class JalanController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'tahun_data' => 'required',
-            'daerah' => 'required',
-            'kategori_jalan' => 'required',
+            'tahun_data_id' => 'required',
+            'daerah_id' => 'required',
+            'kategori_jalan_id' => 'required',
             'panjang' => 'required|numeric'
         ]);      
 
@@ -67,9 +67,9 @@ class JalanController extends Controller
     public function update(Request $request, string $id)
     {
         $validator = Validator::make($request->all(), [
-            'tahun_data' => 'required',
-            'daerah' => 'required',
-            'kategori_jalan' => 'required',
+            'tahun_data_id' => 'required',
+            'daerah_id' => 'required',
+            'kategori_jalan_id' => 'required',
             'panjang' => 'required|numeric'
         ]);      
 

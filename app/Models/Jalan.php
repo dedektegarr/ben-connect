@@ -12,9 +12,9 @@ class Jalan extends Model
     protected $primaryKey = "jalan_id";
     public $timestamps = true;
     public $fillable = [
-        'tahun_data',
+        'tahun_data_id',
         'daerah_id',
-        'kategori_jalan',
+        'kategori_jalan_id',
         'panjang'
     ];
     
