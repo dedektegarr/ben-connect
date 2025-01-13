@@ -10,6 +10,8 @@ class Daerah extends Model
     use HasFactory;
 
     protected $table = 'daerah';
+    protected $primaryKey = 'daerah_id';
+    public $timestamps = false;
 
     protected $fillable = [
         'nama_daerah',
@@ -17,7 +19,13 @@ class Daerah extends Model
         'updated_at',
     ];
 
-    // Relasi ke tabel Akta (satu daerah memiliki banyak akta)
+    // Relasi ke tabel Jalan
+    public function jalan()
+    {
+        return $this->hasMany(Jalan::class, 'daerah_id', 'daerah_id');
+    }
+
+    // Relasi ke tabel Akta
     public function akta()
     {
         return $this->hasMany(Akta::class, 'daerah_id');
