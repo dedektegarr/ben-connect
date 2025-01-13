@@ -2,30 +2,41 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Models\DaerahModel;
-use App\Http\Requests\DaerahRequest;
+use App\Services\DaerahService;
+use App\Models\Daerah;
 use Illuminate\Http\Request;
 
 class DaerahController extends Controller
 {
+    protected $daerahService;
+
+    public function __construct(DaerahService $daerahService)
+    {
+        $this->daerahService = $daerahService;
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
+        $daerah = Daerah::all();
         return response()->json([
-            "data_daerah"=>DaerahModel::get(),
+            'data_daerah' => $daerah,
         ]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(DaerahRequest $request)
+    public function store(Request $request)
     {
-        $daerah = DaerahModel::create([
-            'daerah_nama' => $request->daerah_nama,
+        $request->validate([
+            'nama_daerah' => 'required|string|max:100',
+        ]);
+
+        $daerah = Daerah::create([
+            'nama_daerah' => $request->nama_daerah,
         ]);
 
         return response()->json([
@@ -37,19 +48,16 @@ class DaerahController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $daerah_id)
+    public function show($id)
     {
-        // Mencari data daerah berdasarkan daerah_id
-        $daerah = DaerahModel::find($daerah_id);
+        $daerah = Daerah::find($id);
 
-        // Jika data tidak ditemukan, kembalikan error 404
         if (!$daerah) {
             return response()->json([
                 'message' => 'Data daerah tidak ditemukan.',
             ], 404);
         }
 
-        // Mengembalikan data daerah dalam bentuk JSON
         return response()->json([
             'data_daerah' => $daerah,
         ]);
@@ -58,12 +66,16 @@ class DaerahController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(DaerahRequest $request, string $daerah_id)
+    public function update(Request $request, $id)
     {
-        $daerah = DaerahModel::findOrFail($daerah_id);
+        $request->validate([
+            'nama_daerah' => 'required|string|max:100',
+        ]);
+
+        $daerah = Daerah::findOrFail($id);
 
         $daerah->update([
-            'daerah_nama' => $request->daerah_nama,
+            'nama_daerah' => $request->nama_daerah,
         ]);
 
         return response()->json([
@@ -75,9 +87,9 @@ class DaerahController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $daerah_id)
+    public function destroy($id)
     {
-        $daerah = DaerahModel::findOrFail($daerah_id);
+        $daerah = Daerah::findOrFail($id);
         $daerah->delete();
 
         return response()->json([
