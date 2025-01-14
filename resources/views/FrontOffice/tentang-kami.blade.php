@@ -179,6 +179,9 @@
                             pemerintahan yang lebih efektif dan efisien.</p>
                         <div class="row my-5">
                             <div class="col-md-6">
+                            <img src="{{ asset('assets/FrontOffice/img/gubernur.png') }}" class="img-fluid" width="600" height="600" alt="">
+                            </div>
+                            <div class="col-md-6">
                                 <h4>Visi</h4>
                                 <div class="row">
                                     <div class="col-md-12">
@@ -189,8 +192,7 @@
                                         <hr>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
+                                <p></p>
                                 <h4>Misi:</h4>
                                 <div class="row">
                                     <div class="col-md-12">
