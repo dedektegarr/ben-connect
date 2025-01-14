@@ -50,14 +50,14 @@
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top ">
         <div class="container d-flex align-items-center justify-content-between">
-            <a href="index.html" class="logo"><img src="{{ asset('assets/FrontOffice/img/logo.png') }}"
+            <a href="index.php" class="logo"><img src="{{ asset('assets/FrontOffice/img/logo.png') }}"
                     alt="" class="img-fluid"></a>
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a class="nav-link scrollto {{ Route::is('index') ? 'active' : '' }}"
                             href="{{ route('index') }}">Beranda</a>
                     </li>
-                    <li><a class="nav-link scrollto" href="{{ route('kesehatan.dashboard') }}">Dataset</a></li>
+                    <li><a class="nav-link scrollto" href="{{ route('pendidikan.dashboard') }}">Dataset</a></li>
                     <li><a class="nav-link scrollto {{ Route::is('syarat') ? 'active' : '' }}"
                             href="{{ route('syarat') }}">Syarat & Ketentuan</a></li>
                     <li><a class="nav-link scrollto {{ Route::is('tentang') ? 'active' : '' }}"

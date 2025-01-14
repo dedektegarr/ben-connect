@@ -165,7 +165,7 @@
                 pemerintah di Provinsi Bengkulu secara realtime memungkinkan masyarakat untuk mendapatkan informasi yang
                 up-to-date mengenai layanan publik yang tersedia. Hal ini mencakup berbagai aspek seperti kesehatan,
                 pendidikan, infrastruktur, dan layanan administratif lainnya</p>
-            <a href="{{ route('kesehatan.dashboard') }}" class="btn btn-success">Explore <i
+            <a href="{{ route('pendidikan.dashboard') }}" class="btn btn-success">Explore <i
                     class="ri-arrow-right-line"></i></a>
         </div>
     </section><!-- End Hero -->
