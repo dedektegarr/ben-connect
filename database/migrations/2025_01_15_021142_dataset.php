@@ -11,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('daerah', function (Blueprint $table) {
-            $table->id('daerah_id');
-            $table->string('nama_daerah', length:100);
+        Schema::create('dataset', function (Blueprint $table) {
+            $table->uuid('dataset_id')->primary();
+            $table->string('dataset_year', length:100);
+            $table->timestamps();
         });
     }
 
@@ -22,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('daerah');
+        Schema::dropIfExists('dataset');
     }
 };
