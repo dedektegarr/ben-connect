@@ -4,6 +4,7 @@ use App\Http\Controllers\Infrastructure\RoadController;
 use App\Http\Controllers\Infrastructure\RoadCategoryController;
 use App\Http\Controllers\Master\AreaController;
 use App\Http\Controllers\Master\DatasetController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -32,5 +33,13 @@ Route::middleware('auth:sanctum', 'role:admin-infrastruktur')->group(function(){
     Route::resource('/infrastructure/road/road-category', RoadCategoryController::class);
     Route::resource('/infrastructure/road', RoadController::class);
     Route::post('/infrastructure/road/filter', [RoadController::class, 'filterRoad']);
+
+    // sementara
+    Route::post('/news',[NewsController::class, 'store']);
+    Route::get('/news/{news_id}',[NewsController::class, 'show']);
 });
 
+// route news
+Route::get('/news', [NewsController::class, 'index']);
+
+Route::resource('/user', UserController::class);
