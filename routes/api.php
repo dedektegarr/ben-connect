@@ -34,9 +34,11 @@ Route::middleware('auth:sanctum', 'role:admin-infrastruktur')->group(function(){
     Route::resource('/infrastructure/road', RoadController::class);
     Route::post('/infrastructure/road/filter', [RoadController::class, 'filterRoad']);
 
-    // sementara
+    // sementara untuk news
     Route::post('/news',[NewsController::class, 'store']);
     Route::get('/news/{news_id}',[NewsController::class, 'show']);
+    Route::put('/news/{news_id}',[NewsController::class, 'update']);
+    Route::delete('/news/{news_id}',[NewsController::class, 'destroy']);
 });
 
 // route news
