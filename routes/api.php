@@ -24,7 +24,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('/login', [UserController::class, 'login']);
-Route::post('/logout', [UserController::class, 'logout'])->middleware('auth:sanctum');;
+Route::post('/logout', [UserController::class, 'logout'])->middleware('auth:sanctum');
 
 Route::middleware('auth:sanctum', 'role:admin-infrastruktur')->group(function(){
     Route::resource('/master/area', AreaController::class);
@@ -34,3 +34,4 @@ Route::middleware('auth:sanctum', 'role:admin-infrastruktur')->group(function(){
     Route::post('/infrastructure/road/filter', [RoadController::class, 'filterRoad']);
 });
 
+Route::resource('/user', UserController::class);
