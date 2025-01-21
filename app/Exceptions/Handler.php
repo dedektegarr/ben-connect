@@ -2,6 +2,7 @@
 
 namespace App\Exceptions;
 
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
 use Spatie\Permission\Exceptions\UnauthorizedException;
@@ -35,6 +36,13 @@ class Handler extends ExceptionHandler
                 'status_code' => 403,
                 'message' => 'Akses tidak diizinkan'
             ], 403);
+        }
+
+        if($e instanceof AuthenticationException){
+            return response()->json([
+                'status_code' => 401,
+                'message' => 'Anda belum login atau token tidak valid'
+            ], 401);
         }
         return parent::render($request, $e);
     }
