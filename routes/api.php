@@ -5,6 +5,7 @@ use App\Http\Controllers\Infrastructure\RoadCategoryController;
 use App\Http\Controllers\Master\AreaController;
 use App\Http\Controllers\Master\DatasetController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -45,3 +46,5 @@ Route::middleware('auth:sanctum', 'role:admin-infrastruktur')->group(function(){
 Route::get('/news', [NewsController::class, 'index']);
 
 Route::resource('/user', UserController::class);
+
+Route::post('/search', [SearchController::class, 'searchByKeyword']);
