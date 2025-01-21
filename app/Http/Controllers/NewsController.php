@@ -26,6 +26,8 @@ class NewsController extends Controller
                 'news_image'=>$data_news->news_image,
                 'news_category'=>$data_news->news_category,
                 'news_tag'=>$data_news->news_tag,
+                'created_at'=>$data_news->created_at->format('Y-m-d'),
+                'updated_at'=>$data_news->updated_at->format('Y-m-d'),
                 'news_author'=>optional($data_news->user)->name,
             ];
         });
@@ -110,6 +112,8 @@ class NewsController extends Controller
                 'news_image'=>$data_news->news_image,
                 'news_category'=>$data_news->news_category,
                 'news_tag'=>$data_news->news_tag,
+                'created_at'=>$data_news->created_at->format('Y-m-d'),
+                'updated_at'=>$data_news->updated_at->format('Y-m-d'),
                 'news_author'=>optional($data_news->user)->name,
             ];
 
