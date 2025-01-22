@@ -19,7 +19,6 @@ class NewsModel extends Model
         'news_image',
         'news_description',
         'news_category',
-        'news_tag',
         'user_id',
     ];
 

@@ -33,7 +33,6 @@ class NewsRequest extends FormRequest
             ],
             'news_description'=>'required|min:10',
             'news_category'=>'required|in:pengumuman,berita',
-            'news_tag'=>'required|min:5'
         ];
     }
 
@@ -51,8 +50,6 @@ class NewsRequest extends FormRequest
             'news_description.max' => 'Deskripsi berita maksimal 500 karakter.',
             'news_category.required' => 'Kategori berita harus dipilih.',
             'news_category.in' => 'Kategori berita hanya bisa berupa pengumuman atau berita.',
-            'news_tag.required'=> 'Tag berita harus diisi',
-            'news_tag.min'=>'Tag berita minimal 5 karakter'
         ];
     }
 

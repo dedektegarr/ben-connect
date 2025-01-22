@@ -25,7 +25,6 @@ class NewsController extends Controller
                 'news_description'=>$data_news->news_description,
                 'news_image'=>$data_news->news_image,
                 'news_category'=>$data_news->news_category,
-                'news_tag'=>$data_news->news_tag,
                 'created_at'=>$data_news->created_at->format('Y-m-d'),
                 'updated_at'=>$data_news->updated_at->format('Y-m-d'),
                 'news_author'=>optional($data_news->user)->name,
@@ -73,7 +72,6 @@ class NewsController extends Controller
             'news_image' => $path,
             'news_description' => $validated['news_description'],
             'news_category' => $validated['news_category'],
-            'news_tag'=>$validated['news_tag'],
             'user_id' => $request->user()->id,
         ]);
 
@@ -111,7 +109,6 @@ class NewsController extends Controller
                 'news_description'=>$data_news->news_description,
                 'news_image'=>$data_news->news_image,
                 'news_category'=>$data_news->news_category,
-                'news_tag'=>$data_news->news_tag,
                 'created_at'=>$data_news->created_at->format('Y-m-d'),
                 'updated_at'=>$data_news->updated_at->format('Y-m-d'),
                 'news_author'=>optional($data_news->user)->name,
@@ -167,7 +164,6 @@ class NewsController extends Controller
             'news_image' => $path,
             'news_description' => $validated['news_description'],
             'news_category' => $validated['news_category'],
-            'news_tag' => $validated['news_tag'],
             'user_id' => $request->user()->id,
         ]);
     
