@@ -18,4 +18,8 @@ class Dataset extends Model
     public function road(){
         return $this->hasMany(Road::class, 'road_id', 'road_id');
     }
+    
+    public function social(){
+        return $this->hasMany(Social::class, 'social_id');
+    }
 }
