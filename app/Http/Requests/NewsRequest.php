@@ -33,6 +33,8 @@ class NewsRequest extends FormRequest
             ],
             'news_description'=>'required|min:10',
             'news_category'=>'required|in:pengumuman,berita',
+            'tags' => 'nullable|array',
+            'tags.*' => 'exists:tags,tag_id', 
         ];
     }
 
@@ -50,6 +52,10 @@ class NewsRequest extends FormRequest
             'news_description.max' => 'Deskripsi berita maksimal 500 karakter.',
             'news_category.required' => 'Kategori berita harus dipilih.',
             'news_category.in' => 'Kategori berita hanya bisa berupa pengumuman atau berita.',
+
+            // Pesan untuk tags
+            'tags.array' => 'Tags harus berupa array.',
+            'tags.*.exists' => 'Tag yang dipilih tidak valid atau tidak ada dalam sistem.',
         ];
     }
 
