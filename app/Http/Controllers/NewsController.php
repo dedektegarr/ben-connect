@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\NewsRequest;
 use App\Models\NewsModel;
+use App\Models\NewsTagModel;
+use App\Models\TagsModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -15,7 +17,7 @@ class NewsController extends Controller
     public function index()
     {
         //Ambil seluruh data di dalam model
-        $data_news=NewsModel::with('user')->get();
+        $data_news=NewsModel::with('user','tags')->get();
 
         // format data
         $formatData=$data_news->map(function ($data_news){
@@ -28,6 +30,7 @@ class NewsController extends Controller
                 'created_at'=>$data_news->created_at->format('Y-m-d'),
                 'updated_at'=>$data_news->updated_at->format('Y-m-d'),
                 'news_author'=>optional($data_news->user)->name,
+                'tags' => $data_news->tags->pluck('tag_name'),
             ];
         });
 
@@ -75,11 +78,31 @@ class NewsController extends Controller
             'user_id' => $request->user()->id,
         ]);
 
+        // Ambil ID news
+        $news_id = $news->news_id;
+
+        // Simpan ke tabel pivot news_tag dengan looping
+        if ($request->has('tags')) {
+            // Mengambil array tag_id dari request
+            $tagIds = $request->input('tags'); // Misalnya array tag_id
+
+            // Looping dan menyimpan ke tabel pivot satu per satu
+            foreach ($tagIds as $tagId) {
+                // Insert ke tabel pivot news_tag
+                $newstag=NewsTagModel::create([
+                    'news_id' => $news_id,
+                    'tag_id' => $tagId,
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ]);
+            }
+        }
+
         
         // ambil file yang dikirimkan dan ke public
         return response()->json([
             'status_code'=>201,
-            'message' => 'Data berita berhasil ditemukan.'
+            'message' => 'Data berita berhasil dibuat.'
         ],201);
 
     }
@@ -90,7 +113,7 @@ class NewsController extends Controller
     public function show(string $news_id)
     {
         //cari news dengan id tertentu
-        $data_news=NewsModel::with('user')->get()->find($news_id);
+        $data_news=NewsModel::with('user','tags')->get()->find($news_id);
 
         // Jika kosong
         if(!$data_news)
@@ -112,6 +135,7 @@ class NewsController extends Controller
                 'created_at'=>$data_news->created_at->format('Y-m-d'),
                 'updated_at'=>$data_news->updated_at->format('Y-m-d'),
                 'news_author'=>optional($data_news->user)->name,
+                'tags' => $data_news->tags->pluck('tag_name'),
             ];
 
         return response()->json([
@@ -166,11 +190,30 @@ class NewsController extends Controller
             'news_category' => $validated['news_category'],
             'user_id' => $request->user()->id,
         ]);
+
+        // Hapus semua tag yang terhubung dengan berita ini
+        $newstag = NewsTagModel::find($news_id);
+        $newstag->delete();
+
+        // Tambahkan tag baru (jika ada)
+        if ($request->has('tags')) {
+            $tagIds = $request->input('tags'); // Array tag_id yang dikirim melalui request
+
+            // Looping untuk menambahkan tag baru
+            foreach ($tagIds as $tagId) {
+                $newstag=NewsTagModel::create([
+                    'news_id' => $news_id,
+                    'tag_id' => $tagId,
+                    'created_at' => now(),
+                    'updated_at' => now(),
+                ]);
+            }
+        }
     
         // Kembalikan response JSON
         return response()->json([
             'status_code'=>200,
-            'message' => 'Data berita dengan id {$news_id} telah berhasil diperbarui'
+            'message' => "Data berita dengan id {$news_id} telah berhasil diperbarui"
         ],200);
     }
     
