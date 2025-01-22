@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Social\SocialCategoryController;
+use App\Http\Controllers\Social\SocialController;
 use App\Http\Controllers\Infrastructure\RoadController;
 use App\Http\Controllers\Infrastructure\RoadCategoryController;
 use App\Http\Controllers\Master\AreaController;
@@ -48,3 +50,19 @@ Route::get('/news', [NewsController::class, 'index']);
 Route::resource('/user', UserController::class);
 
 Route::post('/search', [SearchController::class, 'searchByKeyword']);
+
+//opd public dashboard sosial
+Route::get('/dashboard/sosial', [SocialController::class, 'index_sosial']);
+Route::get('/dashboard/socialcategori_filter', [SocialCategoryController::class, 'index_filter']);
+Route::post('/dashboard/sosial/filter', [SocialController::class, 'filter']);
+Route::get('/dashboard/kependudukan', [SocialController::class, 'index_akta']);
+Route::post('/dashboard/kependudukan/filter', [SocialController::class, 'index_akta_filter']);
+
+//opd CRUD Admin sosial
+Route::middleware('auth:sanctum', 'role:admin-sosial')->group(function(){
+    Route::resource('/master/area', AreaController::class);
+    Route::resource('/master/dataset', DatasetController::class);
+    Route::resource('/social/categorysocial', SocialCategoryController::class);
+    Route::resource('/social', SocialController::class);
+    Route::post('/infrastructure/road/filter', [RoadController::class, 'filtersocial']);
+});
