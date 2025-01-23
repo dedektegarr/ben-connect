@@ -26,12 +26,20 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/login', [UserController::class, 'login']);
 Route::post('/logout', [UserController::class, 'logout'])->middleware('auth:sanctum');
 
-Route::middleware('auth:sanctum', 'role:admin-infrastruktur')->group(function(){
+Route::middleware('auth:sanctum', 'permission:user.update|user.update-password')->group(function(){
+    Route::put('/update-password', [UserController::class, 'updatePassword']);
+    Route::put('/update-user', [UserController::class, 'update']);
+});
+
+Route::middleware('auth:sanctum', 'role:admin')->group(function(){
+    Route::resource('/user', UserController::class);
     Route::resource('/master/area', AreaController::class);
     Route::resource('/master/dataset', DatasetController::class);
+});
+
+Route::middleware('auth:sanctum', 'role:admin-infrastruktur')->group(function(){
     Route::resource('/infrastructure/road/road-category', RoadCategoryController::class);
     Route::resource('/infrastructure/road', RoadController::class);
     Route::post('/infrastructure/road/filter', [RoadController::class, 'filterRoad']);
 });
 
-Route::resource('/user', UserController::class);
