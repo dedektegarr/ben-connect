@@ -53,8 +53,7 @@ class SocialController extends Controller
 
         return response()->json([
             'status_code' => 201,
-            'message' => 'Data sosial berhasil disimpan!',
-            'data_sosial' => $social,
+            'message' => 'Data sosial berhasil disimpan!'
         ], 201);
     }
 
@@ -89,8 +88,7 @@ class SocialController extends Controller
 
         return response()->json([
             'status_code' => 200,
-            'message' => 'Data sosial berhasil diubah!',
-            'data_sosial' => $social,
+            'message' => 'Data sosial berhasil diubah!'
         ], 200);
     }
 
