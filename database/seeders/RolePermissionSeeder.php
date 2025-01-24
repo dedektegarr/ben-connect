@@ -22,5 +22,6 @@ class RolePermissionSeeder extends Seeder
         Role::create(['name'=>'admin-infrastruktur']);
         Role::create(['name'=>'admin-tenaga-kerja']);
         Role::create(['name'=>'admin-ekonomi-keuangan']);
+        Role::create(['name'=>'admin-disperindag']);
     }
 }
