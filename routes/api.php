@@ -4,6 +4,9 @@ use App\Http\Controllers\Social\SocialCategoryController;
 use App\Http\Controllers\Social\SocialController;
 use App\Http\Controllers\Infrastructure\RoadController;
 use App\Http\Controllers\Infrastructure\RoadCategoryController;
+use App\Http\Controllers\Komoditi\BahanPokokController;
+use App\Http\Controllers\Komoditi\KomoditiController;
+use App\Http\Controllers\Komoditi\PasarController;
 use App\Http\Controllers\Master\AreaController;
 use App\Http\Controllers\Master\DatasetController;
 use App\Http\Controllers\Master\TagsController;
@@ -45,20 +48,21 @@ Route::middleware('auth:sanctum', 'role:admin-infrastruktur')->group(function(){
     Route::delete('/news/{news_id}',[NewsController::class, 'destroy']);
 });
 
-//opd public dashboard sosial
-Route::get('/dashboard/sosial', [SocialController::class, 'index_sosial']);
-Route::get('/dashboard/socialcategori_filter', [SocialCategoryController::class, 'index_filter']);
-Route::post('/dashboard/sosial/filter', [SocialController::class, 'filter']);
-Route::get('/dashboard/kependudukan', [SocialController::class, 'index_akta']);
-Route::post('/dashboard/kependudukan/filter', [SocialController::class, 'index_akta_filter']);
-
-//opd CRUD Admin sosial
+//CRUD Admin OPD sosial
 Route::middleware('auth:sanctum', 'role:admin-sosial')->group(function(){
     Route::resource('/master/area', AreaController::class);
     Route::resource('/master/dataset', DatasetController::class);
     Route::resource('/social/categorysocial', SocialCategoryController::class);
     Route::resource('/social', SocialController::class);
-    Route::post('/infrastructure/road/filter', [RoadController::class, 'filtersocial']);
+});
+
+//CRUD Admin OPD DISPERINDAG(Komoditas)
+Route::middleware('auth:sanctum', 'role:admin-disperindag')->group(function(){
+    Route::resource('/master/area', AreaController::class);
+    Route::resource('/master/dataset', DatasetController::class);
+    Route::resource('/komoditi/pasar', PasarController::class);
+    Route::resource('/komoditi/komoditi', KomoditiController::class);
+    Route::resource('/komoditi/bahan-pokok', BahanPokokController::class);
 });
 
 // route news
@@ -78,11 +82,3 @@ Route::post('/dashboard/sosial/filter', [SocialController::class, 'filter']);
 Route::get('/dashboard/kependudukan', [SocialController::class, 'index_akta']);
 Route::post('/dashboard/kependudukan/filter', [SocialController::class, 'index_akta_filter']);
 
-//opd CRUD Admin sosial
-Route::middleware('auth:sanctum', 'role:admin-sosial')->group(function(){
-    Route::resource('/master/area', AreaController::class);
-    Route::resource('/master/dataset', DatasetController::class);
-    Route::resource('/social/categorysocial', SocialCategoryController::class);
-    Route::resource('/social', SocialController::class);
-    Route::post('/infrastructure/road/filter', [RoadController::class, 'filtersocial']);
-});
