@@ -20,6 +20,10 @@ class Area extends Model
     }
     
     public function social(){
-        return $this->hasMany(Social::class, 'social_id');
+        return $this->hasMany(Social::class, 'area_id');
+    }
+
+    public function pasar(){
+        return $this->hasMany(Pasar::class, 'area_id');
     }
 }

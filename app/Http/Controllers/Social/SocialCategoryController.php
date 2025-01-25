@@ -39,8 +39,7 @@ class SocialCategoryController extends Controller
         // Kembalikan respon sukses
         return response()->json([
             'status_code' => 201,
-            'message' => 'Data Kategori sosial Berhasil ditambahkan.',
-            'data' => $socialCategory,
+            'message' => 'Data Kategori sosial Berhasil ditambahkan.'
         ], 201);
     }
 
@@ -90,8 +89,7 @@ class SocialCategoryController extends Controller
         // Kembalikan respon sukses
         return response()->json([
             'status_code' => 200,
-            'message' => 'Data kategori sosial berhasil diperbarui.',
-            'data' => $socialCategory,
+            'message' => 'Data kategori sosial berhasil diperbarui.'
         ], 200);
     }
 
