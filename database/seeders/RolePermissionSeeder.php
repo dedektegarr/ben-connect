@@ -70,8 +70,8 @@ class RolePermissionSeeder extends Seeder
                         $role->givePermissionTo($perm.'.'.$prm);
                     }
                 }else{
-                    foreach($p as $pm){
-                        $role->givePermissionTo($perm.'.'.$pm);
+                    foreach($p as $prm){
+                        $role->givePermissionTo($perm.'.'.$prm);
                     }
                 }
             }
