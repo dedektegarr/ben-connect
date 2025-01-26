@@ -22,4 +22,8 @@ class Dataset extends Model
     public function social(){
         return $this->hasMany(Social::class, 'social_id');
     }
+
+    public function schoolfilter(){
+        return $this->hasMany(SchoolFilterModel::class, 'dataset_id','dataset_id');
+    }
 }
