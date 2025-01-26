@@ -24,8 +24,7 @@ class Area extends Model
     }
 
     public function pasar(){
-        return $this->hasMany(Pasar::class, 'area_id');
-    
+        return $this->hasMany(Pasar::class, 'area_id');  
     }
     public function school(){
         return $this->hasMany(SchoolModel::class, 'area_id', 'area_id');

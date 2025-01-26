@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginRequest;
+use App\Http\Requests\UpdatePasswordRequest;
 use App\Http\Requests\UserRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -157,9 +159,9 @@ class UserController extends Controller
             'password' => $request->password
         ];
 
-       if (Auth::attempt($user)){
+        if (Auth::attempt($user)){
             $user = User::where('email', $request->email)->first();
-            $token = $user->createToken('ben-token')->plainTextToken;
+            $token = $user->createToken('ben-token', ['*'], now()->addDay())->plainTextToken;
             return response()->json([
                 'status_code' => 200,
                 'massage' => 'Login berhasil',
@@ -184,4 +186,28 @@ class UserController extends Controller
         ], 200);
     }
 
+    public function updatePassword(UpdatePasswordRequest $request)
+    {
+        if (isset($request->validator) && $request->validator->fails()) {
+            return response()->json([
+                'status_code' => 400,
+                'massage' => 'Data tidak valid',
+                'errors' => $request->validator->errors()
+            ], 400);
+        }
+
+        $checkPassword = Hash::check($request->current_password, $request->user()->password);
+        if(!$checkPassword){
+            return response()->json([
+                'status_code' => 400,
+                'message' => 'Password saat ini salah'
+            ], 400);
+        }
+
+        User::find($request->user()->id)->update(['password' => $request->new_password]);
+        return response()->json([
+            'status_code' => 200,
+            'message' => 'Password berhasil diubah'
+        ], 200);
+    }
 }
