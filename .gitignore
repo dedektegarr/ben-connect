@@ -22,3 +22,5 @@
 # System files
 .DS_Store
 Thumbs.db
+# Ignore Docker environment file
+docker/.env
