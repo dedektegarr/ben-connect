@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\study;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Exceptions\HttpResponseException;
 
-class TagsRequest extends FormRequest
+class SchoolLevelRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,16 +24,16 @@ class TagsRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'tag_name' => 'required|max:100|unique:tags,tag_name'
+            'school_level_name'=>'required|max:100|unique:school_level,school_level_name'
         ];
     }
 
     public function messages(): array
     {
         return [
-            'tag_name.required' => 'Nama tag tidak boleh kosong',
-            'tag_name.max' => 'Nama tag terlalu panjang',
-            'tag_name.unique' => 'Nama tag sudah digunakan, silakan pilih nama lain'
+            'school_level_name.required' => 'Nama Level Sekolah tidak boleh kosong',
+            'school_level_name.max' => 'Nama Level Sekolah terlalu panjang',
+            'school_level_name.unique' => 'Nama Level Sekolah sudah digunakan, silakan pilih nama lain'
         ];
     }
 

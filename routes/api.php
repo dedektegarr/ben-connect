@@ -11,6 +11,9 @@ use App\Http\Controllers\Region\RegionDataController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\Social\SocialCategoryController;
 use App\Http\Controllers\Social\SocialController;
+use App\Http\Controllers\Study\SchoolController;
+use App\Http\Controllers\Study\SchoolFilterController;
+use App\Http\Controllers\Study\SchoolLevelController;
 use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -104,6 +107,15 @@ Route::middleware('auth:sanctum', 'role:admin-infrastruktur')->group(function(){
 //     Route::resource('/social', SocialController::class);
 // });
 
+// CRUD Admin OPD Pendidikan
+Route::middleware('auth:sanctum', 'role:admin-pendidikan')->group(function(){
+    Route::resource('/master/area', AreaController::class);
+    Route::resource('/master/dataset', DatasetController::class);
+    Route::resource('/pendidikan/jenjang-sekolah', SchoolLevelController::class);
+    Route::resource('/pendidikan/sekolah', SchoolController::class);
+    Route::resource('/pendidikan/rekap-data-sekolah', SchoolFilterController::class);
+});
+
 // route news
 Route::get('/news', [NewsController::class, 'index']);
 
@@ -121,3 +133,5 @@ Route::post('/dashboard/kependudukan/filter', [SocialController::class, 'index_a
 
 
 
+// =====================OPD PENDIDIKAN dashboard==============================
+Route::get('/pendidikan/dashboard', [SchoolFilterController::class, 'filter']);

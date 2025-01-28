@@ -6,13 +6,13 @@ use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Dataset extends Model
+class Area extends Model
 {
     use HasFactory, HasUuids;
-    protected $table = "dataset";
-    protected $primaryKey = "dataset_id";
+    protected $table = "area";
+    protected $primaryKey = "area_id";
     public $fillable = [
-        'dataset_year'
+        'area_name'
     ];
     
     public function road(){
@@ -20,10 +20,13 @@ class Dataset extends Model
     }
     
     public function social(){
-        return $this->hasMany(Social::class, 'social_id');
+        return $this->hasMany(Social::class, 'area_id');
     }
 
-    public function schoolfilter(){
-        return $this->hasMany(SchoolFilterModel::class, 'dataset_id','dataset_id');
+    public function pasar(){
+        return $this->hasMany(Pasar::class, 'area_id');  
+    }
+    public function school(){
+        return $this->hasMany(SchoolModel::class, 'area_id', 'area_id');
     }
 }
