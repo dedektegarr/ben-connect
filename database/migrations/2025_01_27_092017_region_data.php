@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('road', function (Blueprint $table) {
-            $table->id('road_id');
+        Schema::create('region_data', function (Blueprint $table) {
+            $table->id('region_data_id');
             $table->foreignUuid('region_id')->references('region_id')->on('region')->onDelete('cascade');
-            $table->foreignUuid('road_category_id')->references('road_category_id')->on('road_category')->onDelete('cascade');
-            $table->float('road_long');
+            $table->year('region_data_year');
+            $table->float('region_data_area');
+            $table->text('region_data_polygon');
             $table->timestamps();
         });
     }
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('road');
+        Schema::dropIfExists('region_area');
     }
 };

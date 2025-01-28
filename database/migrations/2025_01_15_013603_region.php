@@ -11,14 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('komoditi', function (Blueprint $table) {
-            $table->uuid('komoditi_id')->primary();
-            $table->string('komoditi_name');
-            $table->string('color');
-            $table->uuid('pasar_id')->nullable();
+        Schema::create('region', function (Blueprint $table) {
+            $table->uuid('region_id')->primary();
+            $table->string('region_name', length:100);
             $table->timestamps();
-
-            $table->foreign('pasar_id')->references('pasar_id')->on('pasar')->onDelete('cascade');
+            $table->softDeletes();
         });
     }
 
@@ -27,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('komoditi');
+        Schema::dropIfExists('region');
     }
 };

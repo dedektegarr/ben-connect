@@ -13,7 +13,7 @@ class Road extends Model
     public $timestamps = true;
     public $fillable = [
         'dataset_id',
-        'area_id',
+        'region_id',
         'road_category_id',
         'road_long'
     ];
@@ -22,8 +22,8 @@ class Road extends Model
         return $this->belongsTo(Dataset::class, 'dataset_id', 'dataset_id');
     }
 
-    public function area(){
-        return $this->belongsTo(Area::class, 'area_id', 'area_id');
+    public function region(){
+        return $this->belongsTo(Region::class, 'region_id', 'region_id');
     }
 
     public function roadCategory(){

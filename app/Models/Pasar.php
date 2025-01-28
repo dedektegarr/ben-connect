@@ -15,14 +15,14 @@ class Pasar extends Model
     public $incrementing = false; // Pastikan UUID digunakan
     protected $keyType = 'string';
 
-    protected $fillable = ['pasar_name', 'latitude', 'longitude','area_id'];
+    protected $fillable = ['pasar_name', 'latitude', 'longitude','region_id'];
 
     public function komoditi()
     {
         return $this->hasMany(Komoditi::class, 'id_pasar');
     }
 
-    public function area(){
-        return $this->belongsTo(Area::class, 'area_id');
+    public function region(){
+        return $this->belongsTo(Region::class, 'region_id');
     }
 }

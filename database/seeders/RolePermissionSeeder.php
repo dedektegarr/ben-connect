@@ -76,6 +76,5 @@ class RolePermissionSeeder extends Seeder
                 }
             }
         }
-        Role::create(['name'=>'admin-disperindag']);
     }
 }

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->uuid('road_category_id')->primary();
             $table->string('road_category_name', length:100);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

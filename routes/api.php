@@ -2,13 +2,12 @@
 
 use App\Http\Controllers\Infrastructure\RoadController;
 use App\Http\Controllers\Infrastructure\RoadCategoryController;
-use App\Http\Controllers\Komoditi\BahanPokokController;
-use App\Http\Controllers\Komoditi\KomoditiController;
-use App\Http\Controllers\Komoditi\PasarController;
-use App\Http\Controllers\Master\AreaController;
 use App\Http\Controllers\Master\DatasetController;
 use App\Http\Controllers\Master\TagsController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\Population\PopulationPeriodController;
+use App\Http\Controllers\Region\RegionController;
+use App\Http\Controllers\Region\RegionDataController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\Social\SocialCategoryController;
 use App\Http\Controllers\Social\SocialController;
@@ -36,16 +35,33 @@ Route::post('/logout', [UserController::class, 'logout'])->middleware('auth:sanc
 
 
 Route::middleware('auth:sanctum')->group(function () {
-    // User Route
+    // User Route (FIX)
     Route::controller(UserController::class)->group(function(){
-        Route::get('/user/daftar-user', 'index')->middleware('permission:user.get');
-        Route::get('/user/data-user/{id}', 'show')->middleware('permission:user.get-by-id');
-        Route::post('/user/tambah', 'store')->middleware('permission:user.create');
+        Route::get('/user/data', 'index')->middleware('permission:user.get');
+        Route::get('/user/detail/{id}', 'show')->middleware('permission:user.get-by-id');
+        Route::post('/user/register', 'store')->middleware('permission:user.register');
         Route::put('/user/ubah/{id}', 'update')->middleware('permission:user.update');
         Route::delete('/user/hapus/{id}', 'destroy')->middleware('permission:user.delete');
         Route::put('/user/ubah-password', 'updatePassword')->middleware('permission:user.update-password');
     });
-    // Master Data Route
+    
+    //Region routes
+    Route::controller(RegionController::class)->group(function(){
+        Route::get('/wilayah/data', 'index');
+        Route::get('/wilayah/detail/{id}', 'show');
+        Route::post('/wilayah/tambah', 'store');
+        Route::put('/wilayah/ubah/{id}', 'update');
+        Route::delete('/wilayah/hapus/{id}', 'destroy');
+    });
+
+    //Region Data Routes
+    Route::controller(RegionDataController::class)->group(function(){
+        Route::get('/wilayah/data-wilayah/data', 'index');
+        Route::get('/wilayah/data-wilayah/detail/{id}', 'show');
+        Route::post('/wilayah/data-wilayah/tambah', 'store');
+        Route::post('/wilayah/data-wilayah/ubah', 'update');
+        Route::delete('/wilayah/data-wilayah/hapus/{id}', 'destroy');
+    });
 
     // Dataset
     Route::controller(DatasetController::class)->group(function(){
@@ -55,56 +71,44 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::put('/dataset/ubah/{id}', 'update')->middleware('permission:dataset.update');
         Route::delete('/dataset/hapus/{id}', 'delete')->middleware('permission:dataset.delete');
     });
-   // Area (Wilayah)
-    Route::controller(AreaController::class)->group(function(){
-        Route::get('/wilayah/daftar-wilayah', 'index')->middleware('permission:wilayah.get');
-        Route::get('/wilayah/data-wilayah/{id}', 'show')->middleware('permission:wilayah.get-by-id');
-        Route::post('/wilayah/tambah', 'store')->middleware('permission:wilayah.create');
-        Route::put('/wilayah/ubah/{id}', 'update')->middleware('permission:wilayah.update');
-        Route::delete('/wilayah/hapus/{id}', 'delete')->middleware('permission:wilayah.delete');
-    });
     //Berita
     Route::controller(NewsController::class)->group(function(){
         Route::get('/berita/daftar-berita', 'index')->middleware('permission:news.get');
-        Route::get('/berita/data-berita/{id}', 'show')->middleware('permission:news.get-by-id');
+        Route::get('/berita/data/{id}', 'show')->middleware('permission:news.get-by-id');
         Route::post('/berita/tambah', 'store')->middleware('permission:news.create');
         Route::put('/berita/ubah/{id}', 'update')->middleware('permission:update');
         Route::delete('/berita/hapus/{id}', 'destroy')->middleware('permission:delete');
     });
-    //Infrastruktur
+    //Kependudukan
+    Route::controller(PopulationPeriodController::class)->group(function(){
+        Route::get('/kependudukan/periode-data/', 'index');
+        Route::get('/kependudukan/periode-data/data/{id}', 'show');
+        Route::post('/kependudukan/periode-data/tambah', 'store');
+        Route::put('/kependudukan/periode-data/ubah/{id}');
+        Route::delete('/kependudukan/periode-data/ubah/{id}');
+    });
     
 });
-
+Route::resource('/population-period', PopulationPeriodController::class);
 Route::middleware('auth:sanctum', 'role:admin-infrastruktur')->group(function(){
     Route::resource('/infrastructure/road/road-category', RoadCategoryController::class);
     Route::resource('/infrastructure/road', RoadController::class);
     Route::post('/infrastructure/road/filter', [RoadController::class, 'filterRoad']);
 });
 
-//CRUD Admin OPD sosial
-Route::middleware('auth:sanctum', 'role:admin-sosial')->group(function(){
-    Route::resource('/master/area', AreaController::class);
-    Route::resource('/master/dataset', DatasetController::class);
-    Route::resource('/social/categorysocial', SocialCategoryController::class);
-    Route::resource('/social', SocialController::class);
-});
-
-//CRUD Admin OPD DISPERINDAG(Komoditas)
-Route::middleware('auth:sanctum', 'role:admin-disperindag')->group(function(){
-    Route::resource('/master/area', AreaController::class);
-    Route::resource('/master/dataset', DatasetController::class);
-    Route::resource('/komoditi/pasar', PasarController::class);
-    Route::resource('/komoditi/komoditi', KomoditiController::class);
-    Route::resource('/komoditi/bahan-pokok', BahanPokokController::class);
-});
+// //CRUD Admin OPD sosial
+// Route::middleware('auth:sanctum', 'role:admin-sosial')->group(function(){
+//     Route::resource('/master/region', RegionController::class);
+//     Route::resource('/master/dataset', DatasetController::class);
+//     Route::resource('/social/categorysocial', SocialCategoryController::class);
+//     Route::resource('/social', SocialController::class);
+// });
 
 // route news
 Route::get('/news', [NewsController::class, 'index']);
 
 // route tag
 Route::resource('/master/tag', TagsController::class);
-
-Route::resource('/user', UserController::class);
 
 Route::post('/search', [SearchController::class, 'searchByKeyword']);
 

@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('area', function (Blueprint $table) {
-            $table->uuid('area_id')->primary();
-            $table->string('area_name', length:100);
+        Schema::create('population_age_group', function (Blueprint $table) {
+            $table->uuid('population_age_group_id')->primary();
+            $table->string('population_age_group_years');
+            $table->enum('population_age_group_status', ['active', 'nonactive'])->default('active');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -23,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('area');
+        Schema::dropIfExists('population_age_group');
     }
 };

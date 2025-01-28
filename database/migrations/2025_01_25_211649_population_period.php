@@ -11,9 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('social_category', function (Blueprint $table) {
-            $table->uuid('social_category_id')->primary(); // Primary Key
-            $table->string('social_category_name', 100);
+        Schema::create('population_period', function (Blueprint $table) {
+            $table->uuid('population_period_id')->primary();
+            $table->enum('population_period_semester', ['1', '2']);
+            $table->year('population_period_year');
+            $table->foreignUuid('population_period_uploaded_by_user')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -24,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('social_category');
+        Schema::dropIfExists('population_period');
     }
 };

@@ -15,7 +15,7 @@ class Social extends Model
     protected $keyType = 'string';
 
     public $fillable = [
-        'area_id',
+        'region_id',
         'have',
         'dataset_id',
         'social_category_id',
@@ -24,8 +24,8 @@ class Social extends Model
         'count',
     ];
 
-    public function area(){
-        return $this->belongsTo(Area::class, 'area_id');
+    public function region(){
+        return $this->belongsTo(Region::class, 'region_id');
     }
 
     public function dataset()
