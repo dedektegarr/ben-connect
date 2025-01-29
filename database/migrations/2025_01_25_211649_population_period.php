@@ -15,7 +15,6 @@ return new class extends Migration
             $table->uuid('population_period_id')->primary();
             $table->enum('population_period_semester', ['1', '2']);
             $table->year('population_period_year');
-            $table->foreignUuid('population_period_uploaded_by_user')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
         });

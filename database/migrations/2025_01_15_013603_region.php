@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('region', function (Blueprint $table) {
             $table->uuid('region_id')->primary();
-            $table->string('region_name', length:100);
+            $table->string('region_name', length:100)->unique();
             $table->timestamps();
             $table->softDeletes();
         });

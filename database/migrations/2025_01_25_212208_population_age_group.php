@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::create('population_age_group', function (Blueprint $table) {
             $table->uuid('population_age_group_id')->primary();
-            $table->string('population_age_group_years');
-            $table->enum('population_age_group_status', ['active', 'nonactive'])->default('active');
+            $table->string('population_age_group_years')->unique();
             $table->timestamps();
             $table->softDeletes();
         });

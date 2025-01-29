@@ -2,7 +2,6 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 
 class PopulationRequest extends FormRequest
@@ -31,12 +30,12 @@ class PopulationRequest extends FormRequest
     public function rules(): array
     {
         $rules = [
-            'period_input' => [
+            'population_period_input' => [
                 'population_period_semester' => 'required|in:1,2',
                 'population_period_year' => 'required|digits:4'
             ],
-            'age_group_input' => [
-                'population_age_group_years' => 'required'
+            'population_age_group_input' => [
+                'population_age_group_years' => 'required|unique:App\Models\PopulationAgeGroup,population_age_group_years'
             ]
         ];
         return $rules[$this->type];
@@ -45,14 +44,15 @@ class PopulationRequest extends FormRequest
     public function messages(): array
     {
         $messages = [
-            'period_input' => [
+            'population_period_input' => [
                 'population_period_semester.required' => 'Semester tidak boleh kosong',
                 'population_period_semester.in' => 'Semester harus diisi 1 atau 2',
                 'population_period_year.required' => 'Tahun tidak boleh kosong',
-                'population_period_year.digit' => 'Tahun harus 4 digit'
+                'population_period_year.digits' => 'Tahun harus 4 digit'
             ],
-            'age_group_input' => [
-                'population_age_group_years.required' => 'Kelompok umur tidak boleh kosong' 
+            'population_age_group_input' => [
+                'population_age_group_years.required' => 'Kelompok umur tidak boleh kosong',
+                'population_age_group_years.unique' => 'Kelompok umur sudah ada'  
             ]
         ];
         return $messages[$this->type];

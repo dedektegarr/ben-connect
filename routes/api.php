@@ -5,6 +5,7 @@ use App\Http\Controllers\Infrastructure\RoadCategoryController;
 use App\Http\Controllers\Master\DatasetController;
 use App\Http\Controllers\Master\TagsController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\Population\PopulationAgeGroupController;
 use App\Http\Controllers\Population\PopulationPeriodController;
 use App\Http\Controllers\Region\RegionController;
 use App\Http\Controllers\Region\RegionDataController;
@@ -48,7 +49,7 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::put('/user/ubah-password', 'updatePassword')->middleware('permission:user.update-password');
     });
     
-    //Region routes
+    //Region routes (FIX)
     Route::controller(RegionController::class)->group(function(){
         Route::get('/wilayah/data', 'index');
         Route::get('/wilayah/detail/{id}', 'show');
@@ -57,13 +58,31 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::delete('/wilayah/hapus/{id}', 'destroy');
     });
 
-    //Region Data Routes
+    //Region Data Routes (FIX)
     Route::controller(RegionDataController::class)->group(function(){
         Route::get('/wilayah/data-wilayah/data', 'index');
         Route::get('/wilayah/data-wilayah/detail/{id}', 'show');
         Route::post('/wilayah/data-wilayah/tambah', 'store');
         Route::post('/wilayah/data-wilayah/ubah', 'update');
         Route::delete('/wilayah/data-wilayah/hapus/{id}', 'destroy');
+    });
+
+    //Population Period Routes (FIX)
+    Route::controller(PopulationPeriodController::class)->group(function(){
+        Route::get('/kependudukan/periode-data/data', 'index');
+        Route::get('/kependudukan/periode-data/detail/{id}', 'show');
+        Route::post('/kependudukan/periode-data/tambah', 'store');
+        Route::put('/kependudukan/periode-data/ubah/{id}', 'update');
+        Route::delete('/kependudukan/periode-data/hapus/{id}', 'destroy');
+    });
+
+    //Population Group Age Routes
+    Route::controller(PopulationAgeGroupController::class)->group(function(){
+        Route::get('/kependudukan/kelompok-umur/data', 'index');
+        Route::get('/kependudukan/kelompok-umur/detail/{id}', 'show');
+        Route::post('/kependudukan/kelompok-umur/tambah', 'store');
+        Route::put('/kependudukan/kelompok-umur/ubah/{id}', 'update');
+        Route::delete('/kependudukan/kelompok-umur/hapus/{id}', 'destroy');
     });
 
     // Dataset
@@ -81,14 +100,6 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::post('/berita/tambah', 'store')->middleware('permission:news.create');
         Route::put('/berita/ubah/{id}', 'update')->middleware('permission:update');
         Route::delete('/berita/hapus/{id}', 'destroy')->middleware('permission:delete');
-    });
-    //Kependudukan
-    Route::controller(PopulationPeriodController::class)->group(function(){
-        Route::get('/kependudukan/periode-data/', 'index');
-        Route::get('/kependudukan/periode-data/data/{id}', 'show');
-        Route::post('/kependudukan/periode-data/tambah', 'store');
-        Route::put('/kependudukan/periode-data/ubah/{id}');
-        Route::delete('/kependudukan/periode-data/ubah/{id}');
     });
     
 });

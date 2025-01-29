@@ -2,7 +2,6 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 
 
@@ -32,7 +31,7 @@ class RegionRequest extends FormRequest
     {
         $rules = [
             'region_input' => [
-                'region_name' => 'required|max:100',
+                'region_name' => 'required|max:100|unique:App\Models\Region,region_name',
             ],
             'region_data_input' => [
                 'region_id' => 'required|exists:App\Models\Region,region_id',
@@ -57,13 +56,14 @@ class RegionRequest extends FormRequest
         $messages = [
             'region_input' => [
                 'region_name.required' => 'Nama wilayah tidak boleh kosong',
-                'region_name.max' => 'Nama wilayah terlalu panjang'
+                'region_name.max' => 'Nama wilayah terlalu panjang',
+                'region_name.unique' => 'Wilayah sudah ada'
             ],
             'region_data_input' => [
                 'region_id.required' => 'Id wilayah tidak boleh kosong',
                 'region_id.exists' => 'Id wilayah tidak ditemukan',
                 'region_data_year.required' => 'Tahun wilayah tidak boleh kosong',
-                'region_data_year.digits' => 'Tahun wilayah tidak valid',
+                'region_data_year.digits' => 'Tahun wilayah harus 4 digit',
                 'region_data_area.required' => 'Luas wilayah tidak boleh kosong',
                 'region_data_area.numeric' => 'Luas wilayah harus angka dalam satuan Kilometer (Km)',
                 'region_data_polygon.required' => 'Polygon wilayah tidak boleh kosong',

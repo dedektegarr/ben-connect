@@ -9,9 +9,7 @@ use Illuminate\Http\Request;
 
 class PopulationPeriodController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    //Mendapatkan seluruh periode data kependudukan
     public function index()
     {
         $data = PopulationPeriod::get();
@@ -23,29 +21,43 @@ class PopulationPeriodController extends Controller
         ], 200);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    //Menambahkan periode data kependudukan
     public function store(Request $request)
     {
-        $formRequest = new PopulationRequest('population_age_group'); 
+        //Validasi input
+        $formRequest = new PopulationRequest('population_period_input'); 
         $this->validate($request, $formRequest->rules(), $formRequest->messages());
 
-        PopulationPeriod::create($request->all());
+        $semester = $request->population_period_semester;
+        $year = $request->population_period_year;
+
+        //Cek jika periode data kependudukan sudah ada
+        $checkPeriodIfExists = PopulationPeriod::where([
+            'population_period_semester' => $semester,
+            'population_period_year' => $year
+        ])->count();
+
+        if($checkPeriodIfExists != 0){
+            return response()->json([
+                'status_code' => 400,
+                'message' => 'Periode data kependudukan semester '.$semester.' Tahun '.$year.' sudah ada',
+            ], 400);
+        }
+
+        //Store data ke database
+        $store = PopulationPeriod::create($request->all());
         return response()->json([
             'status_code' => 201,
             'message' => 'Periode data kependudukan berhasil ditambahkan'
         ], 201);
-        
     }
 
-    /**
-     * Display the specified resource.
-     */
+    //Mendapatkan periode data kependudukan sesuai ID
     public function show(string $id)
     {
         $data = PopulationPeriod::find($id);
 
+        //Cek data sesuai ID
         if(empty($data)){
             return response()->json([
                 'status_code' => 404,
@@ -60,30 +72,12 @@ class PopulationPeriodController extends Controller
         ], 200);  
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+    //Mengubah periode data kependudukan
     public function update(Request $request, string $id)
     {
-        $formRequest = new PopulationRequest('population_age_group'); 
-        $this->validate($request, $formRequest->rules(), $formRequest->messages());
-
-        $data = PopulationPeriod::find($id);
-        $data->update($request->all());
-        return response()->json([
-            'status_code' => 201,
-            'message' => 'Periode data kependudukan berhasil diubah'
-        ], 201);
-       
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
         $data = PopulationPeriod::find($id);
 
+        //Cek data sesuai ID
         if(empty($data)){
             return response()->json([
                 'status_code' => 404,
@@ -91,6 +85,49 @@ class PopulationPeriodController extends Controller
             ], 404);  
         }
 
+        //Validasi input
+        $formRequest = new PopulationRequest('population_period_input'); 
+        $this->validate($request, $formRequest->rules(), $formRequest->messages());
+
+        $semester = $request->population_period_semester;
+        $year = $request->population_period_year;
+
+        //Cek jika periode data kependudukan sudah ada
+        $checkPeriodIfExists = PopulationPeriod::where([
+            'population_period_semester' => $semester,
+            'population_period_year' => $year
+        ])->count();
+
+
+        if($checkPeriodIfExists != 0){
+            return response()->json([
+                'status_code' => 400,
+                'message' => 'Periode data kependudukan semester '.$semester.' Tahun '.$year.' sudah ada',
+            ], 400);
+        }
+
+        //Update data di database
+        $data->update($request->all());
+        return response()->json([
+            'status_code' => 201,
+            'message' => 'Periode data kependudukan berhasil diubah'
+        ], 201);
+    }
+
+    //Menghapus periode data kependudukan (Soft Delete)
+    public function destroy(string $id)
+    {
+        $data = PopulationPeriod::find($id);
+
+        //Cek data sesuai ID
+        if(empty($data)){
+            return response()->json([
+                'status_code' => 404,
+                'message' => 'Periode data kependudukan tidak ditemukan!'
+            ], 404);  
+        }
+
+        //Delete data di database
         $data->delete();
         return response()->json([
             'status_code' => 200,
