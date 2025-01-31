@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Population;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PopulationRequest;
+use App\Imports\PopulationImport;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class PopulationController extends Controller
 {
@@ -18,9 +21,27 @@ class PopulationController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function stored(Request $request)
     {
-        //
+        //Validasi input
+        $formRequest = new PopulationRequest('population_input'); 
+        $this->validate($request, $formRequest->rules(), $formRequest->messages());
+
+        try {
+            Excel::import(new PopulationImport, $request->file('population_file'));
+
+            return response()->json([
+                'status_code' => 200,
+                'message' => 'OK'
+            ], 200); 
+        } catch (\Exception $e) {
+            return response()->json([
+                'status_code' => 400,
+                'message' => 'Error',
+                'errors' => $e->getMessage()
+            ], 400); 
+           
+        }
     }
 
     /**

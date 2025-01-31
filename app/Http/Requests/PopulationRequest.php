@@ -36,6 +36,9 @@ class PopulationRequest extends FormRequest
             ],
             'population_age_group_input' => [
                 'population_age_group_years' => 'required|unique:App\Models\PopulationAgeGroup,population_age_group_years'
+            ],
+            'population_input' => [
+                'population_file' => 'required|file|mimes:xls,xlsx|max:5000'
             ]
         ];
         return $rules[$this->type];
@@ -53,6 +56,12 @@ class PopulationRequest extends FormRequest
             'population_age_group_input' => [
                 'population_age_group_years.required' => 'Kelompok umur tidak boleh kosong',
                 'population_age_group_years.unique' => 'Kelompok umur sudah ada'  
+            ],
+            'population_input' => [
+                'population_file.required' => 'File data kependudukan tidak boleh kosong',
+                'population_file.file' => 'Data kependudukan harus berupa file',
+                'population_file.mimes' => 'File data kependudukan harus berformat .xls atau .xlsx',
+                'population_file.max' => 'File data kependudukan maksimal 5 Mb '
             ]
         ];
         return $messages[$this->type];
