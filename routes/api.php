@@ -6,6 +6,7 @@ use App\Http\Controllers\Master\DatasetController;
 use App\Http\Controllers\Master\TagsController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\Population\PopulationAgeGroupController;
+use App\Http\Controllers\Population\PopulationController;
 use App\Http\Controllers\Population\PopulationPeriodController;
 use App\Http\Controllers\Region\RegionController;
 use App\Http\Controllers\Region\RegionDataController;
@@ -67,6 +68,11 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::delete('/wilayah/data-wilayah/hapus/{id}', 'destroy');
     });
 
+     //Population Routes
+     Route::controller(PopulationController::class)->group(function(){
+        Route::post('/xx/import', 'stored');
+    });
+
     //Population Period Routes (FIX)
     Route::controller(PopulationPeriodController::class)->group(function(){
         Route::get('/kependudukan/periode-data/data', 'index');
@@ -76,7 +82,7 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::delete('/kependudukan/periode-data/hapus/{id}', 'destroy');
     });
 
-    //Population Group Age Routes
+    //Population Group Age Routes (FIX)
     Route::controller(PopulationAgeGroupController::class)->group(function(){
         Route::get('/kependudukan/kelompok-umur/data', 'index');
         Route::get('/kependudukan/kelompok-umur/detail/{id}', 'show');
@@ -84,6 +90,8 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::put('/kependudukan/kelompok-umur/ubah/{id}', 'update');
         Route::delete('/kependudukan/kelompok-umur/hapus/{id}', 'destroy');
     });
+
+   
 
     // Dataset
     Route::controller(DatasetController::class)->group(function(){
