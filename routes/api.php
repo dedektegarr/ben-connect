@@ -48,7 +48,7 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::delete('/user/hapus/{id}', 'destroy')->middleware('permission:user.delete');
         Route::put('/user/ubah-password', 'updatePassword')->middleware('permission:user.update-password');
     });
-    
+
     //Region routes (FIX)
     Route::controller(RegionController::class)->group(function(){
         Route::get('/wilayah/data', 'index');
@@ -101,7 +101,12 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::put('/berita/ubah/{id}', 'update')->middleware('permission:update');
         Route::delete('/berita/hapus/{id}', 'destroy')->middleware('permission:delete');
     });
-    
+
+    // Pendidikan
+    // Route::controller(SchoolController::class)->group(function(){
+    //     Route::resource('/pendidikan/jenjang-sekolah', SchoolLevelController::class);
+    //     Route::resource('/pendidikan/sekolah', SchoolController::class);
+    // });
 });
 Route::resource('/population-period', PopulationPeriodController::class);
 Route::middleware('auth:sanctum', 'role:admin-infrastruktur')->group(function(){
@@ -110,6 +115,7 @@ Route::middleware('auth:sanctum', 'role:admin-infrastruktur')->group(function(){
     Route::post('/infrastructure/road/filter', [RoadController::class, 'filterRoad']);
 });
 
+Route::resource('/pendidikan/rekap-data-sekolah', SchoolFilterController::class);
 // //CRUD Admin OPD sosial
 // Route::middleware('auth:sanctum', 'role:admin-sosial')->group(function(){
 //     Route::resource('/master/region', RegionController::class);
@@ -118,14 +124,12 @@ Route::middleware('auth:sanctum', 'role:admin-infrastruktur')->group(function(){
 //     Route::resource('/social', SocialController::class);
 // });
 
-// // CRUD Admin OPD Pendidikan
-// Route::middleware('auth:sanctum', 'role:admin-pendidikan')->group(function(){
-//     Route::resource('/master/area', RegionController::class);
-//     Route::resource('/master/dataset', DatasetController::class);
-//     Route::resource('/pendidikan/jenjang-sekolah', SchoolLevelController::class);
-//     Route::resource('/pendidikan/sekolah', SchoolController::class);
-//     Route::resource('/pendidikan/rekap-data-sekolah', SchoolFilterController::class);
-// });
+// CRUD Admin OPD Pendidikan
+Route::middleware('auth:sanctum', 'role:admin-pendidikan')->group(function(){
+    Route::resource('/pendidikan/jenjang-sekolah', SchoolLevelController::class);
+    Route::resource('/pendidikan/sekolah', SchoolController::class);
+    Route::resource('/pendidikan/rekap-data-sekolah', SchoolFilterController::class);
+});
 
 // route news
 Route::get('/news', [NewsController::class, 'index']);
