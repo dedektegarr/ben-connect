@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('news_image');
             $table->text('news_description');
             $table->enum('news_category',['pengumuman','berita']);
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreignUuid('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
