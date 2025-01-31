@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('school_name');
             $table->enum('school_status',['negeri','swasta']);
             $table->foreignUuid('school_level_id')->references('school_level_id')->on('school_level')->onDelete('cascade');
-            $table->foreignUuid('area_id')->references('area_id')->on('area')->onDelete('cascade');
+            $table->foreignUuid('region_id')->references('region_id')->on('region')->onDelete('cascade');
             $table->text('school_address');
             $table->double('latitude');
             $table->double('longitude');

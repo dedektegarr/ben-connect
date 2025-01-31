@@ -32,12 +32,6 @@ class UsersSeeder extends Seeder
         ])->assignRole('admin-sosial');
 
         User::create([
-            'name' => 'ben@disperindag',
-            'email' => 'disperindag@bengkuluprov.go.id',
-            'password' => bcrypt('ben@2025#')
-        ])->assignRole('admin-disperindag');
-
-        User::create([
             'name' => 'ben@pendidikan',
             'email' => 'pendidikan@bengkuluprov.go.id',
             'password' => bcrypt('ben@2025#')
