@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
             RegionSeeder::class,
             SchoolLevelSeeder::class,
             DatasetSeeder::class,
+            VariantSeeder::class,
         ]);
     }
 }

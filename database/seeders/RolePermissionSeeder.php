@@ -23,13 +23,15 @@ class RolePermissionSeeder extends Seeder
             'admin-sosial',
             'admin-infrastruktur',
             'admin-tenaga-kerja',
-            'admin-ekonomi-keuangan'
+            'admin-ekonomi-keuangan',
+            'admin-disperindag'
         ];
 
         //Setup Permission
         $permissions = [
             'user' => ['get', 'register', 'get-by-id', 'update', 'delete', 'update-password'],
             'dataset' => ['get', 'get-by-id', 'create', 'update', 'delete'],
+            'region' => ['get', 'get-by-id', 'create', 'update', 'delete'],
             'area' => ['get', 'get-by-id', 'create', 'update', 'delete'],
             'road_category' => ['get', 'get-by-id', 'create', 'update', 'delete'],
             'road' => ['get', 'get-by-id', 'create', 'update', 'delete', 'filter'],
@@ -37,6 +39,8 @@ class RolePermissionSeeder extends Seeder
             'study'=>['get','get-by-id','create','update','delete','filter'],
             'study_level'=>['get','get-by-id','create','update','delete'],
             'region'=>['get','get-by-id','create','update','delete'],
+            'variants' => ['get', 'get-by-id', 'create', 'update', 'delete'],
+            'prices' => ['get', 'get-by-id', 'create', 'update', 'delete','filter','import']
         ];
 
         $RolePermission = [
@@ -45,6 +49,9 @@ class RolePermissionSeeder extends Seeder
                 'dataset' => '*',
                 'area' => '*',
                 'news'=> '*',
+                'region' => '*',
+                'variants' => '*',
+                'prices' => '*',
                 'road_category' => ['get', 'get-by-id'],
                 'road' => ['get', 'get-by-id', 'filter'],
                 'study'=>'*',
@@ -63,6 +70,13 @@ class RolePermissionSeeder extends Seeder
                 'region'=>['get','get-by-id'],
                 'study'=>'*',
                 'study_level'=>'*'
+            ],
+            'admin-disperindag' => [
+                'user' => ['update', 'update-password'],
+                'dataset' => ['get', 'get-by-id'],
+                'region' => ['get', 'get-by-id'],
+                'variants' => '*',
+                'prices' => '*'
             ]
         ];
 
