@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\ExcelImportController;
 use App\Http\Controllers\Infrastructure\RoadController;
 use App\Http\Controllers\Infrastructure\RoadCategoryController;
+use App\Http\Controllers\Kesehatan\RSUD\ApiController;
 use App\Http\Controllers\Master\DatasetController;
 use App\Http\Controllers\Master\TagsController;
 use App\Http\Controllers\NewsController;
@@ -91,7 +93,7 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::delete('/kependudukan/kelompok-umur/hapus/{id}', 'destroy');
     });
 
-   
+
 
     // Dataset
     Route::controller(DatasetController::class)->group(function(){
@@ -158,3 +160,9 @@ Route::post('/dashboard/kependudukan/filter', [SocialController::class, 'index_a
 
 // =====================OPD PENDIDIKAN dashboard==============================
 Route::get('/pendidikan/dashboard', [SchoolFilterController::class, 'filter']);
+
+// Kesehatan RSUD
+Route::get('/kesehatan',[ApiController::class,'getDataRSUD']);
+Route::get('/kesehatan/post',[ApiController::class,'postDatabase']);
+
+Route::post('/disperindag/price/import', [ExcelImportController::class,'import']);

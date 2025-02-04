@@ -10,9 +10,18 @@ class Kernel extends ConsoleKernel
     /**
      * Define the application's command schedule.
      */
-    protected function schedule(Schedule $schedule): void
+    protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        // $schedule->command('postdatabase:schedule')
+        //      ->everyTwoMinute();
+        // Menjadwalkan command postdatabase:schedule untuk berjalan pada pukul 08:00, 12:00, dan 15:00
+        // $schedule->command('postdatabase:schedule')
+        //         ->hourlyAt(8);  // Jam 8:00
+        // $schedule->command('postdatabase:schedule')
+        //         ->hourlyAt(16); // Jam 12:00
+        $schedule->command('postdatabase:schedule')
+            ->timezone('Asia/Jakarta')
+            ->at('07:58');
     }
 
     /**

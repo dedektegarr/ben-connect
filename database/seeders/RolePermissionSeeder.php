@@ -36,6 +36,7 @@ class RolePermissionSeeder extends Seeder
             'news'=> ['get', 'get-by-id', 'create', 'update', 'delete'],
             'study'=>['get','get-by-id','create','update','delete','filter'],
             'study_level'=>['get','get-by-id','create','update','delete'],
+            'region'=>['get','get-by-id','create','update','delete'],
         ];
 
         $RolePermission = [
@@ -59,7 +60,7 @@ class RolePermissionSeeder extends Seeder
             'admin-pendidikan'=>[
                 'user'=>['update','update-password'],
                 'dataset'=>['get','get-by-id'],
-                'region'=>['region','region-by-id'],
+                'region'=>['get','get-by-id'],
                 'study'=>'*',
                 'study_level'=>'*'
             ]
