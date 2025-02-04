@@ -1,7 +1,11 @@
 <?php
 
+use App\Http\Controllers\Disperindag\PriceController;
+use App\Http\Controllers\Disperindag\VariantController;
+use App\Http\Controllers\ImportController;
 use App\Http\Controllers\Infrastructure\RoadController;
 use App\Http\Controllers\Infrastructure\RoadCategoryController;
+use App\Http\Controllers\Kesehatan\RSUD\ApiController;
 use App\Http\Controllers\Master\DatasetController;
 use App\Http\Controllers\Master\TagsController;
 use App\Http\Controllers\NewsController;
@@ -17,6 +21,7 @@ use App\Http\Controllers\Study\SchoolController;
 use App\Http\Controllers\Study\SchoolFilterController;
 use App\Http\Controllers\Study\SchoolLevelController;
 use App\Http\Controllers\UserController;
+use App\Imports\PricesImport;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -64,7 +69,7 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::get('/wilayah/data-wilayah/data', 'index');
         Route::get('/wilayah/data-wilayah/detail/{id}', 'show');
         Route::post('/wilayah/data-wilayah/tambah', 'store');
-        Route::post('/wilayah/data-wilayah/ubah', 'update');
+        Route::put('/wilayah/data-wilayah/ubah', 'update');
         Route::delete('/wilayah/data-wilayah/hapus/{id}', 'destroy');
     });
 
@@ -91,7 +96,25 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::delete('/kependudukan/kelompok-umur/hapus/{id}', 'destroy');
     });
 
-   
+    //Variant Data Routes (FIX)
+    Route::controller(VariantController::class)->group(function(){
+        Route::get('/disperindag/variant/data', 'index');
+        Route::get('/disperindag/variant/detail/{id}', 'show');
+        Route::post('/disperindag/variant/tambah', 'store');
+        Route::put('/disperindag/variant/ubah/{id}', 'update');
+        Route::delete('/disperindag/variant/hapus/{id}', 'destroy');
+    });
+    
+    //Price Data Routes (FIX)
+    Route::controller(PriceController::class)->group(function(){
+        Route::get('/disperindag/price/data', 'index');
+        Route::get('/disperindag/price/detail/{id}', 'show');
+        Route::post('/disperindag/price/tambah', 'store');
+        Route::put('/disperindag/price/ubah/{id}', 'update');
+        Route::delete('/disperindag/price/hapus/{id}', 'destroy');
+    });
+
+    Route::post('/disperindag/price/import', [ImportController::class, 'importPrices']);
 
     // Dataset
     Route::controller(DatasetController::class)->group(function(){
@@ -154,3 +177,7 @@ Route::post('/dashboard/kependudukan/filter', [SocialController::class, 'index_a
 
 // =====================OPD PENDIDIKAN dashboard==============================
 Route::get('/pendidikan/dashboard', [SchoolFilterController::class, 'filter']);
+
+// Kesehatan RSUD
+Route::get('/kesehatan',[ApiController::class,'getDataRSUD']);
+Route::get('/kesehatan/post',[ApiController::class,'postDatabase']);
