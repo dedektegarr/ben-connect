@@ -17,7 +17,7 @@ class Variant extends Model
     public $fillable = [
         'variants_name',
     ];
-    
+
     public function price()
     {
         return $this->hasMany(Price::class, 'variants_id', 'variants_id');

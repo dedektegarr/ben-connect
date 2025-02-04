@@ -1,43 +1,49 @@
 <?php
 namespace App\Imports;
 
+use App\Models\Price;
+use App\Models\Region;
+use App\Models\Variant;
 use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
 class PricesImport implements ToModel, WithHeadingRow
 {
+    public $variants;
+    public $regions;
     /**
      * Process data from collection after skipping the header.
      */
+    public function __construct()
+    {
+        $this->variants=Variant::select('variants_id','variants_name')->get();
+        $this->regions=Region::select('region_id','region_name')->get();
+    }
+
     public function model(array $row)
     {
-        // Ambil kolom dengan format tanggal (misal ddmmyy)
-        $header = $row;  // Karena sudah merupakan array, ambil langsung
-        $priceColumns = [];
+        $nama_kabupaten=$this->formatKabupaten($row['kabupaten_kota']);
+        $variant_name = trim($row['nama_variant']);
+        $variants=$this->variants->where('variants_name',$variant_name)->first();
+        $regions=$this->regions->where('region_name',$nama_kabupaten)->first();
 
-        // Proses header untuk menentukan kolom yang berisi tanggal
-        foreach ($header as $key => $value) {
-            if (preg_match('/^\d{6}$/', $value)) { // Jika kolom sesuai format tanggal
-                $priceColumns[] = $key; // Simpan kolom harga berdasarkan indeks
-            }
+        // Cek apakah variant dan region ditemukan
+        if (!$variants || !$regions) {
+            // Log error atau tangani sesuai kebutuhan
+            // \Log::error("Data tidak ditemukan: variant_name = $variant_name, region_name = $nama_kabupaten");
+            return null; // Melewatkan baris ini jika data tidak ditemukan
         }
 
-        // Ambil data region dan variant
-        $region  = $row[1];
-        $variant = $row[2];
+        $variants_id = (string) $variants->variants_id;
+        $regions_id = (string) $regions->region_id;
 
-        // Ambil harga berdasarkan kolom yang valid (tanggal)
-        $prices = [];
-        foreach ($priceColumns as $priceColumn) {
-            $prices[$header[$priceColumn]] = $row[$priceColumn]; // Harga berdasarkan tanggal
-        }
-
-        // Return model yang akan di-save ke database
-        return response()->json([
-            'row'          => $row,
-            'priceColumns' => $priceColumns ?? [],
-            'prices'       => $prices ?? [],
+        dd($variants_id,$regions_id);
+        return new Price([
+            "prices_value"=>"1000",
+            "date"=>"2024-02-02",
+            "variants_id"=>$variants_id,
+            "region_id"=>$regions_id,
         ]);
     }
 
@@ -47,5 +53,10 @@ class PricesImport implements ToModel, WithHeadingRow
     public function headingRow(): int
     {
         return 4; // Header is in the 4th row (index 3)
+    }
+
+    private function formatKabupaten($value)
+    {
+        return str_replace("Kab. ", "Kabupaten ", $value);
     }
 }

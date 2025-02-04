@@ -30,12 +30,13 @@ class ExcelImportController extends Controller
 
         try {
             // Process the Excel file with PricesImport
-            $data = Excel::toCollection(new PricesImport, $request->file('file'));
+            $data = Excel::import(new PricesImport, $request->file('file'));
 
             // Flatten the collection and return the result
             return response()->json([
                 'status' => 200,
                 'message' => 'File berhasil di-import.',
+                'data'=>$data
             ], 200);
         } catch (\Exception $e) {
             return response()->json([
