@@ -19,14 +19,14 @@ class SchoolModel extends Model
         'school_name',
         'school_status',
         'school_level_id',
-        'area_id',
+        'region_id',
         'school_address',
         'latitude',
         'longitude'
     ];
-    
-    public function area(){
-        return $this->belongsTo(Area::class, 'area_id', 'area_id');
+
+    public function region(){
+        return $this->belongsTo(Region::class, 'region_id', 'region_id');
     }
 
     public function schoollevel()

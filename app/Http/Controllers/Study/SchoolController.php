@@ -14,7 +14,7 @@ class SchoolController extends Controller
      */
     public function index()
     {
-        $data_school=SchoolModel::with('area','schoollevel')->get();
+        $data_school=SchoolModel::with('region','schoollevel')->get();
 
         // format data
         $formatData=$data_school->map(function ($data_school){
@@ -24,7 +24,7 @@ class SchoolController extends Controller
                 'school_name'=>$data_school->school_name,
                 'school_status'=>$data_school->school_status,
                 'school_level_name'=>$data_school->schoollevel->school_level_name,
-                'area_name'=>$data_school->area->area_name,
+                'region_name'=>$data_school->region->region_name,
                 'school_adress'=>$data_school->school_address,
                 'latitude'=>$data_school->latitude,
                 'longitude'=>$data_school->longitude,
@@ -70,7 +70,7 @@ class SchoolController extends Controller
      */
     public function show(string $school_id)
     {
-        $data_school=SchoolModel::with('area','schoollevel')->find($school_id);
+        $data_school=SchoolModel::with('region','schoollevel')->find($school_id);
 
         // kembalikan response 404
         if(!$data_school){
@@ -88,7 +88,7 @@ class SchoolController extends Controller
                 'school_name'=>$data_school->school_name,
                 'school_status'=>$data_school->school_status,
                 'school_level_name'=>$data_school->schoollevel->school_level_name,
-                'area_name'=>$data_school->area->area_name,
+                'region_name'=>$data_school->region->region_name,
                 'school_adress'=>$data_school->school_address,
                 'latitude'=>$data_school->latitude,
                 'longitude'=>$data_school->longitude,
@@ -108,7 +108,7 @@ class SchoolController extends Controller
      */
     public function update(Request $request, string $school_id)
     {
-        $data_school=SchoolModel::with('area','schoollevel')->find($school_id);
+        $data_school=SchoolModel::with('region','schoollevel')->find($school_id);
 
         // kembalikan response 404
         if(!$data_school){

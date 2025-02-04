@@ -17,13 +17,16 @@ class Region extends Model
         'region_status'
     ];
     protected $dates = ['deleted_at'];
-    
+
     public function regionData(){
         return $this->hasMany(RegionData::class, 'region_id', 'region_id');
     }
-    
+    // school
+    public function school(){
+        return $this->hasMany(SchoolModel::class, 'region_id', 'region_id');
+    }
+
     public function price(){
         return $this->hasMany(Price::class, 'region_id', 'region_id');
     }
-   
 }

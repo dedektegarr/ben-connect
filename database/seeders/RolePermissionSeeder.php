@@ -16,11 +16,11 @@ class RolePermissionSeeder extends Seeder
     {
         //Setup role
         $roles = [
-            'admin', 
-            'admin-pendidikan', 
-            'admin-kesehatan', 
-            'admin-kependudukan', 
-            'admin-sosial', 
+            'admin',
+            'admin-pendidikan',
+            'admin-kesehatan',
+            'admin-kependudukan',
+            'admin-sosial',
             'admin-infrastruktur',
             'admin-tenaga-kerja',
             'admin-ekonomi-keuangan',
@@ -35,6 +35,10 @@ class RolePermissionSeeder extends Seeder
             'area' => ['get', 'get-by-id', 'create', 'update', 'delete'],
             'road_category' => ['get', 'get-by-id', 'create', 'update', 'delete'],
             'road' => ['get', 'get-by-id', 'create', 'update', 'delete', 'filter'],
+            'news'=> ['get', 'get-by-id', 'create', 'update', 'delete'],
+            'study'=>['get','get-by-id','create','update','delete','filter'],
+            'study_level'=>['get','get-by-id','create','update','delete'],
+            'region'=>['get','get-by-id','create','update','delete'],
             'variants' => ['get', 'get-by-id', 'create', 'update', 'delete'],
             'prices' => ['get', 'get-by-id', 'create', 'update', 'delete','filter','import']
         ];
@@ -44,11 +48,14 @@ class RolePermissionSeeder extends Seeder
                 'user' => '*',
                 'dataset' => '*',
                 'area' => '*',
+                'news'=> '*',
                 'region' => '*',
                 'variants' => '*',
                 'prices' => '*',
                 'road_category' => ['get', 'get-by-id'],
-                'road' => ['get', 'get-by-id', 'filter']
+                'road' => ['get', 'get-by-id', 'filter'],
+                'study'=>'*',
+                'study_level'=>'*'
             ],
             'admin-infrastruktur' => [
                 'user' => ['update', 'update-password'],
@@ -56,6 +63,13 @@ class RolePermissionSeeder extends Seeder
                 'area' => ['get', 'get-by-id'],
                 'road_category' => '*',
                 'road' => '*'
+            ],
+            'admin-pendidikan'=>[
+                'user'=>['update','update-password'],
+                'dataset'=>['get','get-by-id'],
+                'region'=>['get','get-by-id'],
+                'study'=>'*',
+                'study_level'=>'*'
             ],
             'admin-disperindag' => [
                 'user' => ['update', 'update-password'],
@@ -69,7 +83,7 @@ class RolePermissionSeeder extends Seeder
         foreach($roles as $role){
             Role::create(['name' => $role]);
         }
-        
+
         foreach($permissions as $permission => $type){
             foreach($type as $t){
                 Permission::create(['name' => $permission.'.'.$t]);

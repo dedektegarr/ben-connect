@@ -37,24 +37,24 @@ class SchoolFilterModel extends Model
 
         // Ambil data statistik berdasarkan tahun terakhir
         $data = self::selectRaw(
-                'area.area_name, school_level.school_level_name, 
-                COUNT(*) as total_schools, 
-                SUM(school_filter_total_student) as total_students, 
+                'region.region_name, school_level.school_level_name,
+                COUNT(*) as total_schools,
+                SUM(school_filter_total_student) as total_students,
                 SUM(school_filter_total_teacher) as total_teachers'
             )
             ->join('school', 'school_filter.school_id', '=', 'school.school_id')  // Gabungkan dengan tabel school
-            ->join('area', 'school.area_id', '=', 'area.area_id') // Gabungkan dengan tabel area
+            ->join('region', 'school.region_id', '=', 'region.region_id') // Gabungkan dengan tabel region
             ->join('school_level', 'school.school_level_id', '=', 'school_level.school_level_id') // Gabungkan dengan tabel school level
             ->whereHas('dataset', function ($query) use ($latestYear) {
                 $query->where('dataset_year', $latestYear);
             })
-            ->groupBy('area.area_name', 'school_level.school_level_name') // Kelompokkan berdasarkan area dan level sekolah
+            ->groupBy('region.region_name', 'school_level.school_level_name') // Kelompokkan berdasarkan region dan level sekolah
             ->get();
 
         $result = [];
 
         foreach ($data as $item) {
-            $areaName = $item->area_name;
+            $regionName = $item->region_name;
             $schoolLevelName = $item->school_level_name;
 
             // Inisialisasi tahun
@@ -63,13 +63,13 @@ class SchoolFilterModel extends Model
                     "total_schools" => 0,
                     "total_students" => 0,
                     "total_teachers" => 0,
-                    "areas" => []
+                    "regions" => []
                 ];
             }
 
-            // Inisialisasi area
-            if (!isset($result[$latestYear]["areas"][$areaName])) {
-                $result[$latestYear]["areas"][$areaName] = [
+            // Inisialisasi region
+            if (!isset($result[$latestYear]["regions"][$regionName])) {
+                $result[$latestYear]["regions"][$regionName] = [
                     "total_schools" => 0,
                     "total_students" => 0,
                     "total_teachers" => 0,
@@ -78,8 +78,8 @@ class SchoolFilterModel extends Model
             }
 
             // Inisialisasi level sekolah
-            if (!isset($result[$latestYear]["areas"][$areaName]["levels"][$schoolLevelName])) {
-                $result[$latestYear]["areas"][$areaName]["levels"][$schoolLevelName] = [
+            if (!isset($result[$latestYear]["regions"][$regionName]["levels"][$schoolLevelName])) {
+                $result[$latestYear]["regions"][$regionName]["levels"][$schoolLevelName] = [
                     "total_schools" => 0,
                     "total_students" => 0,
                     "total_teachers" => 0
@@ -87,14 +87,14 @@ class SchoolFilterModel extends Model
             }
 
             // Update data level sekolah
-            $result[$latestYear]["areas"][$areaName]["levels"][$schoolLevelName]["total_schools"] += $item->total_schools;
-            $result[$latestYear]["areas"][$areaName]["levels"][$schoolLevelName]["total_students"] += $item->total_students;
-            $result[$latestYear]["areas"][$areaName]["levels"][$schoolLevelName]["total_teachers"] += $item->total_teachers;
+            $result[$latestYear]["regions"][$regionName]["levels"][$schoolLevelName]["total_schools"] += $item->total_schools;
+            $result[$latestYear]["regions"][$regionName]["levels"][$schoolLevelName]["total_students"] += $item->total_students;
+            $result[$latestYear]["regions"][$regionName]["levels"][$schoolLevelName]["total_teachers"] += $item->total_teachers;
 
-            // Update data area
-            $result[$latestYear]["areas"][$areaName]["total_schools"] += $item->total_schools;
-            $result[$latestYear]["areas"][$areaName]["total_students"] += $item->total_students;
-            $result[$latestYear]["areas"][$areaName]["total_teachers"] += $item->total_teachers;
+            // Update data region
+            $result[$latestYear]["regions"][$regionName]["total_schools"] += $item->total_schools;
+            $result[$latestYear]["regions"][$regionName]["total_students"] += $item->total_students;
+            $result[$latestYear]["regions"][$regionName]["total_teachers"] += $item->total_teachers;
 
             // Update data tahun
             $result[$latestYear]["total_schools"] += $item->total_schools;
