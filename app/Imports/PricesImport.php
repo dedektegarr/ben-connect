@@ -4,7 +4,6 @@ namespace App\Imports;
 use App\Models\Price;
 use App\Models\Region;
 use App\Models\Variant;
-use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
@@ -12,39 +11,104 @@ class PricesImport implements ToModel, WithHeadingRow
 {
     public $variants;
     public $regions;
+    public $errors = [];
+    private $rowNumber = 4;
+
     /**
      * Process data from collection after skipping the header.
      */
     public function __construct()
     {
-        $this->variants=Variant::select('variants_id','variants_name')->get();
-        $this->regions=Region::select('region_id','region_name')->get();
+        $this->variants = Variant::select('variants_id','variants_name')->get();
+        $this->regions = Region::select('region_id','region_name')->get();
     }
 
     public function model(array $row)
     {
-        $nama_kabupaten=$this->formatKabupaten($row['kabupaten_kota']);
+        $nama_kabupaten = $this->formatKabupaten($row['kabupaten_kota']);
         $variant_name = trim($row['nama_variant']);
-        $variants=$this->variants->where('variants_name',$variant_name)->first();
-        $regions=$this->regions->where('region_name',$nama_kabupaten)->first();
+        $variants = $this->variants->where('variants_name', $variant_name)->first();
+        $regions = $this->regions->where('region_name', $nama_kabupaten)->first();
+        $rowNumber = $this->getRowNumber();
 
-        // Cek apakah variant dan region ditemukan
-        if (!$variants || !$regions) {
-            // Log error atau tangani sesuai kebutuhan
-            // \Log::error("Data tidak ditemukan: variant_name = $variant_name, region_name = $nama_kabupaten");
-            return null; // Melewatkan baris ini jika data tidak ditemukan
+        // Validasi jika region atau variant tidak ditemukan
+        if (!$variants) {
+            $this->errors[] = "Baris {$rowNumber} - Variant '{$variant_name}' tidak ditemukan.";
+            return null;
         }
 
-        $variants_id = (string) $variants->variants_id;
-        $regions_id = (string) $regions->region_id;
+        if (!$regions) {
+            $this->errors[] = "Baris {$rowNumber} - Region '{$nama_kabupaten}' tidak ditemukan.";
+            return null;
+        }
 
-        dd($variants_id,$regions_id);
-        return new Price([
-            "prices_value"=>"1000",
-            "date"=>"2024-02-02",
-            "variants_id"=>$variants_id,
-            "region_id"=>$regions_id,
-        ]);
+        // Menyimpan harga dan tanggal dalam array
+        $pricesData = [];
+
+        // Loop untuk setiap kolom dalam baris data
+        foreach ($row as $key => $value) {
+            // Cek apakah key sesuai dengan format tanggal angka (contoh: 200125)
+            if ($this->isValidDate($key)) {
+                $dateFormatted = $this->formatDate($key);
+
+                if (!$this->isValidFormattedDate($dateFormatted)) {
+                    $this->errors[] = "Baris {$rowNumber} - Format tanggal '{$key}' salah.";
+                    continue;
+                }
+
+                if (empty($value)) {
+                    $this->errors[] = "Baris {$rowNumber} - Harga untuk tanggal {$dateFormatted} kosong.";
+                    continue;
+                }
+
+                // Menyimpan harga dan tanggal ke dalam array
+                $pricesData[] = [
+                    "prices_value" => $value,
+                    "date" => $dateFormatted,
+                    "variants_id" => (string) $variants->variants_id,
+                    "region_id" => (string) $regions->region_id,
+                ];
+            }
+        }
+
+        // Jika tidak ada harga yang ditemukan, kembalikan null
+        if (empty($pricesData)) {
+            return null;
+        }
+
+        // Insert harga dan tanggal ke dalam database
+        foreach ($pricesData as $data) {
+            // Menggunakan data yang sudah diformat untuk setiap harga dan tanggal
+            return new Price($data);
+        }
+    }
+
+    /**
+     * Fungsi untuk mengecek apakah key adalah tanggal angka (contoh: 200125)
+     */
+    private function isValidDate($date)
+    {
+        // Memastikan bahwa tanggal berupa angka 6 digit (YYMMDD)
+        return preg_match('/^\d{6}$/', $date);
+    }
+
+    /**
+     * Fungsi untuk memformat tanggal dari angka (YYMMDD) ke d/m/y
+     */
+    private function formatDate($date)
+    {
+        // Memformat tanggal dari 200125 menjadi 20/01/25
+        $year = substr($date, 0, 2); // Menyaring dua digit pertama sebagai tahun
+        $month = substr($date, 2, 2); // Menyaring dua digit berikutnya sebagai bulan
+        $day = substr($date, 4, 2); // Menyaring dua digit terakhir sebagai hari
+
+        // Mengembalikan tanggal dalam format d/m/y
+        return "$day/$month/$year";
+    }
+
+    private function isValidFormattedDate($date)
+    {
+        return preg_match('/^\d{2}\/\d{2}\/\d{2}$/', $date);
     }
 
     /**
@@ -58,5 +122,15 @@ class PricesImport implements ToModel, WithHeadingRow
     private function formatKabupaten($value)
     {
         return str_replace("Kab. ", "Kabupaten ", $value);
+    }
+
+    public function getErrors()
+    {
+        return $this->errors;
+    }
+
+    public function getRowNumber()
+    {
+        return $this->rowNumber++;
     }
 }

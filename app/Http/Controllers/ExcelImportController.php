@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Imports\PricesImport; // Import PricesImport
+use App\Imports\PricesImport;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Validator;
@@ -29,14 +29,23 @@ class ExcelImportController extends Controller
         }
 
         try {
+            $import = new PricesImport();
             // Process the Excel file with PricesImport
-            $data = Excel::import(new PricesImport, $request->file('file'));
+            
+            // Cek apakah ada error dari proses import
+            if (!empty($import->getErrors())) {
+                return response()->json([
+                    'status' => 400,
+                    'message' => 'Terdapat kesalahan dalam import data.',
+                    'errors' => $import->getErrors(),
+                ], 400);
+            }
+            $data = Excel::import($import, $request->file('file'));
 
             // Flatten the collection and return the result
             return response()->json([
                 'status' => 200,
-                'message' => 'File berhasil di-import.',
-                'data'=>$data
+                'message' => 'File berhasil di-import.'
             ], 200);
         } catch (\Exception $e) {
             return response()->json([

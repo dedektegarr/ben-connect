@@ -115,8 +115,6 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::delete('/disperindag/price/hapus/{id}', 'destroy');
     });
 
-    Route::post('/disperindag/price/import', [ImportController::class, 'importPrices']);
-
     // Dataset
     Route::controller(DatasetController::class)->group(function(){
         Route::get('/dataset/daftar-dataset', 'index')->middleware('permission:dataset.get');
