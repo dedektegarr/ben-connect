@@ -31,7 +31,8 @@ class ExcelImportController extends Controller
         try {
             $import = new PricesImport();
             // Process the Excel file with PricesImport
-            
+            $data = Excel::import($import, $request->file('file'));
+
             // Cek apakah ada error dari proses import
             if (!empty($import->getErrors())) {
                 return response()->json([
@@ -40,7 +41,6 @@ class ExcelImportController extends Controller
                     'errors' => $import->getErrors(),
                 ], 400);
             }
-            $data = Excel::import($import, $request->file('file'));
 
             // Flatten the collection and return the result
             return response()->json([
