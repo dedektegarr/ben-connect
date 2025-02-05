@@ -31,8 +31,13 @@ class PricesImport implements ToModel, WithHeadingRow, WithBatchInserts, WithChu
         $nama_kabupaten_muko_muko=$this->formatKabupatenMuko($nama_kabupaten);
 
         $variant_name = trim($row['nama_variant']);
-        $variants = $this->variants->where('variants_name', $variant_name)->first();
-        $regions = $this->regions->where('region_name', $nama_kabupaten_muko_muko)->first();
+        $variants = $this->variants->first(function ($item) use ($variant_name) {
+            return strtolower($item->variants_name) === strtolower($variant_name);
+        });
+
+        $regions = $this->regions->first(function ($item) use ($nama_kabupaten_muko_muko) {
+            return strtolower($item->region_name) === strtolower($nama_kabupaten_muko_muko);
+        });
         $rowNumber = $this->getRowNumber();
 
         if (!$variants) {
