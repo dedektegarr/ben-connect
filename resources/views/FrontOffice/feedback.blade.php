@@ -150,9 +150,13 @@
             height: 100%;
             /* Sesuaikan tinggi div */
         }
+
+        #header {
+        background-color: #27445D;
+        }
     </style>
 
-    <main id="main" style="background-image: url('{{ asset('assets/FrontOffice/img/bg.png') }}')">
+    <main id="main" style="background-image:#ffff">
         <!-- ======= About Section ======= -->
         <section id="about" class="about" style="background-color:transparent">
             <div class="container">
@@ -165,7 +169,7 @@
                 <div class="row content" style="margin-top: 80px;">
                     <div class="container">
                         <h1 class="text-dark text-capitalize" style="font-family: inter; font-weight:900;"><span
-                                style="background: -webkit-linear-gradient(left,#028C45, #FCCD00); 
+                                style="background: -webkit-linear-gradient(left,#000,rgb(0, 0, 0)); 
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;">Help
                                 & Feedback</span></h1>
@@ -176,7 +180,7 @@
                         <div class="row my-5">
                             <div class="col-md-12">
                                 <h3 class="text-dark text-capitalize" style="font-family: inter; font-weight:900;"><span
-                                        style="background: -webkit-linear-gradient(left,#028C45, #FCCD00); 
+                                        style="background: -webkit-linear-gradient(left,#000,rgb(0, 0, 0)); 
                                         -webkit-background-clip: text;
                                         -webkit-text-fill-color: transparent;">Bantuan
                                         Teknis</span></h3>
@@ -264,7 +268,7 @@
                         <div class="row my-5">
                             <div class="col-md-12">
                                 <h3 class="text-dark text-capitalize" style="font-family: inter; font-weight:900;"><span
-                                        style="background: -webkit-linear-gradient(left,#028C45, #FCCD00); 
+                                        style="background: -webkit-linear-gradient(left,#000,rgb(0, 0, 0)); 
                                         -webkit-background-clip: text;
                                         -webkit-text-fill-color: transparent;">Memberikan
                                         Umpan Balik</span></h3>
@@ -349,7 +353,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <h3 class="text-dark text-capitalize" style="font-family: inter; font-weight:900;"><span
-                                        style="background: -webkit-linear-gradient(left,#028C45, #FCCD00); 
+                                        style="background: -webkit-linear-gradient(left,#000,rgb(0, 0, 0)); 
                                         -webkit-background-clip: text;
                                         -webkit-text-fill-color: transparent;">Memberikan
                                         Umpan Balik</span></h3>

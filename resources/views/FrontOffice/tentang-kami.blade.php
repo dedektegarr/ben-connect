@@ -3,7 +3,14 @@
 @section('main')
     <style>
         body {
-            font-family: "inter";
+            font-family: "poppins";
+        }
+
+        #header {
+        transition: all 0.5s;
+        z-index: 997;
+        padding: 20px 0; 
+        background-color: #27445D;
         }
 
         .card-layanan {
@@ -156,20 +163,20 @@
         }
     </style>
 
-    <main id="main" style="background-image: url('{{ asset('assets/FrontOffice/img/bg.png') }}')">
+        <main id="main" style="background-image: #c7c7c7">
         <!-- ======= About Section ======= -->
-        <section id="about" class="about" style="background-color:transparent">
-            <div class="container">
+        <section id="about" class="about" style="background-color:transparent">    
+        <div class="container">
                 <style>
                     .card-layanan:hover {
                         box-shadow: 1px 8px 20px grey;
                         -webkit-transition: box-shadow .6s ease-in;
                     }
                 </style>
-                <div class="row content" style="margin-top: 80px;">
-                    <div class="container">
+                <div class="row content" style="margin-top: 80px; background-color:transparent">
+                    <div class="container" style="text-align: justify;">
                         <h1 class="text-dark text-capitalize" style="font-family: inter; font-weight:900;"><span
-                                style="background: -webkit-linear-gradient(left,#028C45, #FCCD00); 
+                                style="background: -webkit-linear-gradient(left,#000, #000); 
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;">Selamat
                                 datang di BEN-CONNECT, aplikasi pusat kendali (command center) Provinsi Bengkulu</span></h1>
@@ -179,8 +186,11 @@
                             pemerintahan yang lebih efektif dan efisien.</p>
                         <div class="row my-5">
                             <div class="col-md-6">
+                            <img src="{{ asset('assets/FrontOffice/img/gubernur.png') }}" class="img-fluid" width="600" height="600" alt="">
+                            </div>
+                            <div class="col-md-6">
                                 <h4>Visi</h4>
-                                <div class="row">
+                                <div class="row" style="text-align: justify;">
                                     <div class="col-md-12">
                                         <i class="ri-checkbox-circle-fill my-auto"></i>
                                         <p class="d-inline">Menjadi platform data terintegrasi yang handal dan inovatif
@@ -189,10 +199,9 @@
                                         <hr>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
+                                <p></p>
                                 <h4>Misi:</h4>
-                                <div class="row">
+                                <div class="row" style="text-align: justify;">
                                     <div class="col-md-12">
                                         <i class="ri-checkbox-circle-fill my-auto"></i>
                                         <p class="d-inline">Mewujudkan keterpaduan data antar-OPD di lingkungan Pemerintah
@@ -224,46 +233,56 @@
                         </div>
                     </div>
                     <div class="col-lg-12">
-                        <div class="card" style="background: -webkit-linear-gradient(left,#028C45, #FCCD00); ">
+                        <div class="card" style="border-radius:20px; background: -webkit-linear-gradient(left, #27445D, #27445D); ">
                             <div class="card-body text-white">
                                 <h1>Apa Itu BEN-CONNECT?</h1>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <p>BEN-CONNECT adalah platform digital yang mengintegrasikan berbagai sumber data
+                                <div class="col" style="padding:10px;">
+                                    <div class="row-md-6">
+                                            <p>
+                                            BEN-CONNECT adalah platform digital yang mengintegrasikan berbagai sumber data
                                             dari OPD di Provinsi Bengkulu ke dalam satu pusat kendali yang terkoordinasi.
                                             Melalui aplikasi ini, Pemerintah Provinsi dapat:
-                                            <br>
-
-                                            1. Monitoring Kinerja: Memantau secara real-time kinerja dari berbagai instansi
+                                            </p>
+                                            <ol>
+                                            <li>
+                                            Monitoring Kinerja: Memantau secara real-time kinerja dari berbagai instansi
                                             pemerintah.
-                                            <br>
-                                            2. Integrasi Data: Menyatukan data dari berbagai sektor seperti kesehatan,
+                                            </li>
+                                            <li>
+                                            Integrasi Data: Menyatukan data dari berbagai sektor seperti kesehatan,
                                             pendidikan, infrastruktur, dan lainnya dalam satu sistem terpadu.
-                                            <br>
-                                            3. Pengambilan Keputusan: Mendukung pengambilan keputusan yang lebih cepat dan
+                                            </li>
+                                            <li>
+                                            Pengambilan Keputusan: Mendukung pengambilan keputusan yang lebih cepat dan
                                             akurat berdasarkan data yang tersedia.
-                                            <br>
-                                            4. Pelaporan Publik: Memberikan informasi terbuka dan transparan kepada
+                                            </li>
+                                            <li>
+                                            Pelaporan Publik: Memberikan informasi terbuka dan transparan kepada
                                             masyarakat mengenai kinerja pemerintah daerah.
-                                            <br>
-                                        </p>
+                                            </li>
+                                        </ol>
                                     </div>
-                                    <div class="col-md-6">
+                                    <br>
+                                    <div class="row-md-6" style="text-align: justify;">
                                         <p>Keunggulan BEN-CONNECT
-                                            <br>
-                                            1. Real-Time Monitoring: Data yang terintegrasi memungkinkan pemantauan yang
+                                            <ol>
+                                            <li>
+                                            Real-Time Monitoring: Data yang terintegrasi memungkinkan pemantauan yang
                                             lebih efektif terhadap aktivitas OPD.
-                                            <br>
-                                            2. Data yang Akurat: Semua data yang diolah adalah data resmi dari sumber yang
+                                            </li>
+                                            <li>
+                                            Data yang Akurat: Semua data yang diolah adalah data resmi dari sumber yang
                                             terpercaya, sehingga memastikan akurasi dan validitas informasi.
-                                            <br>
-                                            3. Transparansi: Masyarakat dapat mengakses informasi terkait kinerja pemerintah
+                                            </li>
+                                            <li>
+                                            Transparansi: Masyarakat dapat mengakses informasi terkait kinerja pemerintah
                                             daerah dengan lebih mudah, mendukung prinsip pemerintahan yang transparan.
-                                            <br>
-                                            4. Kolaborasi Antar OPD: Mendorong kerja sama yang lebih solid antar instansi
+                                            </li>
+                                            <li>
+                                            Kolaborasi Antar OPD: Mendorong kerja sama yang lebih solid antar instansi
                                             pemerintah dalam berbagi data dan informasi.
-                                            <br>
-
+                                            </li>
+                                            </ol>
                                         </p>
                                     </div>
                                 </div>
@@ -274,7 +293,7 @@
                         <h1>Tim Kami</h1>
                         <div class="row">
                             <div class="col-lg-6">
-                                <P>BEN-CONNECT dikembangkan oleh Dinas Komunikasi, Informatika, dan Statistik Provinsi
+                                <P style="text-align: justify;">BEN-CONNECT dikembangkan oleh Dinas Komunikasi, Informatika, dan Statistik Provinsi
                                     Bengkulu dengan dukungan berbagai ahli teknologi informasi dan data dari sektor publik
                                     dan swasta. Kami bekerja sama untuk mewujudkan layanan terbaik yang dapat diakses dan
                                     dimanfaatkan oleh semua pemangku kepentingan, baik di lingkungan pemerintah maupun
@@ -287,8 +306,8 @@
                                     Jika Anda memiliki pertanyaan atau ingin mengetahui lebih lanjut tentang platform kami,
                                     silakan hubungi kami melalui kontak yang tersedia di situs ini.</P>
                             </div>
-                            <div class="col-lg-6">
-                                <img src="{{ asset('assets/FrontOffice/img/logo-depan.png') }}" class="img-fluid my-auto"
+                            <div class="col-lg-6" style="text-align: center;">
+                                <img src="{{ asset('assets/FrontOffice/img/logo-depan-nobg.png') }}" class="img-fluid my-auto"
                                     alt="">
                             </div>
                         </div>

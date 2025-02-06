@@ -41,6 +41,8 @@
                                     <label for="tahun" class="form-label">Tahun</label>
                                     <select class="form-control" name="tahun" id="tahun" aria-label="Tahun">
                                         <option value="2024" selected>2024</option>
+                                        <option value="2025" selected>2025</option>
+                                        <option value="2026" selected>2026</option>
                                     </select>
                                 </div>
 

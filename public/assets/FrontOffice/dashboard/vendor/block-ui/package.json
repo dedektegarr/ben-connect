@@ -29,9 +29,8 @@
   "bugs": {
     "url": "https://github.com/malsup/blockui/issues"
   },
-  "bundleDependencies": [],
+  "bundleDependencies": false,
   "dependencies": {
-    "block-ui": "file:",
     "jquery": ">=1.7.x"
   },
   "deprecated": false,

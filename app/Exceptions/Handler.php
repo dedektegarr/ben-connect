@@ -56,12 +56,12 @@ class Handler extends ExceptionHandler
             ], 400);
         }
         //Endpoint ridak ditemukan (404)
-        if($e instanceof NotFoundHttpException){
-            return response()->json([
-                'status_code' => 404,
-                'message' => 'Route tidak ditemukan'
-            ], 404);
-        }
+        // if($e instanceof NotFoundHttpException){
+        //     return response()->json([
+        //         'status_code' => 404,
+        //         'message' => 'Route tidak ditemukan'
+        //     ], 404);
+        // }
         return parent::render($request, $e);
     }
 }

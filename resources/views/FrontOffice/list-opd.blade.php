@@ -19,6 +19,7 @@
             flex-direction: column;
             justify-content: space-between;
             background-color: #fff;
+            border:3px solid #f7f7f7;
         }
 
         .card-layanan-frame,
@@ -154,9 +155,17 @@
             height: 100%;
             /* Sesuaikan tinggi div */
         }
+
+        #header {
+        transition: all 0.5s;
+        z-index: 997;
+        padding: 20px 0;
+        background-color: #27445D;
+        }
+        
     </style>
 
-    <main id="main" style="background-image: url('{{ asset('assets/FrontOffice/img/bg.png') }}')">
+    <main id="main" style="background-image: #f7f7f7">
         <!-- ======= About Section ======= -->
         <section id="about" class="about" style="background-color:transparent">
             <div class="container">
@@ -168,8 +177,8 @@
                 </style>
                 <div class="row content" style="margin-top: 80px;">
                     <div class="container">
-                        <h1 class="text-dark text-capitalize" style="font-family: inter; font-weight:900;"><span
-                                style="background: -webkit-linear-gradient(left,#028C45, #FCCD00); 
+                        <h1 class="text-dark text-capitalize" style="font-family: inter; font-weight:900; text-align:center;"><span
+                                style="background: -webkit-linear-gradient(left,#000,rgb(0, 0, 0)); 
                                 -webkit-background-clip: text;
                                 -webkit-text-fill-color: transparent;">Data
                                 List OPD di Provinsi Bengkulu</span></h1>
