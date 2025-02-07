@@ -15,7 +15,7 @@ class UserController extends Controller
     public function index()
     {
         $data = User::with('roles')->get();
-        $data = $data->map(function($user){
+        $data = $data->map(function ($user) {
             return [
                 'id' => $user->id,
                 'name' => $user->name,
@@ -33,16 +33,16 @@ class UserController extends Controller
 
     //Menambahkan user baru (Register)
     public function store(Request $request)
-    {   
+    {
         //Validasi input
-        $formRequest = new UserRequest('user_input'); 
+        $formRequest = new UserRequest('user_input');
         $this->validate($request, $formRequest->rules(), $formRequest->messages());
 
         $role = $request->role;
         $password = bcrypt($request->password);
         $request['password'] = $password;
         unset($request['role']);
-        
+
         //Mendaftarkan user ke database dan memberikan role
         User::create($request->all())->assignRole($role);
         return response()->json([
@@ -51,21 +51,21 @@ class UserController extends Controller
         ], 201);
     }
 
-   //Mendapatkan user sesuai ID
+    //Mendapatkan user sesuai ID
     public function show(string $id)
     {
         $data = User::find($id);
 
         //Cek data sesuai ID
-        if(empty($data)){
+        if (empty($data)) {
             return response()->json([
                 'status_code' => 404,
                 'message' => 'Data user tidak ditemukan!'
-            ], 404);  
+            ], 404);
         }
 
         $data = $data->where('id', $id)->get();
-        $data = $data->map(function($user){
+        $data = $data->map(function ($user) {
             return [
                 'id' => $user->id,
                 'name' => $user->name,
@@ -87,20 +87,20 @@ class UserController extends Controller
         $data = User::find($id);
 
         //Cek data sesuai ID
-        if(empty($data)){
+        if (empty($data)) {
             return response()->json([
                 'status_code' => 404,
                 'message' => 'Data user tidak ditemukan!'
-            ], 404);  
+            ], 404);
         }
 
         //Validasi input
-        $formRequest = new UserRequest('user_update'); 
+        $formRequest = new UserRequest('user_update');
         $this->validate($request, $formRequest->rules(), $formRequest->messages());
 
         $role = $request->role;
         unset($request['role']);
-        
+
         //Update data user dan memberikan role
         $data->update($request->all());
         $data->syncRoles($role);
@@ -116,11 +116,11 @@ class UserController extends Controller
         $data = User::find($id);
 
         //Cek data sesuai ID
-        if(empty($data)){
+        if (empty($data)) {
             return response()->json([
                 'status_code' => 404,
                 'message' => 'Data user tidak ditemukan!'
-            ], 404);  
+            ], 404);
         }
 
         //Hapus user (Soft Delete)
@@ -128,14 +128,14 @@ class UserController extends Controller
         return response()->json([
             'status_code' => 200,
             'message' => 'Data user berhasil dihapus'
-        ], 200); 
+        ], 200);
     }
 
     //Login user
     public function login(Request $request)
     {
         //Validasi input
-        $formRequest = new UserRequest('user_login'); 
+        $formRequest = new UserRequest('user_login');
         $this->validate($request, $formRequest->rules(), $formRequest->messages());
 
         $user = [
@@ -144,15 +144,16 @@ class UserController extends Controller
         ];
 
         //Otentikasi user
-        if (Auth::attempt($user)){
+        if (Auth::attempt($user)) {
             $user = User::where('email', $request->email)->first();
             $token = $user->createToken('ben-token', ['*'], now()->addDay())->plainTextToken; //Set token (durasi token 1 hari)
             return response()->json([
                 'status_code' => 200,
                 'massage' => 'Login berhasil',
+                'id' => $user->id,
                 'token' => $token
             ], 200);
-        }else{
+        } else {
             return response()->json([
                 'status_code' => 401,
                 'message' => 'Login gagal. Username dan Password tidak terdaftar'
@@ -165,7 +166,7 @@ class UserController extends Controller
     {
         $user = $request->user();
         $user->tokens()->where('id', $user->currentAccessToken()->id)->delete();
-        
+
         return response()->json([
             'status_code' => 200,
             'massage' => 'Logout berhasil',
@@ -176,12 +177,12 @@ class UserController extends Controller
     public function updatePassword(Request $request)
     {
         //Validasi input
-        $formRequest = new UserRequest('user_update_password'); 
+        $formRequest = new UserRequest('user_update_password');
         $this->validate($request, $formRequest->rules(), $formRequest->messages());
-        
+
         //Cek password saat ini
         $checkPassword = Hash::check($request->current_password, $request->user()->password);
-        if(!$checkPassword){
+        if (!$checkPassword) {
             return response()->json([
                 'status_code' => 400,
                 'message' => 'Password saat ini salah'

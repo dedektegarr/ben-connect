@@ -31,24 +31,25 @@ class Handler extends ExceptionHandler
             //
         });
     }
-   
-    public function render($request, Throwable $e){
+
+    public function render($request, Throwable $e)
+    {
         //Error permission
-        if($e instanceof UnauthorizedException){
-            return response()->json([
-                'status_code' => 403,
-                'message' => 'Akses tidak diizinkan'
-            ], 403);
-        }
+        // if($e instanceof UnauthorizedException){
+        //     return response()->json([
+        //         'status_code' => 403,
+        //         'message' => 'Akses tidak diizinkan'
+        //     ], 403);
+        // }
         //Error otentikasi, belum login, token invalid
-        if($e instanceof AuthenticationException){
+        if ($e instanceof AuthenticationException) {
             return response()->json([
                 'status_code' => 401,
                 'message' => 'Anda belum login atau token tidak valid'
             ], 401);
         }
         //Error validasi
-        if($e instanceof ValidationException){
+        if ($e instanceof ValidationException) {
             return response()->json([
                 'status_code' => 400,
                 'message' => 'Input tidak valid',
