@@ -59,5 +59,7 @@ class VariantSeeder extends Seeder
         Variant::create(['variants_name'=>'Tepung Terigu']);
         Variant::create(['variants_name'=>'Tomat']);
         Variant::create(['variants_name'=>'Udang Basah']);
+        Variant::create(['variants_name'=>'Kedelai Lokal']);
+        Variant::create(['variants_name'=>'Beras Khusus']);
     }
 }
