@@ -1,7 +1,6 @@
 @extends('BackOffice.layout.layout1')
 @section('title', 'Dashboard')
 @section('main')
-<<<<<<< HEAD
     <div class="content-body">
         <!-- row -->
         <div class="container-fluid">
@@ -115,9 +114,5 @@
                 <!-- END Kotak -->
             </div>
         </div>
-=======
-    <div style="margin-left: 5rem; margin-top:5rem">
-        {{ Auth::user()->hasRole('admin') }}
->>>>>>> auth-api
     </div>
 @endsection
