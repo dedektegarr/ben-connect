@@ -29,4 +29,8 @@ class Region extends Model
     public function price(){
         return $this->hasMany(Price::class, 'region_id', 'region_id');
     }
+
+    public function ikm(){
+        return $this->hasMany(Ikm::class, 'region_id', 'region_id');
+    }
 }
