@@ -28,6 +28,9 @@ class DatabaseSeeder extends Seeder
             SchoolLevelSeeder::class,
             DatasetSeeder::class,
             VariantSeeder::class,
+            CategoryHosptialSeeder::class,
+            HosptialOwnershipSeeder::class,
+            HosptialAcreditationsSeeder::class
         ]);
     }
 }
