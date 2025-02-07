@@ -50,16 +50,16 @@ Route::middleware(['auth'])->group(function () {
     // SUPER ADMIN ROLE
     Route::prefix("admin")->middleware("role:admin")->group(function () {
         Route::controller(PageAdminController::class)->group(function () {
-            Route::get('/dashboard', 'dashboard')->name('admin.dashboard');
-            Route::get('/pendidikan', 'pendidikan')->name('admin.pendidikan');
-            Route::get('/kesehatan-maps', 'kesehatan_maps')->name('admin.kesehatan_maps');
-            Route::get('/kesehatan', 'kesehatan')->name('admin.kesehatan');
-            Route::get('/kependudukan', 'kependudukan')->name('admin.kependudukan');
-            Route::get('/bencana', 'bencana')->name('admin.bencana');
-            Route::get('/komoditas', 'komoditas')->name('admin.komoditas');
-            Route::get('/infrastruktur', 'infrastruktur')->name('admin.infrastruktur');
-            Route::get('/keuangan', 'keuangan')->name('admin.keuangan');
-            Route::post('/mode', 'mode_dark_light')->name('admin.mode');
+            Route::get('/dashboard', 'dashboard')->name('dashboard');
+            Route::get('/pendidikan', 'pendidikan')->name('pendidikan');
+            Route::get('/kesehatan-maps', 'kesehatan_maps')->name('kesehatan_maps');
+            Route::get('/kesehatan', 'kesehatan')->name('kesehatan');
+            Route::get('/kependudukan', 'kependudukan')->name('kependudukan');
+            Route::get('/bencana', 'bencana')->name('bencana');
+            Route::get('/komoditas', 'komoditas')->name('komoditas');
+            Route::get('/infrastruktur', 'infrastruktur')->name('infrastruktur');
+            Route::get('/keuangan', 'keuangan')->name('keuangan');
+            Route::post('/mode', 'mode_dark_light')->name('mode');
         });
     });
 });
