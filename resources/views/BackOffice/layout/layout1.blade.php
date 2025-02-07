@@ -7,12 +7,17 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>BEN CONNECT @yield('title')- BEN CONNECT PROVINSI BENGKULU </title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/FrontOffice/dashboard/images/favicon.png') }}">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="{{ asset('assets/FrontOffice/dashboard/images/favicon.png') }}">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <!-- Make sure you put this AFTER Leaflet's CSS -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-    <link rel="stylesheet" href="{{ asset('assets/FrontOffice/dashboard/vendor/owl-carousel/css/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/FrontOffice/dashboard/vendor/owl-carousel/css/owl.theme.default.min.css') }}">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <link rel="stylesheet"
+        href="{{ asset('assets/FrontOffice/dashboard/vendor/owl-carousel/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('assets/FrontOffice/dashboard/vendor/owl-carousel/css/owl.theme.default.min.css') }}">
     <link href="{{ asset('assets/FrontOffice/dashboard/vendor/jqvmap/css/jqvmap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/FrontOffice/dashboard/css/style.css') }}" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -22,25 +27,37 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.min.css" rel="stylesheet">
     <style>
         .header {
-            position: relative; /* Untuk positioning anak di dalam header */
+            position: relative;
+            /* Untuk positioning anak di dalam header */
         }
+
         /* Membatasi lebar dropdown */
         .dropdown-menu {
             position: absolute;
-            top: 50px;  /* Jarak dari atas header, bisa sesuaikan */
-            right: 0; /* Menjaga dropdown berada di sisi kanan tombol */
-            z-index: 1050; /* Pastikan dropdown berada di atas elemen lain */
-            max-width: 100%;  /* Memastikan dropdown tidak melebihi lebar layar */
-            overflow-x: auto; /* Menambahkan scroll horizontal jika dropdown terlalu lebar */
+            top: 50px;
+            /* Jarak dari atas header, bisa sesuaikan */
+            right: 0;
+            /* Menjaga dropdown berada di sisi kanan tombol */
+            z-index: 1050;
+            /* Pastikan dropdown berada di atas elemen lain */
+            max-width: 100%;
+            /* Memastikan dropdown tidak melebihi lebar layar */
+            overflow-x: auto;
+            /* Menambahkan scroll horizontal jika dropdown terlalu lebar */
         }
+
         .dropdown-menu-end {
-            right: 0 !important; /* Pastikan dropdown berada di sisi kanan */
+            right: 0 !important;
+            /* Pastikan dropdown berada di sisi kanan */
         }
+
         /* Membatasi lebar item dalam dropdown */
         .dropdown-item {
-            white-space: nowrap; /* Menjaga item dropdown dalam satu baris */
+            white-space: nowrap;
+            /* Menjaga item dropdown dalam satu baris */
             overflow: hidden;
-            text-overflow: ellipsis; /* Menambahkan tanda ellipsis (...) jika teks terlalu panjang */
+            text-overflow: ellipsis;
+            /* Menambahkan tanda ellipsis (...) jika teks terlalu panjang */
         }
     </style>
 </head>
@@ -94,12 +111,14 @@
             <div class="header-content d-flex justify-content-end align-items-center">
                 <!-- Dropdown User -->
                 <div class="dropdown">
-                    <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="{{ asset('assets/BackOffice/img/user.jpg') }}" alt="User Avatar" width="35" height="35" class="rounded-circle">
+                    <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="userDropdown"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="{{ asset('assets/BackOffice/img/user.jpg') }}" alt="User Avatar" width="35"
+                            height="35" class="rounded-circle">
                     </a>
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
                         <a href="javascript:void(0)" class="dropdown-item disabled">
-                            <strong>Welcome, {{ Auth::user()->name }}</strong>
+                            <span>{{ Auth::user()->name }}</span>
                         </a>
                         <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
                             <i class="ri-user-line"></i>
@@ -113,7 +132,8 @@
                             @csrf
                         </form>
 
-                        <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item" onclick="document.getElementById('logout-form').submit();">
+                        <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item"
+                            onclick="document.getElementById('logout-form').submit();">
                             <i class="ri-logout-box-line"></i>
                             <p class="mb-0 ml-2">Logout</p>
                         </a>
@@ -131,28 +151,32 @@
         <div class="quixnav text-dark">
             <div class="quixnav-scroll">
                 <ul class="metismenu" id="menu">
-                 <li class="nav-label first"><b>Data Master</b></li>
+                    <li class="nav-label first"><b>Data Master</b></li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                                 class="ri-database-line"></i><span class="nav-text">Data Master</span></a>
                         <ul aria-expanded="false">
-                        <li><a href="{{ url('/admin/infrastruktur') }}">Data Wilayah</a></li>
+                            <li><a href="{{ url('/admin/infrastruktur') }}">Data Wilayah</a></li>
+                            <li><a href="{{ url('/admin/infrastruktur') }}">Kategori Rumah Sakit</a></li>
+                            <li><a href="{{ url('/admin/infrastruktur') }}">Jenis Akreditasi Rumah Sakit</a></li>
+                            <li><a href="{{ url('/admin/infrastruktur') }}">Kepemilikan Rumah Sakit</a></li>
                         </ul>
                     </li>
                     <li class="nav-label first">User</li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
                                 class="ri-user-line"></i><span class="nav-text">Data User</span></a>
                         <ul aria-expanded="false">
-                        <li><a href="{{ url('/admin/infrastruktur') }}">User OPD</a></li>
-                        <li><a href="{{ url('/admin/infrastruktur') }}">Data Role</a></li>
+                            <li><a href="{{ url('/admin/user') }}">User OPD</a></li>
+                            <li><a href="{{ url('/admin/user_role') }}">Data Role</a></li>
                         </ul>
                     </li>
 
                     <li class="nav-label first">Katalog Data</li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
-                                class="ri-hospital-line"></i><span class="nav-text">Data Rumah Sakit</span></a>
+                                class="ri-hospital-line"></i><span class="nav-text">Kesehatan</span></a>
                         <ul aria-expanded="false">
-                            <li><a href="{{ route('kesehatan.dashboard') }}">RSUD</a></li>
-                            <li><a href="{{ route('index') }}">Index Rumah Sakit</a></li>
+                            <li><a href="{{ url('/admin/datarumahsakit') }}">Data Rumah Sakit</a></li>
+                            <li><a href="{{ url('/admin/rsud') }}">RSUD</a></li>
+                            <li><a href="{{ url('/admin/indexrumahsakit') }}">Index Rumah Sakit</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
@@ -167,7 +191,7 @@
                                 class="ri-team-line"></i><span class="nav-text">Sosial</span></a>
                         <ul aria-expanded="false">
                             <li><a href="{{ route('sosial.dashboard') }}">Kategori Sosial</a></li>
-                            <li><a href="{{ route('kependudukan.dashboard') }}">Data Sosia</a></li>
+                            <li><a href="{{ route('kependudukan.dashboard') }}">Data Sosial</a></li>
                         </ul>
                     </li>
                     <li><a class="has-arrow" href="javascript:void()" aria-expanded="false"><i
@@ -204,7 +228,7 @@
         <!--**********************************
             Sidebar end
         ***********************************-->
-                @yield('main')
+        @yield('main')
         <!--**********************************
             Footer start
         ***********************************-->
@@ -235,7 +259,6 @@
     <!--**********************************
         Scripts
     ***********************************-->
-
     <!-- Required vendors -->
     <script src="{{ asset('assets/FrontOffice/dashboard/vendor/global/global.min.js') }}"></script>
     <script src="{{ asset('assets/FrontOffice/dashboard/js/quixnav-init.js') }}"></script>

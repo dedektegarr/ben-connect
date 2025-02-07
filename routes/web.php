@@ -49,6 +49,16 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin/dashboard', [PageAdminController::class, 'dashboard'])->name('dashboard');
+
+    #Data User
+    Route::get('/admin/user', [PageAdminController::class, 'user'])->name('user');
+    Route::get('/admin/user_role', [PageAdminController::class, 'user_role'])->name('user_role');
+
+    #Kesehatan
+    Route::get('/admin/datarumahsakit', [PageAdminController::class, 'datarumahsakit'])->name('datarumahsakit');
+    Route::get('/admin/rsud', [PageAdminController::class, 'rsud'])->name('rsud');
+    Route::get('/admin/indexrumahsakit', [PageAdminController::class, 'indexrumahsakit'])->name('indexrumahsakit');
+
     Route::get('/admin/pendidikan', [PageAdminController::class, 'pendidikan'])->name('pendidikan');
     Route::get('/admin/kesehatan-maps', [PageAdminController::class, 'kesehatan_maps'])->name('kesehatan_maps');
     Route::get('/admin/kesehatan', [PageAdminController::class, 'kesehatan'])->name('kesehatan');
