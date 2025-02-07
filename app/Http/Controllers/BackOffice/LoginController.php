@@ -45,7 +45,7 @@ class LoginController extends Controller
             Session::put("auth_token", $data["token"]);
             Auth::loginUsingId($data["id"]);
 
-            return redirect()->route('dashboard')->with('success', $data["massage"]);
+            return redirect()->route('admin.dashboard')->with('success', $data["massage"]);
         } catch (Exception $e) {
             return back()->withErrors(["Terjadi kesalahan", $e->getMessage()]);
         }

@@ -41,21 +41,25 @@ Route::get('/dashboard/infrastruktur-jalan', [DashboardInfrastrukturController::
 Route::get('/dashboard/bencana', [DashboardBencanaController::class, 'index'])->name('bencana.dashboard');
 Route::get('/dashboard/komoditas', [DashboardKomoditasController::class, 'index'])->name('komoditas.dashboard');
 
-
 // BACKOFFICE ===
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/authenticate', [LoginController::class, 'authenticate'])->name('authenticate');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/admin/dashboard', [PageAdminController::class, 'dashboard'])->name('dashboard');
-    Route::get('/admin/pendidikan', [PageAdminController::class, 'pendidikan'])->name('pendidikan');
-    Route::get('/admin/kesehatan-maps', [PageAdminController::class, 'kesehatan_maps'])->name('kesehatan_maps');
-    Route::get('/admin/kesehatan', [PageAdminController::class, 'kesehatan'])->name('kesehatan');
-    Route::get('/admin/kependudukan', [PageAdminController::class, 'kependudukan'])->name('kependudukan');
-    Route::get('/admin/bencana', [PageAdminController::class, 'bencana'])->name('bencana');
-    Route::get('/admin/komoditas', [PageAdminController::class, 'komoditas'])->name('komoditas');
-    Route::get('/admin/infrastruktur', [PageAdminController::class, 'infrastruktur'])->name('infrastruktur');
-    Route::get('/admin/keuangan', [PageAdminController::class, 'keuangan'])->name('keuangan');
-    Route::post('/admin/mode', [PageAdminController::class, 'mode_dark_light'])->name('mode');
+    // SUPER ADMIN ROLE
+    Route::prefix("admin")->middleware("role:admin")->group(function () {
+        Route::controller(PageAdminController::class)->group(function () {
+            Route::get('/dashboard', 'dashboard')->name('admin.dashboard');
+            Route::get('/pendidikan', 'pendidikan')->name('admin.pendidikan');
+            Route::get('/kesehatan-maps', 'kesehatan_maps')->name('admin.kesehatan_maps');
+            Route::get('/kesehatan', 'kesehatan')->name('admin.kesehatan');
+            Route::get('/kependudukan', 'kependudukan')->name('admin.kependudukan');
+            Route::get('/bencana', 'bencana')->name('admin.bencana');
+            Route::get('/komoditas', 'komoditas')->name('admin.komoditas');
+            Route::get('/infrastruktur', 'infrastruktur')->name('admin.infrastruktur');
+            Route::get('/keuangan', 'keuangan')->name('admin.keuangan');
+            Route::post('/mode', 'mode_dark_light')->name('admin.mode');
+        });
+    });
 });
