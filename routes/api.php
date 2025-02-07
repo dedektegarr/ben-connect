@@ -6,6 +6,7 @@ use App\Http\Controllers\ImportController;
 use App\Http\Controllers\ExcelImportController;
 use App\Http\Controllers\Infrastructure\RoadController;
 use App\Http\Controllers\Infrastructure\RoadCategoryController;
+use App\Http\Controllers\Kesehatan\Master\CategoryHospitalController;
 use App\Http\Controllers\Kesehatan\RSUD\ApiController;
 use App\Http\Controllers\Master\DatasetController;
 use App\Http\Controllers\Master\TagsController;
@@ -105,7 +106,7 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::put('/disperindag/variant/ubah/{id}', 'update');
         Route::delete('/disperindag/variant/hapus/{id}', 'destroy');
     });
-    
+
     //Price Data Routes (FIX)
     Route::controller(PriceController::class)->group(function(){
         Route::get('/disperindag/price/data', 'index');
@@ -130,6 +131,15 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::post('/berita/tambah', 'store')->middleware('permission:news.create');
         Route::put('/berita/ubah/{id}', 'update')->middleware('permission:update');
         Route::delete('/berita/hapus/{id}', 'destroy')->middleware('permission:delete');
+    });
+
+    // Kesehatan
+    Route::controller(CategoryHospitalController::class)->group(function(){
+        Route::get('/kesehatan/rs/kategori', 'index')->middleware('permission:kategori_rs.get');
+        Route::get('/kesehatan/rs/kategori/{id}', 'show')->middleware('permission:kategori_rs.get-by-id');
+        Route::post('/kesehatan/rs/kategori', 'store')->middleware('permission:kategori_rs.create');
+        Route::put('/kesehatan/rs/kategori/{id}', 'update')->middleware('permission:kategori_rs.update');
+        Route::delete('/kesehatan/rs/kategori/{id}', 'destroy')->middleware('permission:kategori_rs.delete');
     });
 
     // Pendidikan

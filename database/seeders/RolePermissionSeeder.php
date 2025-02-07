@@ -24,7 +24,7 @@ class RolePermissionSeeder extends Seeder
             'admin-infrastruktur',
             'admin-tenaga-kerja',
             'admin-ekonomi-keuangan',
-            'admin-disperindag'
+            'admin-disperindag',
         ];
 
         //Setup Permission
@@ -40,7 +40,10 @@ class RolePermissionSeeder extends Seeder
             'study_level'=>['get','get-by-id','create','update','delete'],
             'region'=>['get','get-by-id','create','update','delete'],
             'variants' => ['get', 'get-by-id', 'create', 'update', 'delete'],
-            'prices' => ['get', 'get-by-id', 'create', 'update', 'delete','filter','import']
+            'prices' => ['get', 'get-by-id', 'create', 'update', 'delete','filter','import'],
+            'kategori_rs'=>['get', 'get-by-id', 'create', 'update', 'delete'],
+            'akreditasi_rs'=>['get', 'get-by-id', 'create', 'update', 'delete'],
+            'kepemilikan_rs'=>['get', 'get-by-id', 'create', 'update', 'delete'],
         ];
 
         $RolePermission = [
@@ -55,7 +58,10 @@ class RolePermissionSeeder extends Seeder
                 'road_category' => ['get', 'get-by-id'],
                 'road' => ['get', 'get-by-id', 'filter'],
                 'study'=>'*',
-                'study_level'=>'*'
+                'study_level'=>'*',
+                'kategori_rs'=>'*',
+                'akreditasi_rs'=>'*',
+                'kepemilikan_rs'=>'*'
             ],
             'admin-infrastruktur' => [
                 'user' => ['update', 'update-password'],
@@ -77,6 +83,14 @@ class RolePermissionSeeder extends Seeder
                 'region' => ['get', 'get-by-id'],
                 'variants' => '*',
                 'prices' => '*'
+            ],
+            'admin-kesehatan'=>[
+                'user' => ['update', 'update-password'],
+                'dataset' => ['get', 'get-by-id'],
+                'region' => ['get', 'get-by-id'],
+                'kategori_rs'=>'*',
+                'akreditasi_rs'=>'*',
+                'kepemilikan_rs'=>'*'
             ]
         ];
 
