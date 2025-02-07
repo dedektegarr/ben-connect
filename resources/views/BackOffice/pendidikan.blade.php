@@ -1,7 +1,6 @@
 @extends('BackOffice.layout.layout')
 @section('title', 'Pendidikan')
 @section('main')
-
     <div class="row">
         <div class="col-md-6">
             <div class="card content-card" style="margin-top:40px; width:350px;">

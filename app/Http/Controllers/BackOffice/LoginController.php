@@ -4,8 +4,11 @@ namespace App\Http\Controllers\BackOffice;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Exception;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
@@ -19,19 +22,33 @@ class LoginController extends Controller
 
     public function authenticate(Request $request): RedirectResponse
     {
-        $credentials = $request->validate([
-            'email' => ['required', 'email'],
-            'password' => ['required'],
-        ]);
+        $credentials = [
+            'email' => $request->email,
+            'password' => $request->password,
+        ];
 
-        if (Auth::attempt($credentials, $request->remember)) {
-            $request->session()->regenerate();
-            session()->put('mode', "dark");
-            return redirect()->route('dashboard')->with('success', 'Berhasil Login !');
+        try {
+            $response = Http::post(url("/api/login"), $credentials);
+            $data = $response->json();
+
+            // Not Authenticated
+            if ($response->status() === 401) {
+                return back()->withErrors(['email' => $data["message"]])->onlyInput('email');
+            }
+
+            // Validation Errors
+            if ($response->status() === 400) {
+                return back()->withErrors($data["errors"]);
+            }
+
+            // Authenticated, set token session and login using id
+            Session::put("auth_token", $data["token"]);
+            Auth::loginUsingId($data["id"]);
+
+            return redirect()->route('dashboard')->with('success', $data["massage"]);
+        } catch (Exception $e) {
+            return back()->withErrors(["Terjadi kesalahan", $e->getMessage()]);
         }
-        return back()->withErrors([
-            'email' => 'Email/Password Salah !',
-        ])->onlyInput('email');
     }
 
 
