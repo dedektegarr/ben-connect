@@ -2277,3 +2277,158 @@
   letter-spacing: 0;
   text-transform: none;
 }
+
+.btn-terbaru {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.btn-terbaru {
+  --primary-color: #111;
+  --hovered-color: #c84747;
+  position: relative;
+  display: flex;
+  font-weight: 600;
+  font-size: 20px;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.btn-terbaru p {
+  margin: 0;
+  font-weight: 700;
+  position: relative;
+  font-size: 20px;
+  color: white;
+}
+
+.btn-terbaru::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  left: 0;
+  bottom: -7px;
+  background: var(--hovered-color);
+  height: 2px;
+  transition: 0.3s ease-out;
+}
+
+.btn-terbaru p::before {
+  position: absolute;
+  /*   box-sizing: border-box; */
+  content: "Berita";
+  width: 0%;
+  inset: 0;
+  color: var(--hovered-color);
+  overflow: hidden;
+  transition: 0.3s ease-out;
+}
+
+.btn-terbaru:hover::after {
+  width: 100%;
+}
+
+.btn-terbaru:hover p::before {
+  width: 100%;
+  height: 100%;
+}
+
+.btn-terbaru:hover svg {
+  transform: translateX(4px);
+  color: var(--hovered-color);
+}
+
+.btn-terbaru svg {
+  color: white;
+  transition: 0.2s;
+  position: relative;
+  width: 15px;
+  transition-delay: 0.2s;
+}
+
+/* From Uiverse.io by akshayjalluri6 */
+.social-links {
+  display: flex;
+}
+
+.Btn {
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  margin-left: 10px;
+}
+
+.instagram {
+  background: #f09433;
+  background: -moz-linear-gradient(45deg,
+      #f09433 0%,
+      #e6683c 25%,
+      #dc2743 50%,
+      #cc2366 75%,
+      #bc1888 100%);
+  background: -webkit-linear-gradient(45deg,
+      #f09433 0%,
+      #e6683c 25%,
+      #dc2743 50%,
+      #cc2366 75%,
+      #bc1888 100%);
+  background: linear-gradient(45deg,
+      #f09433 0%,
+      #e6683c 25%,
+      #dc2743 50%,
+      #cc2366 75%,
+      #bc1888 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f09433', endColorstr='#bc1888', GradientType=1);
+}
+
+.youtube {
+  background-color: #ff0000;
+}
+
+.facebook {
+  background-color: #1877F2;
+}
+
+.Btn:hover {
+  width: 110px;
+  transition-duration: 0.4s;
+  border-radius: 30px;
+}
+
+.Btn:hover .text {
+  opacity: 1;
+  transition-duration: 0.4s;
+}
+
+.Btn:hover .svgIcon {
+  opacity: 0;
+  transition-duration: 0.3s;
+}
+
+.text {
+  position: absolute;
+  color: rgb(255, 255, 255);
+  width: 120px;
+  font-weight: 600;
+  opacity: 0;
+  transition-duration: 0.4s;
+}
+
+.svgIcon {
+  transition-duration: 0.3s;
+}
+
+.svgIcon path {
+  fill: white;
+}

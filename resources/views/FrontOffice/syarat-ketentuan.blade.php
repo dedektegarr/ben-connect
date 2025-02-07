@@ -150,9 +150,16 @@
             height: 100%;
             /* Sesuaikan tinggi div */
         }
+        #header {
+        transition: all 0.5s;
+        z-index: 997;
+        padding: 20px 0;
+        background-color: #27445D;
+        }
+        
     </style>
 
-    <main id="main" style="background-image: url('{{ asset('assets/FrontOffice/img/bg.png') }}')">
+    <main id="main" style="background-image:#ffff">
         <!-- ======= About Section ======= -->
         <section id="about" class="about" style="background-color:transparent">
             <div class="container">
@@ -162,10 +169,9 @@
                         -webkit-transition: box-shadow .6s ease-in;
                     }
                 </style>
-                <div class="row content" style="margin-top: 80px;">
+                <div class="row content" style="margin-top: 80px; text-align: justify;">
                     <div class="container">
-                        <h1 class="text-dark text-capitalize" style="font-family: inter; font-weight:900;"><span
-                                style="background: -webkit-linear-gradient(left,#028C45, #FCCD00); 
+                        <h1 class="text-dark text-capitalize" style="font-family: inter; font-weight:900;"><span                                style="background: -webkit-linear-gradient(left,black,rgb(0, 0, 0)
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;">Syarat
                                 dan Ketentuan Penggunaan BEN-CONNECT</span></h1>
@@ -174,21 +180,19 @@
                             Provinsi Bengkulu. Dengan menggunakan layanan ini, Anda setuju untuk mematuhi syarat dan
                             ketentuan
                             berikut. Mohon baca dengan saksama.</p>
-                        <div class="row my-5">
-                            <div class="col-md-6">
-                                <h4>Syarat:</h4>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <i class="ri-checkbox-circle-fill my-auto"></i>
+                        <div class="row my-3" style="border: 2px solid #CACACA; display: inline-block; border-radius: 20px; background-color:rgb(255, 255, 255); padding:20px 5px 20px 5px;">
+                                <h4 style="font-weight:bold;">Syarat:</h4>
+                                <div class="col">
+                                    <ol>
+                                        <li>
                                         <p class="d-inline">Dengan mengakses dan menggunakan BEN-CONNECT, Anda menyetujui
                                             untuk
                                             terikat dengan syarat dan ketentuan yang telah ditetapkan. Jika Anda tidak
                                             setuju dengan
                                             syarat-syarat ini, Anda tidak diperbolehkan menggunakan layanan ini.</p>
-                                        <hr>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <i class="ri-checkbox-circle-fill my-auto"></i>
+                                        </li>
+                                            <hr>
+                                        <li>
                                         <p class="d-inline">Semua data yang diintegrasikan melalui BEN-CONNECT merupakan
                                             data resmi
                                             dari Organisasi Perangkat Daerah (OPD) di lingkungan Pemerintah Provinsi
@@ -198,10 +202,9 @@
                                             berlaku. Penggunaan data yang melanggar hukum atau tidak sah akan dikenakan
                                             tindakan
                                             sesuai dengan peraturan yang berlaku</p>
-                                        <hr>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <i class="ri-checkbox-circle-fill my-auto"></i>
+                                        </li>
+                                            <hr>
+                                        <li>
                                         <p class="d-inline">Konten dan layanan di BEN-CONNECT merupakan milik Pemerintah
                                             Provinsi
                                             Bengkulu dan dilindungi oleh undang-undang hak cipta yang berlaku. Pengguna
@@ -210,10 +213,9 @@
                                             tertulis dari
                                             Pemerintah Provinsi Bengkulu.
                                         </p>
+                                        </li>
                                         <hr>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <i class="ri-checkbox-circle-fill my-auto"></i>
+                                        <li>
                                         <p class="d-inline">Kami berkomitmen untuk melindungi privasi pengguna. Data pribadi
                                             yang
                                             dikumpulkan melalui BEN-CONNECT akan digunakan sesuai dengan kebijakan privasi
@@ -222,59 +224,36 @@
                                             informasi
                                             pribadi Anda.
                                         </p>
-                                        <hr>
-                                    </div>
+                                        </li>
+                                    </ol>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <h4>Ketentuan:</h4>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <i class="ri-checkbox-circle-fill my-auto"></i>
-                                        <p class="d-inline">Pengguna bertanggung jawab untuk menjaga kerahasiaan informasi
-                                            akun
-                                            mereka, termasuk kata sandi dan akses ke BEN-CONNECT. Pemerintah Provinsi
-                                            Bengkulu tidak
-                                            bertanggung jawab atas segala kerugian yang timbul dari akses yang tidak sah ke
-                                            akun
-                                            pengguna.</p>
-                                        <hr>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <i class="ri-checkbox-circle-fill my-auto"></i>
-                                        <p class="d-inline">Pemerintah Provinsi Bengkulu tidak bertanggung jawab atas segala
-                                            kerugian atau kerusakan yang diakibatkan oleh penggunaan atau ketidakmampuan
-                                            untuk
-                                            menggunakan BEN-CONNECT. Kami tidak menjamin bahwa layanan akan selalu bebas
-                                            dari
-                                            gangguan, kesalahan, atau virus.</p>
-                                        <hr>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <i class="ri-checkbox-circle-fill my-auto"></i>
-                                        <p class="d-inline">Kami berhak untuk mengubah syarat dan ketentuan ini kapan saja
-                                            tanpa
-                                            pemberitahuan sebelumnya. Perubahan akan segera berlaku setelah dipublikasikan
-                                            di situs
-                                            ini. Pengguna disarankan untuk secara berkala meninjau halaman ini untuk
-                                            mengetahui
-                                            perubahan terbaru.
+
+                        <div class="row my-3" style="border: 2px solid #CACACA; display: inline-block; border-radius: 20px; background-color:rgb(255, 255, 255); padding:20px 5px 20px 5px;">
+                                <h4 style="font-weight:bold;">Ketentuan:</h4>
+                                <div class="col">
+                                    <ol>
+                                        <li>
+                                        <p class="d-inline">Pengguna bertanggung jawab untuk menjaga kerahasiaan informasi akun mereka, termasuk kata sandi dan akses ke BEN-CONNECT. Pemerintah Provinsi Bengkulu tidak bertanggung jawab atas segala kerugian yang timbul dari akses yang tidak sah ke akun pengguna.</p>
+                                        </li>
+                                            <hr>
+                                        <li>
+                                        <p class="d-inline">Pemerintah Provinsi Bengkulu tidak bertanggung jawab atas segala kerugian atau kerusakan yang diakibatkan oleh penggunaan atau ketidakmampuan untuk menggunakan BEN-CONNECT. Kami tidak menjamin bahwa layanan akan selalu bebas dari gangguan, kesalahan, atau virus.</p>
+                                        </li>
+                                            <hr>
+                                        <li>
+                                        <p class="d-inline">Kami berhak untuk mengubah syarat dan ketentuan ini kapan saja tanpa pemberitahuan sebelumnya. Perubahan akan segera berlaku setelah dipublikasikan di situs ini. Pengguna disarankan untuk secara berkala meninjau halaman ini untuk mengetahui perubahan terbaru.
                                         </p>
+                                        </li>
                                         <hr>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <i class="ri-checkbox-circle-fill my-auto"></i>
-                                        <p class="d-inline">Syarat dan ketentuan ini diatur oleh hukum yang berlaku di
-                                            Indonesia.
-                                            Segala sengketa yang timbul sehubungan dengan penggunaan BEN-CONNECT akan
-                                            diselesaikan
-                                            sesuai dengan prosedur hukum yang berlaku di Indonesia.
+                                        <li>
+                                        <p class="d-inline">Syarat dan ketentuan ini diatur oleh hukum yang berlaku di Indonesia. Segala sengketa yang timbul sehubungan dengan penggunaan BEN-CONNECT akan diselesaikan sesuai dengan prosedur hukum yang berlaku di Indonesia.
                                         </p>
-                                        <hr>
-                                    </div>
+                                        </li>
+                                    </ol>
                                 </div>
                             </div>
-                        </div>
+
                     </div>
                 </div>
             </div>

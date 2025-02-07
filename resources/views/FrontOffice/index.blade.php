@@ -117,7 +117,7 @@
         }
 
         .card-layanan-text5 {
-            color: #028c45;
+            color:rgb(0, 0, 0);
             font-size: 16px;
             font-style: normal;
             margin-top: 0;
@@ -150,29 +150,213 @@
             height: 100%;
             /* Sesuaikan tinggi div */
         }
+
+         button {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+            outline: none;
+            border: 0;
+            vertical-align: middle;
+            text-decoration: none;
+            background: transparent;
+            padding: 0;
+            font-size: inherit;
+            font-family: inherit;
+        }
+        button.learn-more {
+            width: 12rem;
+            height: auto;
+        }
+        button.learn-more .circle {
+            transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+            position: relative;
+            display: block;
+            margin: 0;
+            width: 3rem;
+            height: 3rem;
+            background:rgb(255, 255, 255);
+            border-radius: 1.625rem;
+        }
+        button.learn-more .circle .icon {
+            transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background: #fff;
+        }
+        button.learn-more .circle .icon.arrow {
+            transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+            left: 0.625rem;
+            width: 1.125rem;
+            height: 0.125rem;
+            background: none;
+        }
+        button.learn-more .circle .icon.arrow::before {
+            position: absolute;
+            content: '';
+            top: -0.25rem;
+            right: 0.0625rem;
+            width: 0.625rem;
+            height: 0.625rem;
+            border-top: 0.125rem solid #000;
+            border-right: 0.125rem solid #000;
+            transform: rotate(45deg);
+        }
+        button.learn-more .button-text {
+            transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 0.75rem 0;
+            margin: 0 0 0 1.85rem;
+            color:rgb(255, 255, 255);
+            font-weight: 700;
+            line-height: 1.6;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        button:hover .circle {
+            width: 100%;
+        }
+        button:hover .circle .icon.arrow {
+            background: #000;
+            transform: translate(1rem, 0);
+        }
+        button:hover .button-text {
+            color: #000;
+        }
+
+        .btn-design {
+            padding: 1.3em 3em;
+            font-size: 15px;
+            font-family: 'Poppins';
+            text-transform: uppercase;
+            font-weight: 600;
+            color: #000;
+            background-color: #fff;
+            border: none;
+            border-radius: 45px;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease 0s;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .btn-design:hover {
+            background-color: #28a745;
+            box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+            color: #fff;
+            transform: translateY(-7px);
+        }
+
+        .btn-design:active {
+            transform: translateY(-1px);
+        }
     </style>
+
     <!-- ======= Hero Section ======= -->
     <section id="hero">
         <div class="hero-container">
-            <h1 class="text-dark text-capitalize" style="font-family: inter; font-weight:900;"><span
-                    style="background: -webkit-linear-gradient(left,#028C45, #FCCD00); 
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;">Pusat
-                    Data Pelayanan Dasar</span></h1>
-            <p class="d-none d-md-block" style="margin-left:200px;
-            margin-right:200px;">Akses data pelayanan dasar
-                dari berbagai instansi
-                pemerintah di Provinsi Bengkulu secara realtime memungkinkan masyarakat untuk mendapatkan informasi yang
-                up-to-date mengenai layanan publik yang tersedia. Hal ini mencakup berbagai aspek seperti kesehatan,
-                pendidikan, infrastruktur, dan layanan administratif lainnya</p>
-            <a href="{{ route('kesehatan.dashboard') }}" class="btn btn-success">Explore <i
-                    class="ri-arrow-right-line"></i></a>
-        </div>
-    </section><!-- End Hero -->
+            <div class="row align-items-start">
+                <div class="col">
+                    <h1 class="depanh1 text-dark text-capitalize" style="font-family: poppins; font-weight:900;">
+                        <span style="background: -webkit-linear-gradient(left,#FFFFFF, #FFFFFF); 
+                    -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Pusat Data Pelayanan Dasar</span>
+                    </h1>
+                        <p class="d-none d-md-block" style="font-family: poppins; font-weight:regular;">Akses data pelayanan dasar
+                            dari berbagai instansi
+                            pemerintah di Provinsi Bengkulu secara realtime memungkinkan masyarakat untuk mendapatkan informasi yang
+                            up-to-date mengenai layanan publik yang tersedia. Hal ini mencakup berbagai aspek seperti kesehatan,
+                            pendidikan, infrastruktur, dan layanan administratif lainnya
+                        </p>
+                </div>
+                
+                <div class="col">
+                <img src="{{ asset('assets/FrontOffice/img/hero.png') }}" alt="" class="animated-img" style="z-index:0;">
+                </div>  
 
-    <main id="main" style="background-image: url('{{ asset('assets/FrontOffice/img/bg.png') }}')">
+                <div class="hero-container-search">
+                    <!-- <form class="form-inline my-2 my-lg-0">
+                        <div class="search-container">
+                            <i class="bi bi-search search-icon"></i>
+                            <input class="form-control" type="search" placeholder="Cari Dashboard" aria-label="Search">
+                            <button class="btn btn-outline-success search-button" type="submit">Search</button>
+                        </div>
+                    </form> -->
+                    <!-- <a class="d-inline float-middle btn btn-light" style="font-weight:bold; padding:7px 7px 7px 7px;" href="{{ route('opd') }}">Jelajahi Sekarang</a> -->
+
+                    <div class="col" id="container">
+                    <a href="{{ route('opd') }}"><button class="learn-more">
+                        <span class="circle" aria-hidden="true">
+                        <span class="icon arrow"></span>
+                        </span>
+                        <span class="button-text">Jelajahi Data</span>
+                    </button>
+                    </a>
+                    </div>
+
+
+                </div>
+
+            </div>
+    </section>
+    <!-- End Hero -->
+
+    <main id="main" style="background-color: #F7F7F7">
+    
+    <!-- Dashboard -->
+    <section id="dashboard" style="background-color:transparent;">
+    <div class="container" >
+        <h1>Dashboard Terbaru</h1>
+      <div class="dashboard-box">
+        <!-- Bootstrap Carousel -->
+        <div id="sliderCarousel" class="carousel slide" data-bs-ride="carousel">
+          <!-- Slides -->
+          <div class="carousel-inner">
+            <a target="_blank" href="{{ route('pendidikan.dashboard') }}">
+            <div class="carousel-item active">
+              <img src="{{ asset('assets/FrontOffice/img/update1.png') }}" class="d-block w-100" alt="Slide 1">
+            </div>
+            <a>
+            <a target="_blank" href="{{ route('sosial.dashboard') }}">
+            <div class="carousel-item">
+              <img src="{{ asset('assets/FrontOffice/img/update2.png') }}" class="d-block w-100" alt="Slide 2">
+            </div>
+            </a>
+            <a target="_blank" href="{{ route('infrastruktur-jalan.dashboard') }}">
+            <div class="carousel-item">
+              <img src="{{ asset('assets/FrontOffice/img/update3.png') }}" class="d-block w-100" alt="Slide 3">
+            </div>
+            </a>
+          </div>
+          <!-- Controls -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#sliderCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#sliderCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+          <!-- Indicators -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#sliderCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#sliderCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#sliderCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+
+    <!-- End Dashboard -->
+
         <!-- ======= About Section ======= -->
-        <section id="about" class="about" style="background-color:transparent">
+        <section id="about" class="about" style="background-color: #27445D">
             <div class="container">
                 <style>
                     .card-layanan:hover {
@@ -181,7 +365,9 @@
                     }
                 </style>
                 <div class="row content">
+                    <h1 style="font-weight:bold; text-align:center; color:white;">Topik Populer</h1>
                     <div class="col-md-3 g-3">
+                        <a href="{{ route('kesehatan.dashboard') }}" class="card-layanan-text5">  
                         <div class="g-3">
                             <div class="card-layanan">
                                 <div class="card-layanan-frame">
@@ -191,27 +377,24 @@
                                             d="M19 22H5C3.34315 22 2 20.6569 2 19V3C2 2.44772 2.44772 2 3 2H17C17.5523 2 18 2.44772 18 3V15H22V19C22 20.6569 20.6569 22 19 22ZM18 17V19C18 19.5523 18.4477 20 19 20C19.5523 20 20 19.5523 20 19V17H18ZM16 20V4H4V19C4 19.5523 4.44772 20 5 20H16ZM6 7H14V9H6V7ZM6 11H14V13H6V11ZM6 15H11V17H6V15Z">
                                         </path>
                                     </svg>
-                                </div>
+                                </div>                              
                                 <div class="card-layanan-frame1">
                                     <div class="card-layanan-text">
                                         <h3 class="fw-bold">Kesehatan</h3>
                                     </div>
                                     <div class="card-layanan-text2">
                                         <p class="card-layanan-text3">
-                                            Data kesehatan meliputi jumlah puskesmas, tenaga kesehatan dan pasien.
+                                            Data kesehatan mencakup puskesmas, tenaga medis, serta pasien.
                                         </p>
-                                    </div>
-                                </div>
-                                <div class="card-layanan-frame2">
-                                    <div class="card-layanan-text4">
-                                        <a href="{{ route('kesehatan.dashboard') }}" class="card-layanan-text5">Detail <i
-                                                class="ri-arrow-right-line"></i></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        </a>
                     </div>
+
                     <div class="col-md-3 g-3">
+                        <a href="{{ route('sosial.dashboard') }}" class="card-layanan-text5">     
                         <div class="g-3">
                             <div class="card-layanan">
                                 <div class="card-layanan-frame">
@@ -221,7 +404,7 @@
                                             d="M2 20H22V22H2V20ZM4 12H6V19H4V12ZM9 12H11V19H9V12ZM13 12H15V19H13V12ZM18 12H20V19H18V12ZM2 7L12 2L22 7V11H2V7ZM4 8.23607V9H20V8.23607L12 4.23607L4 8.23607ZM12 8C11.4477 8 11 7.55228 11 7C11 6.44772 11.4477 6 12 6C12.5523 6 13 6.44772 13 7C13 7.55228 12.5523 8 12 8Z">
                                         </path>
                                     </svg>
-                                </div>
+                                </div>                           
                                 <div class="card-layanan-frame1">
                                     <div class="card-layanan-text">
                                         <h3 class="fw-bold">Sosial</h3>
@@ -232,16 +415,12 @@
                                         </p>
                                     </div>
                                 </div>
-                                <div class="card-layanan-frame2">
-                                    <div class="card-layanan-text4">
-                                        <a href="{{ route('sosial.dashboard') }}" class="card-layanan-text5">Detail <i
-                                                class="ri-arrow-right-line"></i></a>
-                                    </div>
-                                </div>
                             </div>
                         </div>
+                        </a>
                     </div>
                     <div class="col-md-3 g-3">
+                        <a href="{{ route('pendidikan.dashboard') }}" class="card-layanan-text5"> 
                         <div class="g-3">
                             <div class="card-layanan">
                                 <div class="card-layanan-frame">
@@ -251,7 +430,7 @@
                                             d="M17 2V4H20.0066C20.5552 4 21 4.44495 21 4.9934V21.0066C21 21.5552 20.5551 22 20.0066 22H3.9934C3.44476 22 3 21.5551 3 21.0066V4.9934C3 4.44476 3.44495 4 3.9934 4H7V2H17ZM7 6H5V20H19V6H17V8H7V6ZM9 16V18H7V16H9ZM9 13V15H7V13H9ZM9 10V12H7V10H9ZM15 4H9V6H15V4Z">
                                         </path>
                                     </svg>
-                                </div>
+                                </div>                               
                                 <div class="card-layanan-frame1">
                                     <div class="card-layanan-text">
                                         <h3 class="fw-bold">Pendidikan</h3>
@@ -261,17 +440,13 @@
                                             Data Pendidikan Meliputi Jumlah Sekolah, guru dan siswa.
                                         </p>
                                     </div>
-                                </div>
-                                <div class="card-layanan-frame2">
-                                    <div class="card-layanan-text4">
-                                        <a href="{{ route('pendidikan.dashboard') }}" class="card-layanan-text5">Detail <i
-                                                class="ri-arrow-right-line"></i></a>
-                                    </div>
-                                </div>
+                                </div>    
                             </div>
                         </div>
+                        </a>
                     </div>
                     <div class="col-md-3 g-3">
+                        <a href="{{ route('infrastruktur-jalan.dashboard') }}" class="card-layanan-text5">
                         <div class="card-layanan">
                             <div class="card-layanan-frame">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36"
@@ -283,7 +458,7 @@
                             </div>
                             <div class="card-layanan-frame1">
                                 <div class="card-layanan-text">
-                                    <h3 class="fw-bold">infrastruktur</h3>
+                                    <h3 class="fw-bold">Infrastruktur</h3>
                                 </div>
                                 <div class="card-layanan-text2">
                                     <p class="card-layanan-text3">
@@ -291,22 +466,22 @@
                                     </p>
                                 </div>
                             </div>
-                            <div class="card-layanan-frame2">
-                                <div class="card-layanan-text4">
-                                    <a href="#" class="card-layanan-text5">Detail <i
-                                            class="ri-arrow-right-line"></i></a>
-                                </div>
-                            </div>
                         </div>
+                    </div>
+                    </a>
+                    <div style="margin:40px 0px 0px 0px; text-align: center;">
+                        <a class="d-inline float-middle btn-design btn-light" style="padding:10px 10px 10px 10px;" href="{{ route('kesehatan.dashboard') }}">Explore Lebih Lanjut</a>             
                     </div>
                 </div>
             </div>
-        </section><!-- End About Section -->
+        </section>
+        <!-- End About Section -->
+
         <section class="about" style="background-color: transparent">
             <div class="container">
-                <h2 class="fw-bold d-inline">Explore Data</h2>
-                <a class="d-inline float-end btn btn-success" href="{{ route('kesehatan.dashboard') }}">Lihat Selengkapnya
-                    <i class="ri-arrow-right-line"></i></a>
+                <h2 class="fw-bold d-inline">Highlight</h2>
+                <!-- <a class="d-inline float-end btn btn-success" href="{{ route('kesehatan.dashboard') }}">Lihat Selengkapnya
+                    <i class="ri-arrow-right-line"></i></a> -->
                 <p>Jelajahi berbagai data pelayanan dasar provinsi bengkulu</p>
                 <div class="row">
                     <div class="col-md-4 g-2">
@@ -387,8 +562,11 @@
                 </div>
             </div>
         </section>
-    </main><!-- End #main -->
-
+    </main>
+    <!-- End #main -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>                
+      
     <script>
         var ctx = document.getElementById('lineChart').getContext('2d');
         var lineChart = new Chart(ctx, {
@@ -426,6 +604,7 @@
             }
         });
     </script>
+    
 {{--    <script>
         // Data dari PHP yang di-passing ke JavaScript
         const bulan = @json($bulan); // Nama bulan sudah dalam bentuk kalimat
@@ -496,7 +675,8 @@
             }
         });
     </script>
-    <script>
+
+    <!-- <script>
         var ctx = document.getElementById('pieChart').getContext('2d');
         var pieChart = new Chart(ctx, {
             type: 'pie', // Tipe chart pie
@@ -527,6 +707,7 @@
             }
         });
     </script>
+
     <script>
         var ctx = document.getElementById('barChart').getContext('2d');
         var barChart = new Chart(ctx, {
@@ -564,5 +745,5 @@
                 }
             }
         });
-    </script>
+    </script> -->
 @endsection
