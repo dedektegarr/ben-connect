@@ -26,24 +26,24 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.min.css" rel="stylesheet">
     <style>
-        /* From Uiverse.io by Mhyar-nsi */ 
+        /* From Uiverse.io by Mhyar-nsi */
         .btn-rumah {
-        background-color: #f3f7fe;
-        color:  #000;
-        border: none;
-        cursor: pointer;
-        border-radius: 14px;
-        width: 80%;   
-        height: 45px;
-        transition: 0.3s;
-        padding: 10px 0px 0px 0px;
-        margin: 0 auto;
-        display: block;
+            background-color: #f3f7fe;
+            color: #000;
+            border: none;
+            cursor: pointer;
+            border-radius: 14px;
+            width: 80%;
+            height: 45px;
+            transition: 0.3s;
+            padding: 10px 0px 0px 0px;
+            margin: 0 auto;
+            display: block;
         }
 
         .btn-rumah:hover {
-        background-color:rgb(14, 119, 87);
-        color: #000;
+            background-color: rgb(14, 119, 87);
+            color: #000;
         }
     </style>
 </head>
@@ -179,9 +179,9 @@
                             <li><a href="{{ route('komoditas.dashboard') }}">Rekap Data Komoditas</a></li>
                         </ul>
                     </li>
-                    
+
                     <a class="btn btn-rumah" href="{{ route('index') }}" aria-expanded="false">
-                    <i class="ri-home-line"></i><span class="nav-text "> Home</span></a>
+                        <i class="ri-home-line"></i><span class="nav-text "> Home</span></a>
 
                 </ul>
 

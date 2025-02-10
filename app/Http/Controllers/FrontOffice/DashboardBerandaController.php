@@ -8,8 +8,8 @@ use Illuminate\Support\Facades\File;
 
 class DashboardBerandaController extends Controller
 {
-    public function index() 
+    public function index()
     {
-        return view ('FrontOffice.beranda.beranda');  
+        return view('FrontOffice.beranda.beranda');
     }
 }
