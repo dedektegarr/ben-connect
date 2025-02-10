@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\Disperindag\PriceController;
 use App\Http\Controllers\Disperindag\VariantController;
-use App\Http\Controllers\ImportController;
 use App\Http\Controllers\ExcelImportController;
 use App\Http\Controllers\Infrastructure\RoadController;
 use App\Http\Controllers\Infrastructure\RoadCategoryController;
@@ -142,6 +141,10 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::delete('/kesehatan/rs/kategori/{id}', 'destroy')->middleware('permission:kategori_rs.delete');
     });
 
+    Route::post('/disperindag/price/import', [ExcelImportController::class,'import'])->middleware('permission:prices.import');
+    Route::post('/disperindag/ikm/import', [ExcelImportController::class,'importexcel_ikm'])->middleware('permission:ikm.import');
+    Route::post('/disperindag/indusrty/import', [ExcelImportController::class,'importexcel_industry'])->middleware('permission:industry.import');
+
     // Pendidikan
     // Route::controller(SchoolController::class)->group(function(){
     //     Route::resource('/pendidikan/jenjang-sekolah', SchoolLevelController::class);
@@ -195,5 +198,3 @@ Route::get('/pendidikan/dashboard', [SchoolFilterController::class, 'filter']);
 Route::get('/kesehatan',[ApiController::class,'getDataRSUD']);
 Route::get('/kesehatan/post',[ApiController::class,'postDatabase']);
 Route::get('/kesehatan/post',[ApiController::class,'postDatabase']);
-
-Route::post('/disperindag/price/import', [ExcelImportController::class,'import']);
