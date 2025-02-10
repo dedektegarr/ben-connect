@@ -24,23 +24,22 @@ class PopulationController extends Controller
     public function stored(Request $request)
     {
         //Validasi input
-        $formRequest = new PopulationRequest('population_input'); 
+        $formRequest = new PopulationRequest('population_input');
         $this->validate($request, $formRequest->rules(), $formRequest->messages());
 
         try {
-            Excel::import(new PopulationImport, $request->file('population_file'));
+            Excel::import(new PopulationImport($request->population_period_id), $request->file('population_file'));
 
             return response()->json([
                 'status_code' => 200,
                 'message' => 'OK'
-            ], 200); 
+            ], 200);
         } catch (\Exception $e) {
             return response()->json([
                 'status_code' => 400,
                 'message' => 'Error',
                 'errors' => $e->getMessage()
-            ], 400); 
-           
+            ], 400);
         }
     }
 

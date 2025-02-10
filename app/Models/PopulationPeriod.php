@@ -17,4 +17,9 @@ class PopulationPeriod extends Model
         'population_period_year'
     ];
     protected $dates = ['deleted_at'];
+
+    public function populations()
+    {
+        return $this->hasMany(Population::class, "population_period_id");
+    }
 }

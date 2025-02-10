@@ -16,4 +16,9 @@ class PopulationAgeGroup extends Model
         'population_age_group_years'
     ];
     protected $dates = ['deleted_at'];
+
+    public function populations()
+    {
+        return $this->hasMany(Population::class, "population_age_group_id");
+    }
 }

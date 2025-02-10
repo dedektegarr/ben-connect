@@ -14,95 +14,75 @@ use Illuminate\Support\Collection;
 
 HeadingRowFormatter::default('none');
 
-class PopulationImport implements ToModel, ToCollection, WithHeadingRow
+class PopulationImport implements ToModel, WithHeadingRow
 {
-    
-    /**
-    * @param array $row
-    *
-    * @return \Illuminate\Database\Eloquent\Model|null
-    */
-    private $region = [];
-    private $regionField = array();
-    private $ageGroup = [];
-    private $ageGroupField = [];
+    private $populationPeriodId;
+    private $ageRanges;
+    private $regions;
 
-    public function collection(Collection $rows)
+    public function __construct($id)
     {
-        //Mengambil seluruh kelompok umur
-        $getAgeGroup = PopulationAgeGroup::get();
-        //Format kelompok umur menyesuaikan format excel
-        $formattedAgeMale = '';
-        $formattedAgeFemale = '';
-        foreach($getAgeGroup as $age){
-            if(str_contains($age->population_age_group_years, '-')){
-                $ages = explode('-', $age->population_age_group_years);
-                $startAge = $ages[0];
-                $endAge = $ages[1];
-                if(strlen($startAge) == 1){
-                    $startAge = '0'.$startAge;
-                }
-                if(strlen($endAge) == 1){
-                    $endAge = '0'.$endAge;
-                }
-                $formattedAgeMale = $startAge.'-'.$endAge.'(LK)';
-                $formattedAgeFemale = $startAge.'-'.$endAge.'(PR)';
-
-            }else{
-                $formattedAgeMale = $age->population_age_group_years.'(LK)';
-                $formattedAgeFemale = $age->population_age_group_years.'(PR)';
-            }
-            $ageGroupMale = ['age_group_id'=>$age->population_age_group_id, 'age_group_years'=>$formattedAgeMale];
-            $ageGroupFemale = ['age_group_id'=>$age->population_age_group_id, 'age_group_years'=>$formattedAgeFemale];
-            
-            array_push($this->ageGroup, $ageGroupMale);
-            array_push($this->ageGroup, $ageGroupFemale);    
-            
-            $this->ageGroupField[$age->population_age_group_id] = [$formattedAgeMale, $formattedAgeFemale];
-        }
-        //Membuat array header
-        $headers = collect($this->ageGroup);
-        $headers = $headers->pluck('age_group_years')->toArray();
-        array_push($headers, 'WILAYAH');
-
-        //Validasi header
-        $headersInFile = $rows->first()->keys()->toArray();
-        $missingHeaders = array_diff($headers, $headersInFile);
-
-        //Kirim error jika terdapat perbedaan atau kekurangan header
-        if (!empty($missingHeaders)) {
-            $missingHeadersString = implode(', ', $missingHeaders);
-            throw new \Exception("File import tidak lengkap, header berikut tidak ada:  $missingHeadersString");
-        }
-
-        //Mengambil seluruh wilayah database
-        $getRegion = Region::get();
-        foreach($getRegion as $reg){
-            $regs = ['region_id'=>$reg->region_id, 'region_name'=>strtoupper($reg->region_name)];
-            array_push($this->region, $regs);
-            $this->regionField[$reg->region_id] = $reg->region_name;
-        }
-        $region = collect($this->region);
-
-        //Validasi nama wilayah
-        $regionsInFile = $rows->pluck('WILAYAH')->unique()->toArray();
-        $regionsInValidate = $region->pluck('region_name')->toArray();
-        $missingRegions = array_diff($regionsInValidate, $regionsInFile);
-
-        //Kirim error jika terdapat perbedaan atau kekurangan data wilayah
-        if (!empty($missingRegions)) {
-            $missingRegionsString = implode(', ', $missingRegions);
-            $x = json_encode($this->ageGroupField);
-            throw new \Exception("File import tidak lengkap, wilayah berikut tidak ada:  $missingRegionsString");
-        }
+        $this->populationPeriodId = $id;
+        $this->ageRanges = PopulationAgeGroup::pluck("population_age_group_years", "population_age_group_id")->toArray();
+        $this->regions = Region::pluck("region_name", "region_id")->toArray();
     }
 
     public function model(array $row)
-    {   
-        // $r = array_search('Kaur', $this->regionField);
-        // Population::create([
-        //     'population_period_id' => '9e159fb3-3ff2-4933-8e90-5a1d004ae8b5',
-        //     'region_id' => $r,
-        // ]);
+    {
+        // Ambil semua data master yang dibutuhkan dari database
+        $periodId = $this->populationPeriodId;
+        $ageRanges = $this->ageRanges;
+        $regions = array_map('strtolower', $this->regions);
+
+        // Memastikan row dari excel tidak kosong
+        if (empty($row) || !array_key_exists("WILAYAH", $row) || empty($row["WILAYAH"])) {
+            return null;
+        }
+
+        // Menyesuakan format region dan mencari apakah ada region dari excel yang sesuai dengan region di db
+        $regionInExcel = $this->regionFormat(trim($row["WILAYAH"]));
+        $regionId = array_search(strtolower($regionInExcel), $regions);
+
+        // Melakukan perulangan sebanyak jumlah data rentang usia
+        foreach ($ageRanges as $ageRangeId => $range) {
+            // Mengambil data berdasrkan rentang usia dan jenis kelamin
+            $male = $row["$range(LK)"] ?? null;
+            $female = $row["$range(PR)"] ?? null;
+
+            // Skip jika data kosong
+            if (empty($male) && empty($female)) {
+                continue;
+            }
+
+            // Store ke database jika region sesuai
+            if ($regionId !== false) {
+                Population::create([
+                    'population_period_id' => $periodId,
+                    'region_id' => $regionId,
+                    'population_age_group_id' => $ageRangeId,
+                    'population_male' => $row["$range(LK)"],
+                    'population_female' => $row["$range(PR)"],
+                ]);
+            }
+        }
+    }
+
+    private function regionFormat($value)
+    {
+        $region = strtolower($value);
+
+        // Mengubah format region sesuai dengan data master
+        $containsCity = $region == "bengkulu" || $region == 'kota bengkulu';
+        $containsMukoMuko = str_contains($region, "muko muko");
+
+        if ($containsCity) {
+            return $region;
+        }
+
+        if ($containsMukoMuko) {
+            $region = str_replace($region, "muko muko", "muko-muko");
+        }
+
+        return "kabupaten " . $region;
     }
 }
