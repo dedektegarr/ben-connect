@@ -112,9 +112,9 @@ class PricesImport implements ToModel, WithHeadingRow, WithBatchInserts, WithChu
 
     private function formatDate($date)
     {
-        $year = '20' . substr($date, 0, 2);
+        $day = substr($date, 0, 2);
         $month = substr($date, 2, 2);
-        $day = substr($date, 4, 2);
+        $year = '20' . substr($date, 4, 2);
         return "$year-$month-$day"; // Format untuk database
     }
 
