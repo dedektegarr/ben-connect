@@ -42,6 +42,7 @@ class RolePermissionSeeder extends Seeder
             'variants' => ['get', 'get-by-id', 'create', 'update', 'delete'],
             'prices' => ['get', 'get-by-id', 'create', 'update', 'delete','filter','import'],
             'ikm' => ['get', 'get-by-id', 'create', 'update', 'delete','filter','import'],
+            'industry' => ['get', 'get-by-id', 'create', 'update', 'delete','filter','import'],
             'kategori_rs'=>['get', 'get-by-id', 'create', 'update', 'delete'],
             'akreditasi_rs'=>['get', 'get-by-id', 'create', 'update', 'delete'],
             'kepemilikan_rs'=>['get', 'get-by-id', 'create', 'update', 'delete'],
@@ -57,6 +58,7 @@ class RolePermissionSeeder extends Seeder
                 'variants' => '*',
                 'prices' => '*',
                 'ikm' => '*',
+                'industry' => '*',
                 'road_category' => ['get', 'get-by-id'],
                 'road' => ['get', 'get-by-id', 'filter'],
                 'study'=>'*',
@@ -85,7 +87,8 @@ class RolePermissionSeeder extends Seeder
                 'region' => ['get', 'get-by-id'],
                 'variants' => '*',
                 'prices' => '*',
-                'ikm' => '*'
+                'ikm' => '*',
+                'industry' => '*'
             ],
             'admin-kesehatan'=>[
                 'user' => ['update', 'update-password'],

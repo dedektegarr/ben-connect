@@ -15,6 +15,7 @@ class IkmImport implements ToModel, WithHeadingRow, WithBatchInserts, WithChunkR
     protected $regions;
     public $errors = [];
     private $batchSize = 1000;
+    private $rowCount = 0;
 
     public function __construct($year)
     {
@@ -24,22 +25,53 @@ class IkmImport implements ToModel, WithHeadingRow, WithBatchInserts, WithChunkR
 
     public function model(array $row)
     {
-        $rowNumber = $row['no'] ?? null; 
+        // Cek apakah semua kolom penting kosong
+        $isEmptyRow = empty($row['nama_perusahaan']) &&
+            empty($row['nama_pemilik']) &&
+            empty($row['kab_kota']);
 
-        $kabKota = $row['kab_kota'] ?? '';
-
-        if (empty($kabKota)) {
-            $this->errors[] = "Baris $rowNumber: Kolom 'kab_kota' kosong atau tidak ditemukan.";
+        if ($isEmptyRow) {
             return null;
         }
 
+        $this->rowCount++;
+        $rowNumber = $this->rowCount;
+
+        $kabKota = $row['kab_kota'] ?? '';
         $normalizedRegion = strtolower(trim(str_replace(' ', '', $kabKota)));
         $matchingRegion = $this->regions->first(function ($region) use ($normalizedRegion) {
             return strtolower(str_replace(' ', '', $region->region_name)) === $normalizedRegion;
         });
 
+        // Jika tidak ada kecocokan dengan region yang tersedia tampil pesan error
         if (!$matchingRegion) {
+            $this->errors[] = "Baris $rowNumber: Kolom 'kab_kota' tidak tersedia atau kosong";
             return null;
+        }
+        //Cek apakah data sudah ada di database
+        $existingIkm = Ikm::where('ikm_ptname', $row['nama_perusahaan'])
+            ->where('ikm_owner_name', $row['nama_pemilik'])
+            ->where('region_id', $matchingRegion->region_id)
+            ->first();
+
+        if ($existingIkm) {
+            // Jika data sudah ada, perbarui data
+            $existingIkm->update([
+                'ikm_contact' => $row['kontak_person'] ?? null,
+                'ikm_sentra' => $row['sentra'] ?? null,
+                'ikm_address_street' => $row['jalan'],
+                'ikm_address_village' => $row['desa_kelurahan'],
+                'ikm_address_subdistrict' => $row['kecamatan'],
+                'ikm_form' => $row['bentuk_badan_usaha'],
+                'ikm_number' => $row['nomor_izin'] ?? null,
+                'ikm_kd_kbli' => $row['kode_kbli'],
+                'ikm_category_product' => $row['jenis_produk'],
+                'ikm_branch' => $row['cabang_industri'],
+                'ikm_count' => $row['jumlah_tenaga_kerja'],
+                'year' => $this->year
+            ]);
+
+            return null; // Lewati insert karena sudah diperbarui
         }
 
         return new Ikm([

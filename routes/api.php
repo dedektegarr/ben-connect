@@ -2,9 +2,7 @@
 
 use App\Http\Controllers\Disperindag\PriceController;
 use App\Http\Controllers\Disperindag\VariantController;
-use App\Http\Controllers\ImportController;
 use App\Http\Controllers\ExcelImportController;
-use App\Http\Controllers\IkmController;
 use App\Http\Controllers\Infrastructure\RoadController;
 use App\Http\Controllers\Infrastructure\RoadCategoryController;
 use App\Http\Controllers\Kesehatan\Master\CategoryHospitalController;
@@ -144,7 +142,8 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 
     Route::post('/disperindag/price/import', [ExcelImportController::class,'import'])->middleware('permission:prices.import');
-    Route::post('/disperindag/ikm/import', [IkmController::class,'importExcel'])->middleware('permission:ikm.import');
+    Route::post('/disperindag/ikm/import', [ExcelImportController::class,'importexcel_ikm'])->middleware('permission:ikm.import');
+    Route::post('/disperindag/indusrty/import', [ExcelImportController::class,'importexcel_industry'])->middleware('permission:industry.import');
 
     // Pendidikan
     // Route::controller(SchoolController::class)->group(function(){
