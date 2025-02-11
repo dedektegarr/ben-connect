@@ -5,6 +5,7 @@ use App\Http\Controllers\Disperindag\VariantController;
 use App\Http\Controllers\ExcelImportController;
 use App\Http\Controllers\Infrastructure\RoadController;
 use App\Http\Controllers\Infrastructure\RoadCategoryController;
+use App\Http\Controllers\Kesehatan\HospitalController;
 use App\Http\Controllers\Kesehatan\Master\CategoryHospitalController;
 use App\Http\Controllers\Kesehatan\Master\HospitalAcreditationController;
 use App\Http\Controllers\Kesehatan\Master\HospitalOwnershipController;
@@ -169,6 +170,11 @@ Route::middleware('auth:sanctum')->group(function () {
             Route::post("/kesehatan/rs/kepemilikan", "store");
             Route::put("/kesehatan/rs/kepemilikan/ubah/{id}", "update");
             Route::delete("/kesehatan/rs/kepemilikan/delete/{id}", "destroy");
+        });
+
+        // Data Rumah Sakit
+        Route::controller(HospitalController::class)->group(function () {
+            Route::get("/kesehatan/rs", "index");
         });
     });
 

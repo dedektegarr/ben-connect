@@ -118,7 +118,7 @@ class PopulationController extends Controller
      */
     public function show(string $id)
     {
-        $data = Population::find($id);
+        $data = Population::with(['populationPeriod', 'populationAgeGroup', 'region'])->find($id);
 
         if (!$data->exists()) {
             return response()->json([

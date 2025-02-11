@@ -20,6 +20,8 @@ class Population extends Model
         'population_female'
     ];
 
+    protected $hidden = ["population_period_id", "region_id", "population_age_group_id"];
+
     public function scopeFilter($query, $filters)
     {
         return $query->when($filters["year"] ?? null, function ($query, $year) {
