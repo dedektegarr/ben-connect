@@ -28,42 +28,71 @@ class IndustryImport implements ToModel, WithHeadingRow, WithBatchInserts, WithC
 
     public function model(array $row)
     {
-        dd($row);
-        // Cek apakah semua kolom penting kosong
-        $isEmptyRow = empty($row['Nama Perusahaan']) &&
-            empty($row['KBLI']);
+        //Cek apakah semua kolom penting kosong
+        $isEmptyRow = empty($row['nama_perusahaan']) &&
+            empty($row['kbli']);
 
         if ($isEmptyRow) {
+            return null;
+        }
+
+        if (empty(array_filter($row))) {
             return null;
         }
 
         $this->rowCount++;
         $rowNumber = $this->rowCount;
 
-        $kabKota = $row['Kabkota Pabrik'] ?? '';
+        $kabKota = $row['kabkota_pabrik'] ?? '';
         $normalizedRegion = strtolower(trim(str_replace(' ', '', $kabKota)));
         $matchingRegion = $this->regions->first(function ($region) use ($normalizedRegion) {
-            return strtolower(str_replace(' ', '', $region->region_name)) === $normalizedRegion;
+            $regionNormalized = strtolower(str_replace([' ', '-'], '', $region->region_name));
+            return $regionNormalized === $normalizedRegion;
         });
-
+        
         // Jika tidak ada kecocokan dengan region yang tersedia tampil pesan error
         if (!$matchingRegion) {
-            $this->errors[] = "Baris $rowNumber: Kolom 'kab_kota' tidak tersedia atau kosong";
+            $this->errors[] = "Baris $rowNumber: Kolom 'kab/kota' tidak tersedia atau kosong";
             return null;
         }
 
+        //Cek apakah data sudah ada di database
+        $existingIkm = Industry::where('industry_ptname', $row['nama_perusahaan'])
+            ->where('industry_kd_kbli', $row['kbli'])
+            ->where('region_id', $matchingRegion->region_id)
+            ->first();
+
+        if ($existingIkm) {
+            // Jika data sudah ada, perbarui data
+            $existingIkm->update([
+                'industry_ptname' => $row['nama_perusahaan'] ?? null,
+                'industry_headoffice_address' => $row['alamat_kantor_pusat'] ?? null,
+                'industry_office_province' => $row['provinsi_kantor'] ?? null,
+                'industry_city_office' => $row['kabkota_kantor'] ?? null,
+                'industry_factory_address' => $row['alamat_pabrik'] ?? null,
+                'industry_factory_province' => $row['provinsi_pabrik'] ?? null,
+                'region_id' => $matchingRegion->region_id,
+                'industry_kd_kbli' => $row['kbli'] ?? null,
+                'industry_business_fields' => $row['bidang_usaha'] ?? null,
+                'industry_business_scale' => $row['skala_usaha'] ?? null,
+                'industry_registered_sinas' => $row['terdaftar_di_siinas_yatidak'] ?? null
+            ]);
+
+            return null; // Lewati insert karena sudah diperbarui
+        }
+
         return new Industry([
-            'industry_ptname' => $row['Nama Perusahaan'],
-            'industry_headoffice_address' => $row['Alamat Kantor Pusat'],
-            'industry_office_province' => $row['Provinsi Kantor'],
-            'industry_city_office' => $row['Kabkota Kantor'],
-            'industry_factory_address' => $row['Alamat Pabrik'],
-            'industry_factory_province' => $row['Provinsi Pabrik'],
+            'industry_ptname' => $row['nama_perusahaan'] ?? null,
+            'industry_headoffice_address' => $row['alamat_kantor_pusat'] ?? null,
+            'industry_office_province' => $row['provinsi_kantor'] ?? null,
+            'industry_city_office' => $row['kabkota_kantor'] ?? null,
+            'industry_factory_address' => $row['alamat_pabrik'] ?? null,
+            'industry_factory_province' => $row['provinsi_pabrik'] ?? null,
             'region_id' => $matchingRegion->region_id,
-            'industry_kd_kbli' => $row['KBLI'],
-            'industry_business_fields' => $row['Bidang Usaha'] ?? null,
-            'industry_business_scale' => $row['Skala Usaha'],
-            'industry_registered_sinas' => $row['Terdaftar di SIINas (Ya/Tidak)']
+            'industry_kd_kbli' => $row['kbli'] ?? null,
+            'industry_business_fields' => $row['bidang_usaha'] ?? null,
+            'industry_business_scale' => $row['skala_usaha'] ?? null,
+            'industry_registered_sinas' => $row['terdaftar_di_siinas_yatidak'] ?? null
         ]);
     }
 
