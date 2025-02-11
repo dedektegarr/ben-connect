@@ -104,7 +104,6 @@ class ExcelImportController extends Controller
 
     public function importexcel_industry(Request $request)
     {
-        dd($request);
         // Validasi file dan tahun
         $validator = Validator::make($request->all(), [
             'file' => 'required|file|mimes:xlsx,xls'
