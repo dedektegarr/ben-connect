@@ -7,6 +7,7 @@ use App\Http\Controllers\Infrastructure\RoadController;
 use App\Http\Controllers\Infrastructure\RoadCategoryController;
 use App\Http\Controllers\Kesehatan\Master\CategoryHospitalController;
 use App\Http\Controllers\Kesehatan\Master\HospitalAcreditationController;
+use App\Http\Controllers\Kesehatan\Master\HospitalOwnershipController;
 use App\Http\Controllers\Kesehatan\RSUD\ApiController;
 use App\Http\Controllers\Master\DatasetController;
 use App\Http\Controllers\Master\TagsController;
@@ -141,9 +142,9 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::delete('/berita/hapus/{id}', 'destroy')->middleware('permission:delete');
     });
 
-    // KESEHATAN
+    // RUMAH SAKIT
     Route::middleware(["role:admin|admin-kesehatan"])->group(function () {
-        // Kesehatan Kategori
+        // Rumah Sakit Kategori
         Route::controller(CategoryHospitalController::class)->group(function () {
             Route::get('/kesehatan/rs/kategori', 'index')->middleware('permission:kategori_rs.get');
             Route::get('/kesehatan/rs/kategori/{id}', 'show')->middleware('permission:kategori_rs.get-by-id');
@@ -152,13 +153,22 @@ Route::middleware('auth:sanctum')->group(function () {
             Route::delete('/kesehatan/rs/kategori/{id}', 'destroy')->middleware('permission:kategori_rs.delete');
         });
 
-        // Kesehatan Accreditation
+        // Rumah Sakit Accreditation
         Route::controller(HospitalAcreditationController::class)->group(function () {
             Route::get("/kesehatan/rs/akreditasi", "index");
             Route::get("/kesehatan/rs/akreditasi/{id}", "show");
             Route::post("/kesehatan/rs/akreditasi", "store");
             Route::put("/kesehatan/rs/akreditasi/ubah/{id}", "update");
             Route::delete("/kesehatan/rs/akreditasi/delete/{id}", "destroy");
+        });
+
+        // Rumah Sakit Kepemilikan
+        Route::controller(HospitalOwnershipController::class)->group(function () {
+            Route::get("/kesehatan/rs/kepemilikan", "index");
+            Route::get("/kesehatan/rs/kepemilikan/{id}", "show");
+            Route::post("/kesehatan/rs/kepemilikan", "store");
+            Route::put("/kesehatan/rs/kepemilikan/ubah/{id}", "update");
+            Route::delete("/kesehatan/rs/kepemilikan/delete/{id}", "destroy");
         });
     });
 

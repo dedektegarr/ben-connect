@@ -57,7 +57,7 @@ class HospitalAcreditationController extends Controller
 
         if (empty($data)) {
             return response()->json([
-                "status_code" => "404",
+                "status_code" => 404,
                 "message" => "Data akreditasi rumah sakit tidak ditemukan",
                 "data" => null
             ], 404);
@@ -79,7 +79,7 @@ class HospitalAcreditationController extends Controller
 
         if (empty($data)) {
             return response()->json([
-                "status_code" => "404",
+                "status_code" => 404,
                 "message" => "Data akreditasi rumah sakit tidak ditemukan",
                 "data" => null
             ], 404);
@@ -106,7 +106,7 @@ class HospitalAcreditationController extends Controller
 
         if (empty($data)) {
             return response()->json([
-                "status_code" => "404",
+                "status_code" => 404,
                 "message" => "Data akreditasi rumah sakit tidak ditemukan",
                 "data" => null
             ], 404);
@@ -115,7 +115,7 @@ class HospitalAcreditationController extends Controller
         $data->delete();
 
         return response()->json([
-            "status_code" => "200",
+            "status_code" => 200,
             "message" => "Data akreditasi rumah sakit berhasil dihapus",
         ], 200);
     }
