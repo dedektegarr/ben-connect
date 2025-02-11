@@ -158,7 +158,7 @@ Route::middleware('auth:sanctum')->group(function () {
             Route::get("/kesehatan/rs/akreditasi/{id}", "show");
             Route::post("/kesehatan/rs/akreditasi", "store");
             Route::put("/kesehatan/rs/akreditasi/ubah/{id}", "update");
-            Route::delete("/kesehatan/rs/akreditasi/delete/{id}", "delete");
+            Route::delete("/kesehatan/rs/akreditasi/delete/{id}", "destroy");
         });
     });
 

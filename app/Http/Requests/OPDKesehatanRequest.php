@@ -28,28 +28,28 @@ class OPDKesehatanRequest extends FormRequest
      */
     public function rules(): array
     {
-        $rules= [
-            'category_hospital_input'=> [
+        $rules = [
+            'category_hospital_input' => [
                 'category_hospital_name' => 'required|max:100|unique:category_hospital,category_hospital_name'
             ],
-            'hospital_acreditation_input'=> [
-                'hospital_acreditation_name' => 'required|max:100|unique:hospital_acreditation_,hospital_acreditation_name'
+            'hospital_acreditation_input' => [
+                'hospital_acreditation_name' => 'required|max:100|unique:hospital_acreditation,hospital_acreditation_name'
             ],
-            'hospital_ownership_input'=> [
+            'hospital_ownership_input' => [
                 'hospital_ownership_name' => 'required|max:100|unique:hospital_ownership,hospital_ownership_name'
             ],
-            'hospital_data_input'=> [
+            'hospital_data_input' => [
                 'hospital_data_name' => 'required|max:100|unique:hospital_data,hospital_data_name',
                 'hospital_data_nib' => 'required|max:100|unique:hospital_data,hospital_data_nib',
-                'category_hospital_id' =>'required|exists:category_hospital,category_hospital_id',
-                'hospital_acreditation_id' =>'required|exists:hospital_acreditation,hospital_acreditation_id',
-                'hospital_data_class' =>'required|in:A,B,C,D,-',
-                'region_id'=>'required|exists:region,region_id',
-                'hospital_ownership_id'=>'required|exists:hospital_ownership,hospital_ownership_id',
+                'category_hospital_id' => 'required|exists:category_hospital,category_hospital_id',
+                'hospital_acreditation_id' => 'required|exists:hospital_acreditation,hospital_acreditation_id',
+                'hospital_data_class' => 'required|in:A,B,C,D,-',
+                'region_id' => 'required|exists:region,region_id',
+                'hospital_ownership_id' => 'required|exists:hospital_ownership,hospital_ownership_id',
                 'hospital_data_email' => 'required|email',
-                'hospital_data_telp'=>['required','regex:/^(\+62|62|0)[0-9]{9,13}$/','unique:hospital_data,hospital_data_telp'],
-                'hospital_data_longitude'=>['required', 'regex:/^[-]?([1-8]?[0-9](\.\d+)?|90(\.0+)?)$/'],
-                'hospital_data_latitude'=>['required', 'regex:/^[-]?([1-8]?[0-9](\.\d+)?|90(\.0+)?)$/'],
+                'hospital_data_telp' => ['required', 'regex:/^(\+62|62|0)[0-9]{9,13}$/', 'unique:hospital_data,hospital_data_telp'],
+                'hospital_data_longitude' => ['required', 'regex:/^[-]?([1-8]?[0-9](\.\d+)?|90(\.0+)?)$/'],
+                'hospital_data_latitude' => ['required', 'regex:/^[-]?([1-8]?[0-9](\.\d+)?|90(\.0+)?)$/'],
             ],
         ];
 
