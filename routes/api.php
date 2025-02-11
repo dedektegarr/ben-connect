@@ -175,6 +175,7 @@ Route::middleware('auth:sanctum')->group(function () {
         // Data Rumah Sakit
         Route::controller(HospitalController::class)->group(function () {
             Route::get("/kesehatan/rs", "index");
+            Route::post("/kesehatan/rs/import", "import");
         });
     });
 

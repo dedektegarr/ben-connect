@@ -14,7 +14,19 @@ class HospitalController extends Controller
     public function index()
     {
         $data = HospitalDataModel::with(["region", "category_hospital", "hospital_acreditation", "hospital_ownership"])->get();
-        dd($data);
+
+        if ($data->isEmpty()) {
+            return response()->json([
+                "status_code" => 404,
+                "message" => "Data Rumah Sakit kosong",
+            ], 404);
+        }
+
+        return response()->json([
+            "status_code" => 200,
+            "message" => "Data Rumah Sakit berhasil diambil",
+            "data" => $data
+        ], 200);
     }
 
     /**
