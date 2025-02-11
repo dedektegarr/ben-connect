@@ -31,7 +31,8 @@ class DatabaseSeeder extends Seeder
             CategoryHosptialSeeder::class,
             HosptialOwnershipSeeder::class,
             HosptialAcreditationsSeeder::class,
-            PopulationAgeGroupSeeder::class
+            PopulationAgeGroupSeeder::class,
+            PopulationPeriodSeeder::class
         ]);
     }
 }

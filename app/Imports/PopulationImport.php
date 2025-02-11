@@ -56,7 +56,7 @@ class PopulationImport implements ToModel, WithHeadingRow
 
             // Store ke database jika region sesuai
             if ($regionId !== false) {
-                Population::create([
+                Population::updateOrCreate([
                     'population_period_id' => $periodId,
                     'region_id' => $regionId,
                     'population_age_group_id' => $ageRangeId,

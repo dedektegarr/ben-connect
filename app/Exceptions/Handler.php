@@ -35,12 +35,12 @@ class Handler extends ExceptionHandler
     public function render($request, Throwable $e)
     {
         //Error permission
-        // if($e instanceof UnauthorizedException){
-        //     return response()->json([
-        //         'status_code' => 403,
-        //         'message' => 'Akses tidak diizinkan'
-        //     ], 403);
-        // }
+        if ($e instanceof UnauthorizedException) {
+            return response()->json([
+                'status_code' => 403,
+                'message' => 'Akses tidak diizinkan'
+            ], 403);
+        }
         //Error otentikasi, belum login, token invalid
         if ($e instanceof AuthenticationException) {
             return response()->json([
@@ -57,12 +57,12 @@ class Handler extends ExceptionHandler
             ], 400);
         }
         //Endpoint ridak ditemukan (404)
-        // if($e instanceof NotFoundHttpException){
-        //     return response()->json([
-        //         'status_code' => 404,
-        //         'message' => 'Route tidak ditemukan'
-        //     ], 404);
-        // }
+        if ($e instanceof NotFoundHttpException) {
+            return response()->json([
+                'status_code' => 404,
+                'message' => 'Route tidak ditemukan'
+            ], 404);
+        }
         return parent::render($request, $e);
     }
 }

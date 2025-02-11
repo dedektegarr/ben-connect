@@ -47,7 +47,7 @@ Route::post('/logout', [UserController::class, 'logout'])->middleware('auth:sanc
 
 Route::middleware('auth:sanctum')->group(function () {
     // User Route (FIX)
-    Route::controller(UserController::class)->group(function(){
+    Route::controller(UserController::class)->group(function () {
         Route::get('/user/data', 'index')->middleware('permission:user.get');
         Route::get('/user/detail/{id}', 'show')->middleware('permission:user.get-by-id');
         Route::post('/user/register', 'store')->middleware('permission:user.register');
@@ -57,7 +57,7 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 
     //Region routes (FIX)
-    Route::controller(RegionController::class)->group(function(){
+    Route::controller(RegionController::class)->group(function () {
         Route::get('/wilayah/data', 'index');
         Route::get('/wilayah/detail/{id}', 'show');
         Route::post('/wilayah/tambah', 'store');
@@ -66,7 +66,7 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 
     //Region Data Routes (FIX)
-    Route::controller(RegionDataController::class)->group(function(){
+    Route::controller(RegionDataController::class)->group(function () {
         Route::get('/wilayah/data-wilayah/data', 'index');
         Route::get('/wilayah/data-wilayah/detail/{id}', 'show');
         Route::post('/wilayah/data-wilayah/tambah', 'store');
@@ -74,13 +74,13 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::delete('/wilayah/data-wilayah/hapus/{id}', 'destroy');
     });
 
-     //Population Routes
-     Route::controller(PopulationController::class)->group(function(){
-        Route::post('/xx/import', 'stored');
+    //Population Routes
+    Route::controller(PopulationController::class)->group(function () {
+        Route::post('/kependudukan/import', 'import');
     });
 
     //Population Period Routes (FIX)
-    Route::controller(PopulationPeriodController::class)->group(function(){
+    Route::controller(PopulationPeriodController::class)->group(function () {
         Route::get('/kependudukan/periode-data/data', 'index');
         Route::get('/kependudukan/periode-data/detail/{id}', 'show');
         Route::post('/kependudukan/periode-data/tambah', 'store');
@@ -89,7 +89,7 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 
     //Population Group Age Routes (FIX)
-    Route::controller(PopulationAgeGroupController::class)->group(function(){
+    Route::controller(PopulationAgeGroupController::class)->group(function () {
         Route::get('/kependudukan/kelompok-umur/data', 'index');
         Route::get('/kependudukan/kelompok-umur/detail/{id}', 'show');
         Route::post('/kependudukan/kelompok-umur/tambah', 'store');
@@ -98,7 +98,7 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 
     //Variant Data Routes (FIX)
-    Route::controller(VariantController::class)->group(function(){
+    Route::controller(VariantController::class)->group(function () {
         Route::get('/disperindag/variant/data', 'index');
         Route::get('/disperindag/variant/detail/{id}', 'show');
         Route::post('/disperindag/variant/tambah', 'store');
@@ -107,7 +107,7 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 
     //Price Data Routes (FIX)
-    Route::controller(PriceController::class)->group(function(){
+    Route::controller(PriceController::class)->group(function () {
         Route::get('/disperindag/price/data', 'index');
         Route::get('/disperindag/price/detail/{id}', 'show');
         Route::post('/disperindag/price/tambah', 'store');
@@ -116,7 +116,7 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 
     // Dataset
-    Route::controller(DatasetController::class)->group(function(){
+    Route::controller(DatasetController::class)->group(function () {
         Route::get('/dataset/daftar-dataset', 'index')->middleware('permission:dataset.get');
         Route::get('/dataset/data-dataset/{id}', 'show')->middleware('permission:dataset.get-by-id');
         Route::post('/dataset/tambah', 'store')->middleware('permission:dataset.create');
@@ -124,7 +124,7 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::delete('/dataset/hapus/{id}', 'delete')->middleware('permission:dataset.delete');
     });
     //Berita
-    Route::controller(NewsController::class)->group(function(){
+    Route::controller(NewsController::class)->group(function () {
         Route::get('/berita/daftar-berita', 'index')->middleware('permission:news.get');
         Route::get('/berita/data/{id}', 'show')->middleware('permission:news.get-by-id');
         Route::post('/berita/tambah', 'store')->middleware('permission:news.create');
@@ -133,7 +133,7 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 
     // Kesehatan
-    Route::controller(CategoryHospitalController::class)->group(function(){
+    Route::controller(CategoryHospitalController::class)->group(function () {
         Route::get('/kesehatan/rs/kategori', 'index')->middleware('permission:kategori_rs.get');
         Route::get('/kesehatan/rs/kategori/{id}', 'show')->middleware('permission:kategori_rs.get-by-id');
         Route::post('/kesehatan/rs/kategori', 'store')->middleware('permission:kategori_rs.create');
@@ -141,9 +141,9 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::delete('/kesehatan/rs/kategori/{id}', 'destroy')->middleware('permission:kategori_rs.delete');
     });
 
-    Route::post('/disperindag/price/import', [ExcelImportController::class,'import'])->middleware('permission:prices.import');
-    Route::post('/disperindag/ikm/import', [ExcelImportController::class,'importexcel_ikm'])->middleware('permission:ikm.import');
-    Route::post('/disperindag/indusrty/import', [ExcelImportController::class,'importexcel_industry'])->middleware('permission:industry.import');
+    Route::post('/disperindag/price/import', [ExcelImportController::class, 'import'])->middleware('permission:prices.import');
+    Route::post('/disperindag/ikm/import', [ExcelImportController::class, 'importexcel_ikm'])->middleware('permission:ikm.import');
+    Route::post('/disperindag/indusrty/import', [ExcelImportController::class, 'importexcel_industry'])->middleware('permission:industry.import');
 
     // Pendidikan
     // Route::controller(SchoolController::class)->group(function(){
@@ -152,7 +152,7 @@ Route::middleware('auth:sanctum')->group(function () {
     // });
 });
 Route::resource('/population-period', PopulationPeriodController::class);
-Route::middleware('auth:sanctum', 'role:admin-infrastruktur')->group(function(){
+Route::middleware('auth:sanctum', 'role:admin-infrastruktur')->group(function () {
     Route::resource('/infrastructure/road/road-category', RoadCategoryController::class);
     Route::resource('/infrastructure/road', RoadController::class);
     Route::post('/infrastructure/road/filter', [RoadController::class, 'filterRoad']);
@@ -168,7 +168,7 @@ Route::resource('/pendidikan/rekap-data-sekolah', SchoolFilterController::class)
 // });
 
 // CRUD Admin OPD Pendidikan
-Route::middleware('auth:sanctum', 'role:admin-pendidikan')->group(function(){
+Route::middleware('auth:sanctum', 'role:admin-pendidikan')->group(function () {
     Route::resource('/pendidikan/jenjang-sekolah', SchoolLevelController::class);
     Route::resource('/pendidikan/sekolah', SchoolController::class);
     Route::resource('/pendidikan/rekap-data-sekolah', SchoolFilterController::class);
@@ -195,6 +195,6 @@ Route::post('/dashboard/kependudukan/filter', [SocialController::class, 'index_a
 Route::get('/pendidikan/dashboard', [SchoolFilterController::class, 'filter']);
 
 // Kesehatan RSUD
-Route::get('/kesehatan',[ApiController::class,'getDataRSUD']);
-Route::get('/kesehatan/post',[ApiController::class,'postDatabase']);
-Route::get('/kesehatan/post',[ApiController::class,'postDatabase']);
+Route::get('/kesehatan', [ApiController::class, 'getDataRSUD']);
+Route::get('/kesehatan/post', [ApiController::class, 'postDatabase']);
+Route::get('/kesehatan/post', [ApiController::class, 'postDatabase']);
