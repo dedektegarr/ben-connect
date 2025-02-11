@@ -15,10 +15,11 @@ return new class extends Migration
             $table->id('population_id');
             $table->foreignUuid('population_period_id')->references('population_period_id')->on('population_period')->onDelete('cascade');
             $table->foreignUuid('region_id')->references('region_id')->on('region')->onDelete('cascade');
-            $table->foreignUuid('population_age_group_id')->references('population_age_group_id')->on('population_age_group')->onDelete('cascade'); 
+            $table->foreignUuid('population_age_group_id')->references('population_age_group_id')->on('population_age_group')->onDelete('cascade');
             $table->integer('population_male');
             $table->integer('population_female');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

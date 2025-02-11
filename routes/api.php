@@ -76,6 +76,11 @@ Route::middleware('auth:sanctum')->group(function () {
 
     //Population Routes
     Route::controller(PopulationController::class)->group(function () {
+        Route::get('kependudukan/data', 'index');
+        Route::get('kependudukan/detail/{id}', 'show');
+        Route::post('kependudukan/tambah', 'store');
+        Route::put('kependudukan/ubah/{id}', 'update');
+        Route::delete('kependudukan/hapus/{id}', 'destroy');
         Route::post('/kependudukan/import', 'import');
     });
 

@@ -13,7 +13,7 @@ class PopulationAgeGroupController extends Controller
     public function index()
     {
         $data = PopulationAgeGroup::get();
-        
+
         return response()->json([
             'status_code' => 200,
             'message' => "Kelompok umur",
@@ -25,7 +25,7 @@ class PopulationAgeGroupController extends Controller
     public function store(Request $request)
     {
         //Validasi input
-        $formRequest = new PopulationRequest('population_age_group_input'); 
+        $formRequest = new PopulationRequest('population_age_group_input');
         $this->validate($request, $formRequest->rules(), $formRequest->messages());
 
         //Store data ke database
@@ -42,18 +42,18 @@ class PopulationAgeGroupController extends Controller
         $data = PopulationAgeGroup::find($id);
 
         //Cek data sesuai ID
-        if(empty($data)){
+        if (empty($data)) {
             return response()->json([
                 'status_code' => 404,
                 'message' => 'Kelompok umur tidak ditemukan!'
-            ], 404);  
+            ], 404);
         }
-        
+
         return response()->json([
             'status_code' => 200,
             'message' => 'Kelompok umur berhasil ditemukan',
             'kelompok_umur' => $data
-        ], 200);  
+        ], 200);
     }
 
     //Mengubah kelompok umur
@@ -62,15 +62,15 @@ class PopulationAgeGroupController extends Controller
         $data = PopulationAgeGroup::find($id);
 
         //Cek data sesuai ID
-        if(empty($data)){
+        if (empty($data)) {
             return response()->json([
                 'status_code' => 404,
                 'message' => 'Kelompok umur tidak ditemukan!'
-            ], 404);  
+            ], 404);
         }
 
         //Validasi input
-        $formRequest = new PopulationRequest('population_age_group_input'); 
+        $formRequest = new PopulationRequest('population_age_group_input');
         $this->validate($request, $formRequest->rules(), $formRequest->messages());
 
         //Update data di database
@@ -87,11 +87,11 @@ class PopulationAgeGroupController extends Controller
         $data = PopulationAgeGroup::find($id);
 
         //Cek data sesuai ID
-        if(empty($data)){
+        if (empty($data)) {
             return response()->json([
                 'status_code' => 404,
                 'message' => 'Kelompok umur tidak ditemukan!'
-            ], 404);  
+            ], 404);
         }
 
         //Delete data di database
@@ -99,6 +99,6 @@ class PopulationAgeGroupController extends Controller
         return response()->json([
             'status_code' => 200,
             'message' => 'Kelompok umur berhasil dihapus'
-        ], 200); 
+        ], 200);
     }
 }

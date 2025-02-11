@@ -13,7 +13,7 @@ class PopulationPeriodController extends Controller
     public function index()
     {
         $data = PopulationPeriod::get();
-        
+
         return response()->json([
             'status_code' => 200,
             'message' => "Periode data kependudukan",
@@ -25,7 +25,7 @@ class PopulationPeriodController extends Controller
     public function store(Request $request)
     {
         //Validasi input
-        $formRequest = new PopulationRequest('population_period_input'); 
+        $formRequest = new PopulationRequest('population_period_input');
         $this->validate($request, $formRequest->rules(), $formRequest->messages());
 
         $semester = $request->population_period_semester;
@@ -37,10 +37,10 @@ class PopulationPeriodController extends Controller
             'population_period_year' => $year
         ])->count();
 
-        if($checkPeriodIfExists != 0){
+        if ($checkPeriodIfExists != 0) {
             return response()->json([
                 'status_code' => 400,
-                'message' => 'Periode data kependudukan semester '.$semester.' Tahun '.$year.' sudah ada',
+                'message' => 'Periode data kependudukan semester ' . $semester . ' Tahun ' . $year . ' sudah ada',
             ], 400);
         }
 
@@ -58,18 +58,18 @@ class PopulationPeriodController extends Controller
         $data = PopulationPeriod::find($id);
 
         //Cek data sesuai ID
-        if(empty($data)){
+        if (empty($data)) {
             return response()->json([
                 'status_code' => 404,
                 'message' => 'Periode data kependudukan tidak ditemukan!'
-            ], 404);  
+            ], 404);
         }
-        
+
         return response()->json([
             'status_code' => 200,
             'message' => 'Periode data kependudukan berhasil ditemukan',
             'periode_kependudukan' => $data
-        ], 200);  
+        ], 200);
     }
 
     //Mengubah periode data kependudukan
@@ -78,15 +78,15 @@ class PopulationPeriodController extends Controller
         $data = PopulationPeriod::find($id);
 
         //Cek data sesuai ID
-        if(empty($data)){
+        if (empty($data)) {
             return response()->json([
                 'status_code' => 404,
                 'message' => 'Periode data kependudukan tidak ditemukan!'
-            ], 404);  
+            ], 404);
         }
 
         //Validasi input
-        $formRequest = new PopulationRequest('population_period_input'); 
+        $formRequest = new PopulationRequest('population_period_input');
         $this->validate($request, $formRequest->rules(), $formRequest->messages());
 
         $semester = $request->population_period_semester;
@@ -99,10 +99,10 @@ class PopulationPeriodController extends Controller
         ])->count();
 
 
-        if($checkPeriodIfExists != 0){
+        if ($checkPeriodIfExists != 0) {
             return response()->json([
                 'status_code' => 400,
-                'message' => 'Periode data kependudukan semester '.$semester.' Tahun '.$year.' sudah ada',
+                'message' => 'Periode data kependudukan semester ' . $semester . ' Tahun ' . $year . ' sudah ada',
             ], 400);
         }
 
@@ -120,11 +120,11 @@ class PopulationPeriodController extends Controller
         $data = PopulationPeriod::find($id);
 
         //Cek data sesuai ID
-        if(empty($data)){
+        if (empty($data)) {
             return response()->json([
                 'status_code' => 404,
                 'message' => 'Periode data kependudukan tidak ditemukan!'
-            ], 404);  
+            ], 404);
         }
 
         //Delete data di database
@@ -132,6 +132,6 @@ class PopulationPeriodController extends Controller
         return response()->json([
             'status_code' => 200,
             'message' => 'Periode data kependudukan berhasil dihapus'
-        ], 200);  
+        ], 200);
     }
 }

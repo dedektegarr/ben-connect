@@ -40,6 +40,13 @@ class PopulationRequest extends FormRequest
                 'population_file' => 'required|file|mimes:xls,xlsx|max:5000',
                 'population_period_id' => 'required'
             ],
+            'population_store' => [
+                'population_period_id' => 'required',
+                'region_id' => 'required',
+                'population_age_group_id' => 'required',
+                'population_male' => 'required|integer',
+                'population_female' => 'required|integer',
+            ]
         ];
         return $rules[$this->type];
     }
@@ -63,6 +70,15 @@ class PopulationRequest extends FormRequest
                 'population_file.mimes' => 'File data kependudukan harus berformat .xls atau .xlsx',
                 'population_file.max' => 'File data kependudukan maksimal 5 Mb ',
                 'population_period_id.required' => 'Periode kependudukan tidak boleh kosong'
+            ],
+            'population_store' => [
+                'region_id.required' => "Data wilayah tidak boleh kosong",
+                'population_period_id.required' => "Data periode tidak boleh kosong",
+                'population_age_group_id.required' => "Data rentang usia tidak boleh kosong",
+                'population_male.required' => "Data kependudukan laki-laki tidak boleh kosong",
+                'population_male.integer' => "Data kependudukan laki-laki harus berupa angka",
+                'population_female.required' => "Data kependudukan perempuan tidak boleh kosong",
+                'population_female.integer' => "Data kependudukan perempuan harus berupa angka",
             ]
         ];
         return $messages[$this->type];
