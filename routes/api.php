@@ -80,30 +80,30 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::middleware(["role:admin|admin-kependudukan"])->group(function () {
         //Population Routes
         Route::controller(PopulationController::class)->group(function () {
-            Route::get('kependudukan/data', 'index')->middleware("permission:population.get");
-            Route::get('kependudukan/detail/{id}', 'show')->middleware("permission:population.get-by-id");
-            Route::post('kependudukan/tambah', 'store')->middleware("permission:population.create");
-            Route::put('kependudukan/ubah/{id}', 'update')->middleware("permission:population.update");
-            Route::delete('kependudukan/hapus/{id}', 'destroy')->middleware("permission:population.delete");
-            Route::post('/kependudukan/import', 'import')->middleware("permission:population.import");
+            Route::get('kependudukan/data', 'index');
+            Route::get('kependudukan/detail/{id}', 'show');
+            Route::post('kependudukan/tambah', 'store');
+            Route::put('kependudukan/ubah/{id}', 'update');
+            Route::delete('kependudukan/hapus/{id}', 'destroy');
+            Route::post('/kependudukan/import', 'import');
         });
 
         //Population Period Routes (FIX)
         Route::controller(PopulationPeriodController::class)->group(function () {
-            Route::get('/kependudukan/periode-data/data', 'index')->middleware("permission:population_period.get");
-            Route::get('/kependudukan/periode-data/detail/{id}', 'show')->middleware("permission:population_period.get-by-id");
-            Route::post('/kependudukan/periode-data/tambah', 'store')->middleware("permission:population_period.create");
-            Route::put('/kependudukan/periode-data/ubah/{id}', 'update')->middleware("permission:population_period.update");
-            Route::delete('/kependudukan/periode-data/hapus/{id}', 'destroy')->middleware("permission:population_period.delete");
+            Route::get('/kependudukan/periode-data/data', 'index');
+            Route::get('/kependudukan/periode-data/detail/{id}', 'show');
+            Route::post('/kependudukan/periode-data/tambah', 'store');
+            Route::put('/kependudukan/periode-data/ubah/{id}', 'update');
+            Route::delete('/kependudukan/periode-data/hapus/{id}', 'destroy');
         });
 
         //Population Group Age Routes (FIX)
         Route::controller(PopulationAgeGroupController::class)->group(function () {
-            Route::get('/kependudukan/kelompok-umur/data', 'index')->middleware("permission:population_age_group.get");
-            Route::get('/kependudukan/kelompok-umur/detail/{id}', 'show')->middleware("permission:population_age_group.get");
-            Route::post('/kependudukan/kelompok-umur/tambah', 'store')->middleware("permission:population_age_group.get");
-            Route::put('/kependudukan/kelompok-umur/ubah/{id}', 'update')->middleware("permission:population_age_group.get");
-            Route::delete('/kependudukan/kelompok-umur/hapus/{id}', 'destroy')->middleware("permission:population_age_group.get");
+            Route::get('/kependudukan/kelompok-umur/data', 'index');
+            Route::get('/kependudukan/kelompok-umur/detail/{id}', 'show');
+            Route::post('/kependudukan/kelompok-umur/tambah', 'store');
+            Route::put('/kependudukan/kelompok-umur/ubah/{id}', 'update');
+            Route::delete('/kependudukan/kelompok-umur/hapus/{id}', 'destroy');
         });
     });
 
@@ -146,11 +146,11 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::middleware(["role:admin|admin-kesehatan"])->group(function () {
         // Rumah Sakit Kategori
         Route::controller(CategoryHospitalController::class)->group(function () {
-            Route::get('/kesehatan/rs/kategori', 'index')->middleware('permission:kategori_rs.get');
-            Route::get('/kesehatan/rs/kategori/{id}', 'show')->middleware('permission:kategori_rs.get-by-id');
-            Route::post('/kesehatan/rs/kategori', 'store')->middleware('permission:kategori_rs.create');
-            Route::put('/kesehatan/rs/kategori/{id}', 'update')->middleware('permission:kategori_rs.update');
-            Route::delete('/kesehatan/rs/kategori/{id}', 'destroy')->middleware('permission:kategori_rs.delete');
+            Route::get('/kesehatan/rs/kategori', 'index');
+            Route::get('/kesehatan/rs/kategori/{id}', 'show');
+            Route::post('/kesehatan/rs/kategori', 'store');
+            Route::put('/kesehatan/rs/kategori/{id}', 'update');
+            Route::delete('/kesehatan/rs/kategori/{id}', 'destroy');
         });
 
         // Rumah Sakit Accreditation
