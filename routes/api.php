@@ -6,6 +6,7 @@ use App\Http\Controllers\ExcelImportController;
 use App\Http\Controllers\Infrastructure\RoadController;
 use App\Http\Controllers\Infrastructure\RoadCategoryController;
 use App\Http\Controllers\Kesehatan\Master\CategoryHospitalController;
+use App\Http\Controllers\Kesehatan\Master\HospitalAcreditationController;
 use App\Http\Controllers\Kesehatan\RSUD\ApiController;
 use App\Http\Controllers\Master\DatasetController;
 use App\Http\Controllers\Master\TagsController;
@@ -140,14 +141,27 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::delete('/berita/hapus/{id}', 'destroy')->middleware('permission:delete');
     });
 
-    // Kesehatan
-    Route::controller(CategoryHospitalController::class)->group(function () {
-        Route::get('/kesehatan/rs/kategori', 'index')->middleware('permission:kategori_rs.get');
-        Route::get('/kesehatan/rs/kategori/{id}', 'show')->middleware('permission:kategori_rs.get-by-id');
-        Route::post('/kesehatan/rs/kategori', 'store')->middleware('permission:kategori_rs.create');
-        Route::put('/kesehatan/rs/kategori/{id}', 'update')->middleware('permission:kategori_rs.update');
-        Route::delete('/kesehatan/rs/kategori/{id}', 'destroy')->middleware('permission:kategori_rs.delete');
+    // KESEHATAN
+    Route::middleware(["role:admin|admin-kesehatan"])->group(function () {
+        // Kesehatan Kategori
+        Route::controller(CategoryHospitalController::class)->group(function () {
+            Route::get('/kesehatan/rs/kategori', 'index')->middleware('permission:kategori_rs.get');
+            Route::get('/kesehatan/rs/kategori/{id}', 'show')->middleware('permission:kategori_rs.get-by-id');
+            Route::post('/kesehatan/rs/kategori', 'store')->middleware('permission:kategori_rs.create');
+            Route::put('/kesehatan/rs/kategori/{id}', 'update')->middleware('permission:kategori_rs.update');
+            Route::delete('/kesehatan/rs/kategori/{id}', 'destroy')->middleware('permission:kategori_rs.delete');
+        });
+
+        // Kesehatan Accreditation
+        Route::controller(HospitalAcreditationController::class)->group(function () {
+            Route::get("/kesehatan/rs/akreditasi", "index");
+            Route::get("/kesehatan/rs/akreditasi/{id}", "show");
+            Route::post("/kesehatan/rs/akreditasi", "store");
+            Route::put("/kesehatan/rs/akreditasi/ubah/{id}", "update");
+            Route::delete("/kesehatan/rs/akreditasi/delete/{id}", "delete");
+        });
     });
+
 
     Route::post('/disperindag/price/import', [ExcelImportController::class, 'import'])->middleware('permission:prices.import');
     Route::post('/disperindag/ikm/import', [ExcelImportController::class, 'importexcel_ikm'])->middleware('permission:ikm.import');

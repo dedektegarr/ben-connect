@@ -13,22 +13,21 @@ class HospitalAcreditationController extends Controller
      */
     public function index()
     {
-        $data_acreditations_hospital=HospitalAcreditationModel::get();
+        $data_acreditations_hospital = HospitalAcreditationModel::get();
 
-        if($data_acreditations_hospital->isEmpty())
-        {
+        if ($data_acreditations_hospital->isEmpty()) {
             return response()->json([
-                "status_code"=>404,
-                "message"=>"Data akreditasi Rumah Sakit kosong",
-            ],404);
+                "status_code" => 404,
+                "message" => "Data akreditasi Rumah Sakit kosong",
+            ], 404);
         }
 
         // jika data tidak kosong
         return response()->json([
-            "status_code"=>200,
-            "message"=>"Data akreditasi Rumah Sakit berhasil diambil",
-            "data_akreditasi_rs"=>$data_acreditations_hospital
-        ],200);
+            "status_code" => 200,
+            "message" => "Data akreditasi Rumah Sakit berhasil diambil",
+            "data_akreditasi_rs" => $data_acreditations_hospital
+        ], 200);
     }
 
     /**
@@ -36,7 +35,7 @@ class HospitalAcreditationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->all());
     }
 
     /**
