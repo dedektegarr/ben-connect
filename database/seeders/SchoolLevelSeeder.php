@@ -13,10 +13,16 @@ class SchoolLevelSeeder extends Seeder
      */
     public function run(): void
     {
-        SchoolLevelModel::create(['school_level_name'=>'SD']);
-        SchoolLevelModel::create(['school_level_name'=>'SMP']);
-        SchoolLevelModel::create(['school_level_name'=>'SMA']);
-        SchoolLevelModel::create(['school_level_name'=>'SMK']);
-        SchoolLevelModel::create(['school_level_name'=>'SLB']);
+        SchoolLevelModel::create(['school_level_name' => 'TK']);
+        SchoolLevelModel::create(['school_level_name' => 'KB']);
+        SchoolLevelModel::create(['school_level_name' => 'TPA']);
+        SchoolLevelModel::create(['school_level_name' => 'SPS']);
+        SchoolLevelModel::create(['school_level_name' => 'PKBM']);
+        SchoolLevelModel::create(['school_level_name' => 'SKB']);
+        SchoolLevelModel::create(['school_level_name' => 'SD']);
+        SchoolLevelModel::create(['school_level_name' => 'SMP']);
+        SchoolLevelModel::create(['school_level_name' => 'SMA']);
+        SchoolLevelModel::create(['school_level_name' => 'SMK']);
+        SchoolLevelModel::create(['school_level_name' => 'SLB']);
     }
 }

@@ -172,6 +172,15 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 
     // PENDIDIKAN
+    Route::middleware(["role:admin|admin-pendidikan"])->group(function () {
+        // Data Sekolah
+        Route::resource('/pendidikan/jenjang-sekolah', SchoolLevelController::class);
+        Route::resource('/pendidikan/sekolah', SchoolController::class);
+        Route::resource('/pendidikan/rekap-data-sekolah', SchoolFilterController::class);
+
+        // Import Data Sekolah
+        Route::post("/pendidikan/sekolah/import", [SchoolController::class, "import"]);
+    });
 
     // Dataset
     Route::controller(DatasetController::class)->group(function () {
@@ -212,13 +221,6 @@ Route::resource('/pendidikan/rekap-data-sekolah', SchoolFilterController::class)
 //     Route::resource('/social/categorysocial', SocialCategoryController::class);
 //     Route::resource('/social', SocialController::class);
 // });
-
-// CRUD Admin OPD Pendidikan
-Route::middleware('auth:sanctum', 'role:admin-pendidikan')->group(function () {
-    Route::resource('/pendidikan/jenjang-sekolah', SchoolLevelController::class);
-    Route::resource('/pendidikan/sekolah', SchoolController::class);
-    Route::resource('/pendidikan/rekap-data-sekolah', SchoolFilterController::class);
-});
 
 // route news
 Route::get('/news', [NewsController::class, 'index']);

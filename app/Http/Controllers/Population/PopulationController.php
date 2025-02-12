@@ -64,9 +64,9 @@ class PopulationController extends Controller
             Excel::import(new PopulationImport($request->population_period_id), $request->file('population_file'));
 
             return response()->json([
-                'status_code' => 200,
+                'status_code' => 201,
                 'message' => 'OK'
-            ], 200);
+            ], 201);
         } catch (\Exception $e) {
             return response()->json([
                 'status_code' => 400,

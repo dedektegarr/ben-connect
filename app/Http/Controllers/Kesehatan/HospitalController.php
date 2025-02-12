@@ -87,9 +87,9 @@ class HospitalController extends Controller
             Excel::import(new HospitalImport, $request->file("hospital_file"));
 
             return response()->json([
-                'status_code' => 200,
+                'status_code' => 201,
                 'message' => 'OK'
-            ], 200);
+            ], 201);
         } catch (Exception $e) {
             return response()->json([
                 "status_code" => 400,

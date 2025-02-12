@@ -15,26 +15,24 @@ class SchoolModel extends Model
     public $primaryKey = "school_id";
     public $timestamps = true;
     public $fillable = [
-        'school_npsn',
-        'school_name',
-        'school_status',
         'school_level_id',
         'region_id',
-        'school_address',
-        'latitude',
-        'longitude'
+        'negeri_count',
+        'swasta_count'
     ];
 
-    public function region(){
+    public function region()
+    {
         return $this->belongsTo(Region::class, 'region_id', 'region_id');
     }
 
     public function schoollevel()
     {
-        return $this->belongsTo(SchoolLevelModel::class, 'school_level_id','school_level_id');
+        return $this->belongsTo(SchoolLevelModel::class, 'school_level_id', 'school_level_id');
     }
 
-    public function schoolfilter(){
+    public function schoolfilter()
+    {
         return $this->hasMany(SchoolFilterModel::class, 'school_filter_id', 'school_filter_id');
     }
 }

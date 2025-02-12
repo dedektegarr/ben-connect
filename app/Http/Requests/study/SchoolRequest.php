@@ -24,34 +24,16 @@ class SchoolRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'school_npsn'=>'required|integer|unique:school,school_npsn',
-            'school_name'=>'required|max:100',
-            'school_status'=>'required|in:negeri,swasta',
-            'school_level_id'=>'required|exists:school_level,school_level_id',
-            'region_id'=>'required|exists:region,region_id',
-            'school_address'=>'required|min:5',
-            'latitude'=>'required',
-            'longitude'=>'required'
+            'school_file' => 'required|file|mimes:xls,xlsx|max:5000',
         ];
     }
     public function messages()
     {
         return [
-            'school_npsn.required'=>'NPSN sekolah tidak boleh kosong',
-            'school_npsn.integer'=>'NPSN sekolah harus berupa angka',
-            'school_npsn.unique' => 'NPSN sekolah sudah digunakan!',
-            'school_name.required'=>'Nama sekolah tidak boleh kosong',
-            'school_name.max'=>'Nama sekolah maksimal 100 karakter',
-            'school_status.required'=>'Status Sekolah tidak boleh kosong',
-            'school_status.in'=>'Status Sekolah hanya bisa berupa negeri atau swasta',
-            'school_level_id.required'=>'Jenjang sekolah tidak boleh kosong',
-            'school_level_id.exists'=>'Jenjang sekolah tidak ditemukan',
-            'region_id.required'=>'Nama daerah tidak boleh kosong',
-            'region_id.exists'=>'Nama daerah tidak ditemukan',
-            'school_address.required'=>'Alamat sekolah tidak boleh kosong',
-            'school_address.min'=>'Alamat sekolah minimal 5 karakter',
-            'latitude.required'=>'Garis latitude tidak boleh kosong',
-            'longitude.required'=>'Garis longitude tidak boleh kosong',
+            'school_file.required' => 'File data jumlah sekolah tidak boleh kosong',
+            'school_file.file' => 'Data jumlah sekolah harus berupa file',
+            'school_file.mimes' => 'File data jumlah sekolah harus berformat .xls atau .xlsx',
+            'school_file.max' => 'File data jumlah sekolah maksimal 5 Mb ',
         ];
     }
 
@@ -61,6 +43,6 @@ class SchoolRequest extends FormRequest
             'status_code' => 422,
             'message' => 'Data Sekolah gagal di validasi',
             'errors' => $validator->errors(),
-        ],422));
+        ], 422));
     }
 }
