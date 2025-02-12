@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('teachers', function (Blueprint $table) {
-            $table->uuid('school_id')->primary();
+            $table->uuid('teacher_id')->primary();
             $table->foreignUuid('school_level_id')->references('school_level_id')->on('school_level')->onDelete('cascade');
             $table->foreignUuid('region_id')->references('region_id')->on('region')->onDelete('cascade');
             $table->integer('male_count');

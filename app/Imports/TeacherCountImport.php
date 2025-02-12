@@ -8,8 +8,9 @@ use App\Models\Teacher;
 use Exception;
 use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Concerns\ToModel;
+use Maatwebsite\Excel\Concerns\WithStartRow;
 
-class TeacherCountImport implements ToModel
+class TeacherCountImport implements ToModel, WithStartRow
 {
     private $rowNumber;
     private $regions;
@@ -56,8 +57,8 @@ class TeacherCountImport implements ToModel
             Teacher::updateOrCreate([
                 "school_level_id" => $levelExists,
                 "region_id" => $regionExists,
-                "negeri_count" => $row[$startColumn + 1],
-                "swasta_count" => $row[$startColumn + 2],
+                "male_count" => $row[$startColumn + 1],
+                "female_count" => $row[$startColumn + 2],
             ]);
         }
 
