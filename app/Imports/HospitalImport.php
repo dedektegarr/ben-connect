@@ -29,6 +29,7 @@ class HospitalImport implements ToModel, WithHeadingRow
 
     public function model(array $row)
     {
+        // Inisiasi nomor baris
         $this->rowNumber++;
         $rowNumber = $this->rowNumber;
 
@@ -38,11 +39,13 @@ class HospitalImport implements ToModel, WithHeadingRow
         $ownerships = array_map("strtolower", $this->ownerships);
         $categories = array_map("strtolower", $this->categories);
 
+        // mengambil data di excel untuk dibandingkan dengan data foreign key
         $regionInExcel = strtolower($this->regionFormat(trim($row["kabkota"] ?? '')));
         $acreditationInExcel = strtolower($row['status_akreditasi_rumah_sakit'] ?? '');
         $ownershipInExcel = strtolower($row['kepemilikan'] ?? '');
         $categoryInExcel = strtolower($row['jenis'] ?? '');
 
+        // jika baris kosong, lewati
         if (
             empty($regionInExcel) &&
             empty($acreditationInExcel) &&
@@ -71,6 +74,7 @@ class HospitalImport implements ToModel, WithHeadingRow
             throw new Exception("Baris {$rowNumber}: data '{$categoryInExcel}' pada kolom jenis tidak tersedia");
         }
 
+        // buat data rumah sakit baru atau update data yang sudah ada
         HospitalDataModel::updateOrCreate([
             "category_hospital_id" => $categoryExists ?? null,
             "hospital_acreditation_id" => $acreditationExists ?? null,
