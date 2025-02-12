@@ -24,6 +24,7 @@ use App\Http\Controllers\Social\SocialController;
 use App\Http\Controllers\Study\SchoolController;
 use App\Http\Controllers\Study\SchoolFilterController;
 use App\Http\Controllers\Study\SchoolLevelController;
+use App\Http\Controllers\Study\StudentController;
 use App\Http\Controllers\Study\TeacherController;
 use App\Http\Controllers\UserController;
 use App\Imports\PricesImport;
@@ -182,6 +183,9 @@ Route::middleware('auth:sanctum')->group(function () {
 
         // Data Guru
         Route::post("/pendidikan/guru/import", [TeacherController::class, "import"]);
+
+        // Data Peserta Didik
+        Route::post("/pendidikan/peserta-didik/import", [StudentController::class, "import"]);
     });
 
     // Dataset
