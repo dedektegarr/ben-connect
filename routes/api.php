@@ -24,6 +24,7 @@ use App\Http\Controllers\Social\SocialController;
 use App\Http\Controllers\Study\SchoolController;
 use App\Http\Controllers\Study\SchoolFilterController;
 use App\Http\Controllers\Study\SchoolLevelController;
+use App\Http\Controllers\Study\TeacherController;
 use App\Http\Controllers\UserController;
 use App\Imports\PricesImport;
 use Illuminate\Http\Request;
@@ -177,9 +178,10 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::resource('/pendidikan/jenjang-sekolah', SchoolLevelController::class);
         Route::resource('/pendidikan/sekolah', SchoolController::class);
         Route::resource('/pendidikan/rekap-data-sekolah', SchoolFilterController::class);
-
-        // Import Data Sekolah
         Route::post("/pendidikan/sekolah/import", [SchoolController::class, "import"]);
+
+        // Data Guru
+        Route::post("/pendidikan/guru/import", [TeacherController::class, "import"]);
     });
 
     // Dataset
