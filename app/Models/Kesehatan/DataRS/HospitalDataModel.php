@@ -11,10 +11,14 @@ class HospitalDataModel extends Model
 {
     use HasFactory, HasUuids;
 
-    protected $table='hospital_data';
-    protected $primaryKey='hospital_data_id';
+    protected $table = 'hospital_data';
+    protected $primaryKey = 'hospital_data_id';
 
     public $fillable = [
+        'category_hospital_id',
+        'hospital_acreditation_id',
+        'region_id',
+        'hospital_ownership_id',
         'hospital_data_name',
         'hospital_data_nib',
         'hospital_data_class',

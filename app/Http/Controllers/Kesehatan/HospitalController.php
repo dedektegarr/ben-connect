@@ -3,8 +3,12 @@
 namespace App\Http\Controllers\Kesehatan;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\OPDKesehatanRequest;
+use App\Imports\HospitalImport;
 use App\Models\Kesehatan\DataRS\HospitalDataModel;
+use Exception;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class HospitalController extends Controller
 {
@@ -42,7 +46,20 @@ class HospitalController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $data = HospitalDataModel::find($id);
+
+        if (empty($data)) {
+            return response()->json([
+                'status_code' => 404,
+                'message' => "Rumah Sakit dengan id {$id} tidak ditemukan!"
+            ], 404);
+        }
+
+        return response()->json([
+            'status_code' => 200,
+            'message' => "Rumah Sakit dengan id {$id} berhasil ditemukan",
+            'data_kategori_rs' => $data
+        ], 200);
     }
 
     /**
@@ -59,5 +76,25 @@ class HospitalController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function import(Request $request)
+    {
+        $formRequest = new OPDKesehatanRequest("hospital_import");
+        $this->validate($request, $formRequest->rules(), $formRequest->messages());
+
+        try {
+            Excel::import(new HospitalImport, $request->file("hospital_file"));
+
+            return response()->json([
+                'status_code' => 200,
+                'message' => 'OK'
+            ], 200);
+        } catch (Exception $e) {
+            return response()->json([
+                "status_code" => 400,
+                "message" => $e->getMessage()
+            ], 400);
+        }
     }
 }

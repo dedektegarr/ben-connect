@@ -51,6 +51,9 @@ class OPDKesehatanRequest extends FormRequest
                 'hospital_data_longitude' => ['required', 'regex:/^[-]?([1-8]?[0-9](\.\d+)?|90(\.0+)?)$/'],
                 'hospital_data_latitude' => ['required', 'regex:/^[-]?([1-8]?[0-9](\.\d+)?|90(\.0+)?)$/'],
             ],
+            'hospital_import' => [
+                'hospital_file' => 'required|file|mimes:xls,xlsx|max:5000'
+            ]
         ];
 
         return $rules[$this->type];
@@ -73,6 +76,12 @@ class OPDKesehatanRequest extends FormRequest
                 'hospital_ownership_name.required' => 'Nama kepemilikan rumah sakit wajib diisi.',
                 'hospital_ownership_name.max' => 'Nama kepemilikan rumah sakit maksimal 100 karakter.',
                 'hospital_ownership_name.unique' => 'Nama kepemilikan rumah sakit sudah terdaftar.',
+            ],
+            'hospital_import' => [
+                'hospital_file.required' => 'File data rumah sakit tidak boleh kosong',
+                'hospital_file.file' => 'Data rumah sakit harus berupa file',
+                'hospital_file.mimes' => 'File data rumah sakit harus berformat .xls atau .xlsx',
+                'hospital_file.max' => 'File data rumah sakit maksimal 5 Mb '
             ],
             'hospital_data_input' => [
                 'hospital_data_name.required' => 'Nama rumah sakit wajib diisi.',
