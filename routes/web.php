@@ -26,6 +26,10 @@ use App\Http\Controllers\FrontOffice\DashboardInfrastrukturController;
 |
 */
 
+Route::get("/test-tailwind", function () {
+    return view("layouts.app");
+});
+
 Route::get('/', [PageController::class, 'index'])->name('index');
 Route::get('/syarat-ketentuan', [PageController::class, 'syarat_ketentuan'])->name('syarat');
 Route::get('/tentang-kami', [PageController::class, 'tentang'])->name('tentang');
