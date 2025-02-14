@@ -45,7 +45,7 @@
                 </button>
 
                 {{-- User Profile --}}
-                {{-- <button type="button"
+                <button type="button"
                     class="flex mx-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
                     id="user-menu-button" aria-expanded="false" data-dropdown-toggle="dropdown">
                     <span class="sr-only">Open user menu</span>
@@ -124,7 +124,7 @@
                                 out</a>
                         </li>
                     </ul>
-                </div> --}}
+                </div>
             </div>
         </div>
     </div>
