@@ -2,28 +2,43 @@
     class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700"
     aria-label="Sidebar">
     <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
-        {{-- Option2 --}}
-        <div
-            class="flex items-center w-full p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md gap-3 cursor-pointer">
+
+        <button type="button" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="dropdown"
+            class="flex items-center text-left w-full p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md gap-3 cursor-pointer">
             <img src="https://avatar.iran.liara.run/public/31" alt="Avatar"
                 class="rounded-full w-10 h-10 border border-gray-300">
             <div class="flex flex-col">
                 <h3 class="text-md font-bold text-gray-800 dark:text-white line-clamp-1">Dedek Tegar</h3>
                 <p class="text-gray-400 dark:text-gray-500 line-clamp-1 text-sm">dedektegarr@gmail.com</p>
             </div>
+        </button>
+        <div class="hidden z-50 my-4 w-56 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600"
+            id="dropdown">
+            <div class="py-3 px-4 flex items-center gap-2">
+                <span class="block text-sm font-semibold text-gray-900 dark:text-white">Dedek Tegar</span>
+                <span
+                    class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-blue-900 dark:text-blue-300">admin</span>
+            </div>
+            <ul class="py-1 text-gray-500 dark:text-gray-400" aria-labelledby="dropdown">
+                <li>
+                    <a href="#"
+                        class="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">Profil
+                        saya</a>
+                </li>
+                <li>
+                    <a href="#"
+                        class="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">Pengaturan
+                        akun</a>
+                </li>
+            </ul>
+            <ul class="py-1 text-gray-500 dark:text-gray-400" aria-labelledby="dropdown">
+                <li>
+                    <a href="#"
+                        class="block py-2 px-4 text-sm hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Logout</a>
+                </li>
+            </ul>
         </div>
 
-        {{-- Option1 --}}
-        {{-- <div class="flex flex-col w-full gap-4 items-center">
-            <img src="https://avatar.iran.liara.run/public/26" alt="Profile" class="h-24 w-24 object-cover">
-            <div class="text-center">
-                <h3 class="text-lg font-bold text-black dark:text-white line-clamp-1">Dedek Tegar Apriyandi</h3>
-                <p class="text-gray-400 dark:text-gray-500">dedektegarr@gmail.com</p>
-            </div>
-            <button type="button"
-                class="w-full text-gray-600 dark:text-white bg-transparent border border-gray-200 hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">
-                Logout</button>
-        </div> --}}
         <ul class="space-y-2 font-medium pt-5 mt-5 border-t border-gray-200 dark:border-gray-700">
             <li>
                 <a href="#"
