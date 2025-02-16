@@ -13,7 +13,8 @@ use App\Http\Controllers\FrontOffice\DashboardBencanaController;
 use App\Http\Controllers\FrontOffice\DashboardKesehatanController;
 use App\Http\Controllers\FrontOffice\DashboardPendidikanController;
 use App\Http\Controllers\FrontOffice\DashboardInfrastrukturController;
-
+use App\Http\Controllers\Web\Admin\DashboardController;
+use App\Http\Controllers\Web\Admin\Penduduk\JumlahPendudukController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,10 +26,6 @@ use App\Http\Controllers\FrontOffice\DashboardInfrastrukturController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
-Route::get("/test-tailwind", function () {
-    return view("layouts.app");
-});
 
 Route::get('/', [PageController::class, 'index'])->name('index');
 Route::get('/syarat-ketentuan', [PageController::class, 'syarat_ketentuan'])->name('syarat');
@@ -49,40 +46,23 @@ Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/authenticate', [LoginController::class, 'authenticate'])->name('authenticate');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::middleware(['auth'])->group(function () {
-
-    #Data User
-    Route::get('/admin/user', [PageAdminController::class, 'user'])->name('user');
-    Route::get('/admin/user_role', [PageAdminController::class, 'user_role'])->name('user_role');
-
-    #Kesehatan
-    Route::get('/admin/datarumahsakit', [PageAdminController::class, 'datarumahsakit'])->name('datarumahsakit');
-    Route::get('/admin/rsud', [PageAdminController::class, 'rsud'])->name('rsud');
-    Route::get('/admin/indexrumahsakit', [PageAdminController::class, 'indexrumahsakit'])->name('indexrumahsakit');
-
-    Route::get('/admin/pendidikan', [PageAdminController::class, 'pendidikan'])->name('pendidikan');
-    Route::get('/admin/kesehatan-maps', [PageAdminController::class, 'kesehatan_maps'])->name('kesehatan_maps');
-    Route::get('/admin/kesehatan', [PageAdminController::class, 'kesehatan'])->name('kesehatan');
-    Route::get('/admin/kependudukan', [PageAdminController::class, 'kependudukan'])->name('kependudukan');
-    Route::get('/admin/bencana', [PageAdminController::class, 'bencana'])->name('bencana');
-    Route::get('/admin/komoditas', [PageAdminController::class, 'komoditas'])->name('komoditas');
-    Route::get('/admin/infrastruktur', [PageAdminController::class, 'infrastruktur'])->name('infrastruktur');
-    Route::get('/admin/keuangan', [PageAdminController::class, 'keuangan'])->name('keuangan');
-    Route::post('/admin/mode', [PageAdminController::class, 'mode_dark_light'])->name('mode');
-
-    // SUPER ADMIN ROLE
+Route::middleware("auth")->group(function () {
+    // SUPER ADMIN
     Route::prefix("admin")->middleware("role:admin")->group(function () {
-        Route::controller(PageAdminController::class)->group(function () {
-            Route::get('/dashboard', 'dashboard')->name('dashboard');
-            Route::get('/pendidikan', 'pendidikan')->name('pendidikan');
-            Route::get('/kesehatan-maps', 'kesehatan_maps')->name('kesehatan_maps');
-            Route::get('/kesehatan', 'kesehatan')->name('kesehatan');
-            Route::get('/kependudukan', 'kependudukan')->name('kependudukan');
-            Route::get('/bencana', 'bencana')->name('bencana');
-            Route::get('/komoditas', 'komoditas')->name('komoditas');
-            Route::get('/infrastruktur', 'infrastruktur')->name('infrastruktur');
-            Route::get('/keuangan', 'keuangan')->name('keuangan');
-            Route::post('/mode', 'mode_dark_light')->name('mode');
+        // Dashboard
+        Route::controller(DashboardController::class)->group(function () {
+            Route::get("/dashboard", "index")->name("admin.dashboard.index");
+        });
+
+        // Kependudukan
+        Route::prefix("kependudukan")->group(function () {
+            Route::prefix("jumlah-penduduk")->controller(JumlahPendudukController::class)->group(function () {
+                Route::get("/", "index")->name("admin.kependudukan.jumlah-penduduk.index");
+            });
         });
     });
+});
+
+Route::get("/table", function () {
+    return view("test");
 });
