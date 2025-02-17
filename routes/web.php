@@ -62,7 +62,3 @@ Route::middleware("auth")->group(function () {
         });
     });
 });
-
-Route::get("/table", function () {
-    return view("test");
-});
