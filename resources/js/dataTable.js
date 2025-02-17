@@ -7,7 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
         typeof DataTable !== "undefined"
     ) {
         new DataTable("#default-table", {
-            searchable: true,
+            paging: true,
+            perPage: 10,
             sortable: true,
         });
     }

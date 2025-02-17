@@ -52,7 +52,7 @@
                         <path
                             d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z" />
                     </svg>
-                    <span class="ms-3">Dashboard</span>
+                    <span class="ms-3">{{ __('Dashboard') }}</span>
                 </a>
             </li>
 
@@ -67,7 +67,8 @@
                             clip-rule="evenodd" />
                     </svg>
 
-                    <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">Kependudukan</span>
+                    <span
+                        class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">{{ __('Kependudukan') }}</span>
                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                         viewBox="0 0 10 6">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -78,8 +79,8 @@
                     class="{{ Route::is('admin.kependudukan.*') ? 'block' : 'hidden' }} py-2 space-y-2 ml-10">
                     <li>
                         <a href="{{ route('admin.kependudukan.jumlah-penduduk.index') }}"
-                            class="{{ Route::is('admin.kependudukan.jumlah-penduduk.*') ? 'active' : '' }} sidebar-sub-menu">Jumlah
-                            Penduduk</a>
+                            class="{{ Route::is('admin.kependudukan.jumlah-penduduk.*') ? 'active' : '' }} sidebar-sub-menu">{{ __("Jumlah
+                                                        Penduduk") }}</a>
                     </li>
                 </ul>
             </li>
