@@ -12,16 +12,18 @@ class JumlahPendudukController extends Controller
 {
     public function index()
     {
-        $token = Auth::user()->tokens->first()->token;
+        $token = request()->session()->get("auth_token");
         $url = config("app.url") . "/api/kependudukan/data";
 
         try {
-            $response = Http::withToken("10|1HadFfkQecLjCAKoi6iSGKTr0pB1AEmjUZNJSG3m1b4ebe29")->get($url);
-            dd($response->json());
+            $response = Http::withToken($token)->get($url);
+            $data = $response->json();
+
+            return view("admin.penduduk.jumlah-penduduk.index", [
+                "penduduk" => $data["data"]
+            ]);
         } catch (Exception $e) {
             dd($e->getMessage());
         }
-
-        return view("admin.penduduk.jumlah-penduduk.index");
     }
 }

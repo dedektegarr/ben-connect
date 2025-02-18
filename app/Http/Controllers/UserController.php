@@ -147,6 +147,7 @@ class UserController extends Controller
         if (Auth::attempt($user)) {
             $user = User::where('email', $request->email)->first();
             $token = $user->createToken('ben-token', ['*'], now()->addDay())->plainTextToken; //Set token (durasi token 1 hari)
+
             return response()->json([
                 'status_code' => 200,
                 'massage' => 'Login berhasil',
