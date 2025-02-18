@@ -19,8 +19,14 @@ class JumlahPendudukController extends Controller
             $response = Http::withToken($token)->get($url);
             $data = $response->json();
 
+            $penduduk = [];
+
+            if (isset($data["data"]) && is_array($data["data"])) {
+                $penduduk = $data["data"];
+            }
+
             return view("admin.penduduk.jumlah-penduduk.index", [
-                "penduduk" => $data["data"]
+                "penduduk" => $penduduk
             ]);
         } catch (Exception $e) {
             dd($e->getMessage());

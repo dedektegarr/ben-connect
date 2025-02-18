@@ -101,7 +101,6 @@
                                 </th>
                             </tr>
                         </thead>
-
                         <tbody>
                             @foreach ($penduduk as $item)
                                 <tr>
@@ -112,14 +111,10 @@
                                     <td>{{ $item['population_age_group']['population_age_group_years'] }}</td>
                                     <td>{{ $item['population_male'] }}</td>
                                     <td>{{ $item['population_female'] }}</td>
-
                                 </tr>
                             @endforeach
-
                         </tbody>
                     </table>
-
-
                 </div>
             </div>
         </div>
