@@ -50,7 +50,15 @@ class JumlahPendudukController extends Controller
 
             $import = $this->apiClient->post("/kependudukan/import", ["population_period_id" => $request->population_period_id], $request->files);
 
-            flash("Data periode berhasil di import");
+            if ($import["status_code"] === 400) {
+                flash($import["errors"], "error");
+                return redirect()->back();
+            }
+
+            $year = $import["data"]["population_period_year"];
+            $semester = $import["data"]["population_period_semester"];
+
+            flash("Data penduduk tahun $year semester $semester berhasil di import");
             return redirect()->back();
         } catch (ValidationException $e) {
             return redirect()->back()->withErrors($e->errors());

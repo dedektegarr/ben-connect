@@ -46,7 +46,7 @@ Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/authenticate', [LoginController::class, 'authenticate'])->name('authenticate');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::middleware(["web", "auth"])->group(function () {
+Route::middleware("auth")->group(function () {
     // SUPER ADMIN
     Route::prefix("admin")->middleware("role:admin")->group(function () {
         // Dashboard
