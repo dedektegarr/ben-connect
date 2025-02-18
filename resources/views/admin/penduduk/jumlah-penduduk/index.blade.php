@@ -181,9 +181,9 @@
                     @csrf
                     <div class="grid gap-4 mb-4 grid-cols-2">
                         <div class="col-span-2">
-                            <label for="name"
+                            <label for="population_period_id"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ __('Periode') }}</label>
-                            <select id="countries" name="population_period_id"
+                            <select id="population_period_id" name="population_period_id"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                 <option value="" selected>{{ __('Pilih periode') }}</option>
                                 @foreach ($periode as $item)
@@ -199,9 +199,9 @@
                         </div>
 
                         <div class="col-span-2">
-                            <label for="description"
+                            <label for="population_file"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ __('File') }}</label>
-                            <input name="population_file"
+                            <input name="population_file" id="population_file"
                                 class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                 aria-describedby="file_input_help" id="file_input" type="file">
 
