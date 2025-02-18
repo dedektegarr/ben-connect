@@ -3,33 +3,57 @@
 namespace App\Http\Controllers\Web\Admin\Penduduk;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PopulationRequest;
+use App\Services\ApiClient;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Validation\ValidationException;
 
 class JumlahPendudukController extends Controller
 {
+    private $apiClient;
+
+    public function __construct()
+    {
+        $this->apiClient = new ApiClient(config("app.url") . "/api");
+    }
+
     public function index()
     {
-        $token = request()->session()->get("auth_token");
-        $url = config("app.url") . "/api/kependudukan/data";
+        $this->apiClient->setToken(request()->session()->get("auth_token"));
 
         try {
-            $response = Http::withToken($token)->get($url);
-            $data = $response->json();
-
-            $penduduk = [];
-
-            if (isset($data["data"]) && is_array($data["data"])) {
-                $penduduk = $data["data"];
-            }
+            $penduduk = $this->apiClient->get("/kependudukan/data");
+            $periode = $this->apiClient->get("/kependudukan/periode-data/data");
 
             return view("admin.penduduk.jumlah-penduduk.index", [
-                "penduduk" => $penduduk
+                "penduduk" => $penduduk["data"],
+                "periode" => $periode["data"]
             ]);
         } catch (Exception $e) {
-            dd($e->getMessage());
+            return view("admin.penduduk.jumlah-penduduk.index", [
+                "penduduk" => $penduduk["data"],
+                "periode" => $periode["data"],
+            ]);
+        }
+    }
+
+    public function import(Request $request)
+    {
+        $this->apiClient->setToken(request()->session()->get("auth_token"));
+
+        try {
+            $formRequest = new PopulationRequest('population_input');
+            $this->validate($request, $formRequest->rules(), $formRequest->messages());
+
+            $import = $this->apiClient->post("/kependudukan/import", ["population_period_id" => $request->population_period_id], $request->files);
+
+            flash("Data periode berhasil di import");
+            return redirect()->back();
+        } catch (ValidationException $e) {
+            return redirect()->back()->withErrors($e->errors());
         }
     }
 }

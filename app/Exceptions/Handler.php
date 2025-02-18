@@ -49,13 +49,13 @@ class Handler extends ExceptionHandler
             ], 401);
         }
         //Error validasi
-        if ($e instanceof ValidationException) {
-            return response()->json([
-                'status_code' => 400,
-                'message' => 'Input tidak valid',
-                'errors' => $e->errors()
-            ], 400);
-        }
+        // if ($e instanceof ValidationException) {
+        //     return response()->json([
+        //         'status_code' => 400,
+        //         'message' => 'Input tidak valid',
+        //         'errors' => $e->errors()
+        //     ], 400);
+        // }
         //Endpoint ridak ditemukan (404)
         if ($e instanceof NotFoundHttpException) {
             return response()->json([

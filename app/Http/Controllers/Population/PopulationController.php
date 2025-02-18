@@ -24,13 +24,6 @@ class PopulationController extends Controller
         $filters = $request->only(["year", "semester", "age_range", "region"]);
         $populations = Population::with(['populationPeriod', 'populationAgeGroup', 'region'])->filter($filters)->get();
 
-        if ($populations->isEmpty()) {
-            return response()->json([
-                'status_code' => 404,
-                'message' => 'Data Populasi Kosong!',
-            ], 404);
-        }
-
         return response()->json([
             "status_code" => 200,
             "message" => "Data populasi",

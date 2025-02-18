@@ -17,7 +17,7 @@ class PopulationPeriodController extends Controller
         return response()->json([
             'status_code' => 200,
             'message' => "Periode data kependudukan",
-            'data_periode_kependudukan' => $data
+            'data' => $data
         ], 200);
     }
 
