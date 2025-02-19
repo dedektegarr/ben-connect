@@ -12,7 +12,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="stylesheet" href="{{ asset('build/assets/app-C4ljFj83.css') }}">
+
+    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
 </head>
 
 <body class="bg-[#f9fafb] dark:bg-gray-900">
@@ -55,6 +57,7 @@
         </div>
     </main>
 
+    <script src="{{ asset('build/assets/app-7VDy1gAz.js') }}"></script>
     @stack('scripts')
 </body>
 
