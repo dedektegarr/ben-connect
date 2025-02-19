@@ -1,0 +1,122 @@
+<div class="rounded-2xl border border-gray-200 bg-gray-100 dark:border-gray-800 dark:bg-white/[0.03]">
+    <div class="shadow-default rounded-2xl bg-white px-5 pb-11 pt-5 dark:bg-gray-900 sm:px-6 sm:pt-6">
+        <div class="flex justify-between">
+            <div>
+                <h3 class="text-lg font-semibold text-gray-800 dark:text-white/90">
+                    Jenis Kelamin
+                </h3>
+                <p class="mt-1 text-theme-sm text-gray-500 dark:text-gray-400">
+                    Persentase Jenis Kelamin Penduduk Provinsi Bengkulu
+                </p>
+            </div>
+        </div>
+        <div class="relative mt-6">
+            <div id="pieChart" class="h-full"></div>
+        </div>
+    </div>
+
+    <div class="flex items-center justify-center gap-5 px-6 py-3.5 sm:gap-8 sm:py-5">
+        <div>
+            <p class="mb-1 text-center text-theme-xs text-gray-500 dark:text-gray-400 sm:text-sm">
+                Pria
+            </p>
+            <p
+                class="flex items-center justify-center gap-1 text-base font-semibold text-gray-800 dark:text-white/90 sm:text-lg">
+                4,000
+
+            </p>
+        </div>
+
+        <div class="h-7 w-px bg-gray-200 dark:bg-gray-800"></div>
+
+        <div>
+            <p class="mb-1 text-center text-theme-xs text-gray-500 dark:text-gray-400 sm:text-sm">
+                Wanita
+            </p>
+            <p
+                class="flex items-center justify-center gap-1 text-base font-semibold text-gray-800 dark:text-white/90 sm:text-lg">
+                7,000
+
+            </p>
+        </div>
+
+        <div class="h-7 w-px bg-gray-200 dark:bg-gray-800"></div>
+
+        <div>
+            <p class="mb-1 text-center text-theme-xs text-gray-500 dark:text-gray-400 sm:text-sm">
+                Jumlah
+            </p>
+            <p
+                class="flex items-center justify-center gap-1 text-base font-semibold text-gray-800 dark:text-white/90 sm:text-lg">
+                11,000
+
+            </p>
+        </div>
+    </div>
+</div>
+@push('scripts')
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const pieChartOptions = () => {
+                return {
+                    series: [50, 50],
+                    colors: ["#1C64F2", "#16BDCA"],
+                    chart: {
+                        width: "100%",
+                        height: 300,
+                        type: "pie",
+                    },
+                    stroke: {
+                        colors: ["white"],
+                        lineCap: "",
+                    },
+                    plotOptions: {
+                        pie: {
+                            labels: {
+                                show: true,
+                            },
+                            size: "100%",
+                            dataLabels: {
+                                offset: -25
+                            }
+                        },
+                    },
+                    labels: ["Pria", "Wanita"],
+                    dataLabels: {
+                        enabled: true,
+                        style: {
+                            fontFamily: "Inter, sans-serif",
+                        },
+                    },
+                    legend: {
+                        position: "bottom",
+                        fontFamily: "Inter, sans-serif",
+                    },
+                    yaxis: {
+                        labels: {
+                            formatter: function(value) {
+                                return value + "%"
+                            },
+                        },
+                    },
+                    xaxis: {
+                        labels: {
+                            formatter: function(value) {
+                                return value + "%"
+                            },
+                        },
+                        axisTicks: {
+                            show: false,
+                        },
+                        axisBorder: {
+                            show: false,
+                        },
+                    },
+                }
+            }
+
+            const chart = new ApexCharts(document.getElementById("pieChart"), pieChartOptions());
+            chart.render();
+        });
+    </script>
+@endpush

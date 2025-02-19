@@ -151,6 +151,7 @@ export default {
     plugins: [
         require("flowbite/plugin")({
             datatables: true,
+            chart: true,
         }),
     ],
 };
