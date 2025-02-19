@@ -29,6 +29,87 @@
         </x-panel.panel-header>
 
         <x-panel.panel-body>
+            <form method="GET" action="">
+                <div class="flex items-center gap-4 justify-between mb-6">
+                    <div class="flex gap-4 items-center w-full">
+                        {{-- Kabupaten/Kota --}}
+                        <div class="w-full">
+                            <label for="region" class="sr-only">Kab/Kota</label>
+                            <select id="region" name="region"
+                                class="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
+                                <option value="" {{ request('region') == '' ? 'selected' : '' }}>Semua Kabupaten/Kota
+                                </option>
+                                @foreach ($region as $item)
+                                    <option value="{{ $item['region_name'] }}"
+                                        {{ request('region') == $item['region_name'] ? 'selected' : '' }}>
+                                        {{ $item['region_name'] }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        {{-- Tahun --}}
+                        <div class="w-full">
+                            <label for="tahun" class="sr-only">Tahun</label>
+                            <select id="tahun" name="year"
+                                class="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
+                                <option value="" {{ request('year') == '' ? 'selected' : '' }}>Semua Tahun</option>
+                                @foreach (collect($periode)->unique('population_period_year') as $item)
+                                    <option value="{{ $item['population_period_year'] }}"
+                                        {{ request('year') == $item['population_period_year'] ? 'selected' : '' }}>
+                                        {{ $item['population_period_year'] }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        {{-- Semester --}}
+                        <div class="w-full">
+                            <label for="semester" class="sr-only">Semester</label>
+                            <select id="semester" name="semester"
+                                class="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
+                                <option value="" {{ request('semester') == '' ? 'selected' : '' }}>Semua Semester
+                                </option>
+                                @foreach (collect($periode)->unique('population_period_semester') as $item)
+                                    <option value="{{ $item['population_period_semester'] }}"
+                                        {{ request('semester') == $item['population_period_semester'] ? 'selected' : '' }}>
+                                        {{ $item['population_period_semester'] }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        {{-- Rentang Usia --}}
+                        <div class="w-full">
+                            <label for="age_range" class="sr-only">Rentang Usia</label>
+                            <select id="age_range" name="age_range"
+                                class="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
+                                <option value="" {{ request('age_range') == '' ? 'selected' : '' }}>Semua Rentang
+                                    Usia</option>
+                                @foreach ($rentangUsia as $item)
+                                    <option value="{{ $item['population_age_group_years'] }}"
+                                        {{ request('age_range') == $item['population_age_group_years'] ? 'selected' : '' }}>
+                                        {{ $item['population_age_group_years'] }} Tahun
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+
+                    {{-- Tombol Filter --}}
+                    <button type="submit"
+                        class="text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2 text-center inline-flex items-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                        <svg class="w-3.5 h-3.5 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M5.05 3C3.291 3 2.352 5.024 3.51 6.317l5.422 6.059v4.874c0 .472.227.917.613 1.2l3.069 2.25c1.01.742 2.454.036 2.454-1.2v-7.124l5.422-6.059C21.647 5.024 20.708 3 18.95 3H5.05Z" />
+                        </svg>
+                        Filter
+                    </button>
+                </div>
+            </form>
+
+
             <!-- ====== DataTable One Start -->
             <div
                 class="overflow-hidden rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-white/[0.03]">
@@ -38,36 +119,6 @@
                             <th>
                                 <span class="flex items-center">
                                     Kabupaten/Kota
-                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                    </svg>
-                                </span>
-                            </th>
-                            <th data-type="date" data-format="YYYY/DD/MM">
-                                <span class="flex items-center">
-                                    Tahun
-                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                    </svg>
-                                </span>
-                            </th>
-                            <th data-type="date" data-format="YYYY/DD/MM">
-                                <span class="flex items-center">
-                                    Semester
-                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                    </svg>
-                                </span>
-                            </th>
-                            <th>
-                                <span class="flex items-center">
-                                    Rentang Usia
                                     <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                         width="24" height="24" fill="none" viewBox="0 0 24 24">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -95,18 +146,26 @@
                                     </svg>
                                 </span>
                             </th>
+                            <th>
+                                <span class="flex items-center">
+                                    Total
+                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                    </svg>
+                                </span>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($penduduk as $item)
+                        @foreach ($penduduk as $region => $population)
                             <tr>
                                 <td class="font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    {{ $item['region']['region_name'] }}</td>
-                                <td>{{ $item['population_period']['population_period_year'] }}</td>
-                                <td>{{ $item['population_period']['population_period_semester'] }}</td>
-                                <td>{{ $item['population_age_group']['population_age_group_years'] }}</td>
-                                <td>{{ $item['population_male'] }}</td>
-                                <td>{{ $item['population_female'] }}</td>
+                                    {{ $region }}</td>
+                                <td>{{ number_format($population['population_male']) }} Jiwa</td>
+                                <td>{{ number_format($population['population_female']) }} Jiwa</td>
+                                <td>{{ number_format($population['total']) }} Jiwa</td>
                             </tr>
                         @endforeach
                     </tbody>

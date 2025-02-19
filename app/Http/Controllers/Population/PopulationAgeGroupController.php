@@ -17,7 +17,7 @@ class PopulationAgeGroupController extends Controller
         return response()->json([
             'status_code' => 200,
             'message' => "Kelompok umur",
-            'data_kelompok_umur' => $data
+            'data' => $data
         ], 200);
     }
 

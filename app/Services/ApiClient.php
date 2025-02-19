@@ -21,9 +21,9 @@ class ApiClient
         $this->token = $token;
     }
 
-    public function get($endpoint)
+    public function get($endpoint, $data = [])
     {
-        return $this->request('GET', $endpoint);
+        return $this->request('GET', $endpoint, $data);
     }
 
     public function post($endpoint, $data, $files = [])

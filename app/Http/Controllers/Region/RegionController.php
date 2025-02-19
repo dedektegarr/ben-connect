@@ -13,11 +13,11 @@ class RegionController extends Controller
     public function index()
     {
         $data = Region::get();
-        
+
         return response()->json([
             'status_code' => 200,
             'message' => "Data wilayah",
-            'data_wilayah' => $data
+            'data' => $data
         ], 200);
     }
 
@@ -25,9 +25,9 @@ class RegionController extends Controller
     public function store(Request $request)
     {
         //Validasi input
-        $formRequest = new RegionRequest('region_input'); 
+        $formRequest = new RegionRequest('region_input');
         $this->validate($request, $formRequest->rules(), $formRequest->messages());
-        
+
         //Store data ke database
         Region::create($request->all());
         return response()->json([
@@ -42,18 +42,18 @@ class RegionController extends Controller
         $data = Region::find($id);
 
         //Cek data sesuai ID
-        if(empty($data)){
+        if (empty($data)) {
             return response()->json([
                 'status_code' => 404,
                 'message' => 'Wilayah tidak ditemukan!'
-            ], 404);  
+            ], 404);
         }
 
         return response()->json([
             'status_code' => 200,
             'message' => 'Wilayah berhasil ditemukan',
             'data_wilayah' => $data
-        ], 200);    
+        ], 200);
     }
 
     //Mengubah wilayah
@@ -62,15 +62,15 @@ class RegionController extends Controller
         $data = Region::find($id);
 
         //Cek data sesuai ID
-        if(empty($data)){
+        if (empty($data)) {
             return response()->json([
                 'status_code' => 404,
                 'message' => 'Data wilayah tidak ditemukan!'
-            ], 404);  
+            ], 404);
         }
 
         //Validasi input
-        $formRequest = new RegionRequest('region_input'); 
+        $formRequest = new RegionRequest('region_input');
         $this->validate($request, $formRequest->rules(), $formRequest->messages());
 
         //Update data di database
@@ -78,7 +78,7 @@ class RegionController extends Controller
         return response()->json([
             'status_code' => 200,
             'message' => 'Wilayah berhasil diubah'
-        ], 200);    
+        ], 200);
     }
 
     //Menghapus wilayah (Soft Delete)
@@ -87,11 +87,11 @@ class RegionController extends Controller
         $data = Region::find($id);
 
         //Cek data sesuai ID
-        if(empty($data)){
+        if (empty($data)) {
             return response()->json([
                 'status_code' => 404,
                 'message' => 'Wilayah tidak ditemukan!'
-            ], 404);  
+            ], 404);
         }
 
         //Hapus data dari database (Hard Delete)
@@ -99,6 +99,6 @@ class RegionController extends Controller
         return response()->json([
             'status_code' => 200,
             'message' => 'Wilayah berhasil dihapus'
-        ], 200);  
+        ], 200);
     }
 }
