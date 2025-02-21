@@ -6,5 +6,5 @@ import "./darkMode";
 import "./dataTable";
 
 window.ApexCharts = ApexCharts;
-window.Alpine = Alpine;
-Alpine.start();
+// window.Alpine = Alpine;
+// Alpine.start();
