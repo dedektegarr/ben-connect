@@ -15,7 +15,16 @@
     @if (file_exists(public_path('hot')))
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     @else
-        <link rel="stylesheet" href="{{ asset('build/assets/app-Cw3euNE-.css') }}">
+        @php
+            $cssFiles = glob(public_path('build/assets/*.css'));
+            $jsFiles = glob(public_path('build/assets/*.js'));
+            $cssFile = count($cssFiles) > 0 ? basename($cssFiles[0]) : null;
+            $jsFile = count($jsFiles) > 0 ? basename($jsFiles[0]) : null;
+        @endphp
+
+        @if ($cssFile)
+            <link rel="stylesheet" href="{{ asset('build/assets/' . $cssFile) }}">
+        @endif
     @endif
 </head>
 
@@ -60,7 +69,7 @@
     </main>
 
     @if (!file_exists(public_path('hot')))
-        <script src="{{ asset('build/assets/app-cpHWaybe.js') }}"></script>
+        <script src="{{ asset('build/assets/' . $jsFile) }}"></script>
     @endif
 
     @stack('scripts')
