@@ -9,6 +9,7 @@ class StatistikPenduduk extends Component
 {
     private $apiClient;
     public $regions;
+    public $ageRange;
     public $selectedRegion;
     public $genderPercentage;
     public $populationCount;
@@ -23,6 +24,7 @@ class StatistikPenduduk extends Component
     {
         $penduduk = $this->apiClient->get("/kependudukan/data", [])["data"];
 
+        $this->ageRange = $this->getAgeRange($penduduk);
         $this->regions = $this->apiClient->get("/wilayah/data", [])["data"];
         $this->genderPercentage = $this->getGenderPercentage($penduduk);
         $this->populationCount = [
@@ -37,6 +39,7 @@ class StatistikPenduduk extends Component
         $penduduk = $this->apiClient->get("/kependudukan/data", ["region" => $this->selectedRegion])["data"];
 
         $this->genderPercentage = $this->getGenderPercentage($penduduk);
+        $this->ageRange = $this->getAgeRange($penduduk);
         $this->populationCount = [
             "Pria" => $this->getTotal($penduduk, "population_male"),
             "Wanita" => $this->getTotal($penduduk, "population_female"),
@@ -45,7 +48,8 @@ class StatistikPenduduk extends Component
 
         $this->dispatch(
             "data-changed",
-            $this->genderPercentage
+            $this->genderPercentage,
+            $this->ageRange
         );
     }
 
@@ -65,6 +69,38 @@ class StatistikPenduduk extends Component
                 round(($femaleTotal / ($maleTotal + $femaleTotal)) * 100, 1)
             ],
             "labels" => ["Pria", "Wanita"]
+        ];
+    }
+
+    private function getAgeRange($penduduk)
+    {
+        $data = collect($penduduk)->sortBy("population_age_group.population_age_group_years")->groupBy("population_age_group.population_age_group_years");
+
+        return [
+            "categories" => $data->keys()->toArray(),
+            "series" => [
+                [
+                    "name" => "Pria",
+                    "color" => "#31C48D",
+                    "data" => $data->map(function ($group) {
+                        return $group->sum('population_male');
+                    })->values()->toArray()
+                ],
+                [
+                    "name" => "Wanita",
+                    "color" => "#F05252",
+                    "data" => $data->map(function ($group) {
+                        return $group->sum('population_female');
+                    })->values()->toArray()
+                ],
+                [
+                    "name" => "Total",
+                    "color" => "#2b7fff",
+                    "data" => $data->map(function ($group) {
+                        return $group->sum('population_female') + $group->sum('population_male');
+                    })->values()->toArray()
+                ],
+            ]
         ];
     }
 

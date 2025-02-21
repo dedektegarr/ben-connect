@@ -8,32 +8,22 @@
         </h3>
     </div>
 
-    <div class="max-w-full overflow-x-auto">
+    <div class="max-w-full">
         <div id="barChart"></div>
     </div>
 </div>
 @push('scripts')
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        const renderBarChart = (categories, series) => {
             const options = {
-                series: [{
-                        name: "Pria",
-                        color: "#31C48D",
-                        data: ["1420", "1620", "1820", "1420", "1650", "2120"],
-                    },
-                    {
-                        name: "Wanita",
-                        data: ["788", "810", "866", "788", "1100", "1200"],
-                        color: "#F05252",
-                    }
-                ],
+                series,
                 chart: {
                     sparkline: {
                         enabled: false,
                     },
                     type: "bar",
                     width: "100%",
-                    height: 400,
+                    height: 800,
                     toolbar: {
                         show: false,
                     }
@@ -71,9 +61,8 @@
                             fontFamily: "Inter, sans-serif",
                             cssClass: 'text-xs font-normal fill-gray-500 dark:fill-gray-400'
                         },
-
                     },
-                    categories: ["Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                    categories,
                     axisTicks: {
                         show: false,
                     },
@@ -108,6 +97,18 @@
                 const chart = new ApexCharts(document.getElementById("barChart"), options);
                 chart.render();
             }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const categories = @json($data)["categories"];
+            const series = @json($data)["series"];
+
+            renderBarChart(categories, series);
+        });
+
+        window.addEventListener("data-changed", function(e) {
+            const updatedData = e.detail[1];
+            renderBarChart(updatedData.categories, updatedData.series);
         });
     </script>
 @endpush

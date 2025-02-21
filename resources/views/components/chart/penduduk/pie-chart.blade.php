@@ -35,7 +35,7 @@
 </div>
 @push('scripts')
     <script>
-        const renderChart = (values, labels) => {
+        const renderPieChart = (values, labels) => {
             const pieChartOptions = () => {
                 return {
                     series: values,
@@ -102,12 +102,12 @@
             const initialValues = @json($data)["values"];
             const initialLabels = @json($data)["labels"];
 
-            renderChart(initialValues, initialLabels);
+            renderPieChart(initialValues, initialLabels);
         });
 
         window.addEventListener("data-changed", function(e) {
             const updatedData = e.detail[0];
-            renderChart(updatedData.values, updatedData.labels);
+            renderPieChart(updatedData.values, updatedData.labels);
         });
     </script>
 @endpush
