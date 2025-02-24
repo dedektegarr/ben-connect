@@ -35,79 +35,85 @@
 </div>
 @push('scripts')
     <script>
+        const pieChartData = @json($data);
+        let pieChart;
+
         const renderPieChart = (values, labels) => {
-            const pieChartOptions = () => {
-                return {
-                    series: values,
-                    colors: ["#1C64F2", "#16BDCA"],
-                    chart: {
-                        width: "100%",
-                        height: 300,
-                        type: "pie",
-                    },
-                    stroke: {
-                        colors: ["white"],
-                        lineCap: "",
-                    },
-                    plotOptions: {
-                        pie: {
-                            labels: {
-                                show: true,
-                            },
-                            size: "100%",
-                            dataLabels: {
-                                offset: -25
-                            }
-                        },
-                    },
-                    labels: labels,
-                    dataLabels: {
-                        enabled: true,
-                        style: {
-                            fontFamily: "Inter, sans-serif",
-                        },
-                    },
-                    legend: {
-                        position: "bottom",
-                        fontFamily: "Inter, sans-serif",
-                    },
-                    yaxis: {
-                        labels: {
-                            formatter: function(value) {
-                                return value + "%"
-                            },
-                        },
-                    },
-                    xaxis: {
-                        labels: {
-                            formatter: function(value) {
-                                return value + "%"
-                            },
-                        },
-                        axisTicks: {
-                            show: false,
-                        },
-                        axisBorder: {
-                            show: false,
-                        },
-                    },
-                }
+            if (pieChart) {
+                pieChart.destroy()
             }
 
-            const chart = new ApexCharts(document.getElementById("pieChart"), pieChartOptions());
-            chart.render();
+            pieChart = new ApexCharts(document.getElementById("pieChart"), {
+                series: values,
+                colors: ["#1C64F2", "#16BDCA"],
+                chart: {
+                    width: "100%",
+                    height: 300,
+                    type: "pie",
+                },
+                stroke: {
+                    colors: ["white"],
+                    lineCap: "",
+                },
+                plotOptions: {
+                    pie: {
+                        labels: {
+                            show: true,
+                        },
+                        size: "100%",
+                        dataLabels: {
+                            offset: -25
+                        }
+                    },
+                },
+                labels: labels,
+                dataLabels: {
+                    enabled: true,
+                    style: {
+                        fontFamily: "Inter, sans-serif",
+                    },
+                },
+                legend: {
+                    position: "bottom",
+                    fontFamily: "Inter, sans-serif",
+                },
+                yaxis: {
+                    labels: {
+                        formatter: function(value) {
+                            return value + "%"
+                        },
+                    },
+                },
+                xaxis: {
+                    labels: {
+                        formatter: function(value) {
+                            return value + "%"
+                        },
+                    },
+                    axisTicks: {
+                        show: false,
+                    },
+                    axisBorder: {
+                        show: false,
+                    },
+                },
+            });
+            pieChart.render();
         }
 
         document.addEventListener("DOMContentLoaded", function() {
-            const initialValues = @json($data)["values"];
-            const initialLabels = @json($data)["labels"];
-
-            renderPieChart(initialValues, initialLabels);
+            renderPieChart(pieChartData.values, pieChartData.labels);
         });
 
-        window.addEventListener("data-changed", function(e) {
-            const updatedData = e.detail[0];
-            renderPieChart(updatedData.values, updatedData.labels);
+        document.addEventListener('livewire:init', () => {
+            Livewire.on('data-changed', (event) => {
+                const {
+                    values,
+                    labels
+                } = event[0];
+
+                renderPieChart(values, labels)
+            });
         });
     </script>
 @endpush
