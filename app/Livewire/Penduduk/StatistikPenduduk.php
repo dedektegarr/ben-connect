@@ -20,13 +20,13 @@ class StatistikPenduduk extends Component
         $this->apiClient->setToken(request()->session()->get("auth_token"));
     }
 
-    public function mount()
+    public function loadData($region = null)
     {
-        $penduduk = $this->apiClient->get("/kependudukan/data", [])["data"];
+        $penduduk = $this->apiClient->get("/kependudukan/data", ["region" => $region])["data"];
 
-        $this->ageRange = $this->getAgeRange($penduduk);
         $this->regions = $this->apiClient->get("/wilayah/data", [])["data"];
         $this->genderPercentage = $this->getGenderPercentage($penduduk);
+        $this->ageRange = $this->getAgeRange($penduduk);
         $this->populationCount = [
             "Pria" => $this->getTotal($penduduk, "population_male"),
             "Wanita" => $this->getTotal($penduduk, "population_female"),
@@ -34,17 +34,14 @@ class StatistikPenduduk extends Component
         ];
     }
 
-    public function onRegionChange()
+    public function mount()
     {
-        $penduduk = $this->apiClient->get("/kependudukan/data", ["region" => $this->selectedRegion])["data"];
+        $this->loadData();
+    }
 
-        $this->genderPercentage = $this->getGenderPercentage($penduduk);
-        $this->ageRange = $this->getAgeRange($penduduk);
-        $this->populationCount = [
-            "Pria" => $this->getTotal($penduduk, "population_male"),
-            "Wanita" => $this->getTotal($penduduk, "population_female"),
-            "Total" => $this->getTotal($penduduk, "population_male") +  $this->getTotal($penduduk, "population_female")
-        ];
+    public function updatedSelectedRegion($value)
+    {
+        $this->loadData($value);
 
         $this->dispatch(
             "data-changed",
