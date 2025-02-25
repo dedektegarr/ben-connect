@@ -115,7 +115,7 @@
                     </li>
                     <li>
                         <a href="{{ route('admin.kependudukan.jumlah-penduduk.index') }}"
-                            class="{{ Route::is('admin.kependudukan.jumlah-penduduk.index') ? 'active' : '' }} sidebar-sub-menu">{{ __('Industri Kecil menengah') }}</a>
+                            class="{{ Route::is('admin.kependudukan.jumlah-penduduk.index') ? 'active' : '' }} sidebar-sub-menu">{{ __('IKM') }}</a>
                     </li>
                     <li>
                         <a href="{{ route('admin.kependudukan.jumlah-penduduk.index') }}"

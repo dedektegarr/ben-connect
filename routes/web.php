@@ -68,7 +68,7 @@ Route::middleware("auth")->group(function () {
         Route::prefix("perindustrian")->group(function () {
             Route::prefix("industri-nasional")->controller(IndustriNasional::class)->group(function () {
                 Route::get("/", "index")->name("admin.perindustrian.industri-nasional.index");
-                // Route::post("/import", "import")->name("admin.kependudukan.jumlah-penduduk.import");
+                Route::post("/import", "import")->name("admin.perindustrian.industri-nasional.import");
             });
         });
     });

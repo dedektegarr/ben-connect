@@ -69,6 +69,15 @@ class JumlahPendudukController extends Controller
             $regions = $this->apiClient->get("/wilayah/data")["data"];
             $penduduk = $this->apiClient->get("/kependudukan/data", $filters)["data"];
 
+            if (empty($penduduk)) {
+                return view("admin.penduduk.jumlah-penduduk.statistik", [
+                    "regions" => $regions,
+                    "genderPercentage" => [],
+                    "ageRange" => [],
+                    "populationCount" => []
+                ]);
+            }
+
             $genderPercentage = $this->pendudukService->getGenderPercentage($penduduk);
             $ageRange = $this->pendudukService->getAgeRange($penduduk);
             $populationCount = [
