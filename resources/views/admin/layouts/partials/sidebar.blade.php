@@ -78,9 +78,12 @@
                 <ul id="dropdown-example"
                     class="{{ Route::is('admin.kependudukan.*') ? 'block' : 'hidden' }} py-2 space-y-2 ml-10">
                     <li>
+                        <a href="{{ route('admin.kependudukan.jumlah-penduduk.statistik') }}"
+                            class="{{ Route::is('admin.kependudukan.jumlah-penduduk.statistik') ? 'active' : '' }} sidebar-sub-menu">{{ __('Statistik Penduduk') }}</a>
+                    </li>
+                    <li>
                         <a href="{{ route('admin.kependudukan.jumlah-penduduk.index') }}"
-                            class="{{ Route::is('admin.kependudukan.jumlah-penduduk.*') ? 'active' : '' }} sidebar-sub-menu">{{ __("Jumlah
-                                                        Penduduk") }}</a>
+                            class="{{ Route::is('admin.kependudukan.jumlah-penduduk.index') ? 'active' : '' }} sidebar-sub-menu">{{ __('Jumlah Penduduk') }}</a>
                     </li>
                 </ul>
             </li>

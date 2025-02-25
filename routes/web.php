@@ -58,6 +58,7 @@ Route::middleware("auth")->group(function () {
         Route::prefix("kependudukan")->group(function () {
             Route::prefix("jumlah-penduduk")->controller(JumlahPendudukController::class)->group(function () {
                 Route::get("/", "index")->name("admin.kependudukan.jumlah-penduduk.index");
+                Route::get("/statistik", "statistikPenduduk")->name("admin.kependudukan.jumlah-penduduk.statistik");
                 Route::post("/import", "import")->name("admin.kependudukan.jumlah-penduduk.import");
             });
         });

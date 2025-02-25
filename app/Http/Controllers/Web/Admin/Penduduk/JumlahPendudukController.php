@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Web\Admin\Penduduk;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PopulationRequest;
 use App\Services\ApiClient;
+use App\Services\Penduduk\PendudukServices;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -14,17 +15,19 @@ use Illuminate\Validation\ValidationException;
 class JumlahPendudukController extends Controller
 {
     private $apiClient;
+    private $pendudukService;
 
     public function __construct()
     {
         $this->apiClient = new ApiClient(config("app.url") . "/api");
+        $this->pendudukService = new PendudukServices();
     }
 
     public function index(Request $request)
     {
-        $filters = $request->only(["year", "semester", "age_range", "region"]);
-
         $this->apiClient->setToken(request()->session()->get("auth_token"));
+
+        $filters = $request->only(["year", "semester", "age_range", "region"]);
 
         try {
             $penduduk = $this->apiClient->get("/kependudukan/data", $filters);
@@ -53,6 +56,34 @@ class JumlahPendudukController extends Controller
                 "region" => $region["data"],
                 "rentangUsia" => $rentangUsia["data"],
             ]);
+        }
+    }
+
+    public function statistikPenduduk(Request $request)
+    {
+        $this->apiClient->setToken(request()->session()->get("auth_token"));
+
+        $filters = $request->only(["region"]);
+
+        try {
+            $regions = $this->apiClient->get("/wilayah/data")["data"];
+            $penduduk = $this->apiClient->get("/kependudukan/data", $filters)["data"];
+
+            $genderPercentage = $this->pendudukService->getGenderPercentage($penduduk);
+            $ageRange = $this->pendudukService->getAgeRange($penduduk);
+            $populationCount = [
+                "Pria" => $this->pendudukService->getTotal($penduduk, "population_male"),
+                "Wanita" => $this->pendudukService->getTotal($penduduk, "population_female"),
+                "Total" => $this->pendudukService->getTotal($penduduk, "population_male") +  $this->pendudukService->getTotal($penduduk, "population_female")
+            ];
+
+            return view("admin.penduduk.jumlah-penduduk.statistik", [
+                "regions" => $regions,
+                "genderPercentage" => $genderPercentage,
+                "ageRange" => $ageRange,
+                "populationCount" => $populationCount
+            ]);
+        } catch (Exception $e) {
         }
     }
 
