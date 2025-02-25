@@ -14,6 +14,7 @@ use App\Http\Controllers\FrontOffice\DashboardKesehatanController;
 use App\Http\Controllers\FrontOffice\DashboardPendidikanController;
 use App\Http\Controllers\FrontOffice\DashboardInfrastrukturController;
 use App\Http\Controllers\Web\Admin\DashboardController;
+use App\Http\Controllers\Web\Admin\Industri\IndustriNasional;
 use App\Http\Controllers\Web\Admin\Penduduk\JumlahPendudukController;
 
 /*
@@ -56,10 +57,18 @@ Route::middleware("auth")->group(function () {
 
         // Kependudukan
         Route::prefix("kependudukan")->group(function () {
+            Route::get("/statistik", [JumlahPendudukController::class, "statistikPenduduk"])->name("admin.kependudukan.statistik");
             Route::prefix("jumlah-penduduk")->controller(JumlahPendudukController::class)->group(function () {
                 Route::get("/", "index")->name("admin.kependudukan.jumlah-penduduk.index");
-                Route::get("/statistik", "statistikPenduduk")->name("admin.kependudukan.jumlah-penduduk.statistik");
                 Route::post("/import", "import")->name("admin.kependudukan.jumlah-penduduk.import");
+            });
+        });
+
+        // Industri & Perdagangan
+        Route::prefix("perindustrian")->group(function () {
+            Route::prefix("industri-nasional")->controller(IndustriNasional::class)->group(function () {
+                Route::get("/", "index")->name("admin.perindustrian.industri-nasional.index");
+                // Route::post("/import", "import")->name("admin.kependudukan.jumlah-penduduk.import");
             });
         });
     });
