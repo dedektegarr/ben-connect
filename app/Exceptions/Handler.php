@@ -42,12 +42,12 @@ class Handler extends ExceptionHandler
             ], 403);
         }
         //Error otentikasi, belum login, token invalid
-        if ($e instanceof AuthenticationException) {
-            return response()->json([
-                'status_code' => 401,
-                'message' => 'Anda belum login atau token tidak valid'
-            ], 401);
-        }
+        // if ($e instanceof AuthenticationException) {
+        //     return response()->json([
+        //         'status_code' => 401,
+        //         'message' => 'Anda belum login atau token tidak valid'
+        //     ], 401);
+        // }
         //Error validasi
         if ($e instanceof ValidationException) {
             return response()->json([
