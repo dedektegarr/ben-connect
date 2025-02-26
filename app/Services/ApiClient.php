@@ -26,7 +26,7 @@ class ApiClient
         return $this->request('GET', $endpoint, $data);
     }
 
-    public function post($endpoint, $data, $files = [])
+    public function post($endpoint, $data = [], $files = [])
     {
         return $this->request('POST', $endpoint, $data, $files);
     }

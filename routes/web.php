@@ -13,6 +13,7 @@ use App\Http\Controllers\FrontOffice\DashboardBencanaController;
 use App\Http\Controllers\FrontOffice\DashboardKesehatanController;
 use App\Http\Controllers\FrontOffice\DashboardPendidikanController;
 use App\Http\Controllers\FrontOffice\DashboardInfrastrukturController;
+use App\Http\Controllers\Kesehatan\RSUD\RSUDController;
 use App\Http\Controllers\Web\Admin\DashboardController;
 use App\Http\Controllers\Web\Admin\Industri\IndustriNasional;
 use App\Http\Controllers\Web\Admin\Industri\IndustriNasionalController;
@@ -70,6 +71,14 @@ Route::middleware("auth")->group(function () {
             Route::prefix("industri-nasional")->controller(IndustriNasionalController::class)->group(function () {
                 Route::get("/", "index")->name("admin.perindustrian.industri-nasional.index");
                 Route::post("/import", "import")->name("admin.perindustrian.industri-nasional.import");
+            });
+        });
+
+        // Kesehatan
+        Route::prefix("kesehatan")->group(function () {
+            Route::controller(RSUDController::class)->group(function () {
+                Route::get("/rsud/kunjungan", "kunjungan")->name("admin.kesehatan.rsud.kunjungan");
+                Route::post("/rsud/synchronize", "synchronize")->name("admin.kesehatan.rsud.synchronize");
             });
         });
     });
