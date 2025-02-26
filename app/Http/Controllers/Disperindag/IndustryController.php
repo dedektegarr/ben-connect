@@ -11,9 +11,11 @@ class IndustryController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $industries = Industry::with("region")->latest()->get();
+        $filters = $request->only(["region", "skala"]);
+
+        $industries = Industry::with("region")->filter($filters)->latest()->get();
 
         return response()->json([
             "status" => 200,

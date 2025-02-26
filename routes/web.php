@@ -15,6 +15,7 @@ use App\Http\Controllers\FrontOffice\DashboardPendidikanController;
 use App\Http\Controllers\FrontOffice\DashboardInfrastrukturController;
 use App\Http\Controllers\Web\Admin\DashboardController;
 use App\Http\Controllers\Web\Admin\Industri\IndustriNasional;
+use App\Http\Controllers\Web\Admin\Industri\IndustriNasionalController;
 use App\Http\Controllers\Web\Admin\Penduduk\JumlahPendudukController;
 
 /*
@@ -66,7 +67,7 @@ Route::middleware("auth")->group(function () {
 
         // Industri & Perdagangan
         Route::prefix("perindustrian")->group(function () {
-            Route::prefix("industri-nasional")->controller(IndustriNasional::class)->group(function () {
+            Route::prefix("industri-nasional")->controller(IndustriNasionalController::class)->group(function () {
                 Route::get("/", "index")->name("admin.perindustrian.industri-nasional.index");
                 Route::post("/import", "import")->name("admin.perindustrian.industri-nasional.import");
             });

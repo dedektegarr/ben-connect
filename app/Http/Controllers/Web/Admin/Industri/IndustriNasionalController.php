@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Web\Admin\Industri;
 
-use App\Http\Controllers\Controller;
-use App\Services\ApiClient;
 use Exception;
+use App\Services\ApiClient;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Validation\ValidationException;
 
-class IndustriNasional extends Controller
+class IndustriNasionalController extends Controller
 {
     private $apiClient;
 
@@ -17,16 +17,20 @@ class IndustriNasional extends Controller
         $this->apiClient = new ApiClient(config("app.url") . "/api");
     }
 
-    public function index()
+    public function index(Request $request)
     {
         $this->apiClient->setToken(request()->session()->get("auth_token"));
 
+        $filters = $request->only(["region", "skala"]);
+
         try {
-            $industries = $this->apiClient->get("/disperindag/industries");
+            $industries = $this->apiClient->get("/disperindag/industries", $filters);
+            $regions = $this->apiClient->get("/wilayah/data");
 
             if ($industries["status"] === 200) {
                 return view("admin.industri.industri-nasional.index", [
-                    "industries" => $industries["data"]
+                    "industries" => $industries["data"],
+                    "regions" => $regions["data"]
                 ]);
             }
 

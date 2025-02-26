@@ -30,6 +30,17 @@ class Industry extends Model
         'industry_registered_sinas',
     ];
 
+    public function scopeFilter($query, $filters)
+    {
+        return $query->when($filters["region"] ?? null, function ($query, $region) {
+            $query->whereHas("region", function ($q) use ($region) {
+                $q->where("region_name", $region);
+            });
+        })->when($filters["skala"] ?? null, function ($query, $skala) {
+            $query->where("industry_business_scale", $skala);
+        });
+    }
+
     protected $hidden = [
         "region_id",
     ];
