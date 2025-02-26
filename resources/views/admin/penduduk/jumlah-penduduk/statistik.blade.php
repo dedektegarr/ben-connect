@@ -3,8 +3,7 @@
 @section('title', 'Statistik Penduduk')
 @section('content')
     <x-panel.panel>
-        <x-panel.panel-header
-            title="Statistik Penduduk {{ request('region') == '' ? 'Provinsi Bengkulu' : request('region') }}" />
+        <x-panel.panel-header title="Statistik Penduduk Provinsi Bengkulu" />
         <x-panel.panel-body>
             <div class="flex flex-col w-full gap-4 xl:gap-6">
                 <form method="GET" action="" class="flex items-center gap-4 w-full">

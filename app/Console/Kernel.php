@@ -21,7 +21,7 @@ class Kernel extends ConsoleKernel
         //         ->hourlyAt(16); // Jam 12:00
         $schedule->command('postdatabase:schedule')
             ->timezone('Asia/Jakarta')
-            ->at('07:58');
+            ->at('13:01');
     }
 
     /**
@@ -29,7 +29,7 @@ class Kernel extends ConsoleKernel
      */
     protected function commands(): void
     {
-        $this->load(__DIR__.'/Commands');
+        $this->load(__DIR__ . '/Commands');
 
         require base_path('routes/console.php');
     }
