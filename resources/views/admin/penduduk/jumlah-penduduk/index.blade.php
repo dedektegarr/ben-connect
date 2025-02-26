@@ -178,7 +178,7 @@
                                 <td>
                                     <div class="flex items-center justify-center col-span-1">
                                         <div x-data="{ openDropDown: false }" class="relative">
-                                            <button @click="openDropDown = !openDropDown"
+                                            <button x-on:click="openDropDown = !openDropDown"
                                                 class="text-gray-500 dark:text-gray-400">
                                                 <svg class="fill-current" width="24" height="24"
                                                     viewBox="0 0 24 24" fill="none"
@@ -188,7 +188,7 @@
                                                         fill=""></path>
                                                 </svg>
                                             </button>
-                                            <div x-show="openDropDown" @click.outside="openDropDown = false"
+                                            <div x-show="openDropDown" x-on:click.outside="openDropDown = false"
                                                 class="absolute right-0 z-40 w-40 p-2 space-y-1 bg-white border border-gray-200 top-full rounded-2xl shadow-theme-lg dark:border-gray-800 dark:bg-gray-dark"
                                                 style="">
                                                 <button
