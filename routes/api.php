@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Disperindag\IndustryController;
 use App\Http\Controllers\Disperindag\PriceController;
 use App\Http\Controllers\Disperindag\VariantController;
 use App\Http\Controllers\ExcelImportController;
@@ -165,6 +166,11 @@ Route::middleware('auth:sanctum')->group(function () {
             Route::post('/disperindag/price/tambah', 'store');
             Route::put('/disperindag/price/ubah/{id}', 'update');
             Route::delete('/disperindag/price/hapus/{id}', 'destroy');
+        });
+
+        // Industries
+        Route::controller(IndustryController::class)->group(function () {
+            Route::get("/disperindag/industries", "index");
         });
 
         // IMPORT DATA

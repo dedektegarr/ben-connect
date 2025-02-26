@@ -118,6 +118,9 @@ class JumlahPendudukController extends Controller
             return redirect()->back();
         } catch (ValidationException $e) {
             return redirect()->back()->withErrors($e->errors());
+        } catch (Exception $e) {
+            flash($e->getMessage(), "error");
+            return redirect()->back();
         }
     }
 }

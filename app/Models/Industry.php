@@ -30,6 +30,10 @@ class Industry extends Model
         'industry_registered_sinas',
     ];
 
+    protected $hidden = [
+        "region_id",
+    ];
+
     public function region()
     {
         return $this->belongsTo(Region::class, 'region_id', 'region_id');

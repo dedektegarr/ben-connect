@@ -35,7 +35,7 @@
                         <tr>
                             <th>
                                 <span class="flex items-center">
-                                    Alamat Perusahaan
+                                    Nama Perusahaan
                                     <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                         width="24" height="24" fill="none" viewBox="0 0 24 24">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -45,7 +45,7 @@
                             </th>
                             <th>
                                 <span class="flex items-center">
-                                    Alamat
+                                    Alamat Kantor Pusat
                                     <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                         width="24" height="24" fill="none" viewBox="0 0 24 24">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -55,7 +55,7 @@
                             </th>
                             <th>
                                 <span class="flex items-center">
-                                    Provinsi Kantor
+                                    Provinsi
                                     <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                         width="24" height="24" fill="none" viewBox="0 0 24 24">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -146,15 +146,40 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {{-- @foreach ($penduduk as $region => $population)
+                        @foreach ($industries as $key => $industry)
                             <tr>
                                 <td class="font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    {{ $region }}</td>
-                                <td>{{ number_format($population['population_male']) }} Jiwa</td>
-                                <td>{{ number_format($population['population_female']) }} Jiwa</td>
-                                <td>{{ number_format($population['total']) }} Jiwa</td>
+                                    {{ $industry['industry_ptname'] }}</td>
+                                <td>{{ $industry['industry_headoffice_address'] }}</td>
+                                <td>{{ $industry['industry_office_province'] }}</td>
+                                <td>{{ $industry['region']['region_name'] }}</td>
+                                <td>{{ $industry['industry_factory_address'] }}</td>
+                                <td>{{ $industry['industry_factory_province'] }}</td>
+                                <td>{{ $industry['industry_city_office'] }}</td>
+                                <td>{{ $industry['industry_kd_kbli'] }}</td>
+                                <td>{{ $industry['industry_business_fields'] }}</td>
+                                <td>{{ $industry['industry_business_scale'] }}</td>
+                                <td>
+                                    @if ($industry['industry_registered_sinas'] == 'Ya')
+                                        <svg class="w-6 h-6 text-success-600" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            fill="currentColor" viewBox="0 0 24 24">
+                                            <path fill-rule="evenodd"
+                                                d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm13.707-1.293a1 1 0 0 0-1.414-1.414L11 12.586l-1.793-1.793a1 1 0 0 0-1.414 1.414l2.5 2.5a1 1 0 0 0 1.414 0l4-4Z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    @else
+                                        <svg class="w-6 h-6 text-red-600" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            fill="currentColor" viewBox="0 0 24 24">
+                                            <path fill-rule="evenodd"
+                                                d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm7.707-3.707a1 1 0 0 0-1.414 1.414L10.586 12l-2.293 2.293a1 1 0 1 0 1.414 1.414L12 13.414l2.293 2.293a1 1 0 0 0 1.414-1.414L13.414 12l2.293-2.293a1 1 0 0 0-1.414-1.414L12 10.586 9.707 8.293Z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    @endif
+                                </td>
                             </tr>
-                        @endforeach --}}
+                        @endforeach
                     </tbody>
                 </table>
             </div>
