@@ -17,7 +17,7 @@ class JumlahPendudukController extends Controller
 
     public function __construct()
     {
-        $this->apiClient = new ApiClient(config("app.url") . "/api");
+        $this->apiClient = new ApiClient(env("API_BASE_URL"));
     }
 
     public function index(Request $request)
@@ -48,10 +48,10 @@ class JumlahPendudukController extends Controller
             ]);
         } catch (Exception $e) {
             return view("admin.penduduk.jumlah-penduduk.index", [
-                "penduduk" => $penduduk["data"],
-                "periode" => $periode["data"],
-                "region" => $region["data"],
-                "rentangUsia" => $rentangUsia["data"],
+                "penduduk" => isset($penduduk["data"]) ? $penduduk["data"] : [],
+                "periode" => isset($periode["data"]) ? $periode["data"] : [],
+                "region" => isset($region["data"]) ? $region["data"] : [],
+                "rentangUsia" => isset($rentangUsia["data"]) ? $rentangUsia["data"] : [],
             ]);
         }
     }
