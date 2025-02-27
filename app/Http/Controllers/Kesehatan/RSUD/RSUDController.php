@@ -21,6 +21,11 @@ class RSUDController extends Controller
     {
         $this->apiClient->setToken(request()->session()->get("auth_token"));
 
+        $bulanSekarang = Carbon::now();
+        $bulanTerakhir = collect(range(0, 7))->map(function ($i) use ($bulanSekarang) {
+            return $bulanSekarang->copy()->subMonths($i)->translatedFormat('F');
+        })->reverse()->values()->toArray();
+
         try {
             $kunjungan = $this->apiClient->get("/kesehatan");
 
@@ -28,10 +33,13 @@ class RSUDController extends Controller
                 $harian = collect($kunjungan["data"]["kunjungan_harian"])->map(function ($data) {
                     return [
                         "tanggal" => Carbon::parse($data["kunjungan_harian_tanggal"])->translatedFormat("l, d F Y"),
+                        "tanggal_short" => Carbon::parse($data["kunjungan_harian_tanggal"])->translatedFormat("d"),
                         "pasien_lama" => $data["kunjungan_harian_pasien_lama"],
                         "pasien_baru" => $data["kunjungan_harian_pasien_baru"],
                     ];
                 });
+
+                // Urutkan berdasarkan daftar bulan terakhir
                 $bulanan = collect($kunjungan["data"]["kunjungan_bulanan"])->map(function ($data) {
                     return [
                         "bulan" => Carbon::create()->month($data["kunjungan_bulanan_bulan"])->translatedFormat("F"),
@@ -39,11 +47,24 @@ class RSUDController extends Controller
                         "pasien_lama" => $data["kunjungan_bulanan_pasien_lama"],
                         "pasien_baru" => $data["kunjungan_bulanan_pasien_baru"],
                     ];
+                })->sortBy(function ($item) use ($bulanTerakhir) {
+                    return array_search($item["bulan"], $bulanTerakhir);
+                })->values();
+
+                // Calculate totals
+                $total_kunjungan = $harian->sum(function ($data) {
+                    return $data['pasien_baru'] + $data['pasien_lama'];
                 });
+
+                $total_pasien_baru = $harian->sum('pasien_baru');
+                $total_pasien_lama = $harian->sum('pasien_lama');
 
                 return view("admin.kesehatan.rsud.kunjungan", [
                     "kunjungan_harian" => $harian,
                     "kunjungan_bulanan" => $bulanan,
+                    "total_kunjungan" => $total_kunjungan,
+                    "total_pasien_baru" => $total_pasien_baru,
+                    "total_pasien_lama" => $total_pasien_lama,
                 ]);
             }
 
@@ -53,6 +74,7 @@ class RSUDController extends Controller
             return redirect()->back();
         }
     }
+
 
     public function synchronize()
     {

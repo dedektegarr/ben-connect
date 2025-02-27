@@ -28,6 +28,8 @@
             <link rel="stylesheet" href="{{ asset('build/assets/' . $cssFile) }}">
         @endif
     @endif
+
+    @stack('styles')
 </head>
 
 <body class="bg-[#f9fafb] dark:bg-gray-900">
