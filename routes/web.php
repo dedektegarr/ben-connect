@@ -74,6 +74,14 @@ Route::middleware("auth")->group(function () {
                 Route::get("/", "index")->name("admin.perindustrian.industri-nasional.index");
                 Route::post("/import", "import")->name("admin.perindustrian.industri-nasional.import");
             });
+
+            Route::prefix("ikm")->controller(IKMController::class)->group(function () {
+                Route::get("/", "index")->name("admin.perindustrian.ikm.index");
+            });
+
+            Route::prefix("komoditas")->controller(KomoditasController::class)->group(function () {
+                Route::get("/", "index")->name("admin.perindustrian.komoditas.index");
+            });
         });
 
         // Kesehatan
@@ -82,14 +90,6 @@ Route::middleware("auth")->group(function () {
                 Route::get("/rsud/kunjungan", "kunjungan")->name("admin.kesehatan.rsud.kunjungan");
                 Route::post("/rsud/synchronize", "synchronize")->name("admin.kesehatan.rsud.synchronize");
             });
-
-            Route::prefix("ikm")->controller(IKMController::class)->group(function () {
-                Route::get("/", "index")->name("admin.perindustrian.ikm.index");
-            });
-            Route::prefix("komoditas")->controller(KomoditasController::class)->group(function () {
-                Route::get("/", "index")->name("admin.perindustrian.komoditas.index");
-            });
-
         });
     });
 });
