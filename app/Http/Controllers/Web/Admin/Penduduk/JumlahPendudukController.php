@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Web\Admin\Penduduk;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PopulationRequest;
 use App\Services\ApiClient;
-use App\Services\Penduduk\PendudukServices;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -15,19 +14,17 @@ use Illuminate\Validation\ValidationException;
 class JumlahPendudukController extends Controller
 {
     private $apiClient;
-    private $pendudukService;
 
     public function __construct()
     {
         $this->apiClient = new ApiClient(config("app.url") . "/api");
-        $this->pendudukService = new PendudukServices();
     }
 
     public function index(Request $request)
     {
-        $this->apiClient->setToken(request()->session()->get("auth_token"));
-
         $filters = $request->only(["year", "semester", "age_range", "region"]);
+
+        $this->apiClient->setToken(request()->session()->get("auth_token"));
 
         try {
             $penduduk = $this->apiClient->get("/kependudukan/data", $filters);
@@ -51,48 +48,11 @@ class JumlahPendudukController extends Controller
             ]);
         } catch (Exception $e) {
             return view("admin.penduduk.jumlah-penduduk.index", [
-                "penduduk" => $penduduk["data"],
-                "periode" => $periode["data"],
-                "region" => $region["data"],
-                "rentangUsia" => $rentangUsia["data"],
+                "penduduk" => isset($penduduk["data"]) ? $penduduk["data"] : [],
+                "periode" => isset($periode["data"]) ? $periode["data"] : [],
+                "region" => isset($region["data"]) ? $region["data"] : [],
+                "rentangUsia" => isset($rentangUsia["data"]) ? $rentangUsia["data"] : [],
             ]);
-        }
-    }
-
-    public function statistikPenduduk(Request $request)
-    {
-        $this->apiClient->setToken(request()->session()->get("auth_token"));
-
-        $filters = $request->only(["region"]);
-
-        try {
-            $regions = $this->apiClient->get("/wilayah/data")["data"];
-            $penduduk = $this->apiClient->get("/kependudukan/data", $filters)["data"];
-
-            if (empty($penduduk)) {
-                return view("admin.penduduk.jumlah-penduduk.statistik", [
-                    "regions" => $regions,
-                    "genderPercentage" => [],
-                    "ageRange" => [],
-                    "populationCount" => []
-                ]);
-            }
-
-            $genderPercentage = $this->pendudukService->getGenderPercentage($penduduk);
-            $ageRange = $this->pendudukService->getAgeRange($penduduk);
-            $populationCount = [
-                "Pria" => $this->pendudukService->getTotal($penduduk, "population_male"),
-                "Wanita" => $this->pendudukService->getTotal($penduduk, "population_female"),
-                "Total" => $this->pendudukService->getTotal($penduduk, "population_male") +  $this->pendudukService->getTotal($penduduk, "population_female")
-            ];
-
-            return view("admin.penduduk.jumlah-penduduk.statistik", [
-                "regions" => $regions,
-                "genderPercentage" => $genderPercentage,
-                "ageRange" => $ageRange,
-                "populationCount" => $populationCount
-            ]);
-        } catch (Exception $e) {
         }
     }
 
@@ -118,9 +78,6 @@ class JumlahPendudukController extends Controller
             return redirect()->back();
         } catch (ValidationException $e) {
             return redirect()->back()->withErrors($e->errors());
-        } catch (Exception $e) {
-            flash($e->getMessage(), "error");
-            return redirect()->back();
         }
     }
 }
