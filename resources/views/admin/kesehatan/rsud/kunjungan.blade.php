@@ -25,7 +25,7 @@
                     <div class="flex items-center justify-between">
                         <div>
                             <p class="text-sm font-medium">Total Kunjungan</p>
-                            <p class="text-3xl font-bold">{{ $total_kunjungan }}</p>
+                            <p class="text-3xl font-bold">{{ number_format($total_kunjungan) }}</p>
                         </div>
                         <div class="p-3 bg-white/10 rounded-full">
                             <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -41,7 +41,7 @@
                     <div class="flex items-center justify-between">
                         <div>
                             <p class="text-sm font-medium">Pasien Baru</p>
-                            <p class="text-3xl font-bold">{{ $total_pasien_baru }}</p>
+                            <p class="text-3xl font-bold">{{ number_format($total_pasien_baru) }}</p>
                         </div>
                         <div class="p-3 bg-white/10 rounded-full">
                             <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -57,7 +57,7 @@
                     <div class="flex items-center justify-between">
                         <div>
                             <p class="text-sm font-medium">Pasien Lama</p>
-                            <p class="text-3xl font-bold">{{ $total_pasien_lama }}</p>
+                            <p class="text-3xl font-bold">{{ number_format($total_pasien_lama) }}</p>
                         </div>
                         <div class="p-3 bg-white/10 rounded-full">
                             <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
