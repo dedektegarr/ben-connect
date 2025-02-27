@@ -3,7 +3,7 @@
 @section('title', 'Jumlah Penduduk')
 @section('content')
     <x-panel.panel>
-        <x-panel.panel-header title="{{ __('Jumlah Penduduk') }}">
+        <x-panel.panel-header title="Jumlah Penduduk">
             <div class="flex items-center gap-2">
                 <button type="button" data-modal-target="import-modal" data-modal-toggle="import-modal"
                     class="md:inline-flex text-white bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-4 py-2 text-center items-center dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
@@ -70,7 +70,7 @@
                                 class="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
                                 <option value="" {{ request('semester') == '' ? 'selected' : '' }}>Semua Semester
                                 </option>
-                                @foreach (collect($periode)->unique('population_period_semester') as $item)
+                                @foreach (collect($periode)->sortBy('population_period_semester')->unique('population_period_semester') as $item)
                                     <option value="{{ $item['population_period_semester'] }}"
                                         {{ request('semester') == $item['population_period_semester'] ? 'selected' : '' }}>
                                         {{ $item['population_period_semester'] }}
@@ -86,7 +86,7 @@
                                 class="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
                                 <option value="" {{ request('age_range') == '' ? 'selected' : '' }}>Semua Rentang
                                     Usia</option>
-                                @foreach ($rentangUsia as $item)
+                                @foreach (collect($rentangUsia)->sortBy('population_age_group_years') as $item)
                                     <option value="{{ $item['population_age_group_years'] }}"
                                         {{ request('age_range') == $item['population_age_group_years'] ? 'selected' : '' }}>
                                         {{ $item['population_age_group_years'] }} Tahun
@@ -108,7 +108,6 @@
                     </button>
                 </div>
             </form>
-
 
             <!-- ====== DataTable One Start -->
             <div
@@ -156,6 +155,16 @@
                                     </svg>
                                 </span>
                             </th>
+                            <th>
+                                <span class="flex items-center">
+                                    Action
+                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                    </svg>
+                                </span>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -166,6 +175,34 @@
                                 <td>{{ number_format($population['population_male']) }} Jiwa</td>
                                 <td>{{ number_format($population['population_female']) }} Jiwa</td>
                                 <td>{{ number_format($population['total']) }} Jiwa</td>
+                                <td>
+                                    <div class="flex items-center justify-center col-span-1">
+                                        <div x-data="{ openDropDown: false }" class="relative">
+                                            <button x-on:click="openDropDown = !openDropDown"
+                                                class="text-gray-500 dark:text-gray-400">
+                                                <svg class="fill-current" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                                        d="M5.99902 10.245C6.96552 10.245 7.74902 11.0285 7.74902 11.995V12.005C7.74902 12.9715 6.96552 13.755 5.99902 13.755C5.03253 13.755 4.24902 12.9715 4.24902 12.005V11.995C4.24902 11.0285 5.03253 10.245 5.99902 10.245ZM17.999 10.245C18.9655 10.245 19.749 11.0285 19.749 11.995V12.005C19.749 12.9715 18.9655 13.755 17.999 13.755C17.0325 13.755 16.249 12.9715 16.249 12.005V11.995C16.249 11.0285 17.0325 10.245 17.999 10.245ZM13.749 11.995C13.749 11.0285 12.9655 10.245 11.999 10.245C11.0325 10.245 10.249 11.0285 10.249 11.995V12.005C10.249 12.9715 11.0325 13.755 11.999 13.755C12.9655 13.755 13.749 12.9715 13.749 12.005V11.995Z"
+                                                        fill=""></path>
+                                                </svg>
+                                            </button>
+                                            <div x-show="openDropDown" x-on:click.outside="openDropDown = false"
+                                                class="absolute right-0 z-40 w-40 p-2 space-y-1 bg-white border border-gray-200 top-full rounded-2xl shadow-theme-lg dark:border-gray-800 dark:bg-gray-dark"
+                                                style="">
+                                                <button
+                                                    class="flex w-full px-3 py-2 font-medium text-left text-gray-500 rounded-lg text-theme-xs hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-gray-300">
+                                                    Lihat Selengkapnya
+                                                </button>
+                                                <a href="{{ route('admin.kependudukan.statistik', ['region' => $region]) }}"
+                                                    class="flex w-full px-3 py-2 font-medium text-left text-gray-500 rounded-lg text-theme-xs hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-gray-300">
+                                                    Statistik
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>
@@ -186,16 +223,6 @@
                     <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
                         {{ __('Impor Data Penduduk') }}
                     </h3>
-                    {{-- <button type="button"
-                        class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                        data-modal-toggle="import-modal">
-                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                            viewBox="0 0 14 14">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                        </svg>
-                        <span class="sr-only">Close modal</span>
-                    </button> --}}
                 </div>
                 <!-- Modal body -->
                 <form class="p-4 md:p-5" method="POST"

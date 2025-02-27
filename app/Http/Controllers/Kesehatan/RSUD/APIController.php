@@ -31,14 +31,14 @@ class APIController extends Controller
 
             // Ambil 7 data terakhir dari kunjungan harian
             $kunjunganHarian = KunjunganHarianModel::orderBy('kunjungan_harian_tanggal', 'desc')
-                                ->take(7)
-                                ->get(['kunjungan_harian_pasien_lama','kunjungan_harian_pasien_baru','kunjungan_harian_tanggal']);
+                ->take(7)
+                ->get(['kunjungan_harian_pasien_lama', 'kunjungan_harian_pasien_baru', 'kunjungan_harian_tanggal']);
 
             // Ambil 6 data terakhir dari kunjungan bulanan
             $kunjunganBulanan = KunjunganBulananModel::orderBy('kunjungan_bulanan_tahun', 'desc')
-                                ->orderBy('kunjungan_bulanan_bulan', 'desc')
-                                ->take(6)
-                                ->get(['kunjungan_bulanan_pasien_lama','kunjungan_bulanan_pasien_baru','kunjungan_bulanan_bulan','kunjungan_bulanan_tahun']);
+                ->orderBy('kunjungan_bulanan_bulan', 'desc')
+                ->take(6)
+                ->get(['kunjungan_bulanan_pasien_lama', 'kunjungan_bulanan_pasien_baru', 'kunjungan_bulanan_bulan', 'kunjungan_bulanan_tahun']);
 
             // Gabungkan semua data
             $data = [
@@ -71,7 +71,7 @@ class APIController extends Controller
 
     public function postDatabase(): JsonResponse
     {
-        try{
+        try {
             $endpoints = [
                 'kunjungan_harian' => '/cc/getKunjunganHarian',
                 'kunjungan_bulanan' => '/cc/getKunjunganBulanan',
@@ -117,9 +117,7 @@ class APIController extends Controller
                 'status_code' => 200,
                 'message' => 'Data berhasil disimpan ke database',
             ], 200);
-
-        }
-        catch (\Exception $error) {
+        } catch (\Exception $error) {
             return response()->json([
                 'status_code' => 500,
                 'message' => $error->getMessage(),

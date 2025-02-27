@@ -34,10 +34,14 @@
 
                 <div class="grid grid-cols-12 gap-4 md:gap-6">
                     <div class="col-span-12 space-y-6 xl:col-span-8">
-                        <x-chart.penduduk.bar-chart :data="$ageRange" />
+                        @if (!empty($ageRange))
+                            <x-chart.penduduk.bar-chart :data="$ageRange" />
+                        @endif
                     </div>
                     <div class="col-span-12 xl:col-span-4">
-                        <x-chart.penduduk.pie-chart :data="$genderPercentage" :dataFooter="$populationCount" />
+                        @if (!empty($genderPercentage) && !empty($populationCount))
+                            <x-chart.penduduk.pie-chart :data="$genderPercentage" :dataFooter="$populationCount" />
+                        @endif
                     </div>
                 </div>
             </div>

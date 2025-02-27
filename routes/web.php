@@ -14,9 +14,11 @@ use App\Http\Controllers\FrontOffice\DashboardBencanaController;
 use App\Http\Controllers\FrontOffice\DashboardKesehatanController;
 use App\Http\Controllers\FrontOffice\DashboardPendidikanController;
 use App\Http\Controllers\FrontOffice\DashboardInfrastrukturController;
+use App\Http\Controllers\Kesehatan\RSUD\RSUDController;
 use App\Http\Controllers\Web\Admin\DashboardController;
 use App\Http\Controllers\Web\Admin\Industri\IndustriNasional;
 use App\Http\Controllers\Web\Admin\Industri\KomoditasController;
+use App\Http\Controllers\Web\Admin\Industri\IndustriNasionalController;
 use App\Http\Controllers\Web\Admin\Penduduk\JumlahPendudukController;
 
 /*
@@ -68,9 +70,17 @@ Route::middleware("auth")->group(function () {
 
         // Industri & Perdagangan
         Route::prefix("perindustrian")->group(function () {
-            Route::prefix("industri-nasional")->controller(IndustriNasional::class)->group(function () {
+            Route::prefix("industri-nasional")->controller(IndustriNasionalController::class)->group(function () {
                 Route::get("/", "index")->name("admin.perindustrian.industri-nasional.index");
-                // Route::post("/import", "import")->name("admin.kependudukan.jumlah-penduduk.import");
+                Route::post("/import", "import")->name("admin.perindustrian.industri-nasional.import");
+            });
+        });
+
+        // Kesehatan
+        Route::prefix("kesehatan")->group(function () {
+            Route::controller(RSUDController::class)->group(function () {
+                Route::get("/rsud/kunjungan", "kunjungan")->name("admin.kesehatan.rsud.kunjungan");
+                Route::post("/rsud/synchronize", "synchronize")->name("admin.kesehatan.rsud.synchronize");
             });
 
             Route::prefix("ikm")->controller(IKMController::class)->group(function () {
