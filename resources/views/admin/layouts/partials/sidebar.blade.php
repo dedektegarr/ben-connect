@@ -114,12 +114,12 @@
                             class="{{ Route::is('admin.perindustrian.industri-nasional.*') ? 'active' : '' }} sidebar-sub-menu">{{ __('Industri Nasional') }}</a>
                     </li>
                     <li>
-                        <a href="{{ route('admin.kependudukan.jumlah-penduduk.index') }}"
-                            class="{{ Route::is('admin.kependudukan.jumlah-penduduk.index') ? 'active' : '' }} sidebar-sub-menu">{{ __('Industri Kecil menengah') }}</a>
+                        <a href="{{ route('admin.perindustrian.ikm.index') }}"
+                            class="{{ Route::is('admin.perindustrian.ikm.*') ? 'active' : '' }} sidebar-sub-menu">{{ __('Industri Kecil menengah') }}</a>
                     </li>
                     <li>
-                        <a href="{{ route('admin.kependudukan.jumlah-penduduk.index') }}"
-                            class="{{ Route::is('admin.kependudukan.jumlah-penduduk.index') ? 'active' : '' }} sidebar-sub-menu">{{ __('Harga Komoditas') }}</a>
+                        <a href="{{ route('admin.perindustrian.komoditas.index') }}"
+                            class="{{ Route::is('admin.perindustrian.komoditas.*') ? 'active' : '' }} sidebar-sub-menu">{{ __('Harga Komoditas') }}</a>
                     </li>
                 </ul>
             </li>

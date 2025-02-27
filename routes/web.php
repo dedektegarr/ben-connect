@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Web\Admin\Industri\IKMController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
@@ -15,6 +16,7 @@ use App\Http\Controllers\FrontOffice\DashboardPendidikanController;
 use App\Http\Controllers\FrontOffice\DashboardInfrastrukturController;
 use App\Http\Controllers\Web\Admin\DashboardController;
 use App\Http\Controllers\Web\Admin\Industri\IndustriNasional;
+use App\Http\Controllers\Web\Admin\Industri\KomoditasController;
 use App\Http\Controllers\Web\Admin\Penduduk\JumlahPendudukController;
 
 /*
@@ -70,6 +72,14 @@ Route::middleware("auth")->group(function () {
                 Route::get("/", "index")->name("admin.perindustrian.industri-nasional.index");
                 // Route::post("/import", "import")->name("admin.kependudukan.jumlah-penduduk.import");
             });
+
+            Route::prefix("ikm")->controller(IKMController::class)->group(function () {
+                Route::get("/", "index")->name("admin.perindustrian.ikm.index");
+            });
+            Route::prefix("komoditas")->controller(KomoditasController::class)->group(function () {
+                Route::get("/", "index")->name("admin.perindustrian.komoditas.index");
+            });
+
         });
     });
 });
