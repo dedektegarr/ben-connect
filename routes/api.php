@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Disperindag\IKMController;
 use App\Http\Controllers\Disperindag\IndustryController;
 use App\Http\Controllers\Disperindag\PriceController;
 use App\Http\Controllers\Disperindag\VariantController;
@@ -176,6 +177,11 @@ Route::middleware('auth:sanctum')->group(function () {
         // Industries
         Route::controller(IndustryController::class)->group(function () {
             Route::get("/disperindag/industries", "index");
+        });
+
+        // IKMS
+        Route::controller(IKMController::class)->group(function () {
+            Route::get("/disperindag/ikm", "index");
         });
 
         // IMPORT DATA
