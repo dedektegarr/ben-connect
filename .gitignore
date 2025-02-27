@@ -24,3 +24,4 @@
 Thumbs.db
 # Ignore Docker environment file
 docker/.env
+public/build/assets/*.js
