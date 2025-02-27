@@ -17,7 +17,7 @@ class JumlahPendudukController extends Controller
 
     public function __construct()
     {
-        $this->apiClient = new ApiClient(config("app.url") . "/api");
+        $this->apiClient = new ApiClient(env("API_BASE_URL"));
     }
 
     public function index(Request $request)
