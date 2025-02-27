@@ -47,15 +47,13 @@ class JumlahPendudukController extends Controller
                 "penduduk" => $pendudukByRegion,
                 "periode" => $periode["data"],
                 "region" => $region["data"],
+                "total_male" => collect($penduduk["data"])->sum("population_male"),
+                "total_female" => collect($penduduk["data"])->sum("population_female"),
                 "rentangUsia" => $rentangUsia["data"],
             ]);
         } catch (Exception $e) {
-            return view("admin.penduduk.jumlah-penduduk.index", [
-                "penduduk" => $penduduk["data"],
-                "periode" => $periode["data"],
-                "region" => $region["data"],
-                "rentangUsia" => $rentangUsia["data"],
-            ]);
+            flash($e->getMessage(), "error");
+            return redirect()->back();
         }
     }
 

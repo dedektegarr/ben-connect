@@ -152,7 +152,7 @@
                                             </tr>
                                         </thead>
                                         <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
-                                            @foreach ($kunjungan_bulanan as $bulanan)
+                                            @foreach ($kunjungan_bulanan->reverse() as $bulanan)
                                                 <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50">
                                                     <td class="table-data">{{ $bulanan['bulan'] }}</td>
                                                     <td class="table-data">{{ $bulanan['tahun'] }}</td>
