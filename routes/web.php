@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Web\Admin\Industri\IKMController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
@@ -13,7 +14,11 @@ use App\Http\Controllers\FrontOffice\DashboardBencanaController;
 use App\Http\Controllers\FrontOffice\DashboardKesehatanController;
 use App\Http\Controllers\FrontOffice\DashboardPendidikanController;
 use App\Http\Controllers\FrontOffice\DashboardInfrastrukturController;
+use App\Http\Controllers\Kesehatan\RSUD\RSUDController;
 use App\Http\Controllers\Web\Admin\DashboardController;
+use App\Http\Controllers\Web\Admin\Industri\IndustriNasional;
+use App\Http\Controllers\Web\Admin\Industri\KomoditasController;
+use App\Http\Controllers\Web\Admin\Industri\IndustriNasionalController;
 use App\Http\Controllers\Web\Admin\Penduduk\JumlahPendudukController;
 
 /*
@@ -56,9 +61,34 @@ Route::middleware("auth")->group(function () {
 
         // Kependudukan
         Route::prefix("kependudukan")->group(function () {
+            Route::get("/statistik", [JumlahPendudukController::class, "statistikPenduduk"])->name("admin.kependudukan.statistik");
             Route::prefix("jumlah-penduduk")->controller(JumlahPendudukController::class)->group(function () {
                 Route::get("/", "index")->name("admin.kependudukan.jumlah-penduduk.index");
                 Route::post("/import", "import")->name("admin.kependudukan.jumlah-penduduk.import");
+            });
+        });
+
+        // Industri & Perdagangan
+        Route::prefix("perindustrian")->group(function () {
+            Route::prefix("industri-nasional")->controller(IndustriNasionalController::class)->group(function () {
+                Route::get("/", "index")->name("admin.perindustrian.industri-nasional.index");
+                Route::post("/import", "import")->name("admin.perindustrian.industri-nasional.import");
+            });
+
+            Route::prefix("ikm")->controller(IKMController::class)->group(function () {
+                Route::get("/", "index")->name("admin.perindustrian.ikm.index");
+            });
+
+            Route::prefix("komoditas")->controller(KomoditasController::class)->group(function () {
+                Route::get("/", "index")->name("admin.perindustrian.komoditas.index");
+            });
+        });
+
+        // Kesehatan
+        Route::prefix("kesehatan")->group(function () {
+            Route::controller(RSUDController::class)->group(function () {
+                Route::get("/rsud/kunjungan", "kunjungan")->name("admin.kesehatan.rsud.kunjungan");
+                Route::post("/rsud/synchronize", "synchronize")->name("admin.kesehatan.rsud.synchronize");
             });
         });
     });

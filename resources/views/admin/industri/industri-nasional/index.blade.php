@@ -1,9 +1,9 @@
 @extends('admin.layouts.app')
 
-@section('title', 'Jumlah Penduduk')
+@section('title', 'Industri Nasional')
 @section('content')
     <x-panel.panel>
-        <x-panel.panel-header title="Jumlah Penduduk">
+        <x-panel.panel-header title="Data Industri Nasional Provinsi Bengkulu (SIINAS)">
             <div class="flex items-center gap-2">
                 <button type="button" data-modal-target="import-modal" data-modal-toggle="import-modal"
                     class="md:inline-flex text-white bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-4 py-2 text-center items-center dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
@@ -27,19 +27,19 @@
                 </button>
             </div>
         </x-panel.panel-header>
-
         <x-panel.panel-body>
             <form method="GET" action="">
                 <div class="flex items-center gap-4 justify-between mb-6">
                     <div class="flex gap-4 items-center w-full">
                         {{-- Kabupaten/Kota --}}
                         <div class="w-full">
-                            <label for="region" class="sr-only">Kab/Kota</label>
+                            <label for="region" class="sr-only">Kab/Kota Kantor</label>
                             <select id="region" name="region"
                                 class="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
                                 <option value="" {{ request('region') == '' ? 'selected' : '' }}>Semua Kabupaten/Kota
+                                    Kantor
                                 </option>
-                                @foreach ($region as $item)
+                                @foreach ($regions as $item)
                                     <option value="{{ $item['region_name'] }}"
                                         {{ request('region') == $item['region_name'] ? 'selected' : '' }}>
                                         {{ $item['region_name'] }}
@@ -47,51 +47,14 @@
                                 @endforeach
                             </select>
                         </div>
-
-                        {{-- Tahun --}}
                         <div class="w-full">
-                            <label for="tahun" class="sr-only">Tahun</label>
-                            <select id="tahun" name="year"
+                            <label for="skala" class="sr-only">Kab/Kota Kantor</label>
+                            <select id="skala" name="skala"
                                 class="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
-                                <option value="" {{ request('year') == '' ? 'selected' : '' }}>Semua Tahun</option>
-                                @foreach (collect($periode)->unique('population_period_year') as $item)
-                                    <option value="{{ $item['population_period_year'] }}"
-                                        {{ request('year') == $item['population_period_year'] ? 'selected' : '' }}>
-                                        {{ $item['population_period_year'] }}
-                                    </option>
-                                @endforeach
-                            </select>
-                        </div>
-
-                        {{-- Semester --}}
-                        <div class="w-full">
-                            <label for="semester" class="sr-only">Semester</label>
-                            <select id="semester" name="semester"
-                                class="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
-                                <option value="" {{ request('semester') == '' ? 'selected' : '' }}>Semua Semester
+                                <option value="" {{ request('skala') == '' ? 'selected' : '' }}>Semua skala usaha
                                 </option>
-                                @foreach (collect($periode)->sortBy('population_period_semester')->unique('population_period_semester') as $item)
-                                    <option value="{{ $item['population_period_semester'] }}"
-                                        {{ request('semester') == $item['population_period_semester'] ? 'selected' : '' }}>
-                                        {{ $item['population_period_semester'] }}
-                                    </option>
-                                @endforeach
-                            </select>
-                        </div>
-
-                        {{-- Rentang Usia --}}
-                        <div class="w-full">
-                            <label for="age_range" class="sr-only">Rentang Usia</label>
-                            <select id="age_range" name="age_range"
-                                class="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
-                                <option value="" {{ request('age_range') == '' ? 'selected' : '' }}>Semua Rentang
-                                    Usia</option>
-                                @foreach (collect($rentangUsia)->sortBy('population_age_group_years') as $item)
-                                    <option value="{{ $item['population_age_group_years'] }}"
-                                        {{ request('age_range') == $item['population_age_group_years'] ? 'selected' : '' }}>
-                                        {{ $item['population_age_group_years'] }} Tahun
-                                    </option>
-                                @endforeach
+                                <option value="Besar" {{ request('skala') == 'Besar' ? 'selected' : '' }}>Besar</option>
+                                <option value="Kecil" {{ request('skala') == 'Kecil' ? 'selected' : '' }}>Kecil</option>
                             </select>
                         </div>
                     </div>
@@ -109,7 +72,6 @@
                 </div>
             </form>
 
-            <!-- ====== DataTable One Start -->
             <div
                 class="overflow-hidden rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-white/[0.03]">
                 <table id="default-table">
@@ -117,7 +79,7 @@
                         <tr>
                             <th>
                                 <span class="flex items-center">
-                                    Kabupaten/Kota
+                                    Nama Perusahaan
                                     <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                         width="24" height="24" fill="none" viewBox="0 0 24 24">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -127,7 +89,7 @@
                             </th>
                             <th>
                                 <span class="flex items-center">
-                                    Jumlah Laki-laki
+                                    Alamat Kantor Pusat
                                     <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                         width="24" height="24" fill="none" viewBox="0 0 24 24">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -137,7 +99,7 @@
                             </th>
                             <th>
                                 <span class="flex items-center">
-                                    Jumlah Perempuan
+                                    Provinsi
                                     <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                         width="24" height="24" fill="none" viewBox="0 0 24 24">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -147,7 +109,7 @@
                             </th>
                             <th>
                                 <span class="flex items-center">
-                                    Total
+                                    Kab/Kota Kantor
                                     <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                         width="24" height="24" fill="none" viewBox="0 0 24 24">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -157,7 +119,67 @@
                             </th>
                             <th>
                                 <span class="flex items-center">
-                                    Action
+                                    Alamat Pabrik
+                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                    </svg>
+                                </span>
+                            </th>
+                            <th>
+                                <span class="flex items-center">
+                                    Provinsi Pabrik
+                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                    </svg>
+                                </span>
+                            </th>
+                            <th>
+                                <span class="flex items-center">
+                                    Kab/Kota Pabrik
+                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                    </svg>
+                                </span>
+                            </th>
+                            <th>
+                                <span class="flex items-center">
+                                    KBLI
+                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                    </svg>
+                                </span>
+                            </th>
+                            <th>
+                                <span class="flex items-center">
+                                    Bidang Usaha
+                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                    </svg>
+                                </span>
+                            </th>
+                            <th>
+                                <span class="flex items-center">
+                                    Skala Usaha
+                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                    </svg>
+                                </span>
+                            </th>
+                            <th>
+                                <span class="flex items-center">
+                                    Terdaftar di SIINas
                                     <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                         width="24" height="24" fill="none" viewBox="0 0 24 24">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -168,40 +190,37 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($penduduk as $region => $population)
+                        @foreach ($industries as $key => $industry)
                             <tr>
                                 <td class="font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    {{ $region }}</td>
-                                <td>{{ number_format($population['population_male']) }} Jiwa</td>
-                                <td>{{ number_format($population['population_female']) }} Jiwa</td>
-                                <td>{{ number_format($population['total']) }} Jiwa</td>
+                                    {{ $industry['industry_ptname'] }}</td>
+                                <td>{{ $industry['industry_headoffice_address'] }}</td>
+                                <td>{{ $industry['industry_office_province'] }}</td>
+                                <td>{{ $industry['region']['region_name'] }}</td>
+                                <td>{{ $industry['industry_factory_address'] }}</td>
+                                <td>{{ $industry['industry_factory_province'] }}</td>
+                                <td>{{ $industry['industry_city_office'] }}</td>
+                                <td>{{ $industry['industry_kd_kbli'] }}</td>
+                                <td>{{ $industry['industry_business_fields'] }}</td>
+                                <td>{{ $industry['industry_business_scale'] }}</td>
                                 <td>
-                                    <div class="flex items-center justify-center col-span-1">
-                                        <div x-data="{ openDropDown: false }" class="relative">
-                                            <button x-on:click="openDropDown = !openDropDown"
-                                                class="text-gray-500 dark:text-gray-400">
-                                                <svg class="fill-current" width="24" height="24"
-                                                    viewBox="0 0 24 24" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                        d="M5.99902 10.245C6.96552 10.245 7.74902 11.0285 7.74902 11.995V12.005C7.74902 12.9715 6.96552 13.755 5.99902 13.755C5.03253 13.755 4.24902 12.9715 4.24902 12.005V11.995C4.24902 11.0285 5.03253 10.245 5.99902 10.245ZM17.999 10.245C18.9655 10.245 19.749 11.0285 19.749 11.995V12.005C19.749 12.9715 18.9655 13.755 17.999 13.755C17.0325 13.755 16.249 12.9715 16.249 12.005V11.995C16.249 11.0285 17.0325 10.245 17.999 10.245ZM13.749 11.995C13.749 11.0285 12.9655 10.245 11.999 10.245C11.0325 10.245 10.249 11.0285 10.249 11.995V12.005C10.249 12.9715 11.0325 13.755 11.999 13.755C12.9655 13.755 13.749 12.9715 13.749 12.005V11.995Z"
-                                                        fill=""></path>
-                                                </svg>
-                                            </button>
-                                            <div x-show="openDropDown" x-on:click.outside="openDropDown = false"
-                                                class="absolute right-0 z-40 w-40 p-2 space-y-1 bg-white border border-gray-200 top-full rounded-2xl shadow-theme-lg dark:border-gray-800 dark:bg-gray-dark"
-                                                style="">
-                                                <button
-                                                    class="flex w-full px-3 py-2 font-medium text-left text-gray-500 rounded-lg text-theme-xs hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-gray-300">
-                                                    Lihat Selengkapnya
-                                                </button>
-                                                <a href="{{ route('admin.kependudukan.statistik', ['region' => $region]) }}"
-                                                    class="flex w-full px-3 py-2 font-medium text-left text-gray-500 rounded-lg text-theme-xs hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-gray-300">
-                                                    Statistik
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    @if ($industry['industry_registered_sinas'] == 'Ya')
+                                        <svg class="w-6 h-6 text-success-600" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            fill="currentColor" viewBox="0 0 24 24">
+                                            <path fill-rule="evenodd"
+                                                d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm13.707-1.293a1 1 0 0 0-1.414-1.414L11 12.586l-1.793-1.793a1 1 0 0 0-1.414 1.414l2.5 2.5a1 1 0 0 0 1.414 0l4-4Z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    @else
+                                        <svg class="w-6 h-6 text-red-600" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            fill="currentColor" viewBox="0 0 24 24">
+                                            <path fill-rule="evenodd"
+                                                d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm7.707-3.707a1 1 0 0 0-1.414 1.414L10.586 12l-2.293 2.293a1 1 0 1 0 1.414 1.414L12 13.414l2.293 2.293a1 1 0 0 0 1.414-1.414L13.414 12l2.293-2.293a1 1 0 0 0-1.414-1.414L12 10.586 9.707 8.293Z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    @endif
                                 </td>
                             </tr>
                         @endforeach
@@ -221,40 +240,22 @@
                 <div
                     class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200">
                     <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                        {{ __('Impor Data Penduduk') }}
+                        {{ __('Impor Data SIINAS') }}
                     </h3>
                 </div>
                 <!-- Modal body -->
                 <form class="p-4 md:p-5" method="POST"
-                    action="{{ route('admin.kependudukan.jumlah-penduduk.import') }}" enctype="multipart/form-data">
+                    action="{{ route('admin.perindustrian.industri-nasional.import') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="grid gap-4 mb-4 grid-cols-2">
                         <div class="col-span-2">
-                            <label for="population_period_id"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ __('Periode') }}</label>
-                            <select id="population_period_id" name="population_period_id"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                <option value="" selected>{{ __('Pilih periode') }}</option>
-                                @foreach (collect($periode)->sortByDesc('population_period_year') as $item)
-                                    <option value="{{ $item['population_period_id'] }}">Tahun
-                                        {{ $item['population_period_year'] }} | Semester
-                                        {{ $item['population_period_semester'] }}</option>
-                                @endforeach
-                            </select>
-                            @error('population_period_id')
-                                <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span
-                                        class="font-medium">{{ $message }}</p>
-                            @enderror <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">
-                        </div>
-
-                        <div class="col-span-2">
-                            <label for="population_file"
+                            <label for="file"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ __('File') }}</label>
-                            <input name="population_file" id="population_file"
+                            <input name="file" id="file"
                                 class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
                                 aria-describedby="file_input_help" id="file_input" type="file">
 
-                            @error('population_file')
+                            @error('file')
                                 <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span
                                         class="font-medium">{{ $message }}</p>
                             @enderror <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">

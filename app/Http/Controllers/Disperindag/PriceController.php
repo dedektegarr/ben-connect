@@ -13,13 +13,6 @@ class PriceController extends Controller
     {
         $data = Price::with(['region', 'variant'])->get();
 
-        if ($data->isEmpty()) {
-            return response()->json([
-                'status_code' => 404,
-                'message' => 'Data Price Kosong!',
-            ], 404);
-        }
-
         // Mapping data ke format yang diinginkan
         $formattedData = $data->map(function ($item) {
             return [
@@ -35,7 +28,7 @@ class PriceController extends Controller
 
         return response()->json([
             'status_code' => 200,
-            'message' => 'Data Price berhasil ditemukan!',
+            'message' => 'Data komoditas',
             'data_price' => $formattedData,
         ], 200);
     }
@@ -44,18 +37,18 @@ class PriceController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {   
+    {
         //Validasi input
-        $formRequest = new DisperindagRequest('price'); 
+        $formRequest = new DisperindagRequest('price');
         $this->validate($request, $formRequest->rules(), $formRequest->messages());
 
-        
+
         //store database
         Price::create($request->all());
 
         return response()->json([
             'status_code' => 201,
-            
+
             'message' => 'Data price Berhasil Ditambahkan'
         ], 201);
     }
@@ -70,14 +63,14 @@ class PriceController extends Controller
 
         // Mapping data ke format yang diinginkan
         $formattedData = [
-                'prices_id' => $data->prices_id,
-                'prices_value' => $data->prices_value,
-                'date' => $data->date,
-                'region_name' => $data->region->region_name,
-                'variant_name' => $data->variant->variants_name,
-                'created_at' => $data->created_at,
-                'updated_at' => $data->updated_at,
-            ];
+            'prices_id' => $data->prices_id,
+            'prices_value' => $data->prices_value,
+            'date' => $data->date,
+            'region_name' => $data->region->region_name,
+            'variant_name' => $data->variant->variants_name,
+            'created_at' => $data->created_at,
+            'updated_at' => $data->updated_at,
+        ];
 
         if (!$data) {
             return response()->json([
@@ -85,7 +78,7 @@ class PriceController extends Controller
                 'message' => 'Tidak Menemukan data Price tersebut',
             ], 404);
         }
-        
+
 
         return response()->json([
             'status_code' => 200,
@@ -102,17 +95,17 @@ class PriceController extends Controller
         $data = Price::find($id);
 
         //Cek data sesuai ID
-        if(empty($data)){
+        if (empty($data)) {
             return response()->json([
                 'status_code' => 404,
                 'message' => 'Data price tidak ditemukan!'
-            ], 404);  
+            ], 404);
         }
 
         //Validasi input
-        $formRequest = new DisperindagRequest('price'); 
+        $formRequest = new DisperindagRequest('price');
         $this->validate($request, $formRequest->rules(), $formRequest->messages());
-        
+
         //Update data price ke database
         $data->update($request->all());
 

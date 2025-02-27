@@ -1,11 +1,14 @@
 <?php
 
+use App\Http\Controllers\Disperindag\IKMController;
+use App\Http\Controllers\Disperindag\IndustryController;
 use App\Http\Controllers\Disperindag\PriceController;
 use App\Http\Controllers\Disperindag\VariantController;
 use App\Http\Controllers\ExcelImportController;
 use App\Http\Controllers\Infrastructure\RoadController;
 use App\Http\Controllers\Infrastructure\RoadCategoryController;
 use App\Http\Controllers\Kesehatan\HospitalController;
+use App\Http\Controllers\Kesehatan\KunjunganRumahSakitController;
 use App\Http\Controllers\Kesehatan\Master\CategoryHospitalController;
 use App\Http\Controllers\Kesehatan\Master\HospitalAcreditationController;
 use App\Http\Controllers\Kesehatan\Master\HospitalOwnershipController;
@@ -145,6 +148,10 @@ Route::middleware('auth:sanctum')->group(function () {
             Route::get("/kesehatan/rs/{id}", "show");
             Route::post("/kesehatan/rs/import", "import");
         });
+
+        // From API
+        Route::get('/kesehatan', [ApiController::class, 'getDataRSUD']);
+        Route::post('/kesehatan/synchronize', [ApiController::class, 'postDatabase']);
     });
 
     // DISPERINDAG
@@ -165,6 +172,16 @@ Route::middleware('auth:sanctum')->group(function () {
             Route::post('/disperindag/price/tambah', 'store');
             Route::put('/disperindag/price/ubah/{id}', 'update');
             Route::delete('/disperindag/price/hapus/{id}', 'destroy');
+        });
+
+        // Industries
+        Route::controller(IndustryController::class)->group(function () {
+            Route::get("/disperindag/industries", "index");
+        });
+
+        // IKMS
+        Route::controller(IKMController::class)->group(function () {
+            Route::get("/disperindag/ikm", "index");
         });
 
         // IMPORT DATA
@@ -247,8 +264,3 @@ Route::post('/dashboard/kependudukan/filter', [SocialController::class, 'index_a
 
 // =====================OPD PENDIDIKAN dashboard==============================
 Route::get('/pendidikan/dashboard', [SchoolFilterController::class, 'filter']);
-
-// Kesehatan RSUD
-Route::get('/kesehatan', [ApiController::class, 'getDataRSUD']);
-Route::get('/kesehatan/post', [ApiController::class, 'postDatabase']);
-Route::get('/kesehatan/post', [ApiController::class, 'postDatabase']);

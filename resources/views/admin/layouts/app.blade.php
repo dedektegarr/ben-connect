@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title') | BEN CONNECT PROVINSI BENGKULU </title>
 
+    <link rel="shortcut icon" href="{{ asset('/assets/BackOffice/img/favicon.png') }}" type="image/x-icon">
+
     {{-- FONT --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,6 +28,8 @@
             <link rel="stylesheet" href="{{ asset('build/assets/' . $cssFile) }}">
         @endif
     @endif
+
+    @stack('styles')
 </head>
 
 <body class="bg-[#f9fafb] dark:bg-gray-900">

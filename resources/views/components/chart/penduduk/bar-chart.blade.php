@@ -14,8 +14,16 @@
 </div>
 @push('scripts')
     <script>
+        const barChartData = @json($data);
+        const element = document.getElementById("barChart");
+        let barChart;
+
         const renderBarChart = (categories, series) => {
-            const options = {
+            if (barChart) {
+                barChart.destroy()
+            }
+
+            barChart = new ApexCharts(element, {
                 series,
                 chart: {
                     sparkline: {
@@ -91,24 +99,24 @@
                 fill: {
                     opacity: 1,
                 }
-            }
+            });
 
-            if (document.getElementById("barChart") && typeof ApexCharts !== 'undefined') {
-                const chart = new ApexCharts(document.getElementById("barChart"), options);
-                chart.render();
-            }
+            barChart.render();
         }
 
         document.addEventListener("DOMContentLoaded", function() {
-            const categories = @json($data)["categories"];
-            const series = @json($data)["series"];
-
-            renderBarChart(categories, series);
+            renderBarChart(barChartData.categories, barChartData.series);
         });
 
-        window.addEventListener("data-changed", function(e) {
-            const updatedData = e.detail[1];
-            renderBarChart(updatedData.categories, updatedData.series);
+        document.addEventListener('livewire:init', () => {
+            Livewire.on('data-changed', (event) => {
+                const {
+                    categories,
+                    series
+                } = event[1];
+
+                renderBarChart(categories, series)
+            });
         });
     </script>
 @endpush
