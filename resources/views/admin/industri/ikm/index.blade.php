@@ -27,13 +27,12 @@
                     <span class="hidden lg:block lg:ms-2">{{ __('Tambah Data') }}</span>
                 </button>
             </div>
-
         </x-panel.panel-header>
         <x-panel.panel-body>
             <div
                 class="overflow-hidden rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-white/[0.03]">
                 <table id="default-table">
-                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                    <thead>
                         <tr>
                             <th>
                                 <span class="flex items-center">
@@ -46,9 +45,8 @@
                                 </span>
                             </th>
                             <th>
-
                                 <span class="flex items-center">
-                                    Nama Pemilik
+                                    Alamat Pemilik
                                     <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                         width="24" height="24" fill="none" viewBox="0 0 24 24">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -78,8 +76,7 @@
                             </th>
                             <th>
                                 <span class="flex items-center">
-                                    Alamat
-                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    Alamat <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                         width="24" height="24" fill="none" viewBox="0 0 24 24">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                             stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
@@ -108,7 +105,7 @@
                             </th>
                             <th>
                                 <span class="flex items-center">
-                                    Kode KBLI
+                                    KBLI
                                     <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                         width="24" height="24" fill="none" viewBox="0 0 24 24">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -128,7 +125,7 @@
                             </th>
                             <th>
                                 <span class="flex items-center">
-                                    cabang Industri
+                                    Cabang Industri
                                     <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                         width="24" height="24" fill="none" viewBox="0 0 24 24">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -138,7 +135,7 @@
                             </th>
                             <th>
                                 <span class="flex items-center">
-                                    Jumlah Tenaga Kerja
+                                    Jumlah Tenaga kerja
                                     <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                         width="24" height="24" fill="none" viewBox="0 0 24 24">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -146,136 +143,30 @@
                                     </svg>
                                 </span>
                             </th>
-
-
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- Baris Utama -->
-                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
-                            <th scope="row"
-                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                ANEKA KRIPIK SUKA JAYA
-                            </th>
-                            <td class="px-6 py-4">SITI SULASTRI</td>
-                            <td class="px-6 py-4"></td>
-                            <td class="px-6 py-4">Aneka Kripik Sukajaya </td>
-                            <td class="px-6 py-4">
-                                <button onclick="toggleDetail(this)" class="text-blue-600 underline">Lihat Alamat</button>
-                            </td>
-                            <td class="px-6 py-4">PO</td>
-                            <td class="px-6 py-4"></td>
-                            <td class="px-6 py-4">10794</td>
-                            <td class="px-6 py-4">Keripik Pisang, Salai Pisang dan Sejenisnya</td>
-                            <td class="px-6 py-4">PANGAN</td>
-                            <td class="px-6 py-4">2</td>
-                        </tr>
-                        <tr class="alamat-detail hidden">
-                            <td colspan="11" class="px-6 py-4 text-sm text-gray-500 dark:text-gray-400">
-                                <strong>Jalan:</strong> Jl. Lintas Barat Sumatera, <br>
-                                <strong>Desa/Kelurahan:</strong> Suka Jaya, <br>
-                                <strong>Kecamatan:</strong> Kedurang Ilir, <br>
-                                <strong>Kab/Kota:</strong> Kabupaten Bengkulu Selatan.
-                            </td>
-                        </tr>
-
-                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
-                            <th scope="row"
-                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                BATU BATA PASAR PINO
-                            </th>
-                            <td class="px-6 py-4">EMRON</td>
-                            <td class="px-6 py-4"></td>
-                            <td class="px-6 py-4">Pasar Pino</td>
-                            <td class="px-6 py-4">
-                                <button onclick="toggleDetail(this)" class="text-blue-600 underline">Lihat Alamat</button>
-                            </td>
-                            <td class="px-6 py-4">PO</td>
-                            <td class="px-6 py-4">-</td>
-                            <td class="px-6 py-4">23921</td>
-                            <td class="px-6 py-4">BATU BATA</td>
-                            <td class="px-6 py-4">KIMIA</td>
-                            <td class="px-6 py-4">2</td>
-                        </tr>
-                        <tr class="alamat-detail hidden">
-                            <td colspan="11" class="px-6 py-4 text-sm text-gray-500 dark:text-gray-400">
-                                <strong>Jalan:</strong> Jl. Raya Pasar Pino, <br>
-                                <strong>Desa/Kelurahan:</strong> Pasar Pino, <br>
-                                <strong>Kecamatan:</strong> Pino Raya, <br>
-                                <strong>Kab/Kota:</strong> Kabupaten Bengkulu Selatan.
-                            </td>
-                        </tr>
-
-                        <!-- Add additional rows for other companies -->
-                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
-                            <th scope="row"
-                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                BATU BATA PASAR PINO
-                            </th>
-                            <td class="px-6 py-4">RAHIN</td>
-                            <td class="px-6 py-4"></td>
-                            <td class="px-6 py-4">Gedung Agung</td>
-                            <td class="px-6 py-4">
-                                <button onclick="toggleDetail(this)" class="text-blue-600 underline">Lihat Alamat</button>
-                            </td>
-                            <td class="px-6 py-4">PO</td>
-                            <td class="px-6 py-4">-</td>
-                            <td class="px-6 py-4">10722</td>
-                            <td class="px-6 py-4">GULA AREN</td>
-                            <td class="px-6 py-4">PANGAN</td>
-                            <td class="px-6 py-4">2</td>
-                        </tr>
-                        <tr class="alamat-detail hidden">
-                            <td colspan="11" class="px-6 py-4 text-sm text-gray-500 dark:text-gray-400">
-                                <strong>Jalan:</strong> Jl. Raya Gedung Agung, <br>
-                                <strong>Desa/Kelurahan:</strong> Gedung Agung, <br>
-                                <strong>Kecamatan:</strong> Pino, <br>
-                                <strong>Kab/Kota:</strong> Kabupaten Bengkulu Selatan.
-                            </td>
-                        </tr>
-
-                        <!-- Repeat similar structure for the remaining data entries -->
-
+                        @foreach ($ikms as $key => $ikm)
+                            <tr>
+                                <td class="font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    {{ $ikm['ikm_ptname'] }}</td>
+                                <td>{{ $ikm['ikm_owner_name'] }}</td>
+                                <td>{{ $ikm['ikm_contact'] }}</td>
+                                <td>{{ $ikm['ikm_sentra'] }}</td>
+                                <td>{{ $ikm['ikm_address_street'] }}</td>
+                                <td>{{ $ikm['ikm_form'] }}</td>
+                                <td>{{ $ikm['ikm_number'] }}</td>
+                                <td>{{ $ikm['ikm_kd_kbli'] }}</td>
+                                <td>{{ $ikm['ikm_category_product'] }}</td>
+                                <td>{{ $ikm['ikm_branch'] }}</td>
+                                <td>{{ $ikm['ikm_count'] }}</td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
         </x-panel.panel-body>
-
-        <script>
-            function toggleDetail(button) {
-                // Find the row containing the details
-                let row = button.closest('tr').nextElementSibling;
-
-                // Toggle the visibility of the row
-                row.classList.toggle('hidden');
-            }
-        </script>
-        <script>
-            function toggleDetail(button) {
-                let detailRow = button.closest('tr').nextElementSibling;
-                detailRow.classList.toggle('hidden');
-            }
-        </script>
-
-
     </x-panel.panel>
-
 @endsection
 @push('scripts')
-    {{-- <script>
-        const errors = @json($errors->any());
-
-        document.addEventListener("DOMContentLoaded", function() {
-            const modalEl = document.getElementById("import-modal");
-            const modal = new Modal(modalEl, {}, {
-                id: 'modalEl',
-                override: true
-            });
-
-            if (errors) {
-                modal.show();
-            }
-
-        });
-    </script> --}}
 @endpush
