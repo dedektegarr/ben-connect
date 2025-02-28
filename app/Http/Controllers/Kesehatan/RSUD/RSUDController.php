@@ -85,6 +85,10 @@ class RSUDController extends Controller
             if ($response["status_code"] === 200) {
                 $kamar = $response["data"]["ketersediaan_kamar"];
 
+                $kamar = collect($kamar)->filter(function ($item) {
+                    return $item["Kapasitas"] > 0;
+                })->sortByDesc("Kapasitas")->toArray();
+
                 return view("admin.kesehatan.rsud.kamar", [
                     "ketersediaan_kamar" => $kamar
                 ]);
