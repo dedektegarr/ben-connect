@@ -97,6 +97,28 @@ class RSUDController extends Controller
         }
     }
 
+    public function poli()
+    {
+        $this->apiClient->setToken(request()->session()->get("auth_token"));
+
+        try {
+            $response = $this->apiClient->get("/kesehatan");
+
+            if ($response["status_code"] === 200) {
+                $poli = $response["data"]["pelayanan_poli"];
+
+                return view("admin.kesehatan.rsud.poli", [
+                    "pelayanan_poli" => $poli
+                ]);
+            }
+
+            throw new Exception("Terjadi Kesalahan");
+        } catch (Exception $e) {
+            flash($e->getMessage(), "error");
+            return redirect()->back();
+        }
+    }
+
     public function synchronize()
     {
         $this->apiClient->setToken(request()->session()->get("auth_token"));

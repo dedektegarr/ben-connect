@@ -153,6 +153,10 @@
                         <a href="{{ route('admin.kesehatan.rsud.kamar') }}"
                             class="{{ Route::is('admin.kesehatan.rsud.kamar') ? 'active' : '' }} sidebar-sub-menu">{{ __('Ketersediaan Kamar') }}</a>
                     </li>
+                    <li>
+                        <a href="{{ route('admin.kesehatan.rsud.poli') }}"
+                            class="{{ Route::is('admin.kesehatan.rsud.poli') ? 'active' : '' }} sidebar-sub-menu">{{ __('Pelayanan Poli') }}</a>
+                    </li>
                 </ul>
             </li>
         </ul>

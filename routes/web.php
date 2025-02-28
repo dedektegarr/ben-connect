@@ -89,6 +89,7 @@ Route::middleware("auth")->group(function () {
             Route::controller(RSUDController::class)->group(function () {
                 Route::get("/rsud/kunjungan", "kunjungan")->name("admin.kesehatan.rsud.kunjungan");
                 Route::get("/rsud/ketersediaan-kamar", "kamar")->name("admin.kesehatan.rsud.kamar");
+                Route::get("/rsud/pelayanan-poli", "poli")->name("admin.kesehatan.rsud.poli");
                 Route::post("/rsud/synchronize", "synchronize")->name("admin.kesehatan.rsud.synchronize");
             });
         });
