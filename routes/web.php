@@ -77,10 +77,12 @@ Route::middleware("auth")->group(function () {
 
             Route::prefix("ikm")->controller(IKMController::class)->group(function () {
                 Route::get("/", "index")->name("admin.perindustrian.ikm.index");
+                Route::post("/import", "import")->name("admin.perindustrian.ikm.import");
             });
 
             Route::prefix("komoditas")->controller(KomoditasController::class)->group(function () {
                 Route::get("/", "index")->name("admin.perindustrian.komoditas.index");
+                Route::post("/import", "import")->name("admin.perindustrian.komoditas.import");
             });
         });
 
