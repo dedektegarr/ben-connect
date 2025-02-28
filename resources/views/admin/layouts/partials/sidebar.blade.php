@@ -146,6 +146,10 @@
                 <ul id="dropdown-kesehatan"
                     class="{{ Route::is('admin.kesehatan.*') ? 'block' : 'hidden' }} py-2 space-y-2 ml-10">
                     <li>
+                        <a href="{{ route('admin.kesehatan.rs.index') }}"
+                            class="{{ Route::is('admin.kesehatan.rs.*') ? 'active' : '' }} sidebar-sub-menu">{{ __('Data Rumah Sakit') }}</a>
+                    </li>
+                    <li>
                         <a href="{{ route('admin.kesehatan.rsud.kunjungan') }}"
                             class="{{ Route::is('admin.kesehatan.rsud.kunjungan') ? 'active' : '' }} sidebar-sub-menu">{{ __('Kunjungan Pasien') }}</a>
                     </li>

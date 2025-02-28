@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Kesehatan\RSUD;
+namespace App\Http\Controllers\Web\Admin\Kesehatan;
 
-use App\Http\Controllers\Controller;
-use App\Services\ApiClient;
-use Carbon\Carbon;
 use Exception;
+use Carbon\Carbon;
+use App\Services\ApiClient;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class RSUDController extends Controller
 {

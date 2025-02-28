@@ -6,7 +6,7 @@
         <x-panel.panel-header title="Kunjungan Pasien">
             <form method="POST" action="{{ route('admin.kesehatan.rsud.synchronize') }}">
                 @csrf
-                <button type="button"
+                <button type="submit"
                     class="md:inline-flex text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                     <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
