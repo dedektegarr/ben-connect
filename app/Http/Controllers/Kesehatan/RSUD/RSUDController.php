@@ -75,6 +75,27 @@ class RSUDController extends Controller
         }
     }
 
+    public function kamar()
+    {
+        $this->apiClient->setToken(request()->session()->get("auth_token"));
+
+        try {
+            $response = $this->apiClient->get("/kesehatan");
+
+            if ($response["status_code"] === 200) {
+                $kamar = $response["data"]["ketersediaan_kamar"];
+
+                return view("admin.kesehatan.rsud.kamar", [
+                    "ketersediaan_kamar" => $kamar
+                ]);
+            }
+
+            throw new Exception("Terjadi Kesalahan");
+        } catch (Exception $e) {
+            flash($e->getMessage(), "error");
+            return redirect()->back();
+        }
+    }
 
     public function synchronize()
     {
