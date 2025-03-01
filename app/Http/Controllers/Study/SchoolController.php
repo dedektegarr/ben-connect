@@ -28,6 +28,8 @@ class SchoolController extends Controller
                 'school_status' => $data_school->school_status,
                 'school_level_name' => $data_school->schoollevel->school_level_name,
                 'region_name' => $data_school->region->region_name,
+                'negeri_count' => $data_school->negeri_count,
+                'swasta_count' => $data_school->swasta_count,
                 'school_adress' => $data_school->school_address,
                 'latitude' => $data_school->latitude,
                 'longitude' => $data_school->longitude,
@@ -36,19 +38,19 @@ class SchoolController extends Controller
             ];
         });
 
-        if ($data_school->isEmpty()) {
-            // berikan respon ketika data kosong
-            return response()->json([
-                "status_code" => 404,
-                "message" => "Data Sekolah kosong",
-            ], 404);
-        }
+        // if ($data_school->isEmpty()) {
+        // berikan respon ketika data kosong
+        //     return response()->json([
+        //         "status_code" => 404,
+        //         "message" => "Data Sekolah kosong",
+        //     ], 404);
+        // }
 
         // berikan respon ketika berhasil ditemukan
         return response()->json([
             "status_code" => 200,
             "message" => "Data Sekolah berhasil diambil",
-            "data_sekolah" => $formatData
+            "data" => $formatData
         ], 200);
     }
 

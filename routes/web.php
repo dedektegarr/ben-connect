@@ -20,6 +20,9 @@ use App\Http\Controllers\Web\Admin\Industri\KomoditasController;
 use App\Http\Controllers\Web\Admin\Industri\IndustriNasionalController;
 use App\Http\Controllers\Web\Admin\Kesehatan\RSUDController;
 use App\Http\Controllers\Web\Admin\Kesehatan\RumahSakitController;
+use App\Http\Controllers\Web\Admin\Pendidikan\JumlahGuruController;
+use App\Http\Controllers\Web\Admin\Pendidikan\JumlahPesertaDidikController;
+use App\Http\Controllers\Web\Admin\Pendidikan\JumlahSekolahController;
 use App\Http\Controllers\Web\Admin\Penduduk\JumlahPendudukController;
 
 /*
@@ -99,6 +102,22 @@ Route::middleware("auth")->group(function () {
             Route::prefix("rumah-sakit")->controller(RumahSakitController::class)->group(function () {
                 Route::get("/", "index")->name("admin.kesehatan.rs.index");
                 Route::post("/import", "import")->name("admin.kesehatan.rs.import");
+            });
+        });
+
+        // Pendidikan
+        Route::prefix("pendidikan")->group(function () {
+            Route::prefix("sekolah")->controller(JumlahSekolahController::class)->group(function () {
+                Route::get("/", "index")->name("admin.pendidikan.sekolah.index");
+                Route::post("/import", "import")->name("admin.pendidikan.sekolah.import");
+            });
+            Route::prefix("guru")->controller(JumlahGuruController::class)->group(function () {
+                Route::get("/", "index")->name("admin.pendidikan.guru.index");
+                Route::post("/import", "import")->name("admin.pendidikan.guru.import");
+            });
+            Route::prefix("peserta-didik")->controller(JumlahPesertaDidikController::class)->group(function () {
+                Route::get("/", "index")->name("admin.pendidikan.peserta-didik.index");
+                Route::post("/import", "import")->name("admin.pendidikan.peserta-didik.import");
             });
         });
     });
