@@ -204,6 +204,7 @@ Route::middleware('auth:sanctum')->group(function () {
 
         // Data Peserta Didik
         Route::post("/pendidikan/peserta-didik/import", [StudentController::class, "import"]);
+        Route::get("/pendidikan/peserta-didik", [StudentController::class, "index"]);
     });
 
     // Dataset

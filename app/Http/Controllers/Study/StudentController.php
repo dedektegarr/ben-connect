@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\study\StudentRequest;
 use App\Imports\StudentCountImport;
 use App\Imports\StudentImport;
+use App\Models\Student;
 use Exception;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
@@ -17,7 +18,12 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //
+        $students = Student::with(["region", "schoollevel"])->get();
+
+        return response()->json([
+            "status_code" => 200,
+            "data" => $students
+        ]);
     }
 
     /**
