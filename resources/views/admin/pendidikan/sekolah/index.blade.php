@@ -105,7 +105,27 @@
                             </th>
                             <th>
                                 <span class="flex items-center">
-                                    Jumlah Sekolah
+                                    Negeri
+                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                    </svg>
+                                </span>
+                            </th>
+                            <th>
+                                <span class="flex items-center">
+                                    Swasta
+                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                    </svg>
+                                </span>
+                            </th>
+                            <th>
+                                <span class="flex items-center">
+                                    Total Sekolah
                                     <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                         width="24" height="24" fill="none" viewBox="0 0 24 24">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -130,7 +150,9 @@
                             <tr>
                                 <td class="font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                     {{ $region }}</td>
-                                <td>{{ $item }}</td>
+                                <td>{{ $item['total_negeri'] }}</td>
+                                <td>{{ $item['total_swasta'] }}</td>
+                                <td class="text-gray-900 dark:text-white font-bold">{{ $item['total'] }}</td>
                                 <td>
                                     <div class="flex items-center justify-center col-span-1">
                                         <div x-data="{ openDropDown: false }" class="relative">
@@ -182,13 +204,13 @@
                     @csrf
                     <div class="grid gap-4 mb-4 grid-cols-2">
                         <div class="col-span-2">
-                            <label for="file"
+                            <label for="school_file"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ __('File') }}</label>
-                            <input name="file" id="file"
+                            <input name="school_file" id="school_file"
                                 class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                                aria-describedby="file_input_help" id="file_input" type="file">
+                                aria-describedby="file_input_help" id="school_file" type="file">
 
-                            @error('file')
+                            @error('school_file')
                                 <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span
                                         class="font-medium">{{ $message }}</p>
                             @enderror <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">
