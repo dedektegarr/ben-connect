@@ -12,4 +12,14 @@ class Teacher extends Model
 
     protected $primaryKey = "teacher_id";
     protected $guarded = ["teacher_id"];
+
+    public function region()
+    {
+        return $this->belongsTo(Region::class, 'region_id', 'region_id');
+    }
+
+    public function schoollevel()
+    {
+        return $this->belongsTo(SchoolLevelModel::class, 'school_level_id', 'school_level_id');
+    }
 }

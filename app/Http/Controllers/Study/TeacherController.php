@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Study;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\study\TeacherRequest;
 use App\Imports\TeacherCountImport;
+use App\Models\Teacher;
 use Exception;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
@@ -16,7 +17,12 @@ class TeacherController extends Controller
      */
     public function index()
     {
-        //
+        $teachers = Teacher::with(["region", "schoollevel"])->get();
+
+        return response()->json([
+            "status_code" => 200,
+            "data" => $teachers
+        ]);
     }
 
     /**
