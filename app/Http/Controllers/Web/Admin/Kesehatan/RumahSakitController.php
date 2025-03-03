@@ -18,16 +18,26 @@ class RumahSakitController extends Controller
         $this->apiClient = new ApiClient(config("app.url") . "/api");
     }
 
-    public function index()
+    public function index(Request $request)
     {
         $this->apiClient->setToken(request()->session()->get("auth_token"));
 
+        $filters = $request->only(["region", "category", "ownership", "acreditation"]);
+
         try {
-            $data = $this->apiClient->get("/kesehatan/rs");
+            $data = $this->apiClient->get("/kesehatan/rs", $filters);
+            $regions = $this->apiClient->get("/wilayah/data");
+            $acreditations = $this->apiClient->get("/kesehatan/rs/akreditasi");
+            $categories = $this->apiClient->get("/kesehatan/rs/kategori");
+            $ownerships = $this->apiClient->get("/kesehatan/rs/kepemilikan");
 
             if ($data["status_code"] === 200) {
                 return view("admin.kesehatan.rs.index", [
-                    "rumah_sakit" => $data["data"]
+                    "rumah_sakit" => $data["data"],
+                    "acreditations" => $acreditations["data_akreditasi_rs"],
+                    "categories" => $categories["data_kategori_rs"],
+                    "ownerships" => $ownerships["data"],
+                    "regions" => $regions["data"],
                 ]);
             }
 

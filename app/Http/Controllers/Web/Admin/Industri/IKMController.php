@@ -26,10 +26,13 @@ class IKMController extends Controller
 
         try {
             $ikms = $this->apiClient->get("/disperindag/ikm", $filters);
+            $regions = $this->apiClient->get("/wilayah/data");
 
             if ($ikms["status"] === 200) {
                 return view("admin.industri.ikm.index", [
                     "ikms" => $ikms["data"],
+                    "regions" => $regions["data"],
+                    "total" => collect($ikms["data"])->count()
                 ]);
             }
 

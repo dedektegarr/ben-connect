@@ -9,9 +9,10 @@ use App\Models\Price;
 
 class PriceController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $data = Price::with(['region', 'variant'])->get();
+        $filters = $request->only(["region"]);
+        $data = Price::with(['region', 'variant'])->filter($filters)->get();
 
         // Mapping data ke format yang diinginkan
         $formattedData = $data->map(function ($item) {

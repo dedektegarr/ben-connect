@@ -30,7 +30,9 @@ class IndustriNasionalController extends Controller
             if ($industries["status"] === 200) {
                 return view("admin.industri.industri-nasional.index", [
                     "industries" => $industries["data"],
-                    "regions" => $regions["data"]
+                    "regions" => $regions["data"],
+                    "total_kecil" => collect($industries["data"])->where("industry_business_scale", "Kecil")->count(),
+                    "total_besar" => collect($industries["data"])->where("industry_business_scale", "Besar")->count(),
                 ]);
             }
 
