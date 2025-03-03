@@ -56,7 +56,41 @@
                 </a>
             </li>
 
-            <li>
+            {{-- // pemerintahan --}}
+          <li>
+                <button type="button"
+                    class="sidebar-menu-link group w-full flex items-center justify-between
+                    {{ Route::is('admin.pemerintahan.*') ? 'active bg-gray-200 dark:bg-gray-700' : '' }}"
+                    aria-controls="dropdown-pemerintahan"
+                    data-collapse-toggle="dropdown-pemerintahan">
+
+                    <div class="flex items-center">
+                        <svg class="sidebar-menu-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 21">
+                            <path d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z" />
+                            <path d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z" />
+                        </svg>
+                        <span class="flex-1 ms-3 text-left whitespace-nowrap">{{ __('Pemerintahan') }}</span>
+                    </div>
+
+                    <svg class="w-3 h-3 transform transition-transform duration-200
+                    {{ Route::is('admin.pemerintahan.*') ? 'rotate-180' : '' }}"
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+                    </svg>
+                </button>
+
+                <ul id="dropdown-pemerintahan"
+                    class="py-2 space-y-2 ml-10 transition-all duration-300
+                    {{ Route::is('admin.pemerintahan.*') ? 'block' : 'hidden' }}">
+                    <li>
+                        <a href="{{ route('admin.pemerintahan.visimisi') }}"
+                            class="sidebar-sub-menu {{ Route::is('admin.pemerintahan.visimisi') ? 'active bg-gray-300 dark:bg-gray-800' : '' }}">
+                            {{ __('Visi & Misi') }}
+                        </a>
+                    </li>
+                </ul>
+            </li>
+                        <li>
                 <button type="button"
                     class="{{ Route::is('admin.kependudukan.*') ? 'active' : '' }} sidebar-menu-link group w-full"
                     aria-controls="dropdown-penduduk" data-collapse-toggle="dropdown-penduduk">

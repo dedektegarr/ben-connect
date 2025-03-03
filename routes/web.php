@@ -63,6 +63,15 @@ Route::middleware("auth")->group(function () {
             Route::get("/dashboard", "index")->name("admin.dashboard.index");
         });
 
+
+         // Pemerintahan
+         Route::prefix("pemerintahan")->group(function () {
+            Route::get("/visi-misi", function () {
+                return view("admin.pemerintahan.visimisi"); // ✅ Tambahkan path view yang benar
+            })->name("admin.pemerintahan.visimisi");
+        });
+
+
         // Kependudukan
         Route::prefix("kependudukan")->group(function () {
             Route::get("/statistik", [JumlahPendudukController::class, "statistikPenduduk"])->name("admin.kependudukan.statistik");
