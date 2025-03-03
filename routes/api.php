@@ -200,9 +200,11 @@ Route::middleware('auth:sanctum')->group(function () {
 
         // Data Guru
         Route::post("/pendidikan/guru/import", [TeacherController::class, "import"]);
+        Route::get("/pendidikan/guru", [TeacherController::class, "index"]);
 
         // Data Peserta Didik
         Route::post("/pendidikan/peserta-didik/import", [StudentController::class, "import"]);
+        Route::get("/pendidikan/peserta-didik", [StudentController::class, "index"]);
     });
 
     // Dataset

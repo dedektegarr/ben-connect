@@ -88,7 +88,7 @@ class HospitalController extends Controller
 
             return response()->json([
                 'status_code' => 201,
-                'message' => 'OK'
+                'message' => 'File berhasil di import'
             ], 201);
         } catch (Exception $e) {
             return response()->json([

@@ -1,0 +1,76 @@
+<?php
+
+namespace App\Http\Controllers\Web\Admin\Pendidikan;
+
+use App\Http\Controllers\Controller;
+use App\Http\Requests\study\SchoolRequest;
+use App\Services\ApiClient;
+use Exception;
+use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
+
+class JumlahSekolahController extends Controller
+{
+    private $apiClient;
+
+    public function __construct()
+    {
+        $this->apiClient = new ApiClient(config("app.url") . "/api");
+    }
+
+    public function index(Request $request)
+    {
+        $this->apiClient->setToken(request()->session()->get("auth_token"));
+
+        $filters = $request->only(["region"]);
+
+        try {
+            $sekolah = $this->apiClient->get("/pendidikan/sekolah", $filters);
+            $sekolahByRegion = collect($sekolah["data"])->groupBy("region_name");
+            $getTotalPerRegion = $sekolahByRegion->map(function ($sekolah) {
+                return [
+                    "total" => $sekolah->sum("negeri_count") + $sekolah->sum("swasta_count"),
+                    "total_negeri" => $sekolah->sum("negeri_count"),
+                    "total_swasta" => $sekolah->sum("swasta_count")
+                ];
+            });
+
+            if ($sekolah["status_code"] === 200) {
+                return view("admin.pendidikan.sekolah.index", [
+                    "sekolah" => $getTotalPerRegion,
+                    "total_negeri" => collect($sekolah["data"])->sum("negeri_count"),
+                    "total_swasta" => collect($sekolah["data"])->sum("swasta_count"),
+                ]);
+            }
+
+            throw new Exception($sekolah["message"]);
+        } catch (Exception $e) {
+            flash($e->getMessage(), "error");
+            return redirect()->back();
+        }
+    }
+
+    public function import(Request $request)
+    {
+        $this->apiClient->setToken(request()->session()->get("auth_token"));
+
+        try {
+            $formRequest = new SchoolRequest();
+            $this->validate($request, $formRequest->rules(), $formRequest->messages());
+
+            $import = $this->apiClient->post("/pendidikan/sekolah/import", [], $request->files);
+
+            if ($import["status_code"] === 201) {
+                flash("Data jumlah sekolah berhasil di import");
+                return redirect()->back();
+            }
+
+            throw new Exception($import["message"]);
+        } catch (ValidationException $e) {
+            return redirect()->back()->withErrors($e->errors());
+        } catch (Exception $e) {
+            flash($e->getMessage(), "error");
+            return redirect()->back();
+        }
+    }
+}

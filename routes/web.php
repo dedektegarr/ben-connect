@@ -14,11 +14,15 @@ use App\Http\Controllers\FrontOffice\DashboardBencanaController;
 use App\Http\Controllers\FrontOffice\DashboardKesehatanController;
 use App\Http\Controllers\FrontOffice\DashboardPendidikanController;
 use App\Http\Controllers\FrontOffice\DashboardInfrastrukturController;
-use App\Http\Controllers\Kesehatan\RSUD\RSUDController;
 use App\Http\Controllers\Web\Admin\DashboardController;
 use App\Http\Controllers\Web\Admin\Industri\IndustriNasional;
 use App\Http\Controllers\Web\Admin\Industri\KomoditasController;
 use App\Http\Controllers\Web\Admin\Industri\IndustriNasionalController;
+use App\Http\Controllers\Web\Admin\Kesehatan\RSUDController;
+use App\Http\Controllers\Web\Admin\Kesehatan\RumahSakitController;
+use App\Http\Controllers\Web\Admin\Pendidikan\JumlahGuruController;
+use App\Http\Controllers\Web\Admin\Pendidikan\JumlahPesertaDidikController;
+use App\Http\Controllers\Web\Admin\Pendidikan\JumlahSekolahController;
 use App\Http\Controllers\Web\Admin\Penduduk\JumlahPendudukController;
 
 /*
@@ -77,10 +81,12 @@ Route::middleware("auth")->group(function () {
 
             Route::prefix("ikm")->controller(IKMController::class)->group(function () {
                 Route::get("/", "index")->name("admin.perindustrian.ikm.index");
+                Route::post("/import", "import")->name("admin.perindustrian.ikm.import");
             });
 
             Route::prefix("komoditas")->controller(KomoditasController::class)->group(function () {
                 Route::get("/", "index")->name("admin.perindustrian.komoditas.index");
+                Route::post("/import", "import")->name("admin.perindustrian.komoditas.import");
             });
         });
 
@@ -91,6 +97,27 @@ Route::middleware("auth")->group(function () {
                 Route::get("/rsud/ketersediaan-kamar", "kamar")->name("admin.kesehatan.rsud.kamar");
                 Route::get("/rsud/pelayanan-poli", "poli")->name("admin.kesehatan.rsud.poli");
                 Route::post("/rsud/synchronize", "synchronize")->name("admin.kesehatan.rsud.synchronize");
+            });
+
+            Route::prefix("rumah-sakit")->controller(RumahSakitController::class)->group(function () {
+                Route::get("/", "index")->name("admin.kesehatan.rs.index");
+                Route::post("/import", "import")->name("admin.kesehatan.rs.import");
+            });
+        });
+
+        // Pendidikan
+        Route::prefix("pendidikan")->group(function () {
+            Route::prefix("sekolah")->controller(JumlahSekolahController::class)->group(function () {
+                Route::get("/", "index")->name("admin.pendidikan.sekolah.index");
+                Route::post("/import", "import")->name("admin.pendidikan.sekolah.import");
+            });
+            Route::prefix("guru")->controller(JumlahGuruController::class)->group(function () {
+                Route::get("/", "index")->name("admin.pendidikan.guru.index");
+                Route::post("/import", "import")->name("admin.pendidikan.guru.import");
+            });
+            Route::prefix("peserta-didik")->controller(JumlahPesertaDidikController::class)->group(function () {
+                Route::get("/", "index")->name("admin.pendidikan.peserta-didik.index");
+                Route::post("/import", "import")->name("admin.pendidikan.peserta-didik.import");
             });
         });
     });

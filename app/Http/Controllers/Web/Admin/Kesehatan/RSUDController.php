@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Kesehatan\RSUD;
+namespace App\Http\Controllers\Web\Admin\Kesehatan;
 
-use App\Http\Controllers\Controller;
-use App\Services\ApiClient;
-use Carbon\Carbon;
 use Exception;
+use Carbon\Carbon;
+use App\Services\ApiClient;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class RSUDController extends Controller
 {
@@ -84,6 +84,10 @@ class RSUDController extends Controller
 
             if ($response["status_code"] === 200) {
                 $kamar = $response["data"]["ketersediaan_kamar"];
+
+                $kamar = collect($kamar)->filter(function ($item) {
+                    return $item["Kapasitas"] > 0;
+                })->sortByDesc("Kapasitas")->toArray();
 
                 return view("admin.kesehatan.rsud.kamar", [
                     "ketersediaan_kamar" => $kamar
