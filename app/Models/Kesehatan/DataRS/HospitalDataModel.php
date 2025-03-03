@@ -28,6 +28,27 @@ class HospitalDataModel extends Model
         'hospital_data_latitude'
     ];
 
+    public function scopeFilter($query, $filters)
+    {
+        return $query->when($filters["region"] ?? null, function ($query, $region) {
+            $query->whereHas("region", function ($q) use ($region) {
+                $q->where("region_name", $region);
+            });
+        })->when($filters["category"] ?? null, function ($query, $category) {
+            $query->whereHas("category_hospital", function ($q) use ($category) {
+                $q->where("category_hospital_name", $category);
+            });
+        })->when($filters["ownership"] ?? null, function ($query, $ownership) {
+            $query->whereHas("hospital_ownership", function ($q) use ($ownership) {
+                $q->where("hospital_ownership_name", $ownership);
+            });
+        })->when($filters["acreditation"] ?? null, function ($query, $acreditation) {
+            $query->whereHas("hospital_acreditation", function ($q) use ($acreditation) {
+                $q->where("hospital_acreditation_name", $acreditation);
+            });
+        });
+    }
+
     public function region()
     {
         return $this->belongsTo(Region::class, 'region_id', 'region_id');

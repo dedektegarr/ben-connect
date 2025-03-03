@@ -15,9 +15,10 @@ class HospitalController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data = HospitalDataModel::with(["region", "category_hospital", "hospital_acreditation", "hospital_ownership"])->get();
+        $filters = $request->only(["region", "category", "ownership", "acreditation"]);
+        $data = HospitalDataModel::with(["region", "category_hospital", "hospital_acreditation", "hospital_ownership"])->filter($filters)->get();
 
         if ($data->isEmpty()) {
             return response()->json([
