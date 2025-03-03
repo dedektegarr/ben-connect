@@ -9,7 +9,7 @@
         #header {
         transition: all 0.5s;
         z-index: 997;
-        padding: 20px 0; 
+        padding: 20px 0;
         background-color: #27445D;
         }
 
@@ -165,7 +165,7 @@
 
         <main id="main" style="background-image: #c7c7c7">
         <!-- ======= About Section ======= -->
-        <section id="about" class="about" style="background-color:transparent">    
+        <section id="about" class="about" style="background-color:transparent">
         <div class="container">
                 <style>
                     .card-layanan:hover {
@@ -176,7 +176,7 @@
                 <div class="row content" style="margin-top: 80px; background-color:transparent">
                     <div class="container" style="text-align: justify;">
                         <h1 class="text-dark text-capitalize" style="font-family: inter; font-weight:900;"><span
-                                style="background: -webkit-linear-gradient(left,#000, #000); 
+                                style="background: -webkit-linear-gradient(left,#000, #000);
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;">Selamat
                                 datang di BEN-CONNECT, aplikasi pusat kendali (command center) Provinsi Bengkulu</span></h1>
