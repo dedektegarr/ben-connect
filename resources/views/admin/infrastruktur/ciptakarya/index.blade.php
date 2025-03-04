@@ -2,7 +2,7 @@
 {{-- @endsection  --}}
 @extends('admin.layouts.app')
 
-@section('title', 'Dashboard')
+@section('title', 'Ciptakarya')
 @section('content')
     <x-panel.panel class="w-full">
         <x-panel.panel-header title="{{ __('Data Ciptakarya') }}">

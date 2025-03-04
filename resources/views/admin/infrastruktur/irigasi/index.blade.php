@@ -2,10 +2,10 @@
 {{-- @endsection  --}}
 @extends('admin.layouts.app')
 
-@section('title', 'Dashboard')
+@section('title', 'Irigasi')
 @section('content')
     <x-panel.panel class="w-full">
-        <x-panel.panel-header title="{{ __('Data Jalan') }}">
+        <x-panel.panel-header title="{{ __('Data Irigasi') }}">
             <div class="flex items-center gap-2">
                 <button type="button" data-modal-target="import-modal" data-modal-toggle="import-modal"
                     class="md:inline-flex text-white bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-4 py-2 text-center items-center dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
@@ -126,7 +126,7 @@
                 <div
                     class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200">
                     <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                        {{ __('Impor Data Jalan') }}
+                        {{ __('Impor Data Irigasi') }}
                     </h3>
                 </div>
                 <!-- Modal body -->

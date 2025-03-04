@@ -184,54 +184,92 @@
                             Provinsi Bengkulu. Kami hadir sebagai solusi inovatif untuk mempermudah akses, monitoring, dan
                             pengelolaan data lintas Organisasi Perangkat Daerah (OPD), demi mewujudkan tata kelola
                             pemerintahan yang lebih efektif dan efisien.</p>
-                        <div class="row my-5">
-                            <div class="col-md-6">
-                            <img src="{{ asset('assets/FrontOffice/img/gubernur1.png') }}" class="img-fluid" width="600" height="600" alt="">
-                            </div>
-                            <div class="col-md-6">
-                                <h4>Visi</h4>
-                                <div class="row" style="text-align: justify;">
-                                    <div class="col-md-12">
-                                        <i class="ri-checkbox-circle-fill my-auto"></i>
-                                        <p class="d-inline">Menjadi platform data terintegrasi yang handal dan inovatif
-                                            dalam mendukung tata kelola pemerintahan yang transparan, efisien, dan
-                                            berorientasi pada pelayanan publik.</p>
-                                        <hr>
-                                    </div>
+                            <div class="row my-5">
+                                <div class="col-md-6">
+                                <img src="{{ asset('assets/FrontOffice/img/gubernur1.png') }}" class="img-fluid" width="600" height="600" alt="">
                                 </div>
-                                <p></p>
-                                <h4>Misi:</h4>
-                                <div class="row" style="text-align: justify;">
-                                    <div class="col-md-12">
-                                        <i class="ri-checkbox-circle-fill my-auto"></i>
-                                        <p class="d-inline">Mewujudkan keterpaduan data antar-OPD di lingkungan Pemerintah
-                                            Provinsi Bengkulu.</p>
-                                        <hr>
+                                <div class="col-md-6">
+                                    <h4>Visi</h4>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <i class="ri-checkbox-circle-fill my-auto"></i>
+                                            <p class="d-inline">Bengkulu Maju, Religius, Sejahtera, dan Berkelanjutan.</p>
+                                            <hr>
+                                        </div>
                                     </div>
-                                    <div class="col-md-12">
-                                        <i class="ri-checkbox-circle-fill my-auto"></i>
-                                        <p class="d-inline">Memperkuat pengambilan keputusan berbasis data yang akurat dan
-                                            real-time.</p>
-                                        <hr>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <i class="ri-checkbox-circle-fill my-auto"></i>
-                                        <p class="d-inline">Meningkatkan kolaborasi antara OPD dan masyarakat melalui
-                                            transparansi informasi.
-                                        </p>
-                                        <hr>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <i class="ri-checkbox-circle-fill my-auto"></i>
-                                        <p class="d-inline">Mengoptimalkan penggunaan teknologi informasi dalam pelayanan
-                                            publik
-                                        </p>
-                                        <hr>
+                                    <p></p>
+                                    <h4>Misi:</h4>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <i class="ri-checkbox-circle-fill my-auto"></i>
+                                            <p class="d-inline">Fokus pada membangun Bengkulu yang berbasis religiusitas, kesejahteraan sosial, dan keberlanjutan ekonomi.</p>
+                                            <hr>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <i class="ri-checkbox-circle-fill my-auto"></i>
+                                            <p class="d-inline">Mengutamakan pemerintahan yang bersih dan akuntabel dengan pembangunan sumber daya manusia yang berlandaskan pengetahuan dan Teknologi.</p>
+                                            <hr>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <i class="ri-checkbox-circle-fill my-auto"></i>
+                                            <p class="d-inline">Program percepatan peningkatan kualitas jalan dan jembatan di seluruh Provinsi Bengkulu melalui program Jalan Mulus
+                                            </p>
+                                            <hr>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <i class="ri-checkbox-circle-fill my-auto"></i>
+                                            <p class="d-inline">Ambulance gratis di setiap  desadan moda angkutan darat gratis di setiap kabupaten/kota/
+
+                                            </p>
+                                            <hr>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <i class="ri-checkbox-circle-fill my-auto"></i>
+                                            <p class="d-inline">Pembangunan stadion bertaraf internasional dan fasilitas olahraga yang memadai.
+                                                Menjamin seluruh rakyat Bengkulu mendapatkan BPJS Kesehatan untuk mewujudkan UHC.
+
+
+                                            </p>
+                                            <hr>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <i class="ri-checkbox-circle-fill my-auto"></i>
+                                            <p class="d-inline">Menurunkan harga BBMnon-subsidi demi membantu meringankan beban masyarakat.
+                                                Menyediakan program santunan untuk anak yatim serta memperkuat ekonomi kerakyatan berbasis UMKM.
+
+
+                                            </p>
+                                            <hr>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <i class="ri-checkbox-circle-fill my-auto"></i>
+                                            <p class="d-inline">Fokus pada peningkatan kesejahteraan petani dan nelayan melalui bantuan bibit, peralatan, serta stabilitas harga dengan membangun pusat pengolahan agropolitan.
+                                                Pemberdayaan desa dengan penguatan BUMDes, desa wisata, dan one village-one product.
+
+
+                                            </p>
+                                            <hr>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <i class="ri-checkbox-circle-fill my-auto"></i>
+                                            <p class="d-inline">Menciptakan keselarasan pembangunan ekonomi pada sektor pertanian, perkebunan, perikanan, kelautan, pariwisata, dan pertambangan dengan mengutamakan hilirisasi yang berkelanjutan.
+
+
+                                            </p>
+                                            <hr>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <i class="ri-checkbox-circle-fill my-auto"></i>
+                                            <p class="d-inline">Program-program UMKM dan Bumdes untuk meningkatkan kemandirian ekonomi di tingkat desa.
+
+                                            </p>
+                                            <hr>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+
                     <div class="col-lg-12">
                         <div class="card" style="border-radius:20px; background: -webkit-linear-gradient(left, #27445D, #27445D); ">
                             <div class="card-body text-white">
