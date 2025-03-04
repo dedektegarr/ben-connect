@@ -18,6 +18,10 @@ use App\Http\Controllers\Web\Admin\DashboardController;
 use App\Http\Controllers\Web\Admin\Industri\IndustriNasional;
 use App\Http\Controllers\Web\Admin\Industri\KomoditasController;
 use App\Http\Controllers\Web\Admin\Industri\IndustriNasionalController;
+use App\Http\Controllers\Web\Admin\Infrastruktur\CiptakaryaController;
+use App\Http\Controllers\Web\Admin\Infrastruktur\IrigasiController;
+use App\Http\Controllers\Web\Admin\Infrastruktur\JalanController;
+use App\Http\Controllers\Web\Admin\Infrastruktur\JembatanController;
 use App\Http\Controllers\Web\Admin\Kesehatan\RSUDController;
 use App\Http\Controllers\Web\Admin\Kesehatan\RumahSakitController;
 use App\Http\Controllers\Web\Admin\Pendidikan\JumlahGuruController;
@@ -127,6 +131,27 @@ Route::middleware("auth")->group(function () {
             Route::prefix("peserta-didik")->controller(JumlahPesertaDidikController::class)->group(function () {
                 Route::get("/", "index")->name("admin.pendidikan.peserta-didik.index");
                 Route::post("/import", "import")->name("admin.pendidikan.peserta-didik.import");
+            });
+        });
+         // infrastruktur
+         Route::prefix("infrastruktur")->group(function () {
+            Route::prefix("jalan")->controller(JalanController::class)->group(function () {
+                Route::get("/", "index")->name("admin.infrastruktur.jalan.index");
+                Route::post("/import", "import")->name("admin.infrastruktur.jalan.import");
+            });
+
+            Route::prefix("irigasi")->controller(IrigasiController::class)->group(function () {
+                Route::get("/", "index")->name("admin.infrastruktur.irigasi.index");
+                Route::post("/import", "import")->name("admin.infrastruktur.irigasi.import");
+            });
+
+            Route::prefix("jembatan")->controller(JembatanController::class)->group(function () {
+                Route::get("/", "index")->name("admin.infrastruktur.jembatan.index");
+                Route::post("/import", "import")->name("admin.infrastruktur.jembatan.import");
+            });
+            Route::prefix("ciptakarya")->controller(CiptakaryaController::class)->group(function () {
+                Route::get("/", "index")->name("admin.infrastruktur.ciptakarya.index");
+                Route::post("/import", "import")->name("admin.infrastruktur.ciptakarya.import");
             });
         });
     });

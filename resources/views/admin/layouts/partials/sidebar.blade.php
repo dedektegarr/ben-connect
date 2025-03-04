@@ -234,6 +234,45 @@
                     </li>
                 </ul>
             </li>
+            <li>
+                <button type="button"
+                    class="{{ Route::is('admin.infrastruktur.*') ? 'active' : '' }} sidebar-menu-link group w-full"
+                    aria-controls="dropdown-industri" data-collapse-toggle="dropdown-infrastruktur">
+                    <svg class="{{ Route::is('admin.infrastruktur.*') ? 'active' : '' }} sidebar-menu-icon"aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" d="M4 4a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2v14a1 1 0 1 1 0 2H5a1 1 0 1 1 0-2V5a1 1 0 0 1-1-1Zm5 2a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H9Zm5 0a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1h-1Zm-5 4a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1a1 1 0 0 0-1-1H9Zm5 0a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1a1 1 0 0 0-1-1h-1Zm-3 4a2 2 0 0 0-2 2v3h2v-3h2v3h2v-3a2 2 0 0 0-2-2h-2Z" clip-rule="evenodd"/>
+                      </svg>
+
+
+
+                    <span
+                        class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">{{ __('Infrastruktur') }}</span>
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 10 6">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m1 1 4 4 4-4" />
+                    </svg>
+                </button>
+                <ul id="dropdown-infrastruktur"
+                    class="{{ Route::is('admin.infrastruktur.*') ? 'block' : 'hidden' }} py-2 space-y-2 ml-10">
+                    <li>
+                        <a href="{{ route('admin.infrastruktur.jalan.index') }}"
+                            class="{{ Route::is('admin.infrastruktur.jalan.*') ? 'active' : '' }} sidebar-sub-menu">{{ __('Jalan') }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin.infrastruktur.irigasi.index') }}"
+                            class="{{ Route::is('admin.infrastruktur.irigasi.*') ? 'active' : '' }} sidebar-sub-menu">{{ __('Irigasi') }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin.infrastruktur.jembatan.index') }}"
+                            class="{{ Route::is('admin.infrastruktur.jembatan.*') ? 'active' : '' }} sidebar-sub-menu">{{ __('Jembatan') }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin.infrastruktur.ciptakarya.index') }}"
+                            class="{{ Route::is('admin.infrastruktur.ciptakarya.*') ? 'active' : '' }} sidebar-sub-menu">{{ __('Cipta Karya') }}</a>
+                    </li>
+                </ul>
+            </li>
         </ul>
+
     </div>
 </aside>
