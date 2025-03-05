@@ -38,7 +38,7 @@
                 <thead>
 
                     <tr>
-                        <th rowspan="2" >
+                        {{-- <th rowspan="2" >
                             <span class="flex items-center" rowspan="2">
                                 Nomor
                                 <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -47,10 +47,10 @@
                                         stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
                                 </svg>
                             </span>
-                        </th>
+                        </th> --}}
                         <th rowspan="2">
                             <span class="flex items-center">
-                                Nama
+                                Nama Ruas Jalan
                                 <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                     width="24" height="24" fill="none" viewBox="0 0 24 24">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -171,25 +171,25 @@
                         </th>
                     </tr>
                 </thead>
-                {{-- <tbody>
-                    @foreach ($ikms as $key => $ikm)
-                        <tr>
-                            <td class="font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {{ $ikm['ikm_ptname'] }}</td>
-                            <td>{{ $ikm['ikm_owner_name'] }}</td>
-                            <td>{{ $ikm['ikm_contact'] }}</td>
-                            <td>{{ $ikm['ikm_sentra'] }}</td>
-                            <td>{{ $ikm['region']['region_name'] }}</td>
-                            <td>{{ $ikm['ikm_address_street'] }}</td>
-                            <td>{{ $ikm['ikm_form'] }}</td>
-                            <td>{{ $ikm['ikm_number'] }}</td>
-                            <td>{{ $ikm['ikm_kd_kbli'] }}</td>
-                            <td>{{ $ikm['ikm_category_product'] }}</td>
-                            <td>{{ $ikm['ikm_branch'] }}</td>
-                            <td>{{ $ikm['ikm_count'] }}</td>
-                        </tr>
+                <tbody>
+                    @foreach ($roads as $key => $road)
+                    <tr class="border text-center">
+                        {{-- <td class="border px-4 py-2">{{ $key + 1 }}</td> --}}
+                        <td class="border px-4 py-2">{{ $road['nama_ruas'] ?? '-' }}</td>
+                        <td class="border px-4 py-2">{{ $road['panjang_ruas'] ?? '0' }}</td>
+                        <td class="border px-4 py-2">{{ $road['dari_km'] ?? '0' }}</td>
+                        <td class="border px-4 py-2">{{ $road['sampai_km'] ?? '0' }}</td>
+                        <td class="border px-4 py-2">{{ $road['kondisi_baik_km'] ?? '0' }}</td>
+                        <td class="border px-4 py-2">{{ $road['kondisi_sedang_km'] ?? '0' }}</td>
+                        <td class="border px-4 py-2">{{ $road['kondisi_rusak_ringan_km'] ?? '0' }}</td>
+                        <td class="border px-4 py-2">{{ $road['kondisi_rusak_berat_km'] ?? '0' }}</td>
+                        <td class="border px-4 py-2">{{ $road['kondisi_baik_persentase'] ?? '0' }}%</td>
+                        <td class="border px-4 py-2">{{ $road['kondisi_sedang_persentase'] ?? '0' }}%</td>
+                        <td class="border px-4 py-2">{{ $road['kondisi_rusak_ringan_persentase'] ?? '0' }}%</td>
+                        <td class="border px-4 py-2">{{ $road['kondisi_rusak_berat_persentase'] ?? '0' }}%</td>
+                    </tr>
                     @endforeach
-                </tbody> --}}
+                </tbody>
             </table>
         </div>
         </x-panel.panel-body>

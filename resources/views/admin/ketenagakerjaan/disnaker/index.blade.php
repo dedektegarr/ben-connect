@@ -49,9 +49,9 @@
                                 </svg>
                             </span>
                         </th>
-                        <th rowspan="2">
+                        <th colspan="3">
                             <span class="flex items-center">
-                                Laki laki PKT
+                                Pencari Kerja Terdaftar
                                 <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                     width="24" height="24" fill="none" viewBox="0 0 24 24">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
