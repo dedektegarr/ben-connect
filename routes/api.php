@@ -207,6 +207,16 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::get("/pendidikan/peserta-didik", [StudentController::class, "index"]);
     });
 
+    // INFRASTRUKTUR
+    Route::middleware(["role:admin|admin-infrastruktur"])->group(function () {
+        Route::prefix("infrastruktur")->group(function () {
+            Route::prefix("jalan")->controller(RoadController::class)->group(function () {
+                Route::get("/", "index");
+                Route::post("/import", "import");
+            });
+        });
+    });
+
     // Dataset
     Route::controller(DatasetController::class)->group(function () {
         Route::get('/dataset/daftar-dataset', 'index')->middleware('permission:dataset.get');

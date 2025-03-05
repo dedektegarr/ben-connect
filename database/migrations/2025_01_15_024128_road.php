@@ -12,10 +12,19 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('road', function (Blueprint $table) {
-            $table->id('road_id');
-            $table->foreignUuid('region_id')->references('region_id')->on('region')->onDelete('cascade');
-            $table->foreignUuid('road_category_id')->references('road_category_id')->on('road_category')->onDelete('cascade');
-            $table->float('road_long');
+            $table->uuid('road_id');
+            $table->string("nama_ruas");
+            $table->double("panjang_ruas")->nullable();
+            $table->string("dari_km")->nullable();
+            $table->string("sampai_km");
+            $table->double("kondisi_baik_km")->nullable();
+            $table->double("kondisi_sedang_km")->nullable();
+            $table->double("kondisi_rusak_ringan_km")->nullable();
+            $table->double("kondisi_rusak_berat_km")->nullable();
+            $table->double("kondisi_baik_persentase");
+            $table->double("kondisi_sedang_persentase");
+            $table->double("kondisi_rusak_ringan_persentase");
+            $table->double("kondisi_rusak_berat_persentase");
             $table->timestamps();
         });
     }
