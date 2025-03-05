@@ -254,27 +254,27 @@
                 </thead>
                 <tbody>
                      @foreach ($bridges as $key => $bridge)
-                     <tr class="border text-center">
-                        <td class="border px-4 py-2">{{ $bridge['nama_jembatan'] ?? '-' }}</td>
-                        <td class="border px-4 py-2">{{ $bridge['nama_ruas_jalan'] ?? '-' }}</td>
-                        <td class="border px-4 py-2">{{ $bridge['panjang'] ?? '0' }}</td>
-                        <td class="border px-4 py-2">{{ $bridge['lebar'] ?? '0' }}</td>
-                        <td class="border px-4 py-2">{{ $bridge['jumlah_bentang'] ?? '0' }}</td>
-                        <td class="border px-4 py-2">{{ $bridge['bangunan_atas_tipe'] ?? '-' }}</td>
-                        <td class="border px-4 py-2">{{ $bridge['bangunan_atas_tipe_2'] ?? '-' }}</td>
-                        <td class="border px-4 py-2">{{ $bridge['bangunan_atas_kondisi'] ?? '-' }}</td>
-                        <td class="border px-4 py-2">{{ $bridge['bangunan_bawah_tipe'] ?? '-' }}</td>
-                        <td class="border px-4 py-2">{{ $bridge['bangunan_bawah_kondisi'] ?? '-' }}</td>
-                        <td class="border px-4 py-2">{{ $bridge['fondasi_tipe'] ?? '-' }}</td>
-                        <td class="border px-4 py-2">{{ $bridge['fondasi_kondisi'] ?? '-' }}</td>
-                        <td class="border px-4 py-2">{{ $bridge['lantai_jembatan_tipe'] ?? '-' }}</td>
-                        <td class="border px-4 py-2">{{ $bridge['lantai_jembatan_kondisi'] ?? '-' }}</td>
-                        <td class="border px-4 py-2">{{ $bridge['sungai_tipe'] ?? '-' }}</td>
-                        <td class="border px-4 py-2">{{ $bridge['sungai_kondisi'] ?? '-' }}</td>
-                        <td class="border px-4 py-2">{{ $bridge['tahun_konstruksi'] ?? '-' }}</td>
-                        <td class="border px-4 py-2">{{ $bridge['tahun_survei'] ?? '-' }}</td>
-                        <td class="border px-4 py-2">{{ $bridge['nk'] ?? '-' }}</td>
-                        <td class="border px-4 py-2">{{ $bridge['status'] ?? '-' }}</td>
+                     <tr class="text-center">
+                        <td class="px-4 py-2">{{ $bridge['nama_jembatan'] ?? '-' }}</td>
+                        <td class="px-4 py-2">{{ $bridge['nama_ruas_jalan'] ?? '-' }}</td>
+                        <td class="px-4 py-2">{{ $bridge['panjang'] ?? '0' }}</td>
+                        <td class="px-4 py-2">{{ $bridge['lebar'] ?? '0' }}</td>
+                        <td class="px-4 py-2">{{ $bridge['jumlah_bentang'] ?? '0' }}</td>
+                        <td class="px-4 py-2">{{ $bridge['bangunan_atas_tipe'] ?? '-' }}</td>
+                        <td class="px-4 py-2">{{ $bridge['bangunan_atas_tipe_2'] ?? '-' }}</td>
+                        <td class="px-4 py-2">{{ $bridge['bangunan_atas_kondisi'] ?? '-' }}</td>
+                        <td class="px-4 py-2">{{ $bridge['bangunan_bawah_tipe'] ?? '-' }}</td>
+                        <td class="px-4 py-2">{{ $bridge['bangunan_bawah_kondisi'] ?? '-' }}</td>
+                        <td class="px-4 py-2">{{ $bridge['fondasi_tipe'] ?? '-' }}</td>
+                        <td class="px-4 py-2">{{ $bridge['fondasi_kondisi'] ?? '-' }}</td>
+                        <td class="px-4 py-2">{{ $bridge['lantai_jembatan_tipe'] ?? '-' }}</td>
+                        <td class="px-4 py-2">{{ $bridge['lantai_jembatan_kondisi'] ?? '-' }}</td>
+                        <td class="px-4 py-2">{{ $bridge['sungai_tipe'] ?? '-' }}</td>
+                        <td class="px-4 py-2">{{ $bridge['sungai_kondisi'] ?? '-' }}</td>
+                        <td class="px-4 py-2">{{ $bridge['tahun_konstruksi'] ?? '-' }}</td>
+                        <td class="px-4 py-2">{{ $bridge['tahun_survei'] ?? '-' }}</td>
+                        <td class="px-4 py-2">{{ $bridge['nk'] ?? '-' }}</td>
+                        <td class="px-4 py-2">{{ $bridge['status'] ?? '-' }}</td>
                     </tr>
                     @endforeach
                 </tbody>

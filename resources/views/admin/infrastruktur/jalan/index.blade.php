@@ -173,20 +173,20 @@
                 </thead>
                 <tbody>
                     @foreach ($roads as $key => $road)
-                    <tr class="border text-center">
+                    <tr class=" text-center">
                         {{-- <td class="border px-4 py-2">{{ $key + 1 }}</td> --}}
-                        <td class="border px-4 py-2">{{ $road['nama_ruas'] ?? '-' }}</td>
-                        <td class="border px-4 py-2">{{ $road['panjang_ruas'] ?? '0' }}</td>
-                        <td class="border px-4 py-2">{{ $road['dari_km'] ?? '0' }}</td>
-                        <td class="border px-4 py-2">{{ $road['sampai_km'] ?? '0' }}</td>
-                        <td class="border px-4 py-2">{{ $road['kondisi_baik_km'] ?? '0' }}</td>
-                        <td class="border px-4 py-2">{{ $road['kondisi_sedang_km'] ?? '0' }}</td>
-                        <td class="border px-4 py-2">{{ $road['kondisi_rusak_ringan_km'] ?? '0' }}</td>
-                        <td class="border px-4 py-2">{{ $road['kondisi_rusak_berat_km'] ?? '0' }}</td>
-                        <td class="border px-4 py-2">{{ $road['kondisi_baik_persentase'] ?? '0' }}%</td>
-                        <td class="border px-4 py-2">{{ $road['kondisi_sedang_persentase'] ?? '0' }}%</td>
-                        <td class="border px-4 py-2">{{ $road['kondisi_rusak_ringan_persentase'] ?? '0' }}%</td>
-                        <td class="border px-4 py-2">{{ $road['kondisi_rusak_berat_persentase'] ?? '0' }}%</td>
+                        <td class=" px-4 py-2">{{ $road['nama_ruas'] ?? '-' }}</td>
+                        <td class=" px-4 py-2">{{ $road['panjang_ruas'] ?? '0' }}</td>
+                        <td class=" px-4 py-2">{{ $road['dari_km'] ?? '0' }}</td>
+                        <td class=" px-4 py-2">{{ $road['sampai_km'] ?? '0' }}</td>
+                        <td class=" px-4 py-2">{{ $road['kondisi_baik_km'] ?? '0' }}</td>
+                        <td class=" px-4 py-2">{{ $road['kondisi_sedang_km'] ?? '0' }}</td>
+                        <td class=" px-4 py-2">{{ $road['kondisi_rusak_ringan_km'] ?? '0' }}</td>
+                        <td class=" px-4 py-2">{{ $road['kondisi_rusak_berat_km'] ?? '0' }}</td>
+                        <td class=" px-4 py-2">{{ $road['kondisi_baik_persentase'] ?? '0' }}%</td>
+                        <td class=" px-4 py-2">{{ $road['kondisi_sedang_persentase'] ?? '0' }}%</td>
+                        <td class=" px-4 py-2">{{ $road['kondisi_rusak_ringan_persentase'] ?? '0' }}%</td>
+                        <td class=" px-4 py-2">{{ $road['kondisi_rusak_berat_persentase'] ?? '0' }}%</td>
                     </tr>
                     @endforeach
                 </tbody>
