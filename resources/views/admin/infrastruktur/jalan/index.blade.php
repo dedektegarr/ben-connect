@@ -169,10 +169,15 @@
                                 <td class=" px-4 py-2">{{ $road['kondisi_sedang_km'] ?? '0' }}</td>
                                 <td class=" px-4 py-2">{{ $road['kondisi_rusak_ringan_km'] ?? '0' }}</td>
                                 <td class=" px-4 py-2">{{ $road['kondisi_rusak_berat_km'] ?? '0' }}</td>
-                                <td class=" px-4 py-2">{{ $road['kondisi_baik_persentase'] ?? '0' }}%</td>
-                                <td class=" px-4 py-2">{{ $road['kondisi_sedang_persentase'] ?? '0' }}%</td>
-                                <td class=" px-4 py-2">{{ $road['kondisi_rusak_ringan_persentase'] ?? '0' }}%</td>
-                                <td class=" px-4 py-2">{{ $road['kondisi_rusak_berat_persentase'] ?? '0' }}%</td>
+                                <td class=" px-4 py-2">
+                                    {{ number_format($road['kondisi_baik_persentase'], 2) ?? '0' }}%
+                                </td>
+                                <td class=" px-4 py-2">{{ number_format($road['kondisi_sedang_persentase'], 2) ?? '0' }}%
+                                </td>
+                                <td class=" px-4 py-2">
+                                    {{ number_format($road['kondisi_rusak_ringan_persentase'], 2) ?? '0' }}%</td>
+                                <td class=" px-4 py-2">
+                                    {{ number_format($road['kondisi_rusak_berat_persentase'], 2) ?? '0' }}%</td>
                             </tr>
                         @endforeach
                     </tbody>
