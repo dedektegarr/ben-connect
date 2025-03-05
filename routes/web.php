@@ -24,10 +24,12 @@ use App\Http\Controllers\Web\Admin\Infrastruktur\JalanController;
 use App\Http\Controllers\Web\Admin\Infrastruktur\JembatanController;
 use App\Http\Controllers\Web\Admin\Kesehatan\RSUDController;
 use App\Http\Controllers\Web\Admin\Kesehatan\RumahSakitController;
+use App\Http\Controllers\Web\Admin\Ketenagakerjaan\DisnakerController;
 use App\Http\Controllers\Web\Admin\Pendidikan\JumlahGuruController;
 use App\Http\Controllers\Web\Admin\Pendidikan\JumlahPesertaDidikController;
 use App\Http\Controllers\Web\Admin\Pendidikan\JumlahSekolahController;
 use App\Http\Controllers\Web\Admin\Penduduk\JumlahPendudukController;
+use App\Http\Controllers\Web\Admin\Sosial\DatabansosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -154,5 +156,24 @@ Route::middleware("auth")->group(function () {
                 Route::post("/import", "import")->name("admin.infrastruktur.ciptakarya.import");
             });
         });
+        // sosial
+        Route::prefix("sosial")->group(function () {
+            Route::prefix("bansos")->controller(DatabansosController::class)->group(function () {
+                Route::get("/", "index")->name("admin.sosial.databansos.index");
+                Route::post("/import", "import")->name("admin.sosial.databansos.import");
+
+            });
+        });
+// ketenagakerjaan
+Route::prefix("ketenagakerjaan")->group(function () {
+    Route::controller(DisnakerController::class)->group(function () {
+        Route::get("/wlkp", "wlkpIndex")->name("admin.ketenagakerjaan.wlkp.index");
+        Route::get("/disnaker", "disnakerIndex")->name("admin.ketenagakerjaan.disnaker.index");
     });
+
+
+});
+
+
+});
 });
