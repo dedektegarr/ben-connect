@@ -38,7 +38,7 @@
                 <thead>
 
                     <tr>
-                        <th rowspan="2" >
+                        {{-- <th rowspan="2" >
                             <span class="flex items-center" rowspan="2">
                                 Nomor Jembatan
                                 <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +47,7 @@
                                         stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
                                 </svg>
                             </span>
-                        </th>
+                        </th> --}}
                         <th rowspan="2">
                             <span class="flex items-center">
                                 Nama Jembatan
@@ -252,25 +252,32 @@
 
                     </tr>
                 </thead>
-                {{-- <tbody>
-                    @foreach ($ikms as $key => $ikm)
-                        <tr>
-                            <td class="font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {{ $ikm['ikm_ptname'] }}</td>
-                            <td>{{ $ikm['ikm_owner_name'] }}</td>
-                            <td>{{ $ikm['ikm_contact'] }}</td>
-                            <td>{{ $ikm['ikm_sentra'] }}</td>
-                            <td>{{ $ikm['region']['region_name'] }}</td>
-                            <td>{{ $ikm['ikm_address_street'] }}</td>
-                            <td>{{ $ikm['ikm_form'] }}</td>
-                            <td>{{ $ikm['ikm_number'] }}</td>
-                            <td>{{ $ikm['ikm_kd_kbli'] }}</td>
-                            <td>{{ $ikm['ikm_category_product'] }}</td>
-                            <td>{{ $ikm['ikm_branch'] }}</td>
-                            <td>{{ $ikm['ikm_count'] }}</td>
-                        </tr>
+                <tbody>
+                     @foreach ($bridges as $key => $bridge)
+                     <tr class="border text-center">
+                        <td class="border px-4 py-2">{{ $bridge['nama_jembatan'] ?? '-' }}</td>
+                        <td class="border px-4 py-2">{{ $bridge['nama_ruas_jalan'] ?? '-' }}</td>
+                        <td class="border px-4 py-2">{{ $bridge['panjang'] ?? '0' }}</td>
+                        <td class="border px-4 py-2">{{ $bridge['lebar'] ?? '0' }}</td>
+                        <td class="border px-4 py-2">{{ $bridge['jumlah_bentang'] ?? '0' }}</td>
+                        <td class="border px-4 py-2">{{ $bridge['bangunan_atas_tipe'] ?? '-' }}</td>
+                        <td class="border px-4 py-2">{{ $bridge['bangunan_atas_tipe_2'] ?? '-' }}</td>
+                        <td class="border px-4 py-2">{{ $bridge['bangunan_atas_kondisi'] ?? '-' }}</td>
+                        <td class="border px-4 py-2">{{ $bridge['bangunan_bawah_tipe'] ?? '-' }}</td>
+                        <td class="border px-4 py-2">{{ $bridge['bangunan_bawah_kondisi'] ?? '-' }}</td>
+                        <td class="border px-4 py-2">{{ $bridge['fondasi_tipe'] ?? '-' }}</td>
+                        <td class="border px-4 py-2">{{ $bridge['fondasi_kondisi'] ?? '-' }}</td>
+                        <td class="border px-4 py-2">{{ $bridge['lantai_jembatan_tipe'] ?? '-' }}</td>
+                        <td class="border px-4 py-2">{{ $bridge['lantai_jembatan_kondisi'] ?? '-' }}</td>
+                        <td class="border px-4 py-2">{{ $bridge['sungai_tipe'] ?? '-' }}</td>
+                        <td class="border px-4 py-2">{{ $bridge['sungai_kondisi'] ?? '-' }}</td>
+                        <td class="border px-4 py-2">{{ $bridge['tahun_konstruksi'] ?? '-' }}</td>
+                        <td class="border px-4 py-2">{{ $bridge['tahun_survei'] ?? '-' }}</td>
+                        <td class="border px-4 py-2">{{ $bridge['nk'] ?? '-' }}</td>
+                        <td class="border px-4 py-2">{{ $bridge['status'] ?? '-' }}</td>
+                    </tr>
                     @endforeach
-                </tbody> --}}
+                </tbody>
             </table>
         </div>
         </x-panel.panel-body>
