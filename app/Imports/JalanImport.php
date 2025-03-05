@@ -16,7 +16,7 @@ class JalanImport implements ToModel, WithStartRow, WithCalculatedFormulas
     public function model(array $row)
     {
         if ($row[1] !== null) {
-            return new Road([
+            Road::updateOrCreate([
                 'nama_ruas' => $row[1] ?? null,
                 'panjang_ruas' => $row[2] ?? null,
                 'dari_km' => $row[3] ?? null,

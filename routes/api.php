@@ -5,6 +5,7 @@ use App\Http\Controllers\Disperindag\IndustryController;
 use App\Http\Controllers\Disperindag\PriceController;
 use App\Http\Controllers\Disperindag\VariantController;
 use App\Http\Controllers\ExcelImportController;
+use App\Http\Controllers\Infrastructure\BridgeController;
 use App\Http\Controllers\Infrastructure\RoadController;
 use App\Http\Controllers\Infrastructure\RoadCategoryController;
 use App\Http\Controllers\Kesehatan\HospitalController;
@@ -211,6 +212,11 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::middleware(["role:admin|admin-infrastruktur"])->group(function () {
         Route::prefix("infrastruktur")->group(function () {
             Route::prefix("jalan")->controller(RoadController::class)->group(function () {
+                Route::get("/", "index");
+                Route::post("/import", "import");
+            });
+
+            Route::prefix("jembatan")->controller(BridgeController::class)->group(function () {
                 Route::get("/", "index");
                 Route::post("/import", "import");
             });
