@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Infrastructure;
 
 use App\Http\Controllers\Controller;
 use App\Imports\JembatanImport;
+use App\Models\Bridge;
 use Exception;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
@@ -15,8 +16,11 @@ class BridgeController extends Controller
      */
     public function index()
     {
+        $data = Bridge::latest()->get();
+
         return response()->json([
-            'message' => 'BridgeController@index'
+            'status' => 201,
+            'data' => $data
         ]);
     }
 
