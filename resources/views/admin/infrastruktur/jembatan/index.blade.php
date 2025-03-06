@@ -348,4 +348,23 @@
         </div>
     </div>
 @endsection
+@push('scripts')
+    <script>
+        const errors = @json($errors->any());
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const modalEl = document.getElementById("import-modal");
+            const modal = new Modal(modalEl, {}, {
+                id: 'modalEl',
+                override: true
+            });
+
+            if (errors) {
+                modal.show();
+            }
+
+        });
+    </script>
+@endpush
+
 
