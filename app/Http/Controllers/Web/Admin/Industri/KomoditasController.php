@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Services\ApiClient;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
 
 class KomoditasController extends Controller
 {
@@ -40,6 +41,43 @@ class KomoditasController extends Controller
             }
 
             throw new Exception("Terjadi kesalahan");
+        } catch (Exception $e) {
+            flash($e->getMessage(), "error");
+            return redirect()->back();
+        }
+    }
+
+    public function import(Request $request)
+    {
+        $this->apiClient->setToken(request()->session()->get("auth_token"));
+
+        try {
+            $request->validate([
+                "file" => "required|file|mimes:xls,xlsx|max:5000",
+            ], [
+                "file.required" => "File data komditas tidak boleh kosong",
+                'file.file' => 'Data komditas harus berupa file',
+                'file.mimes' => 'File data komditas harus berformat .xls atau .xlsx',
+                'file.max' => 'File data komditas maksimal 5 Mb ',
+                'year.required' => 'Tahun tidak boleh kosong'
+            ]);
+
+            $import = $this->apiClient->post("/disperindag/price/import", [], $request->files);
+
+
+            if ($import["status"] === 400) {
+                flash($import["message"], "error");
+                return redirect()->back();
+            }
+
+            if ($import["status"] === 500) {
+                throw new Exception($import["message"]);
+            }
+
+            flash("Data IKM berhasil di import");
+            return redirect()->back();
+        } catch (ValidationException $e) {
+            return redirect()->back()->withErrors($e->errors());
         } catch (Exception $e) {
             flash($e->getMessage(), "error");
             return redirect()->back();
