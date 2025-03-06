@@ -93,25 +93,17 @@
 
                     </tr>
                 </thead>
-                {{-- <tbody>
-                    @foreach ($ikms as $key => $ikm)
-                        <tr>
-                            <td class="font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {{ $ikm['ikm_ptname'] }}</td>
-                            <td>{{ $ikm['ikm_owner_name'] }}</td>
-                            <td>{{ $ikm['ikm_contact'] }}</td>
-                            <td>{{ $ikm['ikm_sentra'] }}</td>
-                            <td>{{ $ikm['region']['region_name'] }}</td>
-                            <td>{{ $ikm['ikm_address_street'] }}</td>
-                            <td>{{ $ikm['ikm_form'] }}</td>
-                            <td>{{ $ikm['ikm_number'] }}</td>
-                            <td>{{ $ikm['ikm_kd_kbli'] }}</td>
-                            <td>{{ $ikm['ikm_category_product'] }}</td>
-                            <td>{{ $ikm['ikm_branch'] }}</td>
-                            <td>{{ $ikm['ikm_count'] }}</td>
-                        </tr>
+                <tbody>
+                   @foreach ($irigasi as $key => $irigation)
+                     <tr class="text-center">
+                        <td class="px-4 py-2">{{ $irigation['daerah_irigasi'] ?? '-' }}</td>
+                        <td class="px-4 py-2">{{ $irigation['luas_potensial'] ?? '-' }}</td>
+                        <td class="px-4 py-2">{{ $irigation['luas_fungsional'] ?? '0' }}</td>
+                        <td class="px-4 py-2">{{ $irigation['panjang_saluran'] ?? '0' }}</td>
+                        <td class="px-4 py-2">{{ $irigation['keterangan'] ?? '0' }}</td>
+                    </tr>
                     @endforeach
-                </tbody> --}}
+                </tbody>
             </table>
         </div>
         </x-panel.panel-body>
@@ -134,21 +126,6 @@
                     enctype="multipart/form-data">
                     @csrf
                     <div class="grid gap-4 mb-4 grid-cols-2">
-                        <div class="col-span-2">
-                            <label for="year"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ __('Tahun') }}</label>
-                            <select id="year" name="year"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                <option value="" selected>{{ __('Pilih tahun') }}</option>
-                                @foreach (range(\Carbon\Carbon::now()->year, \Carbon\Carbon::now()->subYears(10)->year) as $year)
-                                    <option value="{{ $year }}">{{ $year }}</option>
-                                @endforeach
-                            </select>
-                            @error('year')
-                                <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span
-                                        class="font-medium">{{ $message }}</p>
-                            @enderror <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">
-                        </div>
 
                         <div class="col-span-2">
                             <label for="file"
@@ -182,4 +159,24 @@
         </div>
     </div>
 @endsection
+@push('scripts')
+    <script>
+        const errors = @json($errors->any());
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const modalEl = document.getElementById("import-modal");
+            const modal = new Modal(modalEl, {}, {
+                id: 'modalEl',
+                override: true
+            });
+
+            if (errors) {
+                modal.show();
+            }
+
+        });
+    </script>
+@endpush
+
+
 
