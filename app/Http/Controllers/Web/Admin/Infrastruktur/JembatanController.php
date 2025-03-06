@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Web\Admin\Infrastruktur;
 
 use App\Http\Controllers\Controller;
 use App\Services\ApiClient;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
 
 class JembatanController extends Controller
 {
@@ -38,5 +40,43 @@ class JembatanController extends Controller
         return view("admin.infrastruktur.jembatan.index", [
             "bridges" => [],
         ]);
+    }
+    public function import(Request $request)
+    {
+        $this->apiClient->setToken(request()->session()->get("auth_token"));
+
+        try {
+            $request->validate([
+                "file" => "required|file|mimes:xls,xlsx|max:5000",
+            ], [
+                "file.required" => "File data komditas tidak boleh kosong",
+                'file.file' => 'Data komditas harus berupa file',
+                'file.mimes' => 'File data komditas harus berformat .xls atau .xlsx',
+                'file.max' => 'File data komditas maksimal 5 Mb ',
+                'year.required' => 'Tahun tidak boleh kosong'
+            ]);
+
+            $import = $this->apiClient->post("/infrastruktur/jembatan/import", [], $request->files);
+
+            //  dd($import);
+             if (is_array($import) && isset($import["status_code"])) {
+                if ($import["status_code"] === 400) {
+                    flash($import["message"], "error");
+                    return redirect()->back();
+                }
+
+                if ($import["status_code"] === 500) {
+                    throw new Exception($import["message"]);
+                }
+
+                flash("Data Jalan berhasil diimpor", "success");
+                return redirect()->back();
+            }
+        } catch (ValidationException $e) {
+            return redirect()->back()->withErrors($e->errors());
+        } catch (Exception $e) {
+            flash($e->getMessage(), "error");
+            return redirect()->back();
+        }
     }
 }

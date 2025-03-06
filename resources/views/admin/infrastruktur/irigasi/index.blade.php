@@ -179,5 +179,3 @@
         });
     </script>
 @endpush
-
-
