@@ -93,25 +93,19 @@
 
                     </tr>
                 </thead>
-                {{-- <tbody>
-                    @foreach ($ikms as $key => $ikm)
+                <tbody>
+                    @foreach ($irigations as $key => $irigation)
                         <tr>
                             <td class="font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {{ $ikm['ikm_ptname'] }}</td>
-                            <td>{{ $ikm['ikm_owner_name'] }}</td>
-                            <td>{{ $ikm['ikm_contact'] }}</td>
-                            <td>{{ $ikm['ikm_sentra'] }}</td>
-                            <td>{{ $ikm['region']['region_name'] }}</td>
-                            <td>{{ $ikm['ikm_address_street'] }}</td>
-                            <td>{{ $ikm['ikm_form'] }}</td>
-                            <td>{{ $ikm['ikm_number'] }}</td>
-                            <td>{{ $ikm['ikm_kd_kbli'] }}</td>
-                            <td>{{ $ikm['ikm_category_product'] }}</td>
-                            <td>{{ $ikm['ikm_branch'] }}</td>
-                            <td>{{ $ikm['ikm_count'] }}</td>
+                                {{ $irigation['daerah'] }}</td>
+                            <td>{{ $irigation['luas_potensial'] }}</td>
+                            <td>{{ $irigation['luas_fungsional'] }}</td>
+                            <td>{{ $irigation['panjang_saluran'] }}</td>
+                            <td>{{ $irigation['keterangan'] }}</td>
+
                         </tr>
                     @endforeach
-                </tbody> --}}
+                </tbody>
             </table>
         </div>
         </x-panel.panel-body>
