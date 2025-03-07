@@ -48,15 +48,17 @@ class CiptakaryaController extends Controller
         try {
             $request->validate([
                 "file" => "required|file|mimes:xls,xlsx|max:5000",
+                "year" => "required",
             ], [
                 "file.required" => "File data komoditas tidak boleh kosong",
                 'file.file' => 'Data komoditas harus berupa file',
                 'file.mimes' => 'File data komoditas harus berformat .xls atau .xlsx',
                 'file.max' => 'File data komoditas maksimal 5 Mb ',
+                 'year.required' => 'Tahun tidak boleh kosong'
             ]);
 
-            $import = $this->apiClient->post("/infrastruktur/ciptakarya/import", [], $request->files);
-
+            $import = $this->apiClient->post("/infrastruktur/ciptakarya/import",["year" => $request->year], $request->files);
+// dd(vars:$import);
             if (is_array($import) && isset($import["status_code"])) {
                 if ($import["status_code"] === 400) {
                     flash($import["message"], "error");
@@ -67,7 +69,7 @@ class CiptakaryaController extends Controller
                     throw new Exception($import["message"]);
                 }
 
-                flash("Data Jembatan berhasil diimpor", "success");
+                flash("Data Ciptakarya berhasil diimpor", "success");
                 return redirect()->back();
             }
         } catch (ValidationException $e) {

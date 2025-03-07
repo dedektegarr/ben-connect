@@ -70,26 +70,6 @@
                         </th>
                         <th>
                             <span class="flex items-center">
-                                2023
-                                <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                </svg>
-                            </span>
-                        </th>
-                        <th>
-                            <span class="flex items-center">
-                                2024
-                                <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                </svg>
-                            </span>
-                        </th>
-                        <th>
-                            <span class="flex items-center">
                                 Persentase Capaian Tahun 2024
                                  <svg class="w-4 h-4 ms-1" aria-hidden="true"
                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
@@ -129,6 +109,16 @@
                                 </svg>
                             </span>
                         </th>
+                        <th>
+                            <span class="flex items-center">
+                                Tahun Realisasi
+                                <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                </svg>
+                            </span>
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -138,12 +128,13 @@
                             {{ $art['indikator_sasaran'] ?? '-' }}</td>
                         <td>{{ $art['satuan'] ?? '-' }}</td>
                         <td>{{ $art['target'] ?? '-' }}</td>
-                        <td>{{ $art['tahun_2023'] ?? '-' }}</td>
-                        <td>{{ $art['tahun_2024'] ?? '-' }}</td>
+                        {{-- <td>{{ $art['tahun_2023'] ?? '-' }}</td> --}}
+                        {{-- <td>{{ $art['tahun_2024'] ?? '-' }}</td> --}}
                         <td>{{ $art['persentase_capaian'] ?? '-' }}</td>
                         <td>{{ $art['faktor_pendorong'] ?? '-' }}</td>
                         <td>{{ $art['faktor_penghambat'] ?? '-' }}</td>
                         <td>{{ $art['rekom_tindak_lanjut'] ?? '-' }}</td>
+                        <td>{{ $art['tahun'] ?? '-' }}</td>
                     </tr>
                 @endforeach
 
@@ -171,8 +162,9 @@
                     @csrf
                     <div class="grid gap-4 mb-4 grid-cols-2">
                         <div class="col-span-2">
-                            <label for="year"
-                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ __('Tahun') }}</label>
+                            <label for="year" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                                {{ __('Tahun') }}
+                            </label>
                             <select id="year" name="year"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                 <option value="" selected>{{ __('Pilih tahun') }}</option>
@@ -181,9 +173,10 @@
                                 @endforeach
                             </select>
                             @error('year')
-                                <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span
-                                        class="font-medium">{{ $message }}</p>
-                            @enderror <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">
+                                <p class="mt-2 text-sm text-red-600 dark:text-red-500">
+                                    <span class="font-medium">{{ $message }}</span>
+                                </p>
+                            @enderror
                         </div>
                         <div class="col-span-2">
                             <label for="file"
