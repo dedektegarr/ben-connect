@@ -10,9 +10,12 @@ use Maatwebsite\Excel\Concerns\WithStartRow;
 
 class CiptaKaryaImport implements ToCollection, WithStartRow, WithCalculatedFormulas
 {
-    /**
-     * @param Collection $collection
-     */
+    private $year;
+
+    public function __construct($year)
+    {
+        $this->year = $year;
+    }
 
     public function startRow(): int
     {
@@ -36,6 +39,7 @@ class CiptaKaryaImport implements ToCollection, WithStartRow, WithCalculatedForm
                 "faktor_pendorong" => $row[10],
                 "faktor_penghambat" => $row[11],
                 "rekom_tindak_lanjut" => $row[12],
+                "tahun" => $this->year
             ];
         }
 

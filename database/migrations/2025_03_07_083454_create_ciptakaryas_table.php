@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string("faktor_pendorong");
             $table->string("faktor_penghambat");
             $table->string("rekom_tindak_lanjut");
+            $table->year("tahun");
             $table->timestamps();
         });
     }
