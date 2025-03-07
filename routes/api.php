@@ -6,6 +6,7 @@ use App\Http\Controllers\Disperindag\PriceController;
 use App\Http\Controllers\Disperindag\VariantController;
 use App\Http\Controllers\ExcelImportController;
 use App\Http\Controllers\Infrastructure\BridgeController;
+use App\Http\Controllers\Infrastructure\CiptaKaryaController;
 use App\Http\Controllers\Infrastructure\IrrigationController;
 use App\Http\Controllers\Infrastructure\RoadController;
 use App\Http\Controllers\Infrastructure\RoadCategoryController;
@@ -223,6 +224,11 @@ Route::middleware('auth:sanctum')->group(function () {
             });
 
             Route::prefix("irigasi")->controller(IrrigationController::class)->group(function () {
+                Route::get("/", "index");
+                Route::post("/import", "import");
+            });
+
+            Route::prefix("ciptakarya")->controller(CiptaKaryaController::class)->group(function () {
                 Route::get("/", "index");
                 Route::post("/import", "import");
             });
