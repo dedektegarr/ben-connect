@@ -69,7 +69,7 @@ class JembatanController extends Controller
                     throw new Exception($import["message"]);
                 }
 
-                flash("Data Jalan berhasil diimpor", "success");
+                flash("Data Jembatan berhasil diimpor", "success");
                 return redirect()->back();
             }
         } catch (ValidationException $e) {

@@ -71,7 +71,7 @@ class IrigasiController extends Controller
                     throw new Exception($import["message"]);
                 }
 
-                flash("Data Jalan berhasil diimpor", "success");
+                flash("Data Irigasi berhasil diimpor", "success");
                 return redirect()->back();
             }
         } catch (ValidationException $e) {

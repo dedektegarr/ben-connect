@@ -131,25 +131,23 @@
                         </th>
                     </tr>
                 </thead>
-                {{-- <tbody>
-                    @foreach ($ikms as $key => $ikm)
-                        <tr>
-                            <td class="font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {{ $ikm['ikm_ptname'] }}</td>
-                            <td>{{ $ikm['ikm_owner_name'] }}</td>
-                            <td>{{ $ikm['ikm_contact'] }}</td>
-                            <td>{{ $ikm['ikm_sentra'] }}</td>
-                            <td>{{ $ikm['region']['region_name'] }}</td>
-                            <td>{{ $ikm['ikm_address_street'] }}</td>
-                            <td>{{ $ikm['ikm_form'] }}</td>
-                            <td>{{ $ikm['ikm_number'] }}</td>
-                            <td>{{ $ikm['ikm_kd_kbli'] }}</td>
-                            <td>{{ $ikm['ikm_category_product'] }}</td>
-                            <td>{{ $ikm['ikm_branch'] }}</td>
-                            <td>{{ $ikm['ikm_count'] }}</td>
-                        </tr>
-                    @endforeach
-                </tbody> --}}
+                <tbody>
+                    @foreach ($arts as $key => $art)
+                    <tr>
+                        <td class="font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            {{ $art['indikator_sasaran'] ?? '-' }}</td>
+                        <td>{{ $art['satuan'] ?? '-' }}</td>
+                        <td>{{ $art['target'] ?? '-' }}</td>
+                        <td>{{ $art['tahun_2023'] ?? '-' }}</td>
+                        <td>{{ $art['tahun_2024'] ?? '-' }}</td>
+                        <td>{{ $art['persentase_capaian'] ?? '-' }}</td>
+                        <td>{{ $art['faktor_pendorong'] ?? '-' }}</td>
+                        <td>{{ $art['faktor_penghambat'] ?? '-' }}</td>
+                        <td>{{ $art['rekom_tindak_lanjut'] ?? '-' }}</td>
+                    </tr>
+                @endforeach
+
+                </tbody>
             </table>
         </div>
         </x-panel.panel-body>
@@ -187,7 +185,6 @@
                                         class="font-medium">{{ $message }}</p>
                             @enderror <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">
                         </div>
-
                         <div class="col-span-2">
                             <label for="file"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ __('File') }}</label>
@@ -220,4 +217,21 @@
         </div>
     </div>
 @endsection
+@push('scripts')
+    <script>
+        const errors = @json($errors->any());
 
+        document.addEventListener("DOMContentLoaded", function() {
+            const modalEl = document.getElementById("import-modal");
+            const modal = new Modal(modalEl, {}, {
+                id: 'modalEl',
+                override: true
+            });
+
+            if (errors) {
+                modal.show();
+            }
+
+        });
+    </script>
+@endpush
