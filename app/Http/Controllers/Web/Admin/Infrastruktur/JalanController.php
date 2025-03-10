@@ -23,7 +23,7 @@ class JalanController extends Controller
         $this->apiClient->setToken($request->session()->get("auth_token"));
 
      // Ambil data jalan dari API
-$filters = $request->only(["region"]);
+$filters = $request->only(["year"]);
 $roads = $this->apiClient->get("/infrastruktur/jalan", $filters);
 
 // Periksa apakah response API valid

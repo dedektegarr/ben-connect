@@ -102,6 +102,38 @@
                 </div>
 
             </div>
+
+            <form method="GET" action="">
+                <div class="flex items-center gap-4 justify-between mb-6">
+                    <div class="flex gap-4 items-center w-full">
+                        {{-- Kabupaten/Kota --}}
+                        <div class="w-full">
+                            <label for="year" class="sr-only">Kab/Kota Kantor</label>
+                            <select id="year" name="year"
+                                class="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
+                                <option value="" {{ request('year') == '' ? 'selected' : '' }}>Semua Tahun
+                                </option>
+                                @foreach (range(\Carbon\Carbon::now()->year, \Carbon\Carbon::now()->subYears(10)->year) as $year)
+                                <option value="{{ $year }}" {{ request('year') ==$year ? 'selected' : '' }}>{{ $year }}</option>
+                            @endforeach
+                            </select>
+                        </div>
+
+                    </div>
+
+                    {{-- Tombol Filter --}}
+                    <button type="submit"
+                        class="text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2 text-center inline-flex items-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                        <svg class="w-3.5 h-3.5 me-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                            height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M5.05 3C3.291 3 2.352 5.024 3.51 6.317l5.422 6.059v4.874c0 .472.227.917.613 1.2l3.069 2.25c1.01.742 2.454.036 2.454-1.2v-7.124l5.422-6.059C21.647 5.024 20.708 3 18.95 3H5.05Z" />
+                        </svg>
+                        Filter
+                    </button>
+                </div>
+            </form>
+
             <div
                 class="overflow-hidden rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-white/[0.03]">
                 <table id="default-table">
@@ -110,6 +142,16 @@
                             <th>
                                 <span class="flex items-center">
                                     Nama Ruas Jalan
+                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                    </svg>
+                                </span>
+                            </th>
+                            <th>
+                                <span class="flex items-center">
+                                    Tahun
                                     <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                         width="24" height="24" fill="none" viewBox="0 0 24 24">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
@@ -234,6 +276,7 @@
                             <tr class=" text-center">
                                 {{-- <td class="border px-4 py-2">{{ $key + 1 }}</td> --}}
                                 <td class=" px-4 py-2">{{ $road['nama_ruas'] ?? '-' }}</td>
+                                <td class=" px-4 py-2">{{ $road['tahun'] ?? '-' }}</td>
                                 <td class=" px-4 py-2">{{ $road['panjang_ruas'] ?? '0' }}</td>
                                 <td class=" px-4 py-2">{{ $road['dari_km'] ?? '0' }}</td>
                                 <td class=" px-4 py-2">{{ $road['sampai_km'] ?? '0' }}</td>
