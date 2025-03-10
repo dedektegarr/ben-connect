@@ -23,9 +23,9 @@ class JembatanController extends Controller
         $this->apiClient->setToken($request->session()->get("auth_token"));
 
         // Perbaiki endpoint (pastikan benar)
-        $filters = $request->only(["region"]);
+        $filters = $request->only(["year"]);
         $bridges = $this->apiClient->get("/infrastruktur/jembatan", $filters);
-// dd($bridges);
+
         // Debugging: Periksa hasil API sebelum diproses
         if (isset($bridges["status"]) && in_array($bridges["status"], [200, 201])) {
 
@@ -59,7 +59,7 @@ class JembatanController extends Controller
             $import = $this->apiClient->post("/infrastruktur/jembatan/import", [], $request->files);
 
             //  dd($import);
-             if (is_array($import) && isset($import["status_code"])) {
+            if (is_array($import) && isset($import["status_code"])) {
                 if ($import["status_code"] === 400) {
                     flash($import["message"], "error");
                     return redirect()->back();

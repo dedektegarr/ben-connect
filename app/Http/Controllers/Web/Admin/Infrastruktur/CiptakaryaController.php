@@ -23,9 +23,9 @@ class CiptakaryaController extends Controller
         $this->apiClient->setToken($request->session()->get("auth_token"));
 
         // Perbaiki endpoint (pastikan benar)
-        $filters = $request->only(["region"]);
+        $filters = $request->only(["year"]);
         $arts = $this->apiClient->get("/infrastruktur/ciptakarya", $filters);
-// dd($arts);
+
         // Debugging: Periksa hasil API sebelum diproses
         if (isset($arts["status"]) && in_array($arts["status"], [200, 201])) {
             if (!empty($arts["data"]) && is_array($arts["data"])) {
@@ -54,11 +54,11 @@ class CiptakaryaController extends Controller
                 'file.file' => 'Data komoditas harus berupa file',
                 'file.mimes' => 'File data komoditas harus berformat .xls atau .xlsx',
                 'file.max' => 'File data komoditas maksimal 5 Mb ',
-                 'year.required' => 'Tahun tidak boleh kosong'
+                'year.required' => 'Tahun tidak boleh kosong'
             ]);
 
-            $import = $this->apiClient->post("/infrastruktur/ciptakarya/import",["year" => $request->year], $request->files);
-// dd(vars:$import);
+            $import = $this->apiClient->post("/infrastruktur/ciptakarya/import", ["year" => $request->year], $request->files);
+            // dd(vars:$import);
             if (is_array($import) && isset($import["status_code"])) {
                 if ($import["status_code"] === 400) {
                     flash($import["message"], "error");
