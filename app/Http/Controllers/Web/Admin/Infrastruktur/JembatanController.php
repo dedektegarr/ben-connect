@@ -19,28 +19,31 @@ class JembatanController extends Controller
 
     public function index(Request $request)
     {
-        // Set token autentikasi API
         $this->apiClient->setToken($request->session()->get("auth_token"));
 
-        // Perbaiki endpoint (pastikan benar)
         $filters = $request->only(["region"]);
         $bridges = $this->apiClient->get("/infrastruktur/jembatan", $filters);
-// dd($bridges);
-        // Debugging: Periksa hasil API sebelum diproses
-        if (isset($bridges["status"]) && in_array($bridges["status"], [200, 201])) {
 
+        $total_jembatan = 0;
+        $total_panjang_jembatan = 0;
+
+        if (isset($bridges["status"]) && in_array($bridges["status"], [200, 201])) {
             if (!empty($bridges["data"]) && is_array($bridges["data"])) {
-                return view("admin.infrastruktur.jembatan.index", [
-                    "bridges" => $bridges["data"],
-                ]);
+                $total_jembatan = count($bridges["data"]);
+                $total_panjang_jembatan = array_sum(array_column($bridges["data"], "panjang"));
             }
         }
 
-        // Jika data tidak valid, kirim array kosong
+        $rata_rata_panjang = $total_jembatan > 0 ? $total_panjang_jembatan / $total_jembatan : 0;
+
         return view("admin.infrastruktur.jembatan.index", [
-            "bridges" => [],
+            "bridges" => $bridges["data"] ?? [],
+            "total_jembatan" => $total_jembatan,
+            "total_panjang_jembatan" => $total_panjang_jembatan,
+            "rata_rata_panjang" => $rata_rata_panjang,
         ]);
     }
+
     public function import(Request $request)
     {
         $this->apiClient->setToken(request()->session()->get("auth_token"));

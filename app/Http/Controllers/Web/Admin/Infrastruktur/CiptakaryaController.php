@@ -16,7 +16,6 @@ class CiptakaryaController extends Controller
     {
         $this->apiClient = new ApiClient(config("app.url") . "/api");
     }
-
     public function index(Request $request)
     {
         // Set token autentikasi API
@@ -25,12 +24,25 @@ class CiptakaryaController extends Controller
         // Perbaiki endpoint (pastikan benar)
         $filters = $request->only(["region"]);
         $arts = $this->apiClient->get("/infrastruktur/ciptakarya", $filters);
-// dd($arts);
+
         // Debugging: Periksa hasil API sebelum diproses
+        $target = 0;
+        $persentaseCapaian = 0;
+        $tahunRealisasi = 0;
+
         if (isset($arts["status"]) && in_array($arts["status"], [200, 201])) {
             if (!empty($arts["data"]) && is_array($arts["data"])) {
+                // Ambil nilai dari array pertama dalam data
+                $firstData = $arts["data"][0] ?? [];
+                $target = $firstData["target"] ?? 0;
+                $persentaseCapaian = $firstData["persentase_capaian"] ?? 0;
+                $tahunRealisasi = $firstData["tahun"] ?? 0;
+
                 return view("admin.infrastruktur.ciptakarya.index", [
                     "arts" => $arts["data"],
+                    "target" => $target,
+                    "persentaseCapaian" => $persentaseCapaian,
+                    "tahunRealisasi" => $tahunRealisasi,
                 ]);
             }
         }
@@ -38,6 +50,9 @@ class CiptakaryaController extends Controller
         // Jika data tidak valid, kirim array kosong
         return view("admin.infrastruktur.ciptakarya.index", [
             "arts" => [],
+           'target' => $firstData["target"] ?? 0,
+    'persentaseCapaian' => $firstData["persentase_capaian"] ?? 0,
+    'tahunRealisasi' => $firstData["tahun"] ?? 'Tidak tersedia',
         ]);
     }
 

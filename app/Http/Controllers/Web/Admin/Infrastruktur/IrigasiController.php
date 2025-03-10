@@ -23,22 +23,36 @@ class IrigasiController extends Controller
         // Set token autentikasi API
         $this->apiClient->setToken($request->session()->get("auth_token"));
 
-        // Perbaiki endpoint (pastikan benar)
+        // Ambil data irigasi dari API
         $filters = $request->only(["region"]);
-        $irigations = $this->apiClient->get("/infrastruktur/irigasi", $filters);
+        $response = $this->apiClient->get("/infrastruktur/irigasi", $filters);
 
-        // Debugging: Periksa hasil API sebelum diproses
-        if (isset($irigations["status"]) && in_array($irigations["status"], [200, 201])) {
-            if (!empty($irigations["data"]) && is_array($irigations["data"])) {
-                return view("admin.infrastruktur.irigasi.index", [
-                    "irigations" => $irigations["data"],
-                ]);
-            }
+        // Debugging: Periksa isi response API
+
+
+        // Pastikan response API sukses dan memiliki data
+        if (isset($response["status"]) && $response["status"] === 200) {
+            $irigations = $response["data"] ?? [];
+
+            // Hitung total berdasarkan data API
+            $total_daerah_irigasi = count($irigations);
+            $total_luas_potensial = array_sum(array_map(fn($item) => $item["luas_potensial"] ?? 0, $irigations));
+            $total_luas_fungsional = array_sum(array_map(fn($item) => $item["luas_fungsional"] ?? 0, $irigations));
+
+            return view("admin.infrastruktur.irigasi.index", [
+                "irigations" => $irigations,
+                "total_daerah_irigasi" => $total_daerah_irigasi,
+                "total_luas_potensial" => $total_luas_potensial,
+                "total_luas_fungsional" => $total_luas_fungsional,
+            ]);
         }
 
-        // Jika data tidak valid, kirim array kosong
+        // Jika API gagal atau kosong, tetap kirimkan variabel ke view dengan nilai default
         return view("admin.infrastruktur.irigasi.index", [
             "irigations" => [],
+            "total_daerah_irigasi" => 0,
+            "total_luas_potensial" => 0,
+            "total_luas_fungsional" => 0,
         ]);
     }
 
