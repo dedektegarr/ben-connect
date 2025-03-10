@@ -26,12 +26,14 @@ class IrigasiController extends Controller
         // Perbaiki endpoint (pastikan benar)
         $filters = $request->only(["region"]);
         $irigations = $this->apiClient->get("/infrastruktur/irigasi", $filters);
+        $regions = $this->apiClient->get("/wilayah/data");
 
         // Debugging: Periksa hasil API sebelum diproses
         if (isset($irigations["status"]) && in_array($irigations["status"], [200, 201])) {
             if (!empty($irigations["data"]) && is_array($irigations["data"])) {
                 return view("admin.infrastruktur.irigasi.index", [
                     "irigations" => $irigations["data"],
+                    "regions" => $regions["data"],
                 ]);
             }
         }
@@ -61,7 +63,7 @@ class IrigasiController extends Controller
             $import = $this->apiClient->post("/infrastruktur/irigasi/import", [], $request->files);
 
             //  dd($import);
-             if (is_array($import) && isset($import["status_code"])) {
+            if (is_array($import) && isset($import["status_code"])) {
                 if ($import["status_code"] === 400) {
                     flash($import["message"], "error");
                     return redirect()->back();
@@ -81,5 +83,4 @@ class IrigasiController extends Controller
             return redirect()->back();
         }
     }
-
 }
