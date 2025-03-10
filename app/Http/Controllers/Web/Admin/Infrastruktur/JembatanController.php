@@ -21,7 +21,7 @@ class JembatanController extends Controller
     {
         $this->apiClient->setToken($request->session()->get("auth_token"));
 
-        $filters = $request->only(["region"]);
+        $filters = $request->only(["year"]);
         $bridges = $this->apiClient->get("/infrastruktur/jembatan", $filters);
 
         $total_jembatan = 0;
