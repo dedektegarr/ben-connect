@@ -74,7 +74,7 @@ class KomoditasController extends Controller
                 throw new Exception($import["message"]);
             }
 
-            flash("Data IKM berhasil di import");
+            flash("Data komoditas berhasil di import");
             return redirect()->back();
         } catch (ValidationException $e) {
             return redirect()->back()->withErrors($e->errors());
