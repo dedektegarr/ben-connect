@@ -14,9 +14,11 @@ class IrrigationController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data = Irrigation::with(["region"])->get();
+        $filters = $request->only(["region"]);
+
+        $data = Irrigation::with(["region"])->filter($filters)->get();
 
         return response()->json([
             'status' => 200,

@@ -75,7 +75,7 @@ class IrigasiController extends Controller
             $import = $this->apiClient->post("/infrastruktur/irigasi/import", [], $request->files);
 
             //  dd($import);
-             if (is_array($import) && isset($import["status_code"])) {
+            if (is_array($import) && isset($import["status_code"])) {
                 if ($import["status_code"] === 400) {
                     flash($import["message"], "error");
                     return redirect()->back();
@@ -95,5 +95,4 @@ class IrigasiController extends Controller
             return redirect()->back();
         }
     }
-
 }

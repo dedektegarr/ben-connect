@@ -62,7 +62,7 @@ class JembatanController extends Controller
             $import = $this->apiClient->post("/infrastruktur/jembatan/import", [], $request->files);
 
             //  dd($import);
-             if (is_array($import) && isset($import["status_code"])) {
+            if (is_array($import) && isset($import["status_code"])) {
                 if ($import["status_code"] === 400) {
                     flash($import["message"], "error");
                     return redirect()->back();

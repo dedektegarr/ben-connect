@@ -14,9 +14,11 @@ class CiptaKaryaController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data = Ciptakarya::all();
+        $filters = $request->only(["year"]);
+
+        $data = Ciptakarya::filter($filters)->get();
 
         return response()->json([
             'status' => '200',

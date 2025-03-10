@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('bridges', function (Blueprint $table) {
             $table->uuid("bridge_id");
+            $table->string("tahun");
             $table->string("nama_jembatan");
             $table->string("nama_ruas_jalan");
             $table->double("panjang");

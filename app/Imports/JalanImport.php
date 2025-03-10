@@ -9,6 +9,13 @@ use Maatwebsite\Excel\Concerns\WithStartRow;
 
 class JalanImport implements ToModel, WithStartRow, WithCalculatedFormulas
 {
+    private $year;
+
+    public function __construct($year)
+    {
+        $this->year = $year;
+    }
+
     public function startRow(): int
     {
         return 7;
@@ -29,6 +36,7 @@ class JalanImport implements ToModel, WithStartRow, WithCalculatedFormulas
                 'kondisi_sedang_persentase' => $row[10] ?? null,
                 'kondisi_rusak_ringan_persentase' => $row[11] ?? null,
                 'kondisi_rusak_berat_persentase' => $row[12] ?? null,
+                'tahun' => $this->year
             ]);
         }
     }
