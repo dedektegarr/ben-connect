@@ -1,4 +1,3 @@
-
 {{-- @endsection  --}}
 @extends('admin.layouts.app')
 
@@ -61,7 +60,7 @@
                     <div class="flex items-center justify-between">
                         <div>
                             <p class="text-sm font-medium">Total Panjang Jembatan (m)</p>
-                <p class="text-3xl font-bold">{{ number_format($total_panjang_jembatan ?? 0, 2) }}</p>
+                            <p class="text-3xl font-bold">{{ number_format($total_panjang_jembatan ?? 0) }}</p>
                         </div>
                         <div class="p-3 bg-white/10 rounded-full">
                             <svg class="w-8 h-8 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -83,7 +82,7 @@
                     <div class="flex items-center justify-between">
                         <div>
                             <p class="text-sm font-medium">Rata-rata Panjang Jembatan (m)</p>
-                            <p class="text-3xl font-bold">{{ number_format($rata_rata_panjang ?? 0, 2) }} Meter</p>
+                            <p class="text-3xl font-bold">{{ number_format($rata_rata_panjang ?? 0) }}</p>
                         </div>
                         <div class="p-3 bg-white/10 rounded-full">
                             <svg class="w-8 h-8 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -100,17 +99,17 @@
                         </div>
                     </div>
                 </div>
-                </div>
+            </div>
 
 
             </div>
             <div
-            class="overflow-hidden rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-white/[0.03]">
-            <table id="default-table">
-                <thead>
+                class="overflow-hidden rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-white/[0.03]">
+                <table id="default-table">
+                    <thead>
 
-                    <tr>
-                        {{-- <th rowspan="2" >
+                        <tr>
+                            {{-- <th rowspan="2" >
                             <span class="flex items-center" rowspan="2">
                                 Nomor Jembatan
                                 <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -120,242 +119,241 @@
                                 </svg>
                             </span>
                         </th> --}}
-                        <th rowspan="2">
-                            <span class="flex items-center">
-                                Nama Jembatan
-                                <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                </svg>
-                            </span>
-                        </th>
-                        <th rowspan="2">
-                            <span class="flex items-center">
-                                Nama Ruas
-                                <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                </svg>
-                            </span>
-                        </th>
-                        <th>
-                            <span class="flex items-center">
-                                Panjang
-                                <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                </svg>
-                            </span>
-                        </th>
-                        <th>
-                            <span class="flex items-center">
-                                Lebar
-                                <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                </svg>
-                            </span>
-                        </th>
-                        <th>
-                            <span class="flex items-center">
-                                Jumlah Bentan
-                                 <svg class="w-4 h-4 ms-1" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-                                    viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                </svg>
-                            </span>
-                        </th>
-                        <th>
-                            <span class="flex items-center">
-                                Tipe BA
-                                <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                </svg>
-                            </span>
-                        </th>
-                        <th>
-                            <span class="flex items-center">
-                                Tipe BA
-                                <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                </svg>
-                            </span>
-                        </th>
-                        <th>
-                            <span class="flex items-center">
-                                Kondisi BA
-                                <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                </svg>
-                            </span>
-                        </th>
-                        <th>
-                            <span class="flex items-center">
-                                Tipe BW
-                                <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                </svg>
-                            </span>
-                        </th>
-                        <th>
-                            <span class="flex items-center">
-                                Kondisi BW
-                                <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                </svg>
-                            </span>
-                        </th>
-                        <th>
-                            <span class="flex items-center">
-                                Tipe Fondasi Jembatan
-                                <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                </svg>
-                            </span>
-                        </th>
-                        <th>
-                            <span class="flex items-center">
-                                Kondisi Fondasi Jembatan
-                                <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                </svg>
-                            </span>
-                        </th>
-                        <th>
-                            <span class="flex items-center">
-                                Tipe Lantai Jembatan
-                                <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                </svg>
-                            </span>
-                        </th>
-                        <th>
-                            <span class="flex items-center">
-                                Kondisi Lantai Jembatan
-                                <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                </svg>
-                            </span>
-                        </th>
-                        <th>
-                            <span class="flex items-center">
-                                Tipe Sungai
-                                <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                </svg>
-                            </span>
-                        </th>
-                        <th>
-                            <span class="flex items-center">
-                                Kondisi Sungai
-                                <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                </svg>
-                            </span>
-                        </th>
-                        <th>
-                            <span class="flex items-center">
-                                Tahun Konstruksi
-                                <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                </svg>
-                            </span>
-                        </th>
-                        <th>
-                            <span class="flex items-center">
-                                Tahun Survei
-                                <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                </svg>
-                            </span>
-                        </th>
-                        <th>
-                            <span class="flex items-center">
-                                NK
-                                <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                </svg>
-                            </span>
-                        </th>
-                        <th>
-                            <span class="flex items-center">
-                                Kondisi Jembatan
-                                <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                </svg>
-                            </span>
-                        </th>
+                            <th rowspan="2">
+                                <span class="flex items-center">
+                                    Nama Jembatan
+                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                    </svg>
+                                </span>
+                            </th>
+                            <th rowspan="2">
+                                <span class="flex items-center">
+                                    Nama Ruas
+                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                    </svg>
+                                </span>
+                            </th>
+                            <th>
+                                <span class="flex items-center">
+                                    Panjang
+                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                    </svg>
+                                </span>
+                            </th>
+                            <th>
+                                <span class="flex items-center">
+                                    Lebar
+                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                    </svg>
+                                </span>
+                            </th>
+                            <th>
+                                <span class="flex items-center">
+                                    Jumlah Bentan
+                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                    </svg>
+                                </span>
+                            </th>
+                            <th>
+                                <span class="flex items-center">
+                                    Tipe BA
+                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                    </svg>
+                                </span>
+                            </th>
+                            <th>
+                                <span class="flex items-center">
+                                    Tipe BA
+                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                    </svg>
+                                </span>
+                            </th>
+                            <th>
+                                <span class="flex items-center">
+                                    Kondisi BA
+                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                    </svg>
+                                </span>
+                            </th>
+                            <th>
+                                <span class="flex items-center">
+                                    Tipe BW
+                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                    </svg>
+                                </span>
+                            </th>
+                            <th>
+                                <span class="flex items-center">
+                                    Kondisi BW
+                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                    </svg>
+                                </span>
+                            </th>
+                            <th>
+                                <span class="flex items-center">
+                                    Tipe Fondasi Jembatan
+                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                    </svg>
+                                </span>
+                            </th>
+                            <th>
+                                <span class="flex items-center">
+                                    Kondisi Fondasi Jembatan
+                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                    </svg>
+                                </span>
+                            </th>
+                            <th>
+                                <span class="flex items-center">
+                                    Tipe Lantai Jembatan
+                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                    </svg>
+                                </span>
+                            </th>
+                            <th>
+                                <span class="flex items-center">
+                                    Kondisi Lantai Jembatan
+                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                    </svg>
+                                </span>
+                            </th>
+                            <th>
+                                <span class="flex items-center">
+                                    Tipe Sungai
+                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                    </svg>
+                                </span>
+                            </th>
+                            <th>
+                                <span class="flex items-center">
+                                    Kondisi Sungai
+                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                    </svg>
+                                </span>
+                            </th>
+                            <th>
+                                <span class="flex items-center">
+                                    Tahun Konstruksi
+                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                    </svg>
+                                </span>
+                            </th>
+                            <th>
+                                <span class="flex items-center">
+                                    Tahun Survei
+                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                    </svg>
+                                </span>
+                            </th>
+                            <th>
+                                <span class="flex items-center">
+                                    NK
+                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                    </svg>
+                                </span>
+                            </th>
+                            <th>
+                                <span class="flex items-center">
+                                    Kondisi Jembatan
+                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                    </svg>
+                                </span>
+                            </th>
 
-                    </tr>
-                </thead>
-                <tbody>
-                     @foreach ($bridges as $key => $bridge)
-                     <tr class="text-center">
-                        <td class="px-4 py-2">{{ $bridge['nama_jembatan'] ?? '-' }}</td>
-                        <td class="px-4 py-2">{{ $bridge['nama_ruas_jalan'] ?? '-' }}</td>
-                        <td class="px-4 py-2">{{ $bridge['panjang'] ?? '0' }}</td>
-                        <td class="px-4 py-2">{{ $bridge['lebar'] ?? '0' }}</td>
-                        <td class="px-4 py-2">{{ $bridge['jumlah_bentang'] ?? '0' }}</td>
-                        <td class="px-4 py-2">{{ $bridge['bangunan_atas_tipe'] ?? '-' }}</td>
-                        <td class="px-4 py-2">{{ $bridge['bangunan_atas_tipe_2'] ?? '-' }}</td>
-                        <td class="px-4 py-2">{{ $bridge['bangunan_atas_kondisi'] ?? '-' }}</td>
-                        <td class="px-4 py-2">{{ $bridge['bangunan_bawah_tipe'] ?? '-' }}</td>
-                        <td class="px-4 py-2">{{ $bridge['bangunan_bawah_kondisi'] ?? '-' }}</td>
-                        <td class="px-4 py-2">{{ $bridge['fondasi_tipe'] ?? '-' }}</td>
-                        <td class="px-4 py-2">{{ $bridge['fondasi_kondisi'] ?? '-' }}</td>
-                        <td class="px-4 py-2">{{ $bridge['lantai_jembatan_tipe'] ?? '-' }}</td>
-                        <td class="px-4 py-2">{{ $bridge['lantai_jembatan_kondisi'] ?? '-' }}</td>
-                        <td class="px-4 py-2">{{ $bridge['sungai_tipe'] ?? '-' }}</td>
-                        <td class="px-4 py-2">{{ $bridge['sungai_kondisi'] ?? '-' }}</td>
-                        <td class="px-4 py-2">{{ $bridge['tahun_konstruksi'] ?? '-' }}</td>
-                        <td class="px-4 py-2">{{ $bridge['tahun_survei'] ?? '-' }}</td>
-                        <td class="px-4 py-2">{{ $bridge['NK'] ?? '-' }}</td>
-                        <td class="px-4 py-2">{{ $bridge['status']}}</td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
-        </div>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($bridges as $key => $bridge)
+                            <tr class="text-center">
+                                <td class="px-4 py-2">{{ $bridge['nama_jembatan'] ?? '-' }}</td>
+                                <td class="px-4 py-2">{{ $bridge['nama_ruas_jalan'] ?? '-' }}</td>
+                                <td class="px-4 py-2">{{ $bridge['panjang'] ?? '0' }}</td>
+                                <td class="px-4 py-2">{{ $bridge['lebar'] ?? '0' }}</td>
+                                <td class="px-4 py-2">{{ $bridge['jumlah_bentang'] ?? '0' }}</td>
+                                <td class="px-4 py-2">{{ $bridge['bangunan_atas_tipe'] ?? '-' }}</td>
+                                <td class="px-4 py-2">{{ $bridge['bangunan_atas_tipe_2'] ?? '-' }}</td>
+                                <td class="px-4 py-2">{{ $bridge['bangunan_atas_kondisi'] ?? '-' }}</td>
+                                <td class="px-4 py-2">{{ $bridge['bangunan_bawah_tipe'] ?? '-' }}</td>
+                                <td class="px-4 py-2">{{ $bridge['bangunan_bawah_kondisi'] ?? '-' }}</td>
+                                <td class="px-4 py-2">{{ $bridge['fondasi_tipe'] ?? '-' }}</td>
+                                <td class="px-4 py-2">{{ $bridge['fondasi_kondisi'] ?? '-' }}</td>
+                                <td class="px-4 py-2">{{ $bridge['lantai_jembatan_tipe'] ?? '-' }}</td>
+                                <td class="px-4 py-2">{{ $bridge['lantai_jembatan_kondisi'] ?? '-' }}</td>
+                                <td class="px-4 py-2">{{ $bridge['sungai_tipe'] ?? '-' }}</td>
+                                <td class="px-4 py-2">{{ $bridge['sungai_kondisi'] ?? '-' }}</td>
+                                <td class="px-4 py-2">{{ $bridge['tahun_konstruksi'] ?? '-' }}</td>
+                                <td class="px-4 py-2">{{ $bridge['tahun_survei'] ?? '-' }}</td>
+                                <td class="px-4 py-2">{{ $bridge['NK'] ?? '-' }}</td>
+                                <td class="px-4 py-2">{{ $bridge['status'] }}</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
         </x-panel.panel-body>
     </x-panel.panel>
-        {{-- MODAL --}}
-        <div id="import-modal" tabindex="-1" aria-hidden="true"
+    {{-- MODAL --}}
+    <div id="import-modal" tabindex="-1" aria-hidden="true"
         class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
         <div class="relative p-4 w-full max-w-md max-h-full">
             <!-- Modal content -->
@@ -423,5 +421,3 @@
         });
     </script>
 @endpush
-
-
