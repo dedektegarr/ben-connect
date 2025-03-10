@@ -15,6 +15,13 @@ class Road extends Model
     public $timestamps = true;
     public $guarded = ["road_id"];
 
+    public function scopeFilter($query, $filters)
+    {
+        return $query->when($filters["year"] ?? null, function ($query, $year) {
+            $query->where("tahun", $year);
+        });
+    }
+
     public function dataset()
     {
         return $this->belongsTo(Dataset::class, 'dataset_id', 'dataset_id');

@@ -14,4 +14,11 @@ class Ciptakarya extends Model
     protected $primaryKey = "ciptakarya_id";
     protected $keyType = "string";
     public $incrementing = false;
+
+    public function scopeFilter($query, $filters)
+    {
+        return $query->when($filters["year"] ?? false, function ($query, $year) {
+            return $query->where("tahun", $year);
+        });
+    }
 }

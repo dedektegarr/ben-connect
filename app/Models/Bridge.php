@@ -14,4 +14,11 @@ class Bridge extends Model
     protected $primaryKey = "bridge_id";
     protected $keyType = "string";
     public $incrementing = false;
+
+    public function scopeFilter($query, array $filters)
+    {
+        $query->when($filters["year"] ?? false, function ($query, $year) {
+            $query->where("tahun", $year);
+        });
+    }
 }

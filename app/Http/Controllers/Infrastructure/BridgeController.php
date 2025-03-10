@@ -16,7 +16,9 @@ class BridgeController extends Controller
      */
     public function index()
     {
-        $data = Bridge::latest()->get();
+        $filters = request()->only(["year"]);
+
+        $data = Bridge::latest()->filter($filters)->get();
 
         return response()->json([
             'status' => 201,
@@ -28,15 +30,18 @@ class BridgeController extends Controller
     {
         $request->validate([
             'file' => 'required|file|mimes:xls,xlsx|max:5000',
+            'year' => 'required|numeric'
         ], [
             'file.required' => 'File tidak boleh kosong',
             'file.file' => 'File harus berupa file',
             'file.mimes' => 'File harus berupa file excel',
-            'file.max' => 'File maksimal 5 MB'
+            'file.max' => 'File maksimal 5 MB',
+            'year.required' => 'Tahun tidak boleh kosong',
+            'year.numeric' => 'Tahun harus berupa angka'
         ]);
 
         try {
-            Excel::import(new JembatanImport, $request->file("file"));
+            Excel::import(new JembatanImport($request->year), $request->file("file"));
 
             return response()->json([
                 'status_code' => 201,

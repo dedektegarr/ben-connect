@@ -15,9 +15,11 @@ use Maatwebsite\Excel\Facades\Excel;
 class RoadController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
-        $data = Road::get();
+        $filters = $request->only(["year"]);
+
+        $data = Road::filter($filters)->get();
         return response()->json([
             'status_code' => 200,
             'message' => 'Data Jalan',
@@ -29,15 +31,18 @@ class RoadController extends Controller
     {
         $request->validate([
             'file' => 'required|file|mimes:xls,xlsx|max:5000',
+            'year' => 'required|integer'
         ], [
             'file.required' => 'File tidak boleh kosong',
             'file.file' => 'File harus berupa file',
             'file.mimes' => 'File harus berupa file excel',
-            'file.max' => 'File maksimal 5 MB'
+            'file.max' => 'File maksimal 5 MB',
+            'year.required' => 'Tahun tidak boleh kosong',
+            'year.integer' => 'Tahun harus berupa angka'
         ]);
 
         try {
-            Excel::import(new JalanImport, $request->file("file"));
+            Excel::import(new JalanImport($request->year), $request->file("file"));
 
             return response()->json([
                 'status_code' => 201,

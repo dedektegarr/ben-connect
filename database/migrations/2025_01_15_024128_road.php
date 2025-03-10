@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('road', function (Blueprint $table) {
             $table->uuid('road_id');
             $table->string("nama_ruas");
+            $table->year("tahun");
             $table->double("panjang_ruas")->nullable();
             $table->string("dari_km")->nullable();
             $table->string("sampai_km");

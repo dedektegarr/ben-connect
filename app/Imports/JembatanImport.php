@@ -9,11 +9,13 @@ use Maatwebsite\Excel\Concerns\WithStartRow;
 
 class JembatanImport implements ToModel, WithStartRow, WithCalculatedFormulas
 {
-    /**
-     * @param array $row
-     *
-     * @return \Illuminate\Database\Eloquent\Model|null
-     */
+    private $year;
+
+    public function __construct($year)
+    {
+        $this->year = $year;
+    }
+
     public function startRow(): int
     {
         return 6;
@@ -40,6 +42,7 @@ class JembatanImport implements ToModel, WithStartRow, WithCalculatedFormulas
                 'sungai_tipe' => $row[16],
                 'sungai_kondisi' => $row[17],
                 'tahun_konstruksi' => $row[18],
+                'tahun' => $this->year,
                 'tahun_survei' => $row[19],
                 'NK' => $row[20],
                 'status' => $row[21],
