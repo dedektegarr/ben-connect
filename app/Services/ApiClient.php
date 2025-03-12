@@ -51,12 +51,9 @@ class ApiClient
             }
         }
 
-        try {
-            $response = $request->$method($this->baseUrl . $endpoint, $data);
 
-            return $response->json();
-        } catch (Exception $e) {
-            dd($e->getMessage());
-        }
+        $response = $request->$method($this->baseUrl . $endpoint, $data);
+
+        return $response->json();
     }
 }
