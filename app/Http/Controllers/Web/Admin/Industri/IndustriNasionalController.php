@@ -53,7 +53,7 @@ class IndustriNasionalController extends Controller
         ]);
 
         $import = $this->apiClient->post("/disperindag/indusrty/import", [], $request->files);
-
+        dd($import);
         if ($import["status"] === "error") {
             flash($import["errors"], "error");
             return redirect()->back();
