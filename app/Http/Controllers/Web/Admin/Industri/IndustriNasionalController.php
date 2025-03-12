@@ -23,48 +23,58 @@ class IndustriNasionalController extends Controller
 
         $filters = $request->only(["region", "skala"]);
 
+        try {
+            $industries = $this->apiClient->get("/disperindag/industries", $filters);
+            $regions = $this->apiClient->get("/wilayah/data");
 
-        $industries = $this->apiClient->get("/disperindag/industries", $filters);
-        $regions = $this->apiClient->get("/wilayah/data");
+            if ($industries["status"] === 200) {
+                return view("admin.industri.industri-nasional.index", [
+                    "industries" => $industries["data"],
+                    "regions" => $regions["data"],
+                    "total_kecil" => collect($industries["data"])->where("industry_business_scale", "Kecil")->count(),
+                    "total_besar" => collect($industries["data"])->where("industry_business_scale", "Besar")->count(),
+                ]);
+            }
 
-        if ($industries["status"] === 200) {
-            return view("admin.industri.industri-nasional.index", [
-                "industries" => $industries["data"],
-                "regions" => $regions["data"],
-                "total_kecil" => collect($industries["data"])->where("industry_business_scale", "Kecil")->count(),
-                "total_besar" => collect($industries["data"])->where("industry_business_scale", "Besar")->count(),
-            ]);
+            throw new Exception("Terjadi kesalahan");
+        } catch (Exception $e) {
+            flash($e->getMessage(), "error");
+            return redirect()->back();
         }
-
-        throw new Exception("Terjadi kesalahan");
     }
 
     public function import(Request $request)
     {
         $this->apiClient->setToken(request()->session()->get("auth_token"));
 
-        $request->validate([
-            "file" => "required|file|mimes:xls,xlsx|max:5000",
-        ], [
-            "file.required" => "File data SIINas tidak boleh kosong",
-            'file.file' => 'Data SIInas harus berupa file',
-            'file.mimes' => 'File data SIInas harus berformat .xls atau .xlsx',
-            'file.max' => 'File data SIInas maksimal 5 Mb ',
-        ]);
+        try {
+            $request->validate([
+                "file" => "required|file|mimes:xls,xlsx|max:5000",
+            ], [
+                "file.required" => "File data SIINas tidak boleh kosong",
+                'file.file' => 'Data SIInas harus berupa file',
+                'file.mimes' => 'File data SIInas harus berformat .xls atau .xlsx',
+                'file.max' => 'File data SIInas maksimal 5 Mb ',
+            ]);
 
-        $import = $this->apiClient->post("/disperindag/indusrty/import", [], $request->files);
-        $test = $this->apiClient->get("wilayah/data");
+            $import = $this->apiClient->post("/disperindag/indusrty/import", [], $request->files);
 
-        if ($import["status"] === "error") {
-            flash($import["errors"], "error");
+            if ($import["status"] === "error") {
+                flash($import["errors"], "error");
+                return redirect()->back();
+            }
+
+            if ($import["status"] === 500) {
+                throw new Exception($import["message"]);
+            }
+
+            flash("Data industri SIInas berhasil di import");
+            return redirect()->back();
+        } catch (ValidationException $e) {
+            return redirect()->back()->withErrors($e->errors());
+        } catch (Exception $e) {
+            flash($e->getMessage(), "error");
             return redirect()->back();
         }
-
-        if ($import["status"] === 500) {
-            throw new Exception($import["message"]);
-        }
-
-        flash("Data industri SIInas berhasil di import");
-        return redirect()->back();
     }
 }
