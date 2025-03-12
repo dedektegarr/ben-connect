@@ -23,24 +23,20 @@ class IndustriNasionalController extends Controller
 
         $filters = $request->only(["region", "skala"]);
 
-        try {
-            $industries = $this->apiClient->get("/disperindag/industries", $filters);
-            $regions = $this->apiClient->get("/wilayah/data");
 
-            if ($industries["status"] === 200) {
-                return view("admin.industri.industri-nasional.index", [
-                    "industries" => $industries["data"],
-                    "regions" => $regions["data"],
-                    "total_kecil" => collect($industries["data"])->where("industry_business_scale", "Kecil")->count(),
-                    "total_besar" => collect($industries["data"])->where("industry_business_scale", "Besar")->count(),
-                ]);
-            }
+        $industries = $this->apiClient->get("/disperindag/industries", $filters);
+        $regions = $this->apiClient->get("/wilayah/data");
 
-            throw new Exception("Terjadi kesalahan");
-        } catch (Exception $e) {
-            flash($e->getMessage(), "error");
-            return redirect()->back();
+        if ($industries["status"] === 200) {
+            return view("admin.industri.industri-nasional.index", [
+                "industries" => $industries["data"],
+                "regions" => $regions["data"],
+                "total_kecil" => collect($industries["data"])->where("industry_business_scale", "Kecil")->count(),
+                "total_besar" => collect($industries["data"])->where("industry_business_scale", "Besar")->count(),
+            ]);
         }
+
+        throw new Exception("Terjadi kesalahan");
     }
 
     public function import(Request $request)
