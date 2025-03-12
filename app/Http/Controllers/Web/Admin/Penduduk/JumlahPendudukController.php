@@ -33,7 +33,7 @@ class JumlahPendudukController extends Controller
         $periode = $this->apiClient->get("/kependudukan/periode-data/data");
         $region = $this->apiClient->get("/wilayah/data");
         $rentangUsia = $this->apiClient->get("/kependudukan/kelompok-umur/data");
-        dd($penduduk);
+
         $pendudukByRegion = collect($penduduk["data"])->groupBy("region.region_name")->map(function ($region) {
             return [
                 "population_male" => $region->sum("population_male"),
