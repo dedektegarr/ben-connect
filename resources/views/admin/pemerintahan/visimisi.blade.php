@@ -14,7 +14,7 @@
 
                 <!-- Bagian Visi Misi -->
                 <div class="flex flex-col justify-between p-10 leading-normal w-full md:w-2/3">
-                    <h5 class="mb-4 text-4xl font-extrabold tracking-wide text-[#2f46a2] dark:text-[#2f46a2]">VISI ES</h5>
+                    <h5 class="mb-4 text-4xl font-extrabold tracking-wide text-[#2f46a2] dark:text-[#2f46a2]">VISI</h5>
                     <p class="mb-6 text-lg text-gray-700 dark:text-gray-300">Bengkulu Maju, Religius, Sejahtera, dan
                         Berkelanjutan.</p>
 
