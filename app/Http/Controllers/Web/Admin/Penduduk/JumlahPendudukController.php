@@ -52,8 +52,14 @@ class JumlahPendudukController extends Controller
                 "rentangUsia" => $rentangUsia["data"],
             ]);
         } catch (Exception $e) {
-            flash($e->getMessage(), "error");
-            return redirect()->back();
+            return view("admin.penduduk.jumlah-penduduk.index", [
+                "penduduk" => [],
+                "periode" => [],
+                "region" => [],
+                "total_male" => [],
+                "total_female" => [],
+                "rentangUsia" => [],
+            ]);
         }
     }
 
