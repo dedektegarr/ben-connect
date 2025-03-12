@@ -29,38 +29,27 @@ class JumlahPendudukController extends Controller
 
         $filters = $request->only(["year", "semester", "age_range", "region"]);
 
-        try {
-            $penduduk = $this->apiClient->get("/kependudukan/data", $filters);
-            $periode = $this->apiClient->get("/kependudukan/periode-data/data");
-            $region = $this->apiClient->get("/wilayah/data");
-            $rentangUsia = $this->apiClient->get("/kependudukan/kelompok-umur/data");
+        $penduduk = $this->apiClient->get("/kependudukan/data", $filters);
+        $periode = $this->apiClient->get("/kependudukan/periode-data/data");
+        $region = $this->apiClient->get("/wilayah/data");
+        $rentangUsia = $this->apiClient->get("/kependudukan/kelompok-umur/data");
 
-            $pendudukByRegion = collect($penduduk["data"])->groupBy("region.region_name")->map(function ($region) {
-                return [
-                    "population_male" => $region->sum("population_male"),
-                    "population_female" => $region->sum("population_female"),
-                    "total" => $region->sum("population_male") + $region->sum("population_female")
-                ];
-            });
+        $pendudukByRegion = collect($penduduk["data"])->groupBy("region.region_name")->map(function ($region) {
+            return [
+                "population_male" => $region->sum("population_male"),
+                "population_female" => $region->sum("population_female"),
+                "total" => $region->sum("population_male") + $region->sum("population_female")
+            ];
+        });
 
-            return view("admin.penduduk.jumlah-penduduk.index", [
-                "penduduk" => $pendudukByRegion,
-                "periode" => $periode["data"],
-                "region" => $region["data"],
-                "total_male" => collect($penduduk["data"])->sum("population_male"),
-                "total_female" => collect($penduduk["data"])->sum("population_female"),
-                "rentangUsia" => $rentangUsia["data"],
-            ]);
-        } catch (Exception $e) {
-            // return view("admin.penduduk.jumlah-penduduk.index", [
-            //     "penduduk" => [],
-            //     "periode" => [],
-            //     "region" => [],
-            //     "total_male" => [],
-            //     "total_female" => [],
-            //     "rentangUsia" => [],
-            // ]);
-        }
+        return view("admin.penduduk.jumlah-penduduk.index", [
+            "penduduk" => $pendudukByRegion,
+            "periode" => $periode["data"],
+            "region" => $region["data"],
+            "total_male" => collect($penduduk["data"])->sum("population_male"),
+            "total_female" => collect($penduduk["data"])->sum("population_female"),
+            "rentangUsia" => $rentangUsia["data"],
+        ]);
     }
 
     public function statistikPenduduk(Request $request)
