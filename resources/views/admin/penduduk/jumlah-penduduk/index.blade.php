@@ -35,6 +35,7 @@
                     class="p-6 rounded-xl text-white transition-all duration-300 transform hover:scale-[1.02] bg-gradient-to-br from-blue-500 to-blue-600">
                     <div class="flex items-center justify-between">
                         <div>
+
                             <p class="text-sm font-medium">Laki-laki</p>
                             <p class="text-3xl font-bold">{{ number_format($total_male) }}</p>
                         </div>

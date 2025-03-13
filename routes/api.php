@@ -16,6 +16,7 @@ use App\Http\Controllers\Kesehatan\Master\CategoryHospitalController;
 use App\Http\Controllers\Kesehatan\Master\HospitalAcreditationController;
 use App\Http\Controllers\Kesehatan\Master\HospitalOwnershipController;
 use App\Http\Controllers\Kesehatan\RSUD\ApiController;
+use App\Http\Controllers\Kesehatan\RSUD\ApiRSUDController;
 use App\Http\Controllers\Master\DatasetController;
 use App\Http\Controllers\Master\TagsController;
 use App\Http\Controllers\NewsController;
@@ -153,8 +154,8 @@ Route::middleware('auth:sanctum')->group(function () {
         });
 
         // From API
-        Route::get('/kesehatan', [ApiController::class, 'getDataRSUD']);
-        Route::post('/kesehatan/synchronize', [ApiController::class, 'postDatabase']);
+        Route::get('/kesehatan', [ApiRSUDController::class, 'getDataRSUD']);
+        Route::post('/kesehatan/synchronize', [ApiRSUDController::class, 'postDatabase']);
     });
 
     // DISPERINDAG

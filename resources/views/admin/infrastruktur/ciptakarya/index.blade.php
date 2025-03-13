@@ -1,4 +1,3 @@
-
 {{-- @endsection  --}}
 @extends('admin.layouts.app')
 
@@ -37,7 +36,7 @@
                     <div class="flex items-center justify-between">
                         <div>
                             <p class="text-sm font-medium">Target</p>
-                            <p class="text-3xl font-bold">{{ number_format($target, 2) }}</p>
+                            <p class="text-3xl font-bold">{{ number_format($target, 2) }}%</p>
                         </div>
                         <div class="p-3 bg-white/10 rounded-full">
                             <svg class="w-8 h-8 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -114,8 +113,9 @@
                                 <option value="" {{ request('year') == '' ? 'selected' : '' }}>Semua Tahun
                                 </option>
                                 @foreach (range(\Carbon\Carbon::now()->year, \Carbon\Carbon::now()->subYears(10)->year) as $year)
-                                <option value="{{ $year }}" {{ request('year') ==$year ? 'selected' : '' }}>{{ $year }}</option>
-                            @endforeach
+                                    <option value="{{ $year }}" {{ request('year') == $year ? 'selected' : '' }}>
+                                        {{ $year }}</option>
+                                @endforeach
                             </select>
                         </div>
 
@@ -135,127 +135,124 @@
             </form>
 
             <div
-            class="overflow-hidden rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-white/[0.03]">
-            <table id="default-table">
-                <thead>
-
-                    <tr>
-                        <th rowspan="2" >
-                            <span class="flex items-center" rowspan="2">
-                                Indikator Sasaran
-                                <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                </svg>
-                            </span>
-                        </th>
-                        <th rowspan="2" >
-                            <span class="flex items-center" rowspan="2">
-                                Tahun
-                                <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                </svg>
-                            </span>
-                        </th>
-                        <th rowspan="2">
-                            <span class="flex items-center">
-                                Satuan
-                                <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                </svg>
-                            </span>
-                        </th>
-                        <th rowspan="2">
-                            <span class="flex items-center">
-                                Target
-                                <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                </svg>
-                            </span>
-                        </th>
-                        <th>
-                            <span class="flex items-center">
-                                Persentase Capaian Tahun 2024
-                                 <svg class="w-4 h-4 ms-1" aria-hidden="true"
-                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-                                    viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                </svg>
-                            </span>
-                        </th>
-                        <th>
-                            <span class="flex items-center">
-                                Faktor Pendorong Tercapainya Kinerja
-                                <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                </svg>
-                            </span>
-                        </th>
-                        <th>
-                            <span class="flex items-center">
-                                Faktor Penghambat Tercapainya Kinerja
-                                <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                </svg>
-                            </span>
-                        </th>
-                        <th>
-                            <span class="flex items-center">
-                                Rekomendasi Tindaklanjut
-                                <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                </svg>
-                            </span>
-                        </th>
-                        <th>
-                            <span class="flex items-center">
-                                Tahun Realisasi
-                                <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                </svg>
-                            </span>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($arts as $key => $art)
-                    <tr>
-                        <td class="font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                            {{ $art['indikator_sasaran'] ?? '-' }}</td>
-                        <td>{{ $art['tahun'] ?? '-' }}</td>
-                        <td>{{ $art['satuan'] ?? '-' }}</td>
-                        <td>{{ $art['target'] ?? '-' }}</td>
-                        <td>{{ $art['persentase_capaian'] ?? '-' }}%</td>
-                        <td>{{ $art['faktor_pendorong'] ?? '-' }}</td>
-                        <td>{{ $art['faktor_penghambat'] ?? '-' }}</td>
-                        <td>{{ $art['rekom_tindak_lanjut'] ?? '-' }}</td>
-                        <td>{{ $art['tahun'] ?? '-' }}</td>
-                    </tr>
-                @endforeach
-
-                </tbody>
-            </table>
-        </div>
+                class="overflow-hidden rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-white/[0.03]">
+                <table id="default-table">
+                    <thead>
+                        <tr>
+                            <th rowspan="2">
+                                <span class="flex items-center" rowspan="2">
+                                    Indikator Sasaran
+                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                    </svg>
+                                </span>
+                            </th>
+                            <th rowspan="2">
+                                <span class="flex items-center" rowspan="2">
+                                    Tahun
+                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                    </svg>
+                                </span>
+                            </th>
+                            <th rowspan="2">
+                                <span class="flex items-center">
+                                    Satuan
+                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                    </svg>
+                                </span>
+                            </th>
+                            <th rowspan="2">
+                                <span class="flex items-center">
+                                    Target
+                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                    </svg>
+                                </span>
+                            </th>
+                            <th>
+                                <span class="flex items-center">
+                                    Persentase Capaian Tahun 2024
+                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                    </svg>
+                                </span>
+                            </th>
+                            <th>
+                                <span class="flex items-center">
+                                    Faktor Pendorong Tercapainya Kinerja
+                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                    </svg>
+                                </span>
+                            </th>
+                            <th>
+                                <span class="flex items-center">
+                                    Faktor Penghambat Tercapainya Kinerja
+                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                    </svg>
+                                </span>
+                            </th>
+                            <th>
+                                <span class="flex items-center">
+                                    Rekomendasi Tindaklanjut
+                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                    </svg>
+                                </span>
+                            </th>
+                            <th>
+                                <span class="flex items-center">
+                                    Tahun Realisasi
+                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                    </svg>
+                                </span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($arts as $key => $art)
+                            <tr>
+                                <td class="font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    {{ $art['indikator_sasaran'] ?? '-' }}</td>
+                                <td>{{ $art['tahun'] ?? '-' }}</td>
+                                <td>{{ $art['satuan'] ?? '-' }}</td>
+                                <td>{{ $art['target'] ?? '-' }}</td>
+                                <td>{{ $art['persentase_capaian'] ?? '-' }}%</td>
+                                <td>{{ $art['faktor_pendorong'] ?? '-' }}</td>
+                                <td>{{ $art['faktor_penghambat'] ?? '-' }}</td>
+                                <td>{{ $art['rekom_tindak_lanjut'] ?? '-' }}</td>
+                                <td>{{ $art['tahun'] ?? '-' }}</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
         </x-panel.panel-body>
     </x-panel.panel>
-        {{-- MODAL --}}
-        <div id="import-modal" tabindex="-1" aria-hidden="true"
+    {{-- MODAL --}}
+    <div id="import-modal" tabindex="-1" aria-hidden="true"
         class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
         <div class="relative p-4 w-full max-w-md max-h-full">
             <!-- Modal content -->

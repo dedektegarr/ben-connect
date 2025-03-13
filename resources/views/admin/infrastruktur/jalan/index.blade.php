@@ -36,7 +36,7 @@
                     <div class="flex items-center justify-between">
                         <div>
                             <p class="text-sm font-medium">Total Panjang Jalan</p>
-                            <p class="text-3xl font-bold">{{ number_format($total_panjang_jalan, 2) }} km</p>
+                            <p class="text-3xl font-bold">{{ number_format($total_panjang_jalan ?? 0) }} km</p>
                         </div>
                         <div class="p-3 bg-white/10 rounded-full">
                             <svg class="w-8 h-8 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -59,8 +59,8 @@
                     <div class="flex items-center justify-between">
                         <div>
                             <p class="text-sm font-medium">Persentase Jalan Baik</p>
-                <p class="text-3xl font-bold">{{ number_format($persentase_baik ?? 0, 2) }}%</p>
-                {{-- <p class="text-3xl font-bold">57,92%</p> --}}
+                            <p class="text-3xl font-bold">{{ number_format($persentase_baik ?? 0, 2) }}%</p>
+                            {{-- <p class="text-3xl font-bold">57,92%</p> --}}
                         </div>
                         <div class="p-3 bg-white/10 rounded-full">
                             <svg class="w-8 h-8 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -114,8 +114,9 @@
                                 <option value="" {{ request('year') == '' ? 'selected' : '' }}>Semua Tahun
                                 </option>
                                 @foreach (range(\Carbon\Carbon::now()->year, \Carbon\Carbon::now()->subYears(10)->year) as $year)
-                                <option value="{{ $year }}" {{ request('year') ==$year ? 'selected' : '' }}>{{ $year }}</option>
-                            @endforeach
+                                    <option value="{{ $year }}" {{ request('year') == $year ? 'selected' : '' }}>
+                                        {{ $year }}</option>
+                                @endforeach
                             </select>
                         </div>
 
