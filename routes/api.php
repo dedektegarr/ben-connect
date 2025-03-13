@@ -17,6 +17,9 @@ use App\Http\Controllers\Kesehatan\Master\HospitalAcreditationController;
 use App\Http\Controllers\Kesehatan\Master\HospitalOwnershipController;
 use App\Http\Controllers\Kesehatan\RSUD\ApiController;
 use App\Http\Controllers\Kesehatan\RSUD\ApiRSUDController;
+use App\Http\Controllers\Ketenagakerjaan\LowonganKerjaTerdaftarController;
+use App\Http\Controllers\Ketenagakerjaan\PencariKerjaTerdaftarController;
+use App\Http\Controllers\Ketenagakerjaan\PenempatanTenagaKerjaController;
 use App\Http\Controllers\Master\DatasetController;
 use App\Http\Controllers\Master\TagsController;
 use App\Http\Controllers\NewsController;
@@ -35,6 +38,8 @@ use App\Http\Controllers\Study\StudentController;
 use App\Http\Controllers\Study\TeacherController;
 use App\Http\Controllers\UserController;
 use App\Imports\PricesImport;
+use App\Models\LowonganKerjaTerdaftar;
+use App\Models\PencariKerjaTerdaftar;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -147,15 +152,21 @@ Route::middleware('auth:sanctum')->group(function () {
         });
 
         // Data Rumah Sakit
+        Route::get('/kesehatan', [ApiRSUDController::class, 'getDataRSUD']);
+        Route::post('/kesehatan/synchronize', [ApiRSUDController::class, 'postDatabase']);
         Route::controller(HospitalController::class)->group(function () {
             Route::get("/kesehatan/rs", "index");
             Route::get("/kesehatan/rs/{id}", "show");
             Route::post("/kesehatan/rs/import", "import");
         });
+    });
 
-        // From API
-        Route::get('/kesehatan', [ApiRSUDController::class, 'getDataRSUD']);
-        Route::post('/kesehatan/synchronize', [ApiRSUDController::class, 'postDatabase']);
+    // DISNAKERTRANS
+    Route::prefix("ketenagakerjaan")->middleware(["role:admin|admin-ketenagakerjaan"])->group(function () {
+        Route::post("/pencari-kerja-terdaftar/import", [PencariKerjaTerdaftarController::class, "import"]);
+        Route::get("/pencari-kerja-terdaftar", [PencariKerjaTerdaftarController::class, "index"]);
+        Route::get("/lowongan-kerja-terdaftar", [LowonganKerjaTerdaftarController::class, "index"]);
+        Route::get("/penempatan-tenaga-kerja", [PenempatanTenagaKerjaController::class, "index"]);
     });
 
     // DISPERINDAG
