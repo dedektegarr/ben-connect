@@ -169,8 +169,10 @@ Route::prefix("ketenagakerjaan")->group(function () {
     Route::controller(DisnakerController::class)->group(function () {
         Route::get("/wlkp", "wlkpIndex")->name("admin.ketenagakerjaan.wlkp.index");
         Route::get("/disnaker", "disnakerIndex")->name("admin.ketenagakerjaan.disnaker.index");
+        Route::get("/pkt", "pktIndex")->name("admin.ketenagakerjaan.pkt.index");
+        Route::get("/lkt", "lktIndex")->name("admin.ketenagakerjaan.lkt.index");
+        Route::get("/ptk", "ptkIndex")->name("admin.ketenagakerjaan.ptk.index");
     });
-
 
 });
 

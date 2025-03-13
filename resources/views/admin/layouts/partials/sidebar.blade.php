@@ -325,24 +325,39 @@
 
                 </button>
                 <ul id="dropdown-ketenagakerjaan"
-                    class="{{ Route::is('admin.ketenagakerjaan.*') ? 'block' : 'hidden' }} py-2 space-y-2 ml-10">
-                    <li>
-                        <a href="{{ route('admin.ketenagakerjaan.wlkp.index') }}"
-                            class="{{ Route::is('admin.ketenagakerjaan.wlkp.index') ? 'active' : '' }} sidebar-sub-menu">
-                            {{ __('Tenaga Kerja') }}
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{{ route('admin.ketenagakerjaan.disnaker.index') }}"
-                            class="{{ Route::is('admin.ketenagakerjaan.disnaker.index') ? 'active' : '' }} sidebar-sub-menu">
-                            {{ __('Data Pelamar') }}
-                        </a>
-                    </li>
-                </ul>
-            </li>
+    class="{{ Route::is('admin.ketenagakerjaan.*') ? 'block' : 'hidden' }} py-2 space-y-2 ml-10">
+    <li>
+        <a href="{{ route('admin.ketenagakerjaan.wlkp.index') }}"
+            class="{{ Route::is('admin.ketenagakerjaan.wlkp.index') ? 'active' : '' }} sidebar-sub-menu">
+            {{ __('Tenaga Kerja') }}
+        </a>
+    </li>
+    <li>
+        <a href="{{ route('admin.ketenagakerjaan.disnaker.index') }}"
+            class="{{ Route::is('admin.ketenagakerjaan.disnaker.index') ? 'active' : '' }} sidebar-sub-menu">
+            {{ __('Data Pelamar') }}
+        </a>
+    </li>
+    <li>
+        <a href="{{ route('admin.ketenagakerjaan.pkt.index') }}"
+            class="{{ Route::is('admin.ketenagakerjaan.pkt.index') ? 'active' : '' }} sidebar-sub-menu">
+            {{ __('Pencari Kerja Terdaftar') }}
+        </a>
+    </li>
+    <li>
+        <a href="{{ route('admin.ketenagakerjaan.lkt.index') }}"
+            class="{{ Route::is('admin.ketenagakerjaan.lkt.index') ? 'active' : '' }} sidebar-sub-menu">
+            {{ __('Lowongan Kerja Terdaftar') }}
+        </a>
+    </li>
+    <li>
+        <a href="{{ route('admin.ketenagakerjaan.ptk.index') }}"
+            class="{{ Route::is('admin.ketenagakerjaan.ptk.index') ? 'active' : '' }} sidebar-sub-menu">
+            {{ __('Penempatan Tenaga Kerja') }}
+        </a>
+    </li>
+</ul>
 
-
-        </ul>
 
     </div>
 </aside>

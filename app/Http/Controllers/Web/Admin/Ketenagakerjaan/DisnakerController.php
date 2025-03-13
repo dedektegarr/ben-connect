@@ -16,4 +16,19 @@ class DisnakerController extends Controller
     {
         return view('admin.ketenagakerjaan.disnaker.index');
     }
+
+    public function pktIndex()
+    {
+        return view('admin.ketenagakerjaan.pkt.index');
+    }
+
+    public function lktIndex()
+    {
+        return view('admin.ketenagakerjaan.lkt.index');
+    }
+
+    public function ptkIndex()
+    {
+        return view('admin.ketenagakerjaan.ptk.index');
+    }
 }
