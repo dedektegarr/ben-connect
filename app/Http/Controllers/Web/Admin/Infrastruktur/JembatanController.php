@@ -51,6 +51,7 @@ class JembatanController extends Controller
         try {
             $request->validate([
                 "file" => "required|file|mimes:xls,xlsx|max:5000",
+                "year" => "required|numeric"
             ], [
                 "file.required" => "File data komditas tidak boleh kosong",
                 'file.file' => 'Data komditas harus berupa file',
@@ -59,9 +60,8 @@ class JembatanController extends Controller
                 'year.required' => 'Tahun tidak boleh kosong'
             ]);
 
-            $import = $this->apiClient->post("/infrastruktur/jembatan/import", [], $request->files);
+            $import = $this->apiClient->post("/infrastruktur/jembatan/import", ["year" => $request->year], $request->files);
 
-            //  dd($import);
             if (is_array($import) && isset($import["status_code"])) {
                 if ($import["status_code"] === 400) {
                     flash($import["message"], "error");
