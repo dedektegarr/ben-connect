@@ -1,4 +1,3 @@
-
 {{-- @endsection  --}}
 @extends('admin.layouts.app')
 
@@ -33,56 +32,56 @@
         <x-panel.panel-body class="w-full p-10 bg-gray-900 rounded-lg shadow-lg">
 
             <div
-            class="overflow-hidden rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-white/[0.03]">
-            <table id="default-table">
-                <thead>
+                class="overflow-hidden rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-white/[0.03]">
+                <table id="default-table">
+                    <thead>
 
-                    <tr>
+                        <tr>
 
-                        <th>
-                            <span class="flex items-center">
-                                Kabupaten/Kota
-                                <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                </svg>
-                            </span>
-                        </th>
-                        <th>
-                            <span class="flex items-center">
-                                Laki-laki
-                                <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                </svg>
-                            </span>
-                        </th>
-                        <th>
-                            <span class="flex items-center">
-                                Perempuan
-                                <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                </svg>
-                            </span>
-                        </th>
-                        <th>
-                            <span class="flex items-center">
-                                Total PTK
-                                <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                    width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                </svg>
-                            </span>
-                        </th>
+                            <th>
+                                <span class="flex items-center">
+                                    Kabupaten/Kota
+                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                    </svg>
+                                </span>
+                            </th>
+                            <th>
+                                <span class="flex items-center">
+                                    Laki-laki
+                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                    </svg>
+                                </span>
+                            </th>
+                            <th>
+                                <span class="flex items-center">
+                                    Perempuan
+                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                    </svg>
+                                </span>
+                            </th>
+                            <th>
+                                <span class="flex items-center">
+                                    Total PTK
+                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
+                                    </svg>
+                                </span>
+                            </th>
 
-                    </tr>
-                </thead>
-                {{-- <tbody>
+                        </tr>
+                    </thead>
+                    {{-- <tbody>
                     @foreach ($ikms as $key => $ikm)
                         <tr>
                             <td class="font-medium text-gray-900 whitespace-nowrap dark:text-white">
@@ -101,12 +100,12 @@
                         </tr>
                     @endforeach
                 </tbody> --}}
-            </table>
-        </div>
+                </table>
+            </div>
         </x-panel.panel-body>
     </x-panel.panel>
-        {{-- MODAL --}}
-        <div id="import-modal" tabindex="-1" aria-hidden="true"
+    {{-- MODAL --}}
+    <div id="import-modal" tabindex="-1" aria-hidden="true"
         class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
         <div class="relative p-4 w-full max-w-md max-h-full">
             <!-- Modal content -->
@@ -119,7 +118,8 @@
                     </h3>
                 </div>
                 <!-- Modal body -->
-                <form class="p-4 md:p-5" method="POST" action="{{ route('admin.sosial.databansos.import') }}" enctype="multipart/form-data">
+                <form class="p-4 md:p-5" method="POST" action="{{ route('admin.ketenagakerjaan.import') }}"
+                    enctype="multipart/form-data">
 
                     @csrf
                     <div class="grid gap-4 mb-4 grid-cols-2">
@@ -172,3 +172,21 @@
     </div>
 @endsection
 
+@push('scripts')
+    <script>
+        const errors = @json($errors->any());
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const modalEl = document.getElementById("import-modal");
+            const modal = new Modal(modalEl, {}, {
+                id: 'modalEl',
+                override: true
+            });
+
+            if (errors) {
+                modal.show();
+            }
+
+        });
+    </script>
+@endpush

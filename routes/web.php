@@ -70,8 +70,8 @@ Route::middleware("auth")->group(function () {
         });
 
 
-         // Pemerintahan
-         Route::prefix("pemerintahan")->group(function () {
+        // Pemerintahan
+        Route::prefix("pemerintahan")->group(function () {
             Route::get("/visi-misi", function () {
                 return view("admin.pemerintahan.visimisi"); // ✅ Tambahkan path view yang benar
             })->name("admin.pemerintahan.visimisi");
@@ -135,8 +135,8 @@ Route::middleware("auth")->group(function () {
                 Route::post("/import", "import")->name("admin.pendidikan.peserta-didik.import");
             });
         });
-         // infrastruktur
-         Route::prefix("infrastruktur")->group(function () {
+        // infrastruktur
+        Route::prefix("infrastruktur")->group(function () {
             Route::prefix("jalan")->controller(JalanController::class)->group(function () {
                 Route::get("/", "index")->name("admin.infrastruktur.jalan.index");
                 Route::post("/import", "import")->name("admin.infrastruktur.jalan.import");
@@ -161,21 +161,19 @@ Route::middleware("auth")->group(function () {
             Route::prefix("bansos")->controller(DatabansosController::class)->group(function () {
                 Route::get("/", "index")->name("admin.sosial.databansos.index");
                 Route::post("/import", "import")->name("admin.sosial.databansos.import");
-
             });
         });
-// ketenagakerjaan
-Route::prefix("ketenagakerjaan")->group(function () {
-    Route::controller(DisnakerController::class)->group(function () {
-        Route::get("/wlkp", "wlkpIndex")->name("admin.ketenagakerjaan.wlkp.index");
-        Route::get("/disnaker", "disnakerIndex")->name("admin.ketenagakerjaan.disnaker.index");
-        Route::get("/pkt", "pktIndex")->name("admin.ketenagakerjaan.pkt.index");
-        Route::get("/lkt", "lktIndex")->name("admin.ketenagakerjaan.lkt.index");
-        Route::get("/ptk", "ptkIndex")->name("admin.ketenagakerjaan.ptk.index");
+        // ketenagakerjaan
+        Route::prefix("ketenagakerjaan")->group(function () {
+            Route::controller(DisnakerController::class)->group(function () {
+                Route::post("/import", "import")->name("admin.ketenagakerjaan.import");
+
+                Route::get("/wlkp", "wlkpIndex")->name("admin.ketenagakerjaan.wlkp.index");
+                Route::get("/disnaker", "disnakerIndex")->name("admin.ketenagakerjaan.disnaker.index");
+                Route::get("/pkt", "pktIndex")->name("admin.ketenagakerjaan.pkt.index");
+                Route::get("/lkt", "lktIndex")->name("admin.ketenagakerjaan.lkt.index");
+                Route::get("/ptk", "ptkIndex")->name("admin.ketenagakerjaan.ptk.index");
+            });
+        });
     });
-
-});
-
-
-});
 });
