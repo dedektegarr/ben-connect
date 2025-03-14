@@ -1,10 +1,10 @@
 {{-- @endsection  --}}
 @extends('admin.layouts.app')
 
-@section('title', 'Jembatan')
+@section('title', 'Upah Minimum Regional')
 @section('content')
     <x-panel.panel class="w-full">
-        <x-panel.panel-header title="{{ __('Data Jembatan') }}">
+        <x-panel.panel-header title="{{ __('Upah Minimum Regional Provinsi Bengkulu') }}">
             <div class="flex items-center gap-2">
                 <button type="button" data-modal-target="import-modal" data-modal-toggle="import-modal"
                     class="md:inline-flex text-white bg-yellow-700 hover:bg-yellow-800 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-4 py-2 text-center items-center dark:bg-yellow-600 dark:hover:bg-yellow-700 dark:focus:ring-yellow-800">
