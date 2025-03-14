@@ -27,24 +27,19 @@ class UpahMinimumImport implements ToCollection, WithStartRow
         // Mengambil tahun yang tersedia pada header
         $yearInHeader = $collection[0]->filter(function ($row) {
             return preg_match('/^\d{4}$/', trim($row));
-        })->values();
+        });
 
         foreach ($collection as $row) {
             $regionId = $this->findRegionId($row[1]);
 
             if (!$regionId) continue;
 
-            foreach ($yearInHeader as $year) {
-                // Ambil hanya kolom gaji saja
-                $salaries = array_slice($row->toArray(), 2);
-
-                foreach ($salaries as $salary) {
-                    UpahMinimum::updateOrCreate([
-                        "region_id" => $regionId,
-                        "year" => $year,
-                        "salary" => $salary
-                    ]);
-                }
+            foreach ($yearInHeader as $yearIndex => $year) {
+                UpahMinimum::updateOrCreate([
+                    "region_id" => $regionId,
+                    "year" => $year,
+                    "salary" => $row[$yearIndex]
+                ]);
             }
         }
     }
