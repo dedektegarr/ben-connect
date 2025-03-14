@@ -61,20 +61,23 @@
                 <button type="button"
                     class="sidebar-menu-link group w-full flex items-center justify-between
                     {{ Route::is('admin.pemerintahan.*') ? 'active bg-gray-200 dark:bg-gray-700' : '' }}"
-                    aria-controls="dropdown-pemerintahan"
-                    data-collapse-toggle="dropdown-pemerintahan">
+                    aria-controls="dropdown-pemerintahan" data-collapse-toggle="dropdown-pemerintahan">
 
                     <div class="flex items-center">
-                        <svg class="sidebar-menu-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
-                            <path fill-rule="evenodd" d="M12 4a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm-2.952.462c-.483.19-.868.432-1.19.71-.363.315-.638.677-.831.93l-.106.14c-.21.268-.36.418-.574.527C6.125 6.883 5.74 7 5 7a1 1 0 0 0 0 2c.364 0 .696-.022 1-.067v.41l-1.864 4.2a1.774 1.774 0 0 0 .821 2.255c.255.133.538.202.825.202h2.436a1.786 1.786 0 0 0 1.768-1.558 1.774 1.774 0 0 0-.122-.899L8 9.343V8.028c.2-.188.36-.38.495-.553.062-.079.118-.15.168-.217.185-.24.311-.406.503-.571a1.89 1.89 0 0 1 .24-.177A3.01 3.01 0 0 0 11 7.829V20H5.5a1 1 0 1 0 0 2h13a1 1 0 1 0 0-2H13V7.83a3.01 3.01 0 0 0 1.63-1.387c.206.091.373.19.514.29.31.219.532.465.811.78l.025.027.02.023v1.78l-1.864 4.2a1.774 1.774 0 0 0 .821 2.255c.255.133.538.202.825.202h2.436a1.785 1.785 0 0 0 1.768-1.558 1.773 1.773 0 0 0-.122-.899L18 9.343v-.452c.302.072.633.109 1 .109a1 1 0 1 0 0-2c-.48 0-.731-.098-.899-.2-.2-.12-.363-.293-.651-.617l-.024-.026c-.267-.3-.622-.7-1.127-1.057a5.152 5.152 0 0 0-1.355-.678 3.001 3.001 0 0 0-5.896.04Z" clip-rule="evenodd"/>
+                        <svg class="sidebar-menu-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd"
+                                d="M12 4a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm-2.952.462c-.483.19-.868.432-1.19.71-.363.315-.638.677-.831.93l-.106.14c-.21.268-.36.418-.574.527C6.125 6.883 5.74 7 5 7a1 1 0 0 0 0 2c.364 0 .696-.022 1-.067v.41l-1.864 4.2a1.774 1.774 0 0 0 .821 2.255c.255.133.538.202.825.202h2.436a1.786 1.786 0 0 0 1.768-1.558 1.774 1.774 0 0 0-.122-.899L8 9.343V8.028c.2-.188.36-.38.495-.553.062-.079.118-.15.168-.217.185-.24.311-.406.503-.571a1.89 1.89 0 0 1 .24-.177A3.01 3.01 0 0 0 11 7.829V20H5.5a1 1 0 1 0 0 2h13a1 1 0 1 0 0-2H13V7.83a3.01 3.01 0 0 0 1.63-1.387c.206.091.373.19.514.29.31.219.532.465.811.78l.025.027.02.023v1.78l-1.864 4.2a1.774 1.774 0 0 0 .821 2.255c.255.133.538.202.825.202h2.436a1.785 1.785 0 0 0 1.768-1.558 1.773 1.773 0 0 0-.122-.899L18 9.343v-.452c.302.072.633.109 1 .109a1 1 0 1 0 0-2c-.48 0-.731-.098-.899-.2-.2-.12-.363-.293-.651-.617l-.024-.026c-.267-.3-.622-.7-1.127-1.057a5.152 5.152 0 0 0-1.355-.678 3.001 3.001 0 0 0-5.896.04Z"
+                                clip-rule="evenodd" />
                         </svg>
                         <span class="flex-1 ms-3 text-left whitespace-nowrap">{{ __('Pemerintahan') }}</span>
                     </div>
 
                     <svg class="w-3 h-3 transform transition-transform duration-200
                     {{ Route::is('admin.pemerintahan.*') ? 'rotate-180' : '' }}"
-                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m1 1 4 4 4-4" />
                     </svg>
                 </button>
 
@@ -90,7 +93,7 @@
                 </ul>
             </li>
 
-                        <li>
+            <li>
                 <button type="button"
                     class="{{ Route::is('admin.kependudukan.*') ? 'active' : '' }} sidebar-menu-link group w-full"
                     aria-controls="dropdown-penduduk" data-collapse-toggle="dropdown-penduduk">
@@ -238,9 +241,13 @@
                 <button type="button"
                     class="{{ Route::is('admin.infrastruktur.*') ? 'active' : '' }} sidebar-menu-link group w-full"
                     aria-controls="dropdown-industri" data-collapse-toggle="dropdown-infrastruktur">
-                    <svg class="{{ Route::is('admin.infrastruktur.*') ? 'active' : '' }} sidebar-menu-icon"aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                        <path fill-rule="evenodd" d="M4 4a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2v14a1 1 0 1 1 0 2H5a1 1 0 1 1 0-2V5a1 1 0 0 1-1-1Zm5 2a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H9Zm5 0a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1h-1Zm-5 4a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1a1 1 0 0 0-1-1H9Zm5 0a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1a1 1 0 0 0-1-1h-1Zm-3 4a2 2 0 0 0-2 2v3h2v-3h2v3h2v-3a2 2 0 0 0-2-2h-2Z" clip-rule="evenodd"/>
-                      </svg>
+                    <svg class="{{ Route::is('admin.infrastruktur.*') ? 'active' : '' }} sidebar-menu-icon"aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                        viewBox="0 0 24 24">
+                        <path fill-rule="evenodd"
+                            d="M4 4a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2v14a1 1 0 1 1 0 2H5a1 1 0 1 1 0-2V5a1 1 0 0 1-1-1Zm5 2a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H9Zm5 0a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1h-1Zm-5 4a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1a1 1 0 0 0-1-1H9Zm5 0a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1a1 1 0 0 0-1-1h-1Zm-3 4a2 2 0 0 0-2 2v3h2v-3h2v3h2v-3a2 2 0 0 0-2-2h-2Z"
+                            clip-rule="evenodd" />
+                    </svg>
 
 
 
@@ -279,13 +286,16 @@
                     {{-- <svg class="{{ Route::is('admin.sosial.*') ? 'active' : '' }} sidebar-menu-icon"aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                         <path fill-rule="evenodd" d="M4 4a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2v14a1 1 0 1 1 0 2H5a1 1 0 1 1 0-2V5a1 1 0 0 1-1-1Zm5 2a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H9Zm5 0a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1h-1Zm-5 4a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1a1 1 0 0 0-1-1H9Zm5 0a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1a1 1 0 0 0-1-1h-1Zm-3 4a2 2 0 0 0-2 2v3h2v-3h2v3h2v-3a2 2 0 0 0-2-2h-2Z" clip-rule="evenodd"/>
                       </svg> --}}
-                      <svg class="{{ Route::is('admin.sosial.*') ? 'active' : '' }} sidebar-menu-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                        <path fill-rule="evenodd" d="M12 6a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm-1.5 8a4 4 0 0 0-4 4 2 2 0 0 0 2 2h7a2 2 0 0 0 2-2 4 4 0 0 0-4-4h-3Zm6.82-3.096a5.51 5.51 0 0 0-2.797-6.293 3.5 3.5 0 1 1 2.796 6.292ZM19.5 18h.5a2 2 0 0 0 2-2 4 4 0 0 0-4-4h-1.1a5.503 5.503 0 0 1-.471.762A5.998 5.998 0 0 1 19.5 18ZM4 7.5a3.5 3.5 0 0 1 5.477-2.889 5.5 5.5 0 0 0-2.796 6.293A3.501 3.501 0 0 1 4 7.5ZM7.1 12H6a4 4 0 0 0-4 4 2 2 0 0 0 2 2h.5a5.998 5.998 0 0 1 3.071-5.238A5.505 5.505 0 0 1 7.1 12Z" clip-rule="evenodd"/>
-                      </svg>
+                    <svg class="{{ Route::is('admin.sosial.*') ? 'active' : '' }} sidebar-menu-icon"
+                        aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        fill="currentColor" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd"
+                            d="M12 6a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm-1.5 8a4 4 0 0 0-4 4 2 2 0 0 0 2 2h7a2 2 0 0 0 2-2 4 4 0 0 0-4-4h-3Zm6.82-3.096a5.51 5.51 0 0 0-2.797-6.293 3.5 3.5 0 1 1 2.796 6.292ZM19.5 18h.5a2 2 0 0 0 2-2 4 4 0 0 0-4-4h-1.1a5.503 5.503 0 0 1-.471.762A5.998 5.998 0 0 1 19.5 18ZM4 7.5a3.5 3.5 0 0 1 5.477-2.889 5.5 5.5 0 0 0-2.796 6.293A3.501 3.501 0 0 1 4 7.5ZM7.1 12H6a4 4 0 0 0-4 4 2 2 0 0 0 2 2h.5a5.998 5.998 0 0 1 3.071-5.238A5.505 5.505 0 0 1 7.1 12Z"
+                            clip-rule="evenodd" />
+                    </svg>
 
 
-                    <span
-                        class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">{{ __('Sosial') }}</span>
+                    <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">{{ __('Sosial') }}</span>
                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                         viewBox="0 0 10 6">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -310,13 +320,18 @@
                             d="M4 4a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2v14a1 1 0 1 1 0 2H5a1 1 0 1 1 0-2V5a1 1 0 0 1-1-1Zm5 2a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1H9Zm5 0a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1V7a1 1 0 0 0-1-1h-1Zm-5 4a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1a1 1 0 0 0-1-1H9Zm5 0a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1a1 1 0 0 0-1-1h-1Zm-3 4a2 2 0 0 0-2 2v3h2v-3h2v3h2v-3a2 2 0 0 0-2-2h-2Z"
                             clip-rule="evenodd" />
                     </svg> --}}
-                    <svg class="{{ Route::is('admin.ketenagakerjaan.*') ? 'active' : '' }} sidebar-menu-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M16 10c0-.55228-.4477-1-1-1h-3v2h3c.5523 0 1-.4477 1-1Z"/>
-                        <path d="M13 15v-2h2c1.6569 0 3-1.3431 3-3 0-1.65685-1.3431-3-3-3h-2.256c.1658-.46917.256-.97405.256-1.5 0-.51464-.0864-1.0091-.2454-1.46967C12.8331 4.01052 12.9153 4 13 4h7c.5523 0 1 .44772 1 1v9c0 .5523-.4477 1-1 1h-2.5l1.9231 4.6154c.2124.5098-.0287 1.0953-.5385 1.3077-.5098.2124-1.0953-.0287-1.3077-.5385L15.75 16l-1.827 4.3846c-.1825.438-.6403.6776-1.0889.6018.1075-.3089.1659-.6408.1659-.9864v-2.6002L14 15h-1ZM6 5.5C6 4.11929 7.11929 3 8.5 3S11 4.11929 11 5.5 9.88071 8 8.5 8 6 6.88071 6 5.5Z"/>
-                        <path d="M15 11h-4v9c0 .5523-.4477 1-1 1-.55228 0-1-.4477-1-1v-4H8v4c0 .5523-.44772 1-1 1s-1-.4477-1-1v-6.6973l-1.16797 1.752c-.30635.4595-.92722.5837-1.38675.2773-.45952-.3063-.5837-.9272-.27735-1.3867l2.99228-4.48843c.09402-.14507.2246-.26423.37869-.34445.11427-.05949.24148-.09755.3763-.10887.03364-.00289.06747-.00408.10134-.00355H15c.5523 0 1 .44772 1 1 0 .5523-.4477 1-1 1Z"/>
-                      </svg>
+                    <svg class="{{ Route::is('admin.ketenagakerjaan.*') ? 'active' : '' }} sidebar-menu-icon"
+                        aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M16 10c0-.55228-.4477-1-1-1h-3v2h3c.5523 0 1-.4477 1-1Z" />
+                        <path
+                            d="M13 15v-2h2c1.6569 0 3-1.3431 3-3 0-1.65685-1.3431-3-3-3h-2.256c.1658-.46917.256-.97405.256-1.5 0-.51464-.0864-1.0091-.2454-1.46967C12.8331 4.01052 12.9153 4 13 4h7c.5523 0 1 .44772 1 1v9c0 .5523-.4477 1-1 1h-2.5l1.9231 4.6154c.2124.5098-.0287 1.0953-.5385 1.3077-.5098.2124-1.0953-.0287-1.3077-.5385L15.75 16l-1.827 4.3846c-.1825.438-.6403.6776-1.0889.6018.1075-.3089.1659-.6408.1659-.9864v-2.6002L14 15h-1ZM6 5.5C6 4.11929 7.11929 3 8.5 3S11 4.11929 11 5.5 9.88071 8 8.5 8 6 6.88071 6 5.5Z" />
+                        <path
+                            d="M15 11h-4v9c0 .5523-.4477 1-1 1-.55228 0-1-.4477-1-1v-4H8v4c0 .5523-.44772 1-1 1s-1-.4477-1-1v-6.6973l-1.16797 1.752c-.30635.4595-.92722.5837-1.38675.2773-.45952-.3063-.5837-.9272-.27735-1.3867l2.99228-4.48843c.09402-.14507.2246-.26423.37869-.34445.11427-.05949.24148-.09755.3763-.10887.03364-.00289.06747-.00408.10134-.00355H15c.5523 0 1 .44772 1 1 0 .5523-.4477 1-1 1Z" />
+                    </svg>
 
-                    <span class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">{{ __('Ketenagakerjaan') }}</span>
+                    <span
+                        class="flex-1 ms-3 text-left rtl:text-right whitespace-nowrap">{{ __('Ketenagakerjaan') }}</span>
                     <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                         viewBox="0 0 10 6">
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -325,39 +340,33 @@
 
                 </button>
                 <ul id="dropdown-ketenagakerjaan"
-    class="{{ Route::is('admin.ketenagakerjaan.*') ? 'block' : 'hidden' }} py-2 space-y-2 ml-10">
-    <li>
-        <a href="{{ route('admin.ketenagakerjaan.wlkp.index') }}"
-            class="{{ Route::is('admin.ketenagakerjaan.wlkp.index') ? 'active' : '' }} sidebar-sub-menu">
-            {{ __('Tenaga Kerja') }}
-        </a>
-    </li>
-    <li>
-        <a href="{{ route('admin.ketenagakerjaan.disnaker.index') }}"
-            class="{{ Route::is('admin.ketenagakerjaan.disnaker.index') ? 'active' : '' }} sidebar-sub-menu">
-            {{ __('Data Pelamar') }}
-        </a>
-    </li>
-    <li>
-        <a href="{{ route('admin.ketenagakerjaan.pkt.index') }}"
-            class="{{ Route::is('admin.ketenagakerjaan.pkt.index') ? 'active' : '' }} sidebar-sub-menu">
-            {{ __('Pencari Kerja Terdaftar') }}
-        </a>
-    </li>
-    <li>
-        <a href="{{ route('admin.ketenagakerjaan.lkt.index') }}"
-            class="{{ Route::is('admin.ketenagakerjaan.lkt.index') ? 'active' : '' }} sidebar-sub-menu">
-            {{ __('Lowongan Kerja Terdaftar') }}
-        </a>
-    </li>
-    <li>
-        <a href="{{ route('admin.ketenagakerjaan.ptk.index') }}"
-            class="{{ Route::is('admin.ketenagakerjaan.ptk.index') ? 'active' : '' }} sidebar-sub-menu">
-            {{ __('Penempatan Tenaga Kerja') }}
-        </a>
-    </li>
-</ul>
-
-
+                    class="{{ Route::is('admin.ketenagakerjaan.*') ? 'block' : 'hidden' }} py-2 space-y-2 ml-10">
+                    <li>
+                        <a href="{{ route('admin.ketenagakerjaan.pkt.index') }}"
+                            class="{{ Route::is('admin.ketenagakerjaan.pkt.index') ? 'active' : '' }} sidebar-sub-menu">
+                            {{ __('Pencari Kerja Terdaftar') }}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin.ketenagakerjaan.lkt.index') }}"
+                            class="{{ Route::is('admin.ketenagakerjaan.lkt.index') ? 'active' : '' }} sidebar-sub-menu">
+                            {{ __('Lowongan Kerja Terdaftar') }}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin.ketenagakerjaan.ptk.index') }}"
+                            class="{{ Route::is('admin.ketenagakerjaan.ptk.index') ? 'active' : '' }} sidebar-sub-menu">
+                            {{ __('Penempatan Tenaga Kerja') }}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin.ketenagakerjaan.umr.index') }}"
+                            class="{{ Route::is('admin.ketenagakerjaan.umr.index') ? 'active' : '' }} sidebar-sub-menu">
+                            {{ __('Upah Minimum Regional') }}
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
     </div>
 </aside>

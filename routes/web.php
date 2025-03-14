@@ -173,6 +173,9 @@ Route::middleware("auth")->group(function () {
                 Route::get("/pkt", "pktIndex")->name("admin.ketenagakerjaan.pkt.index");
                 Route::get("/lkt", "lktIndex")->name("admin.ketenagakerjaan.lkt.index");
                 Route::get("/ptk", "ptkIndex")->name("admin.ketenagakerjaan.ptk.index");
+
+                Route::post("/upah-minimum-regional/import", "umrImport")->name("admin.ketenagakerjaan.umr.import");
+                Route::get("/upah-minimum-regional", "umrIndex")->name("admin.ketenagakerjaan.umr.index");
             });
         });
     });

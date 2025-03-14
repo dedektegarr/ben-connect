@@ -17,21 +17,6 @@ class DisnakerController extends Controller
         $this->apiClient = new ApiClient(config("app.url") . "/api");
     }
 
-    public function wlkpIndex()
-    {
-        return view('admin.ketenagakerjaan.wlkp.index');
-    }
-
-    public function disnakerIndex()
-    {
-        return view('admin.ketenagakerjaan.disnaker.index');
-    }
-
-    public function pktIndex()
-    {
-        return view('admin.ketenagakerjaan.pkt.index');
-    }
-
     public function import(Request $request)
     {
         $this->apiClient->setToken(request()->session()->get("auth_token"));
@@ -71,6 +56,58 @@ class DisnakerController extends Controller
         }
     }
 
+    public function umrImport(Request $request)
+    {
+        $this->apiClient->setToken(request()->session()->get("auth_token"));
+
+        try {
+            $request->validate([
+                "file" => "required|file|mimes:xls,xlsx|max:5000"
+            ], [
+                "file.required" => "File tidak boleh kosong",
+                'file.file' => 'Data komditas harus berupa file',
+                'file.mimes' => 'File harus berformat .xls atau .xlsx',
+                'file.max' => 'File maksimal 5 Mb ',
+            ]);
+
+            $import = $this->apiClient->post("/ketenagakerjaan/upah-minimum-regional/import", ["year" => $request->year], $request->files);
+
+            if (is_array($import) && isset($import["status_code"])) {
+                if ($import["status_code"] === 400) {
+                    flash($import["message"], "error");
+                    return redirect()->back();
+                }
+
+                if ($import["status_code"] === 500) {
+                    throw new Exception($import["message"]);
+                }
+
+                flash("Data UMR berhasil diimpor", "success");
+                return redirect()->back();
+            }
+        } catch (ValidationException $e) {
+            return redirect()->back()->withErrors($e->errors());
+        } catch (Exception $e) {
+            flash($e->getMessage(), "error");
+            return redirect()->back();
+        }
+    }
+
+    public function wlkpIndex()
+    {
+        return view('admin.ketenagakerjaan.wlkp.index');
+    }
+
+    public function disnakerIndex()
+    {
+        return view('admin.ketenagakerjaan.disnaker.index');
+    }
+
+    public function pktIndex()
+    {
+        return view('admin.ketenagakerjaan.pkt.index');
+    }
+
     public function lktIndex()
     {
         return view('admin.ketenagakerjaan.lkt.index');
@@ -79,5 +116,30 @@ class DisnakerController extends Controller
     public function ptkIndex()
     {
         return view('admin.ketenagakerjaan.ptk.index');
+    }
+
+    public function umrIndex(Request $request)
+    {
+        $this->apiClient->setToken($request->session()->get("auth_token"));
+
+        try {
+            $filters = $request->only(["year"]);
+            $umrs = $this->apiClient->get("/ketenagakerjaan/upah-minimum-regional", $filters);
+
+            if ($umrs !== null && $umrs["status"] === 200) {
+                $years = $umrs["data"]["years"];
+                $umrs = $umrs["data"]["data"];
+
+                return view("admin.ketenagakerjaan.umr.index", [
+                    "years" => $years,
+                    "umrs" => $umrs
+                ]);
+            }
+
+            throw new Exception("Terjadi kesalahan");
+        } catch (Exception $e) {
+            flash($e->getMessage(), "error");
+            return redirect()->back();
+        }
     }
 }
