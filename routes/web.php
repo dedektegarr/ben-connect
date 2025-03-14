@@ -164,18 +164,32 @@ Route::middleware("auth")->group(function () {
 
             });
         });
-// ketenagakerjaan
-Route::prefix("ketenagakerjaan")->group(function () {
-    Route::controller(DisnakerController::class)->group(function () {
-        Route::get("/wlkp", "wlkpIndex")->name("admin.ketenagakerjaan.wlkp.index");
-        Route::get("/disnaker", "disnakerIndex")->name("admin.ketenagakerjaan.disnaker.index");
-        Route::get("/pkt", "pktIndex")->name("admin.ketenagakerjaan.pkt.index");
-        Route::get("/lkt", "lktIndex")->name("admin.ketenagakerjaan.lkt.index");
-        Route::get("/ptk", "ptkIndex")->name("admin.ketenagakerjaan.ptk.index");
-    });
+        // ketenagakerjaan
+        Route::prefix("ketenagakerjaan")->group(function () {
+            Route::controller(DisnakerController::class)->group(function () {
+                Route::get("/wlkp", "wlkpIndex")->name("admin.ketenagakerjaan.wlkp.index");
+                Route::get("/disnaker", "disnakerIndex")->name("admin.ketenagakerjaan.disnaker.index");
+
+                // Sesuaikan dengan method yang benar
+                Route::get("/pkt", "pktIndex")->name("admin.ketenagakerjaan.pkt.index");
+                Route::get("/lkt", "lktIndex")->name("admin.ketenagakerjaan.lkt.index");
+
+                // Import data
+                Route::post("/pkt/import", "importPkt")->name("admin.ketenagakerjaan.pkt.import");
+                Route::post("/lkt/import", "importLkt")->name("admin.ketenagakerjaan.lkt.import");
+                Route::post("/ptk/import", "importPtk")->name("admin.ketenagakerjaan.ptk.import");
+
+                Route::get("/ptk", "ptkIndex")->name("admin.ketenagakerjaan.ptk.index");
+            });
+        });
+
+
+
+
+
 
 });
 
 
 });
-});
+
