@@ -20,6 +20,7 @@ use App\Http\Controllers\Kesehatan\RSUD\ApiRSUDController;
 use App\Http\Controllers\Ketenagakerjaan\LowonganKerjaTerdaftarController;
 use App\Http\Controllers\Ketenagakerjaan\PencariKerjaTerdaftarController;
 use App\Http\Controllers\Ketenagakerjaan\PenempatanTenagaKerjaController;
+use App\Http\Controllers\Ketenagakerjaan\UpahMinimumController;
 use App\Http\Controllers\Master\DatasetController;
 use App\Http\Controllers\Master\TagsController;
 use App\Http\Controllers\NewsController;
@@ -167,6 +168,8 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::get("/pencari-kerja-terdaftar", [PencariKerjaTerdaftarController::class, "index"]);
         Route::get("/lowongan-kerja-terdaftar", [LowonganKerjaTerdaftarController::class, "index"]);
         Route::get("/penempatan-tenaga-kerja", [PenempatanTenagaKerjaController::class, "index"]);
+        Route::post("/upah-minimum-regional/import", [UpahMinimumController::class, "import"]);
+        Route::get("/upah-minimum-regional", [UpahMinimumController::class, "index"]);
     });
 
     // DISPERINDAG

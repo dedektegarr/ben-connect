@@ -68,7 +68,6 @@ class KetenagakerjaanImport implements ToCollection, WithStartRow
         }
     }
 
-    // function to add Kabupaten and Kota to Kota
     private function findRegionId($region)
     {
         $region = strtolower($region);
