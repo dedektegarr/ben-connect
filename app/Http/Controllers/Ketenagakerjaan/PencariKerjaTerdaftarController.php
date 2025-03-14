@@ -41,9 +41,11 @@ class PencariKerjaTerdaftarController extends Controller
         }
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $data = PencariKerjaTerdaftar::with(["region"])->latest()->get();
+        $filters = $request->only(["year"]);
+
+        $data = PencariKerjaTerdaftar::with(["region"])->filter($filters)->latest()->get();
 
         return response()->json([
             "status" => 200,
