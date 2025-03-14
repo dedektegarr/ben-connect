@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Services\ApiClient;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
 
 class DisnakerController extends Controller
 {
@@ -14,6 +15,82 @@ class DisnakerController extends Controller
     public function __construct()
     {
         $this->apiClient = new ApiClient(config("app.url") . "/api");
+    }
+
+    public function import(Request $request)
+    {
+        $this->apiClient->setToken(request()->session()->get("auth_token"));
+
+        try {
+            $request->validate([
+                "file" => "required|file|mimes:xls,xlsx|max:5000",
+                "year" => "required|numeric"
+            ], [
+                "file.required" => "File tidak boleh kosong",
+                'file.file' => 'Data komditas harus berupa file',
+                'file.mimes' => 'File harus berformat .xls atau .xlsx',
+                'file.max' => 'File maksimal 5 Mb ',
+                'year.required' => 'Tahun tidak boleh kosong'
+            ]);
+
+            $import = $this->apiClient->post("/ketenagakerjaan/pencari-kerja-terdaftar/import", ["year" => $request->year], $request->files);
+
+            if (is_array($import) && isset($import["status_code"])) {
+                if ($import["status_code"] === 400) {
+                    flash($import["message"], "error");
+                    return redirect()->back();
+                }
+
+                if ($import["status_code"] === 500) {
+                    throw new Exception($import["message"]);
+                }
+
+                flash("Data naker berhasil diimpor", "success");
+                return redirect()->back();
+            }
+        } catch (ValidationException $e) {
+            return redirect()->back()->withErrors($e->errors());
+        } catch (Exception $e) {
+            flash($e->getMessage(), "error");
+            return redirect()->back();
+        }
+    }
+
+    public function umrImport(Request $request)
+    {
+        $this->apiClient->setToken(request()->session()->get("auth_token"));
+
+        try {
+            $request->validate([
+                "file" => "required|file|mimes:xls,xlsx|max:5000"
+            ], [
+                "file.required" => "File tidak boleh kosong",
+                'file.file' => 'Data komditas harus berupa file',
+                'file.mimes' => 'File harus berformat .xls atau .xlsx',
+                'file.max' => 'File maksimal 5 Mb ',
+            ]);
+
+            $import = $this->apiClient->post("/ketenagakerjaan/upah-minimum-regional/import", ["year" => $request->year], $request->files);
+
+            if (is_array($import) && isset($import["status_code"])) {
+                if ($import["status_code"] === 400) {
+                    flash($import["message"], "error");
+                    return redirect()->back();
+                }
+
+                if ($import["status_code"] === 500) {
+                    throw new Exception($import["message"]);
+                }
+
+                flash("Data UMR berhasil diimpor", "success");
+                return redirect()->back();
+            }
+        } catch (ValidationException $e) {
+            return redirect()->back()->withErrors($e->errors());
+        } catch (Exception $e) {
+            flash($e->getMessage(), "error");
+            return redirect()->back();
+        }
     }
 
     public function wlkpIndex()
@@ -88,107 +165,28 @@ class DisnakerController extends Controller
     }
 }
 
+    public function umrIndex(Request $request)
+    {
+        $this->apiClient->setToken($request->session()->get("auth_token"));
 
+        try {
+            $filters = $request->only(["year"]);
+            $umrs = $this->apiClient->get("/ketenagakerjaan/upah-minimum-regional", $filters);
 
+            if ($umrs !== null && $umrs["status"] === 200) {
+                $years = $umrs["data"]["years"];
+                $umrs = $umrs["data"]["data"];
 
-    // public function ptkIndex(Request $request)
-    // {
-    //     $this->apiClient->setToken($request->session()->get("auth_token"));
-    //     $filters = $request->only(["year"]);
+                return view("admin.ketenagakerjaan.umr.index", [
+                    "years" => $years,
+                    "umrs" => $umrs
+                ]);
+            }
 
-    //     try {
-    //         $ptks = $this->apiClient->get("/ketenagakerjaan/penempatan-tenaga-kerja", $filters);
-    //         $filters = $request->only(["year"]);
-
-    //         if (!isset($ptks["status"]) || $ptks["status"] !== 200) {
-    //             throw new Exception("Terjadi kesalahan saat mengambil data");
-    //         }
-    //         $totalLaki = collect($ptks)->sum('male');
-    //         $totalPerempuan = collect($ptks)->sum('female');
-    //         $grandTotal = $totalLaki + $totalPerempuan;
-    //         return view("admin.ketenagakerjaan.ptk.index", [
-    //             "ptks" => collect($ptks["data"] ?? [])->map(function ($ptk) {
-    //                 return [
-    //                     "id" => $ptk["id"] ?? null,
-    //                     "region_name" => $ptk["region"]["region_name"] ?? "Data tidak tersedia",
-    //                     "male" => $ptk["male"] ?? 0,
-    //                     "female" => $ptk["female"] ?? 0,
-    //                     "year" => $ptk["year"] ?? "Unknown"
-    //                 ];
-    //             }),
-    //             "regions" => $regions["data"] ?? [],
-    //             "total" => count($ptks["data"] ?? [])
-    //         ]);
-
-    //     } catch (Exception $e) {
-    //         flash($e->getMessage(), "error");
-    //         return redirect()->back();
-    //     }
-    // }
+            throw new Exception("Terjadi kesalahan");
+        } catch (Exception $e) {
+            flash($e->getMessage(), "error");
+            return redirect()->back();
+        }
+    }
 }
-
-//     // Method import data
-//     public function importPkt(Request $request)
-//     {
-//         return $this->import($request, "pencari-kerja-terdaftar");
-//     }
-
-//     public function importLkt(Request $request)
-//     {
-//         return $this->import($request, "lowongan-kerja");
-//     }
-
-//     public function importPtk(Request $request)
-//     {
-//         return $this->import($request, "pelatihan-tenaga-kerja");
-//     }
-
-//     private function import(Request $request, $type)
-//     {
-//         $this->apiClient->setToken(request()->session()->get("auth_token"));
-
-//         try {
-//             $request->validate([
-//                 "file" => "required|file|mimes:xls,xlsx|max:5000",
-//                 "year" => "required"
-//             ], [
-//                 "file.required" => "File data tidak boleh kosong",
-//                 "file.file" => "Data harus berupa file",
-//                 "file.mimes" => "File harus berformat .xls atau .xlsx",
-//                 "file.max" => "File maksimal 5 MB",
-//                 "year.required" => "Tahun tidak boleh kosong"
-//             ]);
-
-//             $import = $this->apiClient->post("/ketenagakerjaan/$type/import", [
-//                 "year" => $request->year
-//             ], $request->files);
-
-//             if (!isset($import["status"])) {
-//                 throw new Exception("Respons API tidak valid atau kosong.");
-//             }
-
-//             if ($import["status"] === 400) {
-//                 flash($import["message"] ?? "Terjadi kesalahan saat import.", "error");
-//                 return redirect()->back();
-//             }
-
-//             if ($import["status"] === 500) {
-//                 throw new Exception($import["message"] ?? "Kesalahan server.");
-//             }
-
-//             flash("Data berhasil diimport");
-//             return redirect()->back();
-//         } catch (ValidationException $e) {
-//             return redirect()->back()->withErrors($e->errors());
-//         } catch (Exception $e) {
-//             flash($e->getMessage(), "error");
-//             return redirect()->back();
-//         }
-//     }
-
-//     // Method untuk halaman pelatihan tenaga kerja
-//     public function ptkIndex()
-//     {
-//         return view('admin.ketenagakerjaan.ptk.index');
-//     }
-// }

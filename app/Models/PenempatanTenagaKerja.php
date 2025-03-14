@@ -12,6 +12,13 @@ class PenempatanTenagaKerja extends Model
 
     protected $guarded = ["id"];
 
+    public function scopeFilter($query, $filters)
+    {
+        return $query->when($filters["year"] ?? false, function ($q, $filter) {
+            $q->where("year", $filter);
+        });
+    }
+
     public function region()
     {
         return $this->belongsTo(Region::class, "region_id");

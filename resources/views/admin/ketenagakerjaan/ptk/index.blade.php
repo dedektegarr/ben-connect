@@ -1,4 +1,3 @@
-
 {{-- @endsection  --}}
 @extends('admin.layouts.app')
 
@@ -137,11 +136,11 @@
                 </div>
             </form>
             <div
-            class="overflow-hidden rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-white/[0.03]">
-            <table id="default-table">
-                <thead>
+                class="overflow-hidden rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-white/[0.03]">
+                <table id="default-table">
+                    <thead>
 
-                    <tr>
+                        <tr>
 
                         <th>
                             <span class="flex items-center">
@@ -212,8 +211,8 @@
         </div>
         </x-panel.panel-body>
     </x-panel.panel>
-        {{-- MODAL --}}
-        <div id="import-modal" tabindex="-1" aria-hidden="true"
+    {{-- MODAL --}}
+    <div id="import-modal" tabindex="-1" aria-hidden="true"
         class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
         <div class="relative p-4 w-full max-w-md max-h-full">
             <!-- Modal content -->
@@ -226,7 +225,8 @@
                     </h3>
                 </div>
                 <!-- Modal body -->
-                <form class="p-4 md:p-5" method="POST" action="{{ route('admin.sosial.databansos.import') }}" enctype="multipart/form-data">
+                <form class="p-4 md:p-5" method="POST" action="{{ route('admin.ketenagakerjaan.import') }}"
+                    enctype="multipart/form-data">
 
                     @csrf
                     <div class="grid gap-4 mb-4 grid-cols-2">
@@ -279,3 +279,21 @@
     </div>
 @endsection
 
+@push('scripts')
+    <script>
+        const errors = @json($errors->any());
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const modalEl = document.getElementById("import-modal");
+            const modal = new Modal(modalEl, {}, {
+                id: 'modalEl',
+                override: true
+            });
+
+            if (errors) {
+                modal.show();
+            }
+
+        });
+    </script>
+@endpush

@@ -3,34 +3,47 @@
 namespace App\Http\Controllers\Ketenagakerjaan;
 
 use App\Http\Controllers\Controller;
-use App\Imports\KetenagakerjaanImport;
-use App\Models\PencariKerjaTerdaftar;
+use App\Imports\UpahMinimumImport;
+use App\Models\UpahMinimum;
 use Exception;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 
-class PencariKerjaTerdaftarController extends Controller
+class UpahMinimumController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     */
+    public function index()
+    {
+        $data = UpahMinimum::with(["region"])->oldest()->get()->groupBy("region.region_name");
+
+        return response()->json([
+            "status" => 200,
+            "data" => [
+                "years" => $data->flatMap(fn($arr) => $arr->map(fn($item) => $item->year))->unique(),
+                "data" => $data
+            ]
+        ]);
+    }
+
     public function import(Request $request)
     {
         $request->validate([
             'file' => 'required|file|mimes:xls,xlsx|max:5000',
-            'year' => 'required|integer'
         ], [
             'file.required' => 'File tidak boleh kosong',
             'file.file' => 'File harus berupa file',
             'file.mimes' => 'File harus berupa file excel',
             'file.max' => 'File maksimal 5 MB',
-            'year.required' => 'Tahun tidak boleh kosong',
-            'year.integer' => 'Tahun harus berupa angka'
         ]);
 
         try {
-            Excel::import(new KetenagakerjaanImport($request->year), $request->file("file"));
+            Excel::import(new UpahMinimumImport, $request->file("file"));
 
             return response()->json([
                 'status_code' => 201,
-                'message' => 'Data ketenagakerjaan berhasil diimpor'
+                'message' => 'Data upah minimum regional berhasil diimpor'
             ], 201);
         } catch (Exception $e) {
             return response()->json([
@@ -39,18 +52,6 @@ class PencariKerjaTerdaftarController extends Controller
                 'error' => $e->getMessage()
             ], 500);
         }
-    }
-
-    public function index(Request $request)
-    {
-        $filters = $request->only(["year"]);
-
-        $data = PencariKerjaTerdaftar::with(["region"])->filter($filters)->latest()->get();
-
-        return response()->json([
-            "status" => 200,
-            "data" => $data
-        ]);
     }
 
     /**

@@ -11,9 +11,11 @@ class PenempatanTenagaKerjaController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data = PenempatanTenagaKerja::with(["region"])->latest()->get();
+        $filters = $request->only(["year"]);
+
+        $data = PenempatanTenagaKerja::with(["region"])->filter($filters)->latest()->get();
 
         return response()->json([
             "status" => 200,
