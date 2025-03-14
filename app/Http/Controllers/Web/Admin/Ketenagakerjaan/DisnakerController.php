@@ -103,20 +103,67 @@ class DisnakerController extends Controller
         return view('admin.ketenagakerjaan.disnaker.index');
     }
 
-    public function pktIndex()
+    public function pktIndex(Request $request)
     {
-        return view('admin.ketenagakerjaan.pkt.index');
+        return $this->fetchData("pkt", "/ketenagakerjaan/pencari-kerja-terdaftar", "admin.ketenagakerjaan.pkt.index", $request);
     }
 
-    public function lktIndex()
+    public function lktIndex(Request $request)
     {
-        return view('admin.ketenagakerjaan.lkt.index');
+        return $this->fetchData("lkt", "/ketenagakerjaan/lowongan-kerja-terdaftar", "admin.ketenagakerjaan.lkt.index", $request);
     }
 
-    public function ptkIndex()
+    public function ptkIndex(Request $request)
     {
-        return view('admin.ketenagakerjaan.ptk.index');
+        return $this->fetchData("ptk", "/ketenagakerjaan/penempatan-tenaga-kerja", "admin.ketenagakerjaan.ptk.index", $request);
     }
+
+    private function fetchData($type, $endpoint, $view, Request $request)
+{
+    $this->apiClient->setToken($request->session()->get("auth_token"));
+
+    $filters = $request->only(["year"]);
+
+    try {
+        $response = $this->apiClient->get($endpoint, $filters);
+
+        if (!isset($response["status"]) || $response["status"] !== 200 || !isset($response["data"])) {
+            throw new Exception("Gagal mengambil data $type dari API.");
+        }
+
+        // Ambil data dari response
+        $data = collect($response["data"] ?? []);
+
+        // Terapkan filter jika year dikirimkan
+        if (isset($filters["year"])) {
+            $data = $data->where("year", $filters["year"])->values();
+        }
+
+        $totalLaki = $data->sum("male") ?? 0;
+        $totalPerempuan = $data->sum("female") ?? 0;
+        $grandTotal = $totalLaki + $totalPerempuan;
+
+        return view($view, [
+            "{$type}s" => $data->map(function ($item) {
+                return [
+                    "id" => $item["id"] ?? null,
+                    "region_name" => data_get($item, "region.region_name", "Data tidak tersedia"),
+                    "male" => $item["male"] ?? 0,
+                    "female" => $item["female"] ?? 0,
+                    "year" => $item["year"] ?? "Unknown"
+                ];
+            }),
+            "total" => count($data),
+            "totalLaki" => $totalLaki,
+            "totalPerempuan" => $totalPerempuan,
+            "grandTotal" => $grandTotal
+        ]);
+
+    } catch (Exception $e) {
+        flash($e->getMessage(), "error");
+        return redirect()->back();
+    }
+}
 
     public function umrIndex(Request $request)
     {
