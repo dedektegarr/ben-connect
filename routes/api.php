@@ -153,8 +153,9 @@ Route::middleware('auth:sanctum')->group(function () {
         });
 
         // Data Rumah Sakit
-        Route::get('/kesehatan', [ApiRSUDController::class, 'getDataRSUD']);
-        Route::post('/kesehatan/synchronize', [ApiRSUDController::class, 'postDatabase']);
+        Route::get('/kesehatan/kunjungan-harian', [ApiRSUDController::class, 'kunjunganHarian']);
+        Route::get('/kesehatan/kunjungan-bulanan', [ApiRSUDController::class, 'kunjunganBulanan']);
+        Route::post('/kesehatan/synchronize', [ApiRSUDController::class, 'synchronize']);
         Route::controller(HospitalController::class)->group(function () {
             Route::get("/kesehatan/rs", "index");
             Route::get("/kesehatan/rs/{id}", "show");

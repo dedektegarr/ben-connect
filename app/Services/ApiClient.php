@@ -9,11 +9,13 @@ class ApiClient
 {
     protected $baseUrl;
     protected $token;
+    protected $headers;
 
-    public function __construct($baseUrl, $token = null)
+    public function __construct($baseUrl, $token = null, $headers = [])
     {
         $this->baseUrl = $baseUrl;
         $this->token = $token;
+        $this->headers = $headers;
     }
 
     public function setToken($token)
@@ -43,7 +45,7 @@ class ApiClient
 
     protected function request($method, $endpoint, $data = [], $files = [])
     {
-        $request = Http::withToken($this->token);
+        $request = Http::withToken($this->token)->withHeaders($this->headers)->withoutVerifying();
 
         if (!empty($files)) {
             foreach ($files as $key => $file) {

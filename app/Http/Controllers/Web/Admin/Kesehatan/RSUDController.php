@@ -11,10 +11,12 @@ use App\Http\Controllers\Controller;
 class RSUDController extends Controller
 {
     private $apiClient;
+    private $rsClient;
 
     public function __construct()
     {
         $this->apiClient = new ApiClient(config("app.url") . "/api");
+        $this->rsClient = new ApiClient(env("APP_BASE_URL_RSUD"), null, ["x-token" => env("APP_X_TOKEN")]);
     }
 
     public function kunjungan()
@@ -27,10 +29,11 @@ class RSUDController extends Controller
         })->reverse()->values()->toArray();
 
         try {
-            $kunjungan = $this->apiClient->get("/kesehatan");
+            $kunjunganHarian = $this->apiClient->get("/kesehatan/kunjungan-harian");
+            $kunjunganBulanan = $this->apiClient->get("/kesehatan/kunjungan-bulanan");
 
-            if ($kunjungan["status_code"] === 200) {
-                $harian = collect($kunjungan["data"]["kunjungan_harian"])->map(function ($data) {
+            if ($kunjunganHarian["status_code"] === 200) {
+                $harian = collect($kunjunganHarian["data"])->map(function ($data) {
                     return [
                         "tanggal" => Carbon::parse($data["kunjungan_harian_tanggal"])->translatedFormat("l, d F Y"),
                         "tanggal_short" => Carbon::parse($data["kunjungan_harian_tanggal"])->translatedFormat("d"),
@@ -40,7 +43,7 @@ class RSUDController extends Controller
                 });
 
                 // Urutkan berdasarkan daftar bulan terakhir
-                $bulanan = collect($kunjungan["data"]["kunjungan_bulanan"])->map(function ($data) {
+                $bulanan = collect($kunjunganBulanan["data"])->map(function ($data) {
                     return [
                         "bulan" => Carbon::create()->month($data["kunjungan_bulanan_bulan"])->translatedFormat("F"),
                         "tahun" => $data["kunjungan_bulanan_tahun"],
@@ -80,21 +83,21 @@ class RSUDController extends Controller
         $this->apiClient->setToken(request()->session()->get("auth_token"));
 
         try {
-            $response = $this->apiClient->get("/kesehatan");
+            $kamar = $this->rsClient->get("/cc/getKetersediaanKamar");
 
-            if ($response["status_code"] === 200) {
-                $kamar = $response["data"]["ketersediaan_kamar"];
+            $kamar = collect($kamar)->map(function ($item) {
+                return [
+                    "Kapasitas" => $item["cap"],
+                    "Kelas_kamar" => $item["name_of_clinic"],
+                    "Terisi" => $item["ISI"]
+                ];
+            })->filter(function ($item) {
+                return $item["Kapasitas"] > 0;
+            })->sortByDesc("Kapasitas")->toArray();
 
-                $kamar = collect($kamar)->filter(function ($item) {
-                    return $item["Kapasitas"] > 0;
-                })->sortByDesc("Kapasitas")->toArray();
-
-                return view("admin.kesehatan.rsud.kamar", [
-                    "ketersediaan_kamar" => $kamar
-                ]);
-            }
-
-            throw new Exception("Terjadi Kesalahan");
+            return view("admin.kesehatan.rsud.kamar", [
+                "ketersediaan_kamar" => $kamar
+            ]);
         } catch (Exception $e) {
             flash($e->getMessage(), "error");
             return redirect()->back();
@@ -106,17 +109,11 @@ class RSUDController extends Controller
         $this->apiClient->setToken(request()->session()->get("auth_token"));
 
         try {
-            $response = $this->apiClient->get("/kesehatan");
+            $pelayananPoli = $this->rsClient->get("/cc/getPelayananPoli");
 
-            if ($response["status_code"] === 200) {
-                $poli = $response["data"]["pelayanan_poli"];
-
-                return view("admin.kesehatan.rsud.poli", [
-                    "pelayanan_poli" => $poli
-                ]);
-            }
-
-            throw new Exception("Terjadi Kesalahan");
+            return view("admin.kesehatan.rsud.poli", [
+                "pelayanan_poli" => $pelayananPoli
+            ]);
         } catch (Exception $e) {
             flash($e->getMessage(), "error");
             return redirect()->back();
@@ -130,7 +127,7 @@ class RSUDController extends Controller
         try {
             $synchronize = $this->apiClient->post("/kesehatan/synchronize");
 
-            if ($synchronize["status_code"] === 200) {
+            if ($synchronize["status_code"] === 201) {
                 flash("Data berhasil di perbarui");
                 return redirect()->back();
             }

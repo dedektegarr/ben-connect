@@ -7,121 +7,77 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Kesehatan\RSUD\KunjunganHarianModel;
 use App\Models\Kesehatan\RSUD\KunjunganBulananModel;
+use App\Services\ApiClient;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Http;
 
 class ApiRSUDController extends Controller
 {
     protected $apiService;
+    protected $apiClient;
 
     public function __construct(ApiService $apiService)
     {
         $this->apiService = $apiService;
+        $this->apiClient = new ApiClient(env("APP_BASE_URL_RSUD"), null, ["x-token" => env("APP_X_TOKEN")]);
     }
 
-    public function getDataRSUD()
+    public function kunjunganHarian()
     {
-        try {
-            // Endpoint yang akan dipanggil
-            $endpoints = [
-                'ketersediaan_kamar' => '/cc/getKetersediaanKamar',
-                'pelayanan_poli' => '/cc/getPelayananPoli',
-            ];
+        $data = KunjunganHarianModel::orderBy('kunjungan_harian_tanggal', 'desc')
+            ->take(7)
+            ->get(['kunjungan_harian_pasien_lama', 'kunjungan_harian_pasien_baru', 'kunjungan_harian_tanggal']);
 
-            // Ambil data dari API
-            $responses = $this->apiService->sendMultipleRequests($endpoints);
-
-            // Ambil 7 data terakhir dari kunjungan harian
-            $kunjunganHarian = KunjunganHarianModel::orderBy('kunjungan_harian_tanggal', 'desc')
-                ->take(7)
-                ->get(['kunjungan_harian_pasien_lama', 'kunjungan_harian_pasien_baru', 'kunjungan_harian_tanggal']);
-
-            // Ambil 6 data terakhir dari kunjungan bulanan
-            $kunjunganBulanan = KunjunganBulananModel::orderBy('kunjungan_bulanan_tahun', 'desc')
-                ->orderBy('kunjungan_bulanan_bulan', 'desc')
-                ->take(6)
-                ->get(['kunjungan_bulanan_pasien_lama', 'kunjungan_bulanan_pasien_baru', 'kunjungan_bulanan_bulan', 'kunjungan_bulanan_tahun']);
-
-            // Gabungkan semua data
-            $data = [
-                'kunjungan_harian' => $kunjunganHarian,
-                'kunjungan_bulanan' => $kunjunganBulanan,
-                'ketersediaan_kamar' => $responses['ketersediaan_kamar'] ?? null,
-                'pelayanan_poli' => $responses['pelayanan_poli'] ?? null,
-            ];
-
-            // Jika semua data kosong, kembalikan response 500
-            if (empty($responses) && $kunjunganHarian->isEmpty() && $kunjunganBulanan->isEmpty()) {
-                return response()->json([
-                    'status_code' => 500,
-                    'message' => 'Gagal mengambil data dari server dan database',
-                    'data' => null,
-                ], 500);
-            }
-
-            return response()->json([
-                'status_code' => 200,
-                'data' => $data,
-            ], 200);
-        } catch (\Exception $error) {
-            return response()->json([
-                'status_code' => 500,
-                'message' => $error->getMessage(),
-            ], 500);
-        }
+        return response()->json([
+            'status_code' => 200,
+            'data' => $data,
+        ], 200);
     }
 
-    public function postDatabase()
+    public function kunjunganBulanan()
     {
-        try {
-            $endpoints = [
-                'kunjungan_harian' => '/cc/getKunjunganHarian',
-                'kunjungan_bulanan' => '/cc/getKunjunganBulanan',
+        $data = KunjunganBulananModel::orderBy('kunjungan_bulanan_bulan', 'desc')
+            ->take(7)
+            ->get(['kunjungan_bulanan_pasien_lama', 'kunjungan_bulanan_pasien_baru', 'kunjungan_bulanan_bulan', 'kunjungan_bulanan_tahun']);
+
+        return response()->json([
+            'status_code' => 200,
+            'data' => $data,
+        ], 200);
+    }
+
+    public function synchronize()
+    {
+        $kunjunganHarian = $this->apiClient->get("/cc/getKunjunganHarian");
+        $kunjunganBulanan = $this->apiClient->get("/cc/getKunjunganBulanan");
+
+        // Mapping
+        $kunjunganHarian = collect($kunjunganHarian)->map(function ($item) {
+            return [
+                "kunjungan_harian_pasien_baru" => $item["pasien_baru"],
+                "kunjungan_harian_pasien_lama" => $item["pasien_lama"],
+                "kunjungan_harian_tanggal" => $item["tanggal1"],
+                "created_at" => Carbon::now(),
+                "updated_at" => Carbon::now(),
             ];
+        })->toArray();
 
-            $responses = $this->apiService->sendMultipleRequests($endpoints);
+        $kunjunganBulanan = collect($kunjunganBulanan)->map(function ($item) {
+            return [
+                "kunjungan_bulanan_pasien_baru" => $item["pasien_baru"],
+                "kunjungan_bulanan_pasien_lama" => $item["pasien_lama"],
+                "kunjungan_bulanan_bulan" => $item["bulan"],
+                "kunjungan_bulanan_tahun" => $item["tahun"],
+                "created_at" => Carbon::now(),
+                "updated_at" => Carbon::now(),
+            ];
+        })->toArray();
 
-            if ($responses === null) {
-                return response()->json([
-                    'status_code' => 500,
-                    'message' => 'Gagal mengambil data dari server untuk semua endpoint',
-                    'data' => null,
-                ], 500);
-            }
-
-            // Simpan data kunjungan harian
-            if (!empty($responses['kunjungan_harian'])) {
-                foreach ($responses['kunjungan_harian'] as $kunjungan) {
-                    KunjunganHarianModel::updateOrCreate(
-                        ['kunjungan_harian_tanggal' => $kunjungan['tanggal1']], // unique constraint
-                        [
-                            'kunjungan_harian_pasien_lama' => $kunjungan['pasien_lama'],
-                            'kunjungan_harian_pasien_baru' => $kunjungan['pasien_baru'],
-                        ]
-                    );
-                }
-            }
-
-            // Simpan data kunjungan bulanan
-            if (!empty($responses['kunjungan_bulanan'])) {
-                foreach ($responses['kunjungan_bulanan'] as $kunjungan) {
-                    KunjunganBulananModel::updateOrCreate(
-                        ['kunjungan_bulanan_bulan' => $kunjungan['bulan'], 'kunjungan_bulanan_tahun' => $kunjungan['tahun']], // unique constraint
-                        [
-                            'kunjungan_bulanan_pasien_lama' => $kunjungan['pasien_lama'],
-                            'kunjungan_bulanan_pasien_baru' => $kunjungan['pasien_baru'],
-                        ]
-                    );
-                }
-            }
-
-            return response()->json([
-                'status_code' => 200,
-                'message' => 'Data berhasil disimpan ke database',
-            ], 200);
-        } catch (\Exception $error) {
-            return response()->json([
-                'status_code' => 500,
-                'message' => $error->getMessage(),
-            ], 500);
-        }
+        KunjunganHarianModel::insertOrIgnore($kunjunganHarian);
+        KunjunganBulananModel::insertOrIgnore($kunjunganBulanan);
+        return response()->json([
+            "status_code" => 201,
+            "message" => "Data berhasil disimpan ke database"
+        ]);
     }
 }
