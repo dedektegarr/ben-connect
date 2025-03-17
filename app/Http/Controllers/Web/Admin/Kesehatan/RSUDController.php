@@ -111,8 +111,13 @@ class RSUDController extends Controller
         try {
             $pelayananPoli = $this->rsClient->get("/cc/getPelayananPoli");
 
+            $totalPengunjung = collect($pelayananPoli)->sum("pengunjung");
+            $totalTerlayani = collect($pelayananPoli)->sum("terlayani");
+
             return view("admin.kesehatan.rsud.poli", [
-                "pelayanan_poli" => $pelayananPoli
+                "pelayanan_poli" => $pelayananPoli,
+                "totalPengunjung" => $totalPengunjung,
+                "totalTerlayani" => $totalTerlayani,
             ]);
         } catch (Exception $e) {
             flash($e->getMessage(), "error");
