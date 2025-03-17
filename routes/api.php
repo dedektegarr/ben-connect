@@ -309,3 +309,5 @@ Route::post('/dashboard/kependudukan/filter', [SocialController::class, 'index_a
 
 // =====================OPD PENDIDIKAN dashboard==============================
 Route::get('/pendidikan/dashboard', [SchoolFilterController::class, 'filter']);
+
+require __DIR__ . "/public/api.php";
