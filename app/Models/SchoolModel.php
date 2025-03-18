@@ -18,7 +18,8 @@ class SchoolModel extends Model
         'school_level_id',
         'region_id',
         'negeri_count',
-        'swasta_count'
+        'swasta_count',
+        'year'
     ];
 
     public function region()

@@ -64,7 +64,7 @@ class StudentController extends Controller
         $this->validate($request, $formRequest->rules(), $formRequest->messages());
 
         try {
-            Excel::import(new StudentCountImport, $request->file("student_file"));
+            Excel::import(new StudentCountImport($request->year), $request->file("student_file"));
 
             return response()->json([
                 "status_code" => 201,

@@ -162,7 +162,7 @@ class SchoolController extends Controller
         $this->validate($request, $formRequest->rules(), $formRequest->messages());
 
         try {
-            Excel::import(new SchoolCountImport, $request->file("school_file"));
+            Excel::import(new SchoolCountImport($request->year), $request->file("school_file"));
 
             return response()->json([
                 "status_code" => 201,

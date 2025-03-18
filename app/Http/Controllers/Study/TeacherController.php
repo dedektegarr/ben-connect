@@ -63,7 +63,7 @@ class TeacherController extends Controller
         $this->validate($request, $formRequest->rules(), $formRequest->messages());
 
         try {
-            Excel::import(new TeacherCountImport, $request->file("teacher_file"));
+            Excel::import(new TeacherCountImport($request->year), $request->file("teacher_file"));
 
             return response()->json([
                 "status_code" => 201,

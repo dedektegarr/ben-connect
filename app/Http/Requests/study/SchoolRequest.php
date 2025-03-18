@@ -25,6 +25,7 @@ class SchoolRequest extends FormRequest
     {
         return [
             'school_file' => 'required|file|mimes:xls,xlsx|max:5000',
+            'year' => "required|numeric"
         ];
     }
     public function messages()
@@ -34,6 +35,8 @@ class SchoolRequest extends FormRequest
             'school_file.file' => 'Data jumlah sekolah harus berupa file',
             'school_file.mimes' => 'File data jumlah sekolah harus berformat .xls atau .xlsx',
             'school_file.max' => 'File data jumlah sekolah maksimal 5 Mb ',
+            'year.required' => 'Tahun tidak boleh kosong',
+            'year.numeric' => 'Tahun harus berupa angka'
         ];
     }
 
