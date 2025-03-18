@@ -13,6 +13,13 @@ class Teacher extends Model
     protected $primaryKey = "teacher_id";
     protected $guarded = ["teacher_id"];
 
+    public function scopeFilter($query, $filters)
+    {
+        return $query->when($filters["year"] ?? null, function ($query, $year) {
+            $query->where("year", $year);
+        });
+    }
+
     public function region()
     {
         return $this->belongsTo(Region::class, 'region_id', 'region_id');
