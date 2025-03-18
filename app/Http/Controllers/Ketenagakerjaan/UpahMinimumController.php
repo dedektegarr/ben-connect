@@ -15,6 +15,7 @@ class UpahMinimumController extends Controller
      * Display a listing of the resource.
      */
     public function index()
+
     {
         $data = UpahMinimum::with(["region"])->oldest()->get()->groupBy("region.region_name");
 
@@ -24,7 +25,9 @@ class UpahMinimumController extends Controller
                 "years" => $data->flatMap(fn($arr) => $arr->map(fn($item) => $item->year))->unique(),
                 "data" => $data
             ]
+
         ]);
+
     }
 
     public function import(Request $request)

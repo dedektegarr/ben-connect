@@ -38,7 +38,7 @@
                         <div>
 
                             <p class="text-sm font-medium">Total Pencari Kerja Laki-Laki</p>
-                            <p class="text-3xl font-bold text-blue-500">{{ number_format($totalLaki) }}</p>
+                            <p class="text-3xl font-bold">{{ number_format($totalLaki) }}</p>
                         </div>
                         <div class="p-3 bg-white/10 rounded-full">
                             <svg class="w-8 h-8 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -62,7 +62,7 @@
                         <div>
 
                             <p class="text-sm font-medium">Total Pencari Kerja Perempuan</p>
-                            <p class="text-3xl font-bold text-pink-500">{{ number_format($totalPerempuan) }}</p>
+                            <p class="text-3xl font-bold">{{ number_format($totalPerempuan) }}</p>
                             {{-- <p class="text-3xl font-bold">57,92%</p> --}}
                         </div>
                         <div class="p-3 bg-white/10 rounded-full">
@@ -85,7 +85,7 @@
                     <div class="flex items-center justify-between">
                         <div>
                             <p class="text-sm font-medium">Grand Total</p>
-                              <p class="text-3xl font-bold text-green-500">{{ number_format($grandTotal) }}</p>
+                            <p class="text-3xl font-bold">{{ number_format($grandTotal) }}</p>
                          </div>
                         <div class="p-3 bg-white/10 rounded-full">
                             <svg class="w-8 h-8 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"

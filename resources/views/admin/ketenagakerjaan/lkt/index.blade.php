@@ -38,7 +38,7 @@
                         <div>
 
                             <p class="text-sm font-medium">Total Lowongan Kerja Laki laki</p>
-                            <p class="text-3xl font-bold text-blue-500">{{ isset($totalLaki) ? number_format($totalLaki) : 0 }}</p>
+                            <p class="text-3xl font-bold">{{ isset($totalLaki) ? number_format($totalLaki) : 0 }}</p>
                         </div>
                         <div class="p-3 bg-white/10 rounded-full">
                             <svg class="w-8 h-8 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -62,7 +62,7 @@
                         <div>
 
                             <p class="text-sm font-medium">Total Lowongan Kerja Perempuan</p>
-                            <p class="text-3xl font-bold text-pink-500">{{ isset($totalPerempuan) ? number_format($totalPerempuan) : 0 }}</p>
+                            <p class="text-3xl font-bold">{{ isset($totalPerempuan) ? number_format($totalPerempuan) : 0 }}</p>
                             {{-- <p class="text-3xl font-bold">57,92%</p> --}}
                         </div>
                         <div class="p-3 bg-white/10 rounded-full">
@@ -85,7 +85,7 @@
                     <div class="flex items-center justify-between">
                         <div>
                             <p class="text-sm font-medium">Grand Total</p>
-                            <p class="text-3xl font-bold text-green-500">{{ isset($grandTotal) ? number_format($grandTotal) : 0 }}</p>
+                            <p class="text-3xl font-bold">{{ isset($grandTotal) ? number_format($grandTotal) : 0 }}</p>
                          </div>
                         <div class="p-3 bg-white/10 rounded-full">
                             <svg class="w-8 h-8 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"

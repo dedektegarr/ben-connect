@@ -30,13 +30,16 @@
         </x-panel.panel-header>
 
         <x-panel.panel-body class="w-full p-10 bg-gray-900 rounded-lg shadow-lg">
-            {{-- <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
                 <div
                     class="p-6 rounded-xl text-white transition-all duration-300 transform hover:scale-[1.02] bg-gradient-to-br from-blue-500 to-blue-600">
                     <div class="flex items-center justify-between">
+
                         <div>
-                            <p class="text-sm font-medium">Total Jembatan</p>
-                            <p class="text-3xl font-bold">{{ number_format($total_jembatan ?? 0) }}</p>
+
+                            <p class="text-sm font-medium">UMR Terendah</p>
+                            <p class="text-3xl font-bold">{{ number_format($summary['min_salary'] ?? 0) }}</p>
+
                         </div>
                         <div class="p-3 bg-white/10 rounded-full">
                             <svg class="w-8 h-8 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -58,8 +61,10 @@
                     class="p-6 rounded-xl text-white transition-all duration-300 transform hover:scale-[1.02] bg-gradient-to-br from-green-500 to-green-600">
                     <div class="flex items-center justify-between">
                         <div>
-                            <p class="text-sm font-medium">Total Panjang Jembatan (m)</p>
-                            <p class="text-3xl font-bold">{{ number_format($total_panjang_jembatan ?? 0) }}</p>
+
+                            <p class="text-sm font-medium">UMR Tertinggi</p>
+                            <p class="text-3xl font-bold">{{ number_format($summary['max_salary'] ?? 0) }}</p>
+
                         </div>
                         <div class="p-3 bg-white/10 rounded-full">
                             <svg class="w-8 h-8 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -73,6 +78,7 @@
                                     d="M20.7071 15.2929c.3905.3905.3905 1.0237 0 1.4142l-4 4c-.3905.3905-1.0237.3905-1.4142 0l-2-2c-.3905-.3905-.3905-1.0237 0-1.4142.3905-.3905 1.0237-.3905 1.4142 0L16 18.5858l3.2929-3.2929c.3905-.3905 1.0237-.3905 1.4142 0Z"
                                     clip-rule="evenodd" />
                             </svg>
+
                         </div>
                     </div>
                 </div>
@@ -80,8 +86,9 @@
                     class="p-6 rounded-xl text-white transition-all duration-300 transform hover:scale-[1.02] bg-gradient-to-br from-green-500 to-green-600">
                     <div class="flex items-center justify-between">
                         <div>
-                            <p class="text-sm font-medium">Rata-rata Panjang Jembatan (m)</p>
-                            <p class="text-3xl font-bold">{{ number_format($rata_rata_panjang ?? 0) }}</p>
+
+                            <p class="text-sm font-medium">Rata-rata UMR</p>
+                            <p class="text-3xl font-bold">{{ number_format($summary['avg_salary'] ?? 0) }}</p>
                         </div>
                         <div class="p-3 bg-white/10 rounded-full">
                             <svg class="w-8 h-8 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
@@ -98,7 +105,8 @@
                         </div>
                     </div>
                 </div>
-            </div> --}}
+
+            </div>
 
             <div
                 class="overflow-hidden rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-white/[0.03]">
@@ -179,8 +187,8 @@
                     </div>
                     <button type="submit"
                         class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                        <svg class="me-1 -ms-1 w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
-                            height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <svg class="me-1 -ms-1 w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                             <path fill-rule="evenodd"
                                 d="M12 3a1 1 0 0 1 .78.375l4 5a1 1 0 1 1-1.56 1.25L13 6.85V14a1 1 0 1 1-2 0V6.85L8.78 9.626a1 1 0 1 1-1.56-1.25l4-5A1 1 0 0 1 12 3ZM9 14v-1H5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2h-4v1a3 3 0 1 1-6 0Zm8 2a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2H17Z"
                                 clip-rule="evenodd" />

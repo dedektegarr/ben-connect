@@ -165,28 +165,49 @@ class DisnakerController extends Controller
     }
 }
 
-    public function umrIndex(Request $request)
-    {
-        $this->apiClient->setToken($request->session()->get("auth_token"));
+public function umrIndex(Request $request)
+{
+    $this->apiClient->setToken($request->session()->get("auth_token"));
 
-        try {
-            $filters = $request->only(["year"]);
-            $umrs = $this->apiClient->get("/ketenagakerjaan/upah-minimum-regional", $filters);
+    try {
+        $filters = $request->only(["year"]);
 
-            if ($umrs !== null && $umrs["status"] === 200) {
-                $years = $umrs["data"]["years"];
-                $umrs = $umrs["data"]["data"];
+        // Tambahkan log sebelum API dipanggil
+        // Log::info("Mengambil data upah minimum regional", ["filters" => $filters]);
 
-                return view("admin.ketenagakerjaan.umr.index", [
-                    "years" => $years,
-                    "umrs" => $umrs
-                ]);
-            }
+        $umrs = $this->apiClient->get("/ketenagakerjaan/upah-minimum-regional", $filters);
 
-            throw new Exception("Terjadi kesalahan");
-        } catch (Exception $e) {
-            flash($e->getMessage(), "error");
-            return redirect()->back();
+        // Log respons API
+        // Log::info("Respons API UMR", ["response" => $umrs]);
+
+        // Cek apakah API mengembalikan status 200
+        if (!isset($umrs["status"]) || $umrs["status"] !== 200) {
+            throw new Exception("Gagal mengambil data dari API. Status tidak valid.");
         }
+
+        $years = $umrs["data"]["years"] ?? [];
+        $umrs = $umrs["data"]["data"] ?? [];
+
+        // Ambil semua salary
+        $allSalaries = collect($umrs)->flatMap(fn($regions) => collect($regions)->pluck("salary"));
+
+        // Buat ringkasan data
+        $summary = [
+            "min_salary" => $allSalaries->min() ?? 0,
+            "max_salary" => $allSalaries->max() ?? 0,
+            "avg_salary" => round($allSalaries->avg() ?? 0)
+        ];
+
+        return view("admin.ketenagakerjaan.umr.index", [
+            "years" => $years,
+            "umrs" => $umrs,
+            "summary" => $summary
+        ]);
+    } catch (Exception $e) {
+        // Log::error("Error mengambil data UMR", ["error" => $e->getMessage()]);
+
+        flash($e->getMessage(), "error");
+        return redirect()->back();
     }
+}
 }

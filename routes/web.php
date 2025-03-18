@@ -176,7 +176,9 @@ Route::middleware("auth")->group(function () {
 
                 Route::post("/upah-minimum-regional/import", "umrImport")->name("admin.ketenagakerjaan.umr.import");
                 Route::get("/upah-minimum-regional", "umrIndex")->name("admin.ketenagakerjaan.umr.index");
+
             });
         });
+
     });
 });
