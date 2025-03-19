@@ -23,7 +23,7 @@ class JumlahGuruController extends Controller
     {
         $this->apiClient->setToken(request()->session()->get("auth_token"));
 
-        $filters = $request->only(["region"]);
+        $filters = $request->only(["year"]);
 
         try {
             $guru = $this->apiClient->get("/pendidikan/guru", $filters);

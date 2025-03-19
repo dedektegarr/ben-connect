@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Web\Admin\Pendidikan;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\study\SchoolRequest;
 use App\Services\ApiClient;
+use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
@@ -22,16 +23,18 @@ class JumlahSekolahController extends Controller
     {
         $this->apiClient->setToken(request()->session()->get("auth_token"));
 
-        $filters = $request->only(["region"]);
+        $filters = $request->only(["year"]);
 
         try {
             $sekolah = $this->apiClient->get("/pendidikan/sekolah", $filters);
+
             $sekolahByRegion = collect($sekolah["data"])->groupBy("region_name");
             $getTotalPerRegion = $sekolahByRegion->map(function ($sekolah) {
                 return [
                     "total" => $sekolah->sum("negeri_count") + $sekolah->sum("swasta_count"),
                     "total_negeri" => $sekolah->sum("negeri_count"),
-                    "total_swasta" => $sekolah->sum("swasta_count")
+                    "total_swasta" => $sekolah->sum("swasta_count"),
+                    "tahun" => $sekolah[0]["school_year"]
                 ];
             });
 

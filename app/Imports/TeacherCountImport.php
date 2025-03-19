@@ -16,11 +16,13 @@ class TeacherCountImport implements ToModel, WithStartRow
     private $regions;
     private $levels;
     private $levelMapping;
+    private $year;
 
-    public function __construct()
+    public function __construct(int $year)
     {
         $this->regions = array_map("strtolower", Region::pluck("region_name", "region_id")->toArray());
         $this->levels = array_map("strtolower", SchoolLevelModel::pluck("school_level_name", "school_level_id")->toArray());
+        $this->year = $year;
     }
 
     public function model($row)
@@ -59,6 +61,7 @@ class TeacherCountImport implements ToModel, WithStartRow
                 "region_id" => $regionExists,
                 "male_count" => $row[$startColumn + 1],
                 "female_count" => $row[$startColumn + 2],
+                "year" => $this->year
             ]);
         }
 

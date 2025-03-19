@@ -7,6 +7,7 @@ use App\Http\Requests\study\StudentRequest;
 use App\Imports\StudentCountImport;
 use App\Imports\StudentImport;
 use App\Models\Student;
+use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
@@ -16,9 +17,12 @@ class StudentController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $students = Student::with(["region", "schoollevel"])->get();
+        $filters = $request->only(["year"]);
+        $filters["year"] = $filters["year"] ?? Carbon::now()->year;
+
+        $students = Student::with(["region", "schoollevel"])->filter($filters)->get();
 
         return response()->json([
             "status_code" => 200,
@@ -64,7 +68,7 @@ class StudentController extends Controller
         $this->validate($request, $formRequest->rules(), $formRequest->messages());
 
         try {
-            Excel::import(new StudentCountImport, $request->file("student_file"));
+            Excel::import(new StudentCountImport($request->year), $request->file("student_file"));
 
             return response()->json([
                 "status_code" => 201,

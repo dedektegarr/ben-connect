@@ -25,6 +25,7 @@ class StudentRequest extends FormRequest
     {
         return [
             'student_file' => 'required|file|mimes:xls,xlsx|max:5000',
+            'year' => 'required|numeric'
         ];
     }
     public function messages()
@@ -34,6 +35,8 @@ class StudentRequest extends FormRequest
             'student_file.file' => 'Data jumlah peserta didik harus berupa file',
             'student_file.mimes' => 'File data jumlah peserta didik harus berformat .xls atau .xlsx',
             'student_file.max' => 'File data jumlah peserta didik maksimal 5 Mb ',
+            'year.required' => 'Tahun tidak boleh kosong',
+            'year.numeric' => 'Tahun harus berupa angka'
         ];
     }
 

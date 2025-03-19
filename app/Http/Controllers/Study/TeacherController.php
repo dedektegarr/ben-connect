@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\study\TeacherRequest;
 use App\Imports\TeacherCountImport;
 use App\Models\Teacher;
+use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
@@ -15,9 +16,12 @@ class TeacherController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $teachers = Teacher::with(["region", "schoollevel"])->get();
+        $filters = $request->only(["year"]);
+        $filters["year"] = $filters["year"] ?? Carbon::now()->year;
+
+        $teachers = Teacher::with(["region", "schoollevel"])->filter($filters)->get();
 
         return response()->json([
             "status_code" => 200,
@@ -63,7 +67,7 @@ class TeacherController extends Controller
         $this->validate($request, $formRequest->rules(), $formRequest->messages());
 
         try {
-            Excel::import(new TeacherCountImport, $request->file("teacher_file"));
+            Excel::import(new TeacherCountImport($request->year), $request->file("teacher_file"));
 
             return response()->json([
                 "status_code" => 201,

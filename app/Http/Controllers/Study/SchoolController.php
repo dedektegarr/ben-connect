@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\study\SchoolRequest;
 use App\Imports\SchoolCountImport;
 use App\Models\SchoolModel;
+use Carbon\Carbon;
 use Exception;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
@@ -15,9 +16,12 @@ class SchoolController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data_school = SchoolModel::with('region', 'schoollevel')->get();
+        $filters = $request->only(["year"]);
+        $filters["year"] = $filters["year"] ?? Carbon::now()->year;
+
+        $data_school = SchoolModel::with('region', 'schoollevel')->filter($filters)->get();
 
         // format data
         $formatData = $data_school->map(function ($data_school) {
@@ -31,6 +35,7 @@ class SchoolController extends Controller
                 'negeri_count' => $data_school->negeri_count,
                 'swasta_count' => $data_school->swasta_count,
                 'school_adress' => $data_school->school_address,
+                'school_year' => $data_school->year,
                 'latitude' => $data_school->latitude,
                 'longitude' => $data_school->longitude,
                 'created_at' => $data_school->created_at->format('Y-m-d'),
@@ -162,7 +167,7 @@ class SchoolController extends Controller
         $this->validate($request, $formRequest->rules(), $formRequest->messages());
 
         try {
-            Excel::import(new SchoolCountImport, $request->file("school_file"));
+            Excel::import(new SchoolCountImport($request->year), $request->file("school_file"));
 
             return response()->json([
                 "status_code" => 201,

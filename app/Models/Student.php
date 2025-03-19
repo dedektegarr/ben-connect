@@ -13,6 +13,13 @@ class Student extends Model
     protected $primaryKey = "student_id";
     protected $guarded = ["student_id"];
 
+    public function scopeFilter($query, $filters)
+    {
+        return $query->when($filters["year"] ?? null, function ($query, $year) {
+            $query->where("year", $year);
+        });
+    }
+
     public function region()
     {
         return $this->belongsTo(Region::class, 'region_id', 'region_id');

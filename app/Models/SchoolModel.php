@@ -18,8 +18,16 @@ class SchoolModel extends Model
         'school_level_id',
         'region_id',
         'negeri_count',
-        'swasta_count'
+        'swasta_count',
+        'year'
     ];
+
+    public function scopeFilter($query, $filters)
+    {
+        return $query->when($filters["year"] ?? null, function ($query, $year) {
+            $query->where("year", $year);
+        });
+    }
 
     public function region()
     {

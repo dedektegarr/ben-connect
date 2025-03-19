@@ -25,6 +25,7 @@ class TeacherRequest extends FormRequest
     {
         return [
             'teacher_file' => 'required|file|mimes:xls,xlsx|max:5000',
+            'year' => 'required|numeric'
         ];
     }
     public function messages()
@@ -34,6 +35,8 @@ class TeacherRequest extends FormRequest
             'teacher_file.file' => 'Data jumlah guru harus berupa file',
             'teacher_file.mimes' => 'File data jumlah guru harus berformat .xls atau .xlsx',
             'teacher_file.max' => 'File data jumlah guru maksimal 5 Mb ',
+            'year.required' => 'Tahun tidak boleh kosong',
+            'year.numeric' => 'Tahun harus berupa angka'
         ];
     }
 

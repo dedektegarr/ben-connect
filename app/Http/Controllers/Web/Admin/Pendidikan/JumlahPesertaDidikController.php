@@ -23,7 +23,7 @@ class JumlahPesertaDidikController extends Controller
     {
         $this->apiClient->setToken(request()->session()->get("auth_token"));
 
-        $filters = $request->only(["region"]);
+        $filters = $request->only(["year"]);
 
         try {
             $pesertaDidik = $this->apiClient->get("/pendidikan/peserta-didik", $filters);
