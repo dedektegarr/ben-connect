@@ -59,7 +59,7 @@ class JumlahPesertaDidikController extends Controller
             $formRequest = new StudentRequest();
             $this->validate($request, $formRequest->rules(), $formRequest->messages());
 
-            $import = $this->apiClient->post("/pendidikan/peserta-didik/import", [], $request->files);
+            $import = $this->apiClient->post("/pendidikan/peserta-didik/import", ["year" => $request->year], $request->files);
 
             if ($import["status_code"] === 201) {
                 flash("Data jumlah peserta didik berhasil di import");

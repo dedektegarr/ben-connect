@@ -59,7 +59,7 @@ class JumlahGuruController extends Controller
             $formRequest = new TeacherRequest();
             $this->validate($request, $formRequest->rules(), $formRequest->messages());
 
-            $import = $this->apiClient->post("/pendidikan/guru/import", [], $request->files);
+            $import = $this->apiClient->post("/pendidikan/guru/import", ["year" => $request->year], $request->files);
 
             if ($import["status_code"] === 201) {
                 flash("Data jumlah guru berhasil di import");

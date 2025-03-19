@@ -61,7 +61,7 @@ class JumlahSekolahController extends Controller
             $formRequest = new SchoolRequest();
             $this->validate($request, $formRequest->rules(), $formRequest->messages());
 
-            $import = $this->apiClient->post("/pendidikan/sekolah/import", [], $request->files);
+            $import = $this->apiClient->post("/pendidikan/sekolah/import", ["year" => $request->year], $request->files);
 
             if ($import["status_code"] === 201) {
                 flash("Data jumlah sekolah berhasil di import");
