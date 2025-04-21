@@ -66,7 +66,7 @@ class ExcelImportController extends Controller
             'file' => 'required|file|mimes:xlsx,xls',
             'year' => 'required|integer|min:1990|max:2100'
         ]);
-    
+
         if ($validator->fails()) {
             return response()->json([
                 'status' => 400,
@@ -74,7 +74,7 @@ class ExcelImportController extends Controller
                 'errors' => $validator->errors(),
             ], 400);
         }
-    
+
         try {
             $import = new IkmImport($request->year);
             Excel::import($import, $request->file('file'));
@@ -92,7 +92,6 @@ class ExcelImportController extends Controller
                 'status' => 200,
                 'message' => 'File berhasil di-import.'
             ], 200);
-    
         } catch (\Exception $e) {
             return response()->json([
                 'status' => 500,
@@ -108,7 +107,7 @@ class ExcelImportController extends Controller
         $validator = Validator::make($request->all(), [
             'file' => 'required|file|mimes:xlsx,xls'
         ]);
-    
+
         if ($validator->fails()) {
             return response()->json([
                 'status' => 400,
@@ -116,7 +115,7 @@ class ExcelImportController extends Controller
                 'errors' => $validator->errors(),
             ], 400);
         }
-    
+
         try {
             $import = new IndustryImport();
             Excel::import($import, $request->file('file'));
@@ -134,7 +133,6 @@ class ExcelImportController extends Controller
                 'status' => 200,
                 'message' => 'File berhasil di-import.'
             ], 200);
-    
         } catch (\Exception $e) {
             return response()->json([
                 'status' => 500,
@@ -144,4 +142,3 @@ class ExcelImportController extends Controller
         }
     }
 }
-

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Kesehatan\RSUD\ApiRSUDController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Population\PopulationController;
 
@@ -9,4 +10,6 @@ Route::middleware(["guest"])->group(function () {
         Route::get('kependudukan/data', 'index');
         Route::get('kependudukan/detail/{id}', 'show');
     });
+
+    Route::get('/kesehatan/kunjungan-harian', [ApiRSUDController::class, 'kunjunganHarian']);
 });

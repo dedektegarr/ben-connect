@@ -74,7 +74,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
             <form method="GET" action="">
                 <div class="flex items-center gap-4 justify-between mb-6">
@@ -110,6 +109,57 @@
                     </button>
                 </div>
             </form>
+
+            <div class="w-full mb-4 bg-white rounded-lg shadow-sm dark:bg-gray-800">
+                <div id="labels-chart" class="px-2.5"></div>
+                <div
+                    class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between mt-5 p-4 md:p-6 pt-0 md:pt-0">
+                    <div class="flex justify-between items-center pt-5">
+                        <!-- Button -->
+                        <button id="dropdownDefaultButton" data-dropdown-toggle="lastDaysdropdown"
+                            data-dropdown-placement="bottom"
+                            class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 text-center inline-flex items-center dark:hover:text-white"
+                            type="button">
+                            Last 7 days
+                            <svg class="w-2.5 m-2.5 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 10 6">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="m1 1 4 4 4-4" />
+                            </svg>
+                        </button>
+                        <!-- Dropdown menu -->
+                        <div id="lastDaysdropdown"
+                            class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700">
+                            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200"
+                                aria-labelledby="dropdownDefaultButton">
+                                <li>
+                                    <a href="#"
+                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Yesterday</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Today</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Last
+                                        7 days</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Last
+                                        30 days</a>
+                                </li>
+                                <li>
+                                    <a href="#"
+                                        class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Last
+                                        90 days</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <div
                 class="overflow-x-auto rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-white/[0.03]">
@@ -170,73 +220,167 @@
             </div>
         </x-panel.panel-body>
     </x-panel.panel>
-  {{-- MODAL --}}
-  <div id="import-modal" tabindex="-1" aria-hidden="true"
-  class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-  <div class="relative p-4 w-full max-w-md max-h-full">
-      <!-- Modal content -->
-      <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
-          <!-- Modal header -->
-          <div
-              class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200">
-              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                  {{ __('Impor Data Komoditas') }}
-              </h3>
-          </div>
-          <!-- Modal body -->
-          <form class="p-4 md:p-5" method="POST" action="{{ route('admin.perindustrian.komoditas.import') }}" enctype="multipart/form-data">
+    {{-- MODAL --}}
+    <div id="import-modal" tabindex="-1" aria-hidden="true"
+        class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+        <div class="relative p-4 w-full max-w-md max-h-full">
+            <!-- Modal content -->
+            <div class="relative bg-white rounded-lg shadow-sm dark:bg-gray-700">
+                <!-- Modal header -->
+                <div
+                    class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600 border-gray-200">
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                        {{ __('Impor Data Komoditas') }}
+                    </h3>
+                </div>
+                <!-- Modal body -->
+                <form class="p-4 md:p-5" method="POST" action="{{ route('admin.perindustrian.komoditas.import') }}"
+                    enctype="multipart/form-data">
 
-              @csrf
-              <div class="grid gap-4 mb-4 grid-cols-2">
-                  <div class="col-span-2">
-                      <label for="file"
-                          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ __('File') }}</label>
-                      <input name="file" id="file"
-                          class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                          aria-describedby="file_input_help" id="file_input" type="file">
+                    @csrf
+                    <div class="grid gap-4 mb-4 grid-cols-2">
+                        <div class="col-span-2">
+                            <label for="file"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ __('File') }}</label>
+                            <input name="file" id="file"
+                                class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                aria-describedby="file_input_help" id="file_input" type="file">
 
-                      @error('file')
-                          <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span
-                                  class="font-medium">{{ $message }}</p>
-                      @enderror <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">
-                          PDF (MAX.
-                          5Mb).
-                      </p>
-                  </div>
-              </div>
-              <button type="submit"
-                  class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                  <svg class="me-1 -ms-1 w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                      width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                      <path fill-rule="evenodd"
-                          d="M12 3a1 1 0 0 1 .78.375l4 5a1 1 0 1 1-1.56 1.25L13 6.85V14a1 1 0 1 1-2 0V6.85L8.78 9.626a1 1 0 1 1-1.56-1.25l4-5A1 1 0 0 1 12 3ZM9 14v-1H5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2h-4v1a3 3 0 1 1-6 0Zm8 2a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2H17Z"
-                          clip-rule="evenodd" />
-                  </svg>
+                            @error('file')
+                                <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span
+                                        class="font-medium">{{ $message }}</p>
+                            @enderror <p class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">
+                                PDF (MAX.
+                                5Mb).
+                            </p>
+                        </div>
+                    </div>
+                    <button type="submit"
+                        class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        <svg class="me-1 -ms-1 w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd"
+                                d="M12 3a1 1 0 0 1 .78.375l4 5a1 1 0 1 1-1.56 1.25L13 6.85V14a1 1 0 1 1-2 0V6.85L8.78 9.626a1 1 0 1 1-1.56-1.25l4-5A1 1 0 0 1 12 3ZM9 14v-1H5a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2h-4v1a3 3 0 1 1-6 0Zm8 2a1 1 0 1 0 0 2h.01a1 1 0 1 0 0-2H17Z"
+                                clip-rule="evenodd" />
+                        </svg>
 
-                  {{ __('Impor') }}
-              </button>
-          </form>
-      </div>
-  </div>
-</div>
+                        {{ __('Impor') }}
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
 
 @endsection
 
 @push('scripts')
-<script>
-    const errors = @json($errors->any());
+    <script>
+        const errors = @json($errors->any());
 
-    document.addEventListener("DOMContentLoaded", function() {
-        const modalEl = document.getElementById("import-modal");
-        const modal = new Modal(modalEl, {}, {
-            id: 'modalEl',
-            override: true
+        document.addEventListener("DOMContentLoaded", function() {
+            const modalEl = document.getElementById("import-modal");
+            const modal = new Modal(modalEl, {}, {
+                id: 'modalEl',
+                override: true
+            });
+
+            if (errors) {
+                modal.show();
+            }
+
+
+            const options = {
+                // set the labels option to true to show the labels on the X and Y axis
+                xaxis: {
+                    show: true,
+                    categories: @json($chartDates),
+                    labels: {
+                        show: true,
+                        style: {
+                            fontFamily: "Inter, sans-serif",
+                            cssClass: 'text-xs font-normal fill-gray-500 dark:fill-gray-400'
+                        }
+                    },
+                    axisBorder: {
+                        show: false,
+                    },
+                    axisTicks: {
+                        show: false,
+                    },
+                },
+                yaxis: {
+                    show: true,
+                    labels: {
+                        show: true,
+                        style: {
+                            fontFamily: "Inter, sans-serif",
+                            cssClass: 'text-xs font-normal fill-gray-500 dark:fill-gray-400'
+                        },
+                        formatter: function(value) {
+                            return '$' + value;
+                        }
+                    }
+                },
+                series: [{
+                        name: "Developer Edition",
+                        data: [150, 141, 145, 152, 135, 125],
+                        color: "#1A56DB",
+                    },
+                    {
+                        name: "Designer Edition",
+                        data: [43, 13, 65, 12, 42, 73],
+                        color: "#7E3BF2",
+                    },
+                ],
+                chart: {
+                    sparkline: {
+                        enabled: false
+                    },
+                    height: "100%",
+                    width: "100%",
+                    type: "area",
+                    fontFamily: "Inter, sans-serif",
+                    dropShadow: {
+                        enabled: false,
+                    },
+                    toolbar: {
+                        show: false,
+                    },
+                },
+                tooltip: {
+                    enabled: true,
+                    x: {
+                        show: false,
+                    },
+                },
+                fill: {
+                    type: "gradient",
+                    gradient: {
+                        opacityFrom: 0.55,
+                        opacityTo: 0,
+                        shade: "#1C64F2",
+                        gradientToColors: ["#1C64F2"],
+                    },
+                },
+                dataLabels: {
+                    enabled: false,
+                },
+                stroke: {
+                    width: 6,
+                },
+                legend: {
+                    show: false
+                },
+                grid: {
+                    show: false,
+                },
+            }
+
+            if (document.getElementById("labels-chart") && typeof ApexCharts !== 'undefined') {
+                const chart = new ApexCharts(document.getElementById("labels-chart"), options);
+                chart.render();
+            }
+
         });
-
-        if (errors) {
-            modal.show();
-        }
-
-    });
-</script>
+    </script>
 @endpush

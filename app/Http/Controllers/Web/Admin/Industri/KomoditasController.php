@@ -33,9 +33,15 @@ class KomoditasController extends Controller
             $groupedData = collect($data_price["data_price"])->groupBy(["region_name", "variant_name"]);
 
             if ($data_price["status_code"] === 200 && isset($data_price["data_price"]) && is_array($data_price["data_price"])) {
+
+                // Olah data untuk chart
+                $dataByDate = collect($data_price["data_price"])->groupBy("date");
+                $dataByVariant = collect($data_price["data_price"])->groupBy("variant_name");
+                // dd($dataByVariant);
                 return view("admin.industri.komoditas.index", [
                     "data_price" => $groupedData,
                     "dates" => $dates,
+                    "chartDates" => $dataByDate->keys(),
                     "regions" => $regions["data"]
                 ]);
             }

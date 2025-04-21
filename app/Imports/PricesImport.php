@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Imports;
 
 use Maatwebsite\Excel\Concerns\ToModel;
@@ -28,7 +29,7 @@ class PricesImport implements ToModel, WithHeadingRow, WithBatchInserts, WithChu
     public function model(array $row)
     {
         $nama_kabupaten = $this->formatKabupaten($row['kabupaten_kota']);
-        $nama_kabupaten_muko_muko=$this->formatKabupatenMuko($nama_kabupaten);
+        $nama_kabupaten_muko_muko = $this->formatKabupatenMuko($nama_kabupaten);
 
         $variant_name = trim($row['nama_variant']);
         $variants = $this->variants->first(function ($item) use ($variant_name) {
