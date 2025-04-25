@@ -18,6 +18,8 @@ return new class extends Migration
             $table->foreignUuid('region_id')->references('region_id')->on('region')->onDelete('cascade');
             $table->foreignUuid('variants_id')->references('variants_id')->on('variants')->onDelete('cascade');
             $table->timestamps();
+
+            $table->unique(['region_id', 'variants_id', 'date'], 'unique_region_variant_date');
         });
     }
 

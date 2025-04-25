@@ -9,9 +9,13 @@ use Maatwebsite\Excel\Concerns\WithChunkReading;
 use App\Models\Price;
 use App\Models\Variant;
 use App\Models\Region;
+use Carbon\Carbon;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Log;
+use Maatwebsite\Excel\Concerns\ToCollection;
+use Maatwebsite\Excel\Concerns\WithStartRow;
 
-class PricesImport implements ToModel, WithHeadingRow, WithBatchInserts, WithChunkReading
+class PricesImport implements ToCollection, WithBatchInserts, WithChunkReading, WithStartRow
 {
     public $variants;
     public $regions;
@@ -22,64 +26,118 @@ class PricesImport implements ToModel, WithHeadingRow, WithBatchInserts, WithChu
 
     public function __construct()
     {
-        $this->variants = Variant::select('variants_id', 'variants_name')->get();
-        $this->regions = Region::select('region_id', 'region_name')->get();
+        $this->variants = array_map("strtolower", Variant::pluck("variants_name", "variants_id")->toArray());
+        $this->regions = array_map("strtolower", Region::pluck("region_name", "region_id")->toArray());
     }
 
-    public function model(array $row)
+    public function startRow(): int
     {
-        $nama_kabupaten = $this->formatKabupaten($row['kabupaten_kota']);
-        $nama_kabupaten_muko_muko = $this->formatKabupatenMuko($nama_kabupaten);
+        return 4;
+    }
 
-        $variant_name = trim($row['nama_variant']);
-        $variants = $this->variants->first(function ($item) use ($variant_name) {
-            return strtolower($item->variants_name) === strtolower($variant_name);
-        });
+    public function collection(Collection $collection)
+    {
+        $dates = $collection->first()->filter(fn($date) => $date !== null)->values();
+        $data = $collection->slice(1)->map(function ($row) {
+            return $row->filter(fn($value) => $value !== null);
+        })->values();
 
-        $regions = $this->regions->first(function ($item) use ($nama_kabupaten_muko_muko) {
-            return strtolower($item->region_name) === strtolower($nama_kabupaten_muko_muko);
-        });
-        $rowNumber = $this->getRowNumber();
+        $insertData = [];
+        $currentRegion = "";
 
-        if (!$variants) {
-            $this->errors[] = "Baris {$rowNumber} - Variant '{$variant_name}' tidak ditemukan.";
-            return null;
-        }
+        foreach ($dates as $i => $date) {
+            foreach ($data as $row) {
+                // bandingkan data foreign key region dari excel dengan db
+                $regionInExcel = trim($row[1] ?? '');
 
-        if (!$regions) {
-            $this->errors[] = "Baris {$rowNumber} - Region '{$nama_kabupaten}' tidak ditemukan.";
-            return null;
-        }
-
-        foreach ($row as $key => $value) {
-            if ($this->isValidDate($key)) {
-                $dateFormatted = $this->formatDate($key);
-
-                if (!$this->isValidFormattedDate($dateFormatted)) {
-                    $this->errors[] = "Baris {$rowNumber} - Format tanggal '{$key}' salah.";
-                    continue;
+                if ($regionInExcel !== '') {
+                    $currentRegion = $this->regionFormat($regionInExcel);
                 }
 
-                if (empty($value)) {
-                    $this->errors[] = "Baris {$rowNumber} - Harga untuk tanggal {$dateFormatted} kosong.";
-                    continue;
-                }
+                $regionId = array_search($currentRegion, $this->regions);
 
-                $this->pricesData[] = [
-                    "prices_value" => $value,
-                    "date" => $dateFormatted,
-                    "variants_id" => (string) $variants->variants_id,
-                    "region_id" => (string) $regions->region_id,
+                // bandingkan data foreign key variant dari excel dengan db
+                $variantId = array_search(strtolower($row[2]), $this->variants);
+
+                // Date Format
+                $carbonDate = Carbon::createFromFormat('d/m/y', $date);
+
+                $insertData[] = [
+                    "region_id" => $regionId,
+                    "variants_id" => $variantId,
+                    "date" => $carbonDate->format('Y/m/d'),
+                    "prices_value" => $row[$i + 3],
+                    "created_at" => now(),
+                    "updated_at" => now()
                 ];
             }
         }
 
-        if (count($this->pricesData) >= $this->batchSize) {
-            $this->saveBatch();
-        }
-
-        return null;
+        Price::insertOrIgnore($insertData);
     }
+
+    private function regionFormat($value)
+    {
+        $region = strtolower($value);
+        $replaced = str_replace("kab.", "kabupaten", $region);
+
+        return $replaced;
+    }
+
+    // public function model(array $row)
+    // {
+    //     $nama_kabupaten = $this->formatKabupaten($row['kabupaten_kota']);
+    //     $nama_kabupaten_muko_muko = $this->formatKabupatenMuko($nama_kabupaten);
+
+    //     $variant_name = trim($row['nama_variant']);
+    //     $variants = $this->variants->first(function ($item) use ($variant_name) {
+    //         return strtolower($item->variants_name) === strtolower($variant_name);
+    //     });
+
+    //     $regions = $this->regions->first(function ($item) use ($nama_kabupaten_muko_muko) {
+    //         return strtolower($item->region_name) === strtolower($nama_kabupaten_muko_muko);
+    //     });
+    //     $rowNumber = $this->getRowNumber();
+
+    //     if (!$variants) {
+    //         $this->errors[] = "Baris {$rowNumber} - Variant '{$variant_name}' tidak ditemukan.";
+    //         return null;
+    //     }
+
+    //     if (!$regions) {
+    //         $this->errors[] = "Baris {$rowNumber} - Region '{$nama_kabupaten}' tidak ditemukan.";
+    //         return null;
+    //     }
+
+    //     foreach ($row as $key => $value) {
+    //         if ($this->isValidDate($key)) {
+    //             $dateFormatted = $this->formatDate($key);
+
+    //             if (!$this->isValidFormattedDate($dateFormatted)) {
+    //                 $this->errors[] = "Baris {$rowNumber} - Format tanggal '{$key}' salah.";
+    //                 continue;
+    //             }
+
+    //             if (empty($value)) {
+    //                 $this->errors[] = "Baris {$rowNumber} - Harga untuk tanggal {$dateFormatted} kosong.";
+    //                 continue;
+    //             }
+
+    //             $this->pricesData[] = [
+    //                 "prices_value" => $value,
+    //                 "date" => $dateFormatted,
+    //                 "variants_id" => (string) $variants->variants_id,
+    //                 "region_id" => (string) $regions->region_id,
+    //             ];
+    //         }
+    //     }
+
+    //     if (count($this->pricesData) >= $this->batchSize) {
+    //         $this->saveBatch();
+    //     }
+
+    //     return null;
+    // }
 
     private function saveBatch()
     {
