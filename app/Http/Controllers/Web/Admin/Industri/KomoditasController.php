@@ -22,10 +22,11 @@ class KomoditasController extends Controller
     {
         $this->apiClient->setToken(request()->session()->get("auth_token"));
 
-        $filters = $request->only(["region"]);
+        $filters = $request->only(["region", "variant"]);
 
         try {
             $data_price = $this->apiClient->get("/disperindag/price/data", $filters);
+            $variants = $this->apiClient->get("/disperindag/variant/data");
             $regions = $this->apiClient->get("/wilayah/data");
 
             // Ambil daftar tanggal unik dan urutkan
@@ -35,13 +36,44 @@ class KomoditasController extends Controller
             if ($data_price["status_code"] === 200 && isset($data_price["data_price"]) && is_array($data_price["data_price"])) {
 
                 // Olah data untuk chart
-                $dataByDate = collect($data_price["data_price"])->groupBy("date");
+                $dates = collect($data_price["data_price"])->groupBy("date")->keys();
                 $dataByVariant = collect($data_price["data_price"])->groupBy("variant_name");
-                // dd($dataByVariant);
+
+                $dates = collect($data_price['data_price'])->pluck('date')->unique()->sort()->values();
+
+                $chartData = [];
+
+                $colors = ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9F40'];
+                $colorIndex = 0;
+
+                foreach ($dataByVariant as $variantName => $items) {
+                    $prices = [];
+
+                    foreach ($dates as $date) {
+                        // Filter data per tanggal, lalu sum prices_value
+                        $sum = $items->filter(function ($item) use ($date) {
+                            return $item['date'] === $date;
+                        })->sum(function ($item) {
+                            return (int)$item['prices_value'];
+                        });
+
+                        $prices[] = $sum;
+                    }
+
+                    $chartData[] = [
+                        'name' => $variantName,
+                        'data' => $prices,
+                        'color' => $colors[$colorIndex % count($colors)]
+                    ];
+
+                    $colorIndex++;
+                }
+
                 return view("admin.industri.komoditas.index", [
                     "data_price" => $groupedData,
                     "dates" => $dates,
-                    "chartDates" => $dataByDate->keys(),
+                    "chartData" => $chartData,
+                    "variants" => $variants["data_variant"],
                     "regions" => $regions["data"]
                 ]);
             }

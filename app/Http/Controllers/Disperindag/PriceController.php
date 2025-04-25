@@ -11,7 +11,7 @@ class PriceController extends Controller
 {
     public function index(Request $request)
     {
-        $filters = $request->only(["region"]);
+        $filters = $request->only(["region", "variant"]);
         $data = Price::with(['region', 'variant'])->filter($filters)->get();
 
         // Mapping data ke format yang diinginkan

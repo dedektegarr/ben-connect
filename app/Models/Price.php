@@ -24,6 +24,10 @@ class Price extends Model
             $query->whereHas("region", function ($q) use ($region) {
                 $q->where("region_name", $region);
             });
+        })->when($filters["variant"] ?? null, function ($query, $variant) {
+            $query->whereHas("variant", function ($q) use ($variant) {
+                $q->where("variants_name", $variant);
+            });
         });
     }
 

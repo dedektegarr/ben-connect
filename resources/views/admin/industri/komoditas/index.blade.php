@@ -94,7 +94,20 @@
                                 @endforeach
                             </select>
                         </div>
-
+                        <div class="w-full">
+                            <label for="variant" class="sr-only">Komoditas</label>
+                            <select id="variant" name="variant"
+                                class="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
+                                <option value="" {{ request('variant') == '' ? 'selected' : '' }}>Semua Komoditas
+                                </option>
+                                @foreach ($variants as $item)
+                                    <option value="{{ $item['variants_name'] }}"
+                                        {{ request('variant') == $item['variants_name'] ? 'selected' : '' }}>
+                                        {{ $item['variants_name'] }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
                     </div>
 
                     {{-- Tombol Filter --}}
@@ -123,8 +136,8 @@
                             Last 7 days
                             <svg class="w-2.5 m-2.5 ms-1.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 fill="none" viewBox="0 0 10 6">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="m1 1 4 4 4-4" />
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m1 1 4 4 4-4" />
                             </svg>
                         </button>
                         <!-- Dropdown menu -->
@@ -293,7 +306,7 @@
                 // set the labels option to true to show the labels on the X and Y axis
                 xaxis: {
                     show: true,
-                    categories: @json($chartDates),
+                    categories: @json($dates),
                     labels: {
                         show: true,
                         style: {
@@ -317,21 +330,11 @@
                             cssClass: 'text-xs font-normal fill-gray-500 dark:fill-gray-400'
                         },
                         formatter: function(value) {
-                            return '$' + value;
+                            return 'Rp' + value;
                         }
                     }
                 },
-                series: [{
-                        name: "Developer Edition",
-                        data: [150, 141, 145, 152, 135, 125],
-                        color: "#1A56DB",
-                    },
-                    {
-                        name: "Designer Edition",
-                        data: [43, 13, 65, 12, 42, 73],
-                        color: "#7E3BF2",
-                    },
-                ],
+                series: @json($chartData),
                 chart: {
                     sparkline: {
                         enabled: false
