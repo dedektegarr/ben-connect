@@ -124,7 +124,12 @@
             </form>
 
             <div class="w-full mb-4 bg-white rounded-lg shadow-sm dark:bg-gray-800">
-                <div id="labels-chart" class="px-2.5"></div>
+                <div class="px-2.5">
+                    <div id="labels-chart" class="h-[500px]"></div>
+                  </div>
+
+
+
                 <div
                     class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between mt-5 p-4 md:p-6 pt-0 md:pt-0">
                     <div class="flex justify-between items-center pt-5">
@@ -351,11 +356,14 @@
                     },
                 },
                 tooltip: {
-                    enabled: true,
-                    x: {
-                        show: false,
-                    },
-                },
+    enabled: true,
+    x: {
+        show: false,
+    },
+    shared: false,
+    intersect: false
+},
+
                 fill: {
                     type: "gradient",
                     gradient: {
