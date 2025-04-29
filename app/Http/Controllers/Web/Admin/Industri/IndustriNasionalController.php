@@ -16,29 +16,41 @@ class IndustriNasionalController extends Controller
     {
         $this->apiClient = new ApiClient(config("app.url") . "/api");
     }
-
     public function index(Request $request)
     {
-        $this->apiClient->setToken(request()->session()->get("auth_token"));
+        $this->apiClient->setToken($request->session()->get('auth_token'));
 
-        $filters = $request->only(["region", "skala"]);
+        // Ambil semua filter yang ada, tapi kosongkan filter jika tidak dipilih user
+        $filters = [];
+
+        if ($request->filled('region')) {
+            $filters['region'] = $request->input('region');
+        }
+
+        if ($request->filled('skala')) {
+            $filters['skala'] = $request->input('skala');
+        }
 
         try {
-            $industries = $this->apiClient->get("/disperindag/industries", $filters);
-            $regions = $this->apiClient->get("/wilayah/data");
+            $industries = $this->apiClient->get('/disperindag/industries', $filters);
+            $regions = $this->apiClient->get('/wilayah/data');
 
-            if ($industries["status"] === 200) {
-                return view("admin.industri.industri-nasional.index", [
-                    "industries" => $industries["data"],
-                    "regions" => $regions["data"],
-                    "total_kecil" => collect($industries["data"])->where("industry_business_scale", "Kecil")->count(),
-                    "total_besar" => collect($industries["data"])->where("industry_business_scale", "Besar")->count(),
+            if ($industries['status'] === 200) {
+                // dd(collect($industries['data'])->pluck('region.region_name')->unique());
+                // dd($industries['data']); // Cek apakah data yang diterima sudah sesuai
+
+                return view('admin.industri.industri-nasional.index', [
+                    'industries' => $industries['data'],
+                    'regions' => $regions['data'],
+                    'total_kecil' => collect($industries['data'])->where('industry_business_scale', 'Kecil')->count(),
+                    'total_besar' => collect($industries['data'])->where('industry_business_scale', 'Besar')->count(),
+                    'industries_json' => json_encode($industries['data']) // untuk JavaScript
                 ]);
             }
 
-            throw new Exception("Terjadi kesalahan");
-        } catch (Exception $e) {
-            flash($e->getMessage(), "error");
+            throw new \Exception('Terjadi kesalahan saat memuat data industri.');
+        } catch (\Exception $e) {
+            flash($e->getMessage(), 'error');
             return redirect()->back();
         }
     }
