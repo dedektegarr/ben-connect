@@ -108,7 +108,8 @@
                             <label for="region" class="sr-only">Kab/Kota Kantor</label>
                             <select id="region" name="region"
                                 class="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
-                                <option value="" {{ request('region') == '' ? 'selected' : '' }}>Semua Kabupaten/Kota
+                                <option value="" {{ request('region') == '' ? 'selected' : '' }}>Semua
+                                    Kabupaten/Kota
                                     Kantor
                                 </option>
                                 @foreach ($regions as $item)
@@ -123,10 +124,13 @@
                             <label for="skala" class="sr-only">Kab/Kota Kantor</label>
                             <select id="skala" name="skala"
                                 class="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
-                                <option value="" {{ request('skala') == '' ? 'selected' : '' }}>Semua skala usaha
+                                <option value="" {{ request('skala') == '' ? 'selected' : '' }}>Semua skala
+                                    usaha
                                 </option>
-                                <option value="Besar" {{ request('skala') == 'Besar' ? 'selected' : '' }}>Besar</option>
-                                <option value="Kecil" {{ request('skala') == 'Kecil' ? 'selected' : '' }}>Kecil</option>
+                                <option value="Besar" {{ request('skala') == 'Besar' ? 'selected' : '' }}>Besar
+                                </option>
+                                <option value="Kecil" {{ request('skala') == 'Kecil' ? 'selected' : '' }}>Kecil
+                                </option>
                             </select>
                         </div>
                     </div>
@@ -144,8 +148,28 @@
                 </div>
             </form>
 
+            <!-- Chart Registrasi SINAS -->
+            <div class="p-6 bg-white dark:bg-gray-dark rounded-lg shadow col-span-full mb-4">
+                <h3 class="text-lg font-semibold mb-4 dark:text-white/90">Distribusi Per Kabupaten/Kota</h3>
+                <div id="kabupatenChart" wire:ignore></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Chart Registrasi SINAS -->
+                <div class="p-6 bg-white dark:bg-gray-dark rounded-lg shadow">
+                    <h3 class="text-lg font-semibold mb-4 dark:text-white/90">Registrasi SINAS</h3>
+                    <div id="sinasChart" wire:ignore></div>
+                </div>
+
+                <!-- Chart Skala Bisnis -->
+                <div class="p-6 bg-white dark:bg-gray-dark rounded-lg shadow">
+                    <h3 class="text-lg font-semibold mb-4 dark:text-white/90">Skala Bisnis</h3>
+                    <div id="businessScaleChart" wire:ignore></div>
+                </div>
+            </div>
+
             <div
-                class="overflow-hidden rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-white/[0.03]">
+                class="overflow-hidden mt-4 rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-white/[0.03]">
                 <table id="default-table">
                     <thead>
                         <tr>
@@ -367,6 +391,120 @@
                 modal.show();
             }
 
+            // Chart Registrasi SINAS
+            const sinasChart = new ApexCharts(document.querySelector('#sinasChart'), {
+                chart: {
+                    type: 'pie',
+                    height: 350
+                },
+                series: @json($sinasData),
+                labels: @json($sinasLabels),
+                colors: ['#3B82F6', '#64748B'],
+                responsive: [{
+                    breakpoint: 480,
+                    options: {
+                        chart: {
+                            width: 200
+                        }
+                    }
+                }]
+            });
+            sinasChart.render();
+
+            // Chart Skala Bisnis
+            const businessScaleChart = new ApexCharts(document.querySelector('#businessScaleChart'), {
+                chart: {
+                    type: 'donut',
+                    height: 350
+                },
+                series: @json($businessScaleData),
+                labels: @json($businessScaleLabels),
+                colors: ['#10B981', '#F59E0B', '#EF4444'],
+                legend: {
+                    position: 'bottom'
+                }
+            });
+            businessScaleChart.render();
+
+            // Chart Distribusi Kabupaten
+            const kabupatenChart = new ApexCharts(document.querySelector('#kabupatenChart'), {
+                series: [{
+                    name: 'Jumlah Industri',
+                    data: @json($kabupatenData)
+                }],
+                chart: {
+                    sparkline: {
+                        enabled: false,
+                    },
+                    type: "bar",
+                    width: "100%",
+                    height: 300,
+                    toolbar: {
+                        show: false,
+                    }
+                },
+                fill: {
+                    opacity: 1,
+                },
+                plotOptions: {
+                    bar: {
+                        borderRadiusApplication: "end",
+                        borderRadius: 6,
+                        dataLabels: {
+                            position: "top",
+                        },
+                    },
+                },
+                legend: {
+                    show: true,
+                    position: "bottom",
+                },
+                dataLabels: {
+                    enabled: false,
+                },
+                tooltip: {
+                    shared: true,
+                    intersect: false,
+                },
+                xaxis: {
+                    labels: {
+                        show: true,
+                        style: {
+                            fontFamily: "Inter, sans-serif",
+                            cssClass: 'text-xs font-normal fill-gray-500 dark:fill-gray-400'
+                        },
+                    },
+                    categories: @json($kabupatenLabels),
+                    axisTicks: {
+                        show: false,
+                    },
+                    axisBorder: {
+                        show: false,
+                    },
+                },
+                yaxis: {
+                    labels: {
+                        show: true,
+                        style: {
+                            fontFamily: "Inter, sans-serif",
+                            cssClass: 'text-xs font-normal fill-gray-500 dark:fill-gray-400'
+                        }
+                    }
+                },
+                grid: {
+                    show: true,
+                    strokeDashArray: 4,
+                    padding: {
+                        left: 2,
+                        right: 2,
+                        top: -20
+                    },
+                },
+                fill: {
+                    opacity: 1,
+                }
+            });
+            kabupatenChart.render();
         });
     </script>
 @endpush

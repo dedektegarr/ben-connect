@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Web\Admin\Industri;
 
 use Exception;
 use App\Services\ApiClient;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Validation\ValidationException;
@@ -28,11 +29,39 @@ class IndustriNasionalController extends Controller
             $regions = $this->apiClient->get("/wilayah/data");
 
             if ($industries["status"] === 200) {
+                $industryData = collect($industries["data"]);
+
+                // Data distribusi kabupaten
+                $kabupatenDistribution = $industryData
+                    ->groupBy('region.region_name')
+                    ->map(function ($item) {
+                        return $item->count();
+                    })
+                    ->sortDesc();
+
+                // Data skala bisnis
+                $businessScale = $industryData
+                    ->groupBy('industry_business_scale')
+                    ->map->count();
+
+                // Data registrasi SINAS
+                $sinasRegistration = $industryData
+                    ->groupBy('industry_registered_sinas')
+                    ->map->count();
+
                 return view("admin.industri.industri-nasional.index", [
                     "industries" => $industries["data"],
                     "regions" => $regions["data"],
                     "total_kecil" => collect($industries["data"])->where("industry_business_scale", "Kecil")->count(),
                     "total_besar" => collect($industries["data"])->where("industry_business_scale", "Besar")->count(),
+                    "kabupatenLabels" => $kabupatenDistribution->keys()->map(function ($item) {
+                        return Str::replace('kabupaten', '', strtolower($item));
+                    })->toArray(),
+                    "kabupatenData" => $kabupatenDistribution->values()->toArray(),
+                    "businessScaleLabels" => $businessScale->keys()->toArray(),
+                    "businessScaleData" => $businessScale->values()->toArray(),
+                    "sinasLabels" => $sinasRegistration->keys()->toArray(),
+                    "sinasData" => $sinasRegistration->values()->toArray()
                 ]);
             }
 
