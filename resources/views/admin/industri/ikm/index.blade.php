@@ -89,6 +89,32 @@
                 </div>
             </form>
 
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Chart Cabang Usaha -->
+                <div class="p-6 bg-white dark:bg-gray-dark dark:text-white/90 rounded-lg shadow">
+                    <h3 class="text-lg font-semibold mb-4">Distribusi Cabang Usaha</h3>
+                    <div id="branchChart" wire:ignore></div>
+                </div>
+
+                <!-- Chart Sentra -->
+                <div class="p-6 bg-white dark:bg-gray-dark dark:text-white/90 rounded-lg shadow">
+                    <h3 class="text-lg font-semibold mb-4">Top 10 Sentra IKM</h3>
+                    <div id="sentraChart" wire:ignore></div>
+                </div>
+
+                <!-- Chart Kategori Produk -->
+                <div class="p-6 bg-white dark:bg-gray-dark dark:text-white/90 rounded-lg shadow col-span-full">
+                    <h3 class="text-lg font-semibold mb-4">Kategori Produk Populer</h3>
+                    <div id="categoryChart" wire:ignore></div>
+                </div>
+
+                <!-- Chart Pertumbuhan Tahunan -->
+                <div class="p-6 bg-white dark:bg-gray-dark dark:text-white/90 rounded-lg shadow col-span-full">
+                    <h3 class="text-lg font-semibold mb-4">Pertumbuhan IKM Per Tahun</h3>
+                    <div id="yearlyChart" wire:ignore></div>
+                </div>
+            </div>
+
             <div
                 class="overflow-hidden rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-white/[0.03]">
                 <table id="default-table">
@@ -320,6 +346,120 @@
             if (errors) {
                 modal.show();
             }
+
+            // Chart Cabang Usaha
+            const branchChart = new ApexCharts(document.querySelector('#branchChart'), {
+                chart: {
+                    type: 'donut',
+                    height: 350
+                },
+                series: @json($chartData['branch']->values()),
+                labels: @json($chartData['branch']->keys()),
+                colors: ['#3B82F6', '#10B981', '#F59E0B', '#EF4444'],
+                legend: {
+                    position: 'bottom'
+                }
+            });
+
+            // Chart Sentra
+            const sentraChart = new ApexCharts(document.querySelector('#sentraChart'), {
+                chart: {
+                    type: 'bar',
+                    height: 350
+                },
+                series: [{
+                    name: 'Jumlah IKM',
+                    data: @json($chartData['sentra']->values())
+                }],
+                xaxis: {
+                    labels: {
+                        show: true,
+                        style: {
+                            fontFamily: "Inter, sans-serif",
+                            cssClass: 'text-xs font-normal fill-gray-500 dark:fill-gray-400'
+                        },
+                    },
+                    categories: @json($chartData['sentra']->keys())
+                },
+                yaxis: {
+                    labels: {
+                        show: true,
+                        style: {
+                            fontFamily: "Inter, sans-serif",
+                            cssClass: 'text-xs font-normal fill-gray-500 dark:fill-gray-400'
+                        }
+                    }
+                },
+                plotOptions: {
+                    bar: {
+                        borderRadius: 4
+                    }
+                },
+                colors: ['#3B82F6']
+            });
+
+            // Chart Kategori Produk
+            const categoryChart = new ApexCharts(document.querySelector('#categoryChart'), {
+                chart: {
+                    type: 'bar',
+                    height: 350,
+                    stacked: true
+                },
+                series: [{
+                    name: 'Jumlah Produk',
+                    data: @json($chartData['category']->values())
+                }],
+                xaxis: {
+                    labels: {
+                        show: true,
+                        style: {
+                            fontFamily: "Inter, sans-serif",
+                            cssClass: 'text-xs font-normal fill-gray-500 dark:fill-gray-400'
+                        }
+                    },
+                    categories: @json($chartData['category']->keys())
+                },
+                yaxis: {
+                    labels: {
+                        show: true,
+                        style: {
+                            fontFamily: "Inter, sans-serif",
+                            cssClass: 'text-xs font-normal fill-gray-500 dark:fill-gray-400'
+                        }
+                    }
+                },
+                plotOptions: {
+                    bar: {
+                        borderRadius: 4
+                    }
+                },
+                colors: ['#10B981']
+            });
+
+            // Chart Pertumbuhan Tahunan
+            const yearlyChart = new ApexCharts(document.querySelector('#yearlyChart'), {
+                chart: {
+                    type: 'line',
+                    height: 350
+                },
+                series: [{
+                    name: 'Jumlah IKM',
+                    data: @json($chartData['yearly']->values())
+                }],
+                xaxis: {
+                    categories: @json($chartData['yearly']->keys())
+                },
+                stroke: {
+                    curve: 'smooth'
+                },
+                colors: ['#F59E0B']
+            });
+
+            // Render semua chart
+            branchChart.render();
+            sentraChart.render();
+            categoryChart.render();
+            yearlyChart.render();
 
         });
     </script>

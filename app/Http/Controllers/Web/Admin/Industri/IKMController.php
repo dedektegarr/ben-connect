@@ -29,10 +29,21 @@ class IKMController extends Controller
             $regions = $this->apiClient->get("/wilayah/data");
 
             if ($ikms["status"] === 200) {
+                $ikmData = collect($ikms["data"]);
+
+                // Data untuk chart
+                $chartData = [
+                    'branch' => $ikmData->groupBy('ikm_branch')->map->count(),
+                    'sentra' => $ikmData->groupBy('ikm_sentra')->map->count()->sortDesc()->take(10),
+                    'category' => $ikmData->groupBy('ikm_category_product')->map->count()->sortDesc()->take(8),
+                    'yearly' => $ikmData->groupBy('year')->map->count()
+                ];
+
                 return view("admin.industri.ikm.index", [
-                    "ikms" => $ikms["data"],
+                    "ikms" => $ikmData,
                     "regions" => $regions["data"],
-                    "total" => collect($ikms["data"])->count()
+                    "total" => collect($ikmData)->count(),
+                    "chartData" => $chartData
                 ]);
             }
 

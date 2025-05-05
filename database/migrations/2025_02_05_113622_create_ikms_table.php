@@ -28,6 +28,7 @@ return new class extends Migration
             $table->string('ikm_branch');
             $table->string('ikm_count');
             $table->string('year');
+            $table->unique(['ikm_ptname', 'region_id', 'year'], 'unique_ikm');
             $table->timestamps();
         });
     }
