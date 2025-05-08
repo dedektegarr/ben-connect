@@ -374,7 +374,7 @@
                                     {{ $jumlah_smp }} {{ app('request')->input('jenis_data') }}
                                     </div>
                                 </div>
-                            </div>  
+                            </div>
                             <div class="col-md-6">
                                 <div class="icon-wrapper">
                                     <img src="{{ asset('assets/logo_sekolah/sma.png') }}" width="25" height="25" >
@@ -383,7 +383,7 @@
                                     {{ $jumlah_sma }} {{ app('request')->input('jenis_data') }}
                                     </div>
                                 </div>
-                            </div>  
+                            </div>
                             <div class="col-md-6">
                                 <div class="icon-wrapper">
                                     <img src="{{ asset('assets/logo_sekolah/smk.png') }}" width="25" height="25" >
@@ -392,7 +392,7 @@
                                     {{ $jumlah_smk }} {{ app('request')->input('jenis_data') }}
                                     </div>
                                 </div>
-                            </div>  
+                            </div>
                         </div>
                     </div>`);
             }

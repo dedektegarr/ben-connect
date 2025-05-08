@@ -159,6 +159,24 @@
                     </button>
                 </div>
             </form>
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+
+<!-- Div Map -->
+<div id="map" style="height: 600px;"></div>
+<style>
+    #map {
+      height: 600px;
+      width: 100%;
+      margin-top: 80px; /* Sesuaikan ini dengan tinggi navbar atau header */
+      z-index: 0;
+    }
+
+    .leaflet-container {
+      z-index: 0;
+    }
+  </style>
+
 
             <!-- Chart Registrasi SINAS -->
             <div class="p-6 bg-white dark:bg-gray-dark rounded-lg shadow col-span-full mb-4">
@@ -534,4 +552,163 @@
             kabupatenChart.render();
         });
     </script>
+{{-- <div id="map" style="height: 600px;"></div> --}}
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+  var industriesData = {};
+
+  var allIndustries = @json($industries); // Data industri dari controller
+  console.log("Data Industri:", allIndustries);
+console.table(allIndustries.map(i => i.region?.region_name)); // ← Tambahkan di sini
+
+
+  // Mapping nama wilayah dari berbagai variasi ke nama standar
+  const regionAliasMap = {
+    "Kab. Bengkulu Selatan": "Kabupaten Bengkulu Selatan",
+    "Kab. Bengkulu Tengah": "Kabupaten Bengkulu Tengah",
+    "Kab. Bengkulu Utara": "Kabupaten Bengkulu Utara",
+    "Kaur": "Kabupaten Kaur",
+    "Kab. Kepahiang": "Kabupaten Kepahiang",
+    "Kab. Lebong": "Kabupaten Lebong",
+    // "Kab. Muko Muko": "Kabupaten Mukomuko",
+    // "Kab. Muko-Muko": "Kabupaten Mukomuko",
+    "Kabupaten Muko Muko": "Kabupaten Mukomuko",
+    "Kab. Rejang Lebong": "Kabupaten Rejang Lebong",
+    "Kab. Seluma": "Kabupaten Seluma",
+    "Kota Bengkulu": "Kota Bengkulu"
+  };
+
+
+  // Fungsi untuk normalisasi nama wilayah
+  function normalizeRegionName(name) {
+    if (!name) return '';
+    return name
+      .replace(/^Kab\.\s?/, "Kabupaten ")
+      .replace(/^Kota\s/, "Kota ")
+      .replace(/Muko[\s-]?Muko/gi, "Kabupaten Mukomuko")
+      .replace(/^Bengkulu Tengah$/, "Kabupaten Bengkulu Tengah")
+      .replace(/^Bengkulu Utara$/, "Kabupaten Bengkulu Utara")
+      .replace(/^Bengkulu Selatan$/, "Kabupaten Bengkulu Selatan")
+      .replace(/^Kaur$/, "Kabupaten Kaur")
+      .replace(/^Kepahiang$/, "Kabupaten Kepahiang")
+      .replace(/^Lebong$/, "Kabupaten Lebong")
+      .replace(/^Rejang Lebong$/, "Kabupaten Rejang Lebong")
+      .replace(/^Seluma$/, "Kabupaten Seluma")
+      .replace(/^Kota Bengkulu$/, "Kota Bengkulu")
+      .trim();
+  }
+
+  console.log("Data Industri:", allIndustries);
+  console.table(allIndustries.map(i => i.region?.region_name));
+
+  // Mengelompokkan industri berdasarkan nama wilayah yang dinormalisasi
+  allIndustries.forEach(function(industry) {
+    if (!industry.region || !industry.region.region_name) {
+      console.log("Skipping industry with missing region_name", industry);
+      return;
+    }
+
+    var regionName = normalizeRegionName(industry.region.region_name);
+    console.log("Normalized Region Name:", regionName);
+
+    industriesData[regionName] = industriesData[regionName] || [];
+    industriesData[regionName].push({
+      nama: industry.industry_ptname,
+    //   bidang: industry.industry_business_fields,
+      skala: industry.industry_business_scale
+    });
+  });
+
+  console.log("Grouped Industries by Region:", industriesData);
+
+  var map = L.map('map').setView([-3.8, 102.7], 8);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+
+  fetch('/assets/kotaKabupatenBengkulu.geojson')
+    .then(response => {
+      if (!response.ok) throw new Error('GeoJSON not found');
+      return response.json();
+    })
+    .then(regionsGeoJSON => {
+      var colors = [
+        '#f28cb1', '#9ad0ec', '#ffd6a5', '#bdb2ff', '#caffbf',
+        '#a0c4ff', '#fdffb6', '#ffadad', '#d0f4de', '#ffc6ff'
+      ];
+
+      var geoLayer = L.geoJSON(regionsGeoJSON, {
+        style: function (feature) {
+          var color = colors[Math.floor(Math.random() * colors.length)];
+          return {
+            color: 'white',
+            fillColor: color,
+            fillOpacity: 0.6,
+            weight: 1,
+            dashArray: '3',
+            smoothFactor: 1
+          };
+        },
+        onEachFeature: function (feature, layer) {
+          var rawRegionName = feature.properties?.Nama;
+          var regionName = normalizeRegionName(rawRegionName);
+
+          console.log("GeoJSON Region:", rawRegionName, "| Normalized:", regionName);
+
+          var industries = industriesData[regionName] || [];
+          console.log("Industries in Region:", industries);
+
+          let totalBesar = 0;
+let totalKecil = 0;
+let totalLain = 0;
+
+industries.forEach(ind => {
+  const skala = (ind.skala || "").toLowerCase().trim();
+  if (skala === "besar") totalBesar++;
+  else if (skala === "kecil") totalKecil++;
+  else totalLain++; // kategori tidak dikenal
+});
+
+let total = totalBesar + totalKecil;
+
+let popupContent = `<b>${regionName}</b><br/>
+  Industri Besar: ${totalBesar}<br/>
+  Industri Kecil: ${totalKecil}<br/>`;
+
+if (totalLain > 0) {
+  popupContent += `Lain-lain (tidak diketahui): ${totalLain}<br/>`;
+}
+
+popupContent += `Total: ${total}`;
+
+
+          layer.bindPopup(popupContent);
+          layer.bindTooltip(regionName, {
+            permanent: true,
+            direction: 'center',
+            className: 'region-label'
+          });
+
+          layer.on('mouseover', function (e) {
+            this.setStyle({ weight: 2, color: '#666', fillOpacity: 0.8 });
+            this.bringToFront();
+          });
+
+          layer.on('mouseout', function (e) {
+            geoLayer.resetStyle(this);
+          });
+
+          layer.on('click', function () {
+            map.fitBounds(layer.getBounds());
+          });
+        }
+      }).addTo(map);
+    })
+    .catch(error => {
+      console.error('Error fetching regions:', error);
+      alert("Gagal memuat data wilayah. Periksa file GeoJSON Anda.");
+    });
+</script>
+
 @endpush

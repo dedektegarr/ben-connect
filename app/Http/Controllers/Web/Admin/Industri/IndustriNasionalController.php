@@ -17,16 +17,15 @@ class IndustriNasionalController extends Controller
     {
         $this->apiClient = new ApiClient(config("app.url") . "/api");
     }
-
     public function index(Request $request)
     {
-        $this->apiClient->setToken(request()->session()->get("auth_token"));
+        $this->apiClient->setToken($request->session()->get('auth_token'));
 
         $filters = $request->only(["region", "skala", "year"]);
 
         try {
-            $industries = $this->apiClient->get("/disperindag/industries", $filters);
-            $regions = $this->apiClient->get("/wilayah/data");
+            $industries = $this->apiClient->get('/disperindag/industries', $filters);
+            $regions = $this->apiClient->get('/wilayah/data');
 
             if ($industries["status"] === 200) {
                 $industryData = collect($industries["data"]);
@@ -65,9 +64,9 @@ class IndustriNasionalController extends Controller
                 ]);
             }
 
-            throw new Exception("Terjadi kesalahan");
-        } catch (Exception $e) {
-            flash($e->getMessage(), "error");
+            throw new \Exception('Terjadi kesalahan saat memuat data industri.');
+        } catch (\Exception $e) {
+            flash($e->getMessage(), 'error');
             return redirect()->back();
         }
     }
