@@ -13,7 +13,7 @@ class IndustryController extends Controller
      */
     public function index(Request $request)
     {
-        $filters = $request->only(["region", "skala"]);
+        $filters = $request->only(["region", "skala", "year"]);
 
         $industries = Industry::with("region")->filter($filters)->latest()->get();
 

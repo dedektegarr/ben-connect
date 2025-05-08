@@ -4,96 +4,92 @@ namespace App\Imports;
 
 use App\Models\Industry;
 use App\Models\Region;
+use Maatwebsite\Excel\Concerns\ToCollection;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Maatwebsite\Excel\Concerns\WithBatchInserts;
 use Maatwebsite\Excel\Concerns\WithChunkReading;
 
-class IndustryImport implements ToModel, WithHeadingRow, WithBatchInserts, WithChunkReading
+class IndustryImport implements ToCollection, WithBatchInserts, WithChunkReading
 {
     /**
-    * @param array $row
-    *
-    * @return \Illuminate\Database\Eloquent\Model|null
-    */
+     * @param array $row
+     *
+     * @return \Illuminate\Database\Eloquent\Model|null
+     */
     protected $regions;
     public $errors = [];
     private $batchSize = 1000;
     private $rowCount = 0;
+    protected $year;
 
-    public function __construct()
+    public function __construct(int $year)
     {
         $this->regions = Region::select('region_id', 'region_name')->get();
+        $this->year = $year;
     }
 
-    public function model(array $row)
+    public function collection($rows)
     {
-        //Cek apakah semua kolom penting kosong
-        $isEmptyRow = empty($row['nama_perusahaan']) &&
-            empty($row['kbli']);
+        $rows->shift(); // skip header row kalau ada
+        $insertData = [];
 
-        if ($isEmptyRow) {
-            return null;
-        }
+        foreach ($rows as $row) {
+            $this->rowCount++;
+            $rowNumber = $this->rowCount;
 
-        if (empty(array_filter($row))) {
-            return null;
-        }
+            $namaPerusahaan = $row[1] ?? null;
+            $alamatKantorPusat = $row[2] ?? null;
+            $provinsiKantor = $row[3] ?? null;
+            $kabkotaKantor = $row[4] ?? null;
+            $alamatPabrik = $row[5] ?? null;
+            $provinsiPabrik = $row[6] ?? null;
+            $kabkotaPabrik = $row[7] ?? null;
+            $kbli = $row[8] ?? null;
+            $bidangUsaha = $row[9] ?? null;
+            $skalaUsaha = $row[10] ?? null;
+            $terdaftarSiinas = $row[11] ?? null;
 
-        $this->rowCount++;
-        $rowNumber = $this->rowCount;
+            if (empty($namaPerusahaan) && empty($kbli)) {
+                continue;
+            }
 
-        $kabKota = $row['kabkota_pabrik'] ?? '';
-        $normalizedRegion = strtolower(trim(str_replace(' ', '', $kabKota)));
-        $matchingRegion = $this->regions->first(function ($region) use ($normalizedRegion) {
-            $regionNormalized = strtolower(str_replace([' ', '-'], '', $region->region_name));
-            return $regionNormalized === $normalizedRegion;
-        });
-        
-        // Jika tidak ada kecocokan dengan region yang tersedia tampil pesan error
-        if (!$matchingRegion) {
-            $this->errors[] = "Baris $rowNumber: Kolom 'kab/kota' tidak tersedia atau kosong";
-            return null;
-        }
+            if (empty(array_filter($row->toArray()))) {
+                continue;
+            }
 
-        //Cek apakah data sudah ada di database
-        $existingIkm = Industry::where('industry_ptname', $row['nama_perusahaan'])
-            ->where('industry_kd_kbli', $row['kbli'])
-            ->where('region_id', $matchingRegion->region_id)
-            ->first();
+            $normalizedRegion = strtolower(trim(str_replace(' ', '', $kabkotaPabrik)));
+            $matchingRegion = $this->regions->first(function ($region) use ($normalizedRegion) {
+                $regionNormalized = strtolower(str_replace([' ', '-'], '', $region->region_name));
+                return $regionNormalized === $normalizedRegion;
+            });
 
-        if ($existingIkm) {
-            // Jika data sudah ada, perbarui data
-            $existingIkm->update([
-                'industry_ptname' => $row['nama_perusahaan'] ?? null,
-                'industry_headoffice_address' => $row['alamat_kantor_pusat'] ?? null,
-                'industry_office_province' => $row['provinsi_kantor'] ?? null,
-                'industry_city_office' => $row['kabkota_kantor'] ?? null,
-                'industry_factory_address' => $row['alamat_pabrik'] ?? null,
-                'industry_factory_province' => $row['provinsi_pabrik'] ?? null,
+            if (!$matchingRegion) {
+                $this->errors[] = "Baris $rowNumber: Kolom 'kab/kota' tidak tersedia atau kosong";
+                continue;
+            }
+
+            $insertData[] = [
+                'industry_ptname' => $namaPerusahaan,
+                'industry_headoffice_address' => $alamatKantorPusat,
+                'industry_office_province' => $provinsiKantor,
+                'industry_city_office' => $kabkotaKantor,
+                'industry_factory_address' => $alamatPabrik,
+                'industry_factory_province' => $provinsiPabrik,
                 'region_id' => $matchingRegion->region_id,
-                'industry_kd_kbli' => $row['kbli'] ?? null,
-                'industry_business_fields' => $row['bidang_usaha'] ?? null,
-                'industry_business_scale' => $row['skala_usaha'] ?? null,
-                'industry_registered_sinas' => $row['terdaftar_di_siinas_yatidak'] ?? null
-            ]);
-
-            return null; // Lewati insert karena sudah diperbarui
+                'industry_kd_kbli' => $kbli,
+                'industry_business_fields' => $bidangUsaha,
+                'industry_business_scale' => $skalaUsaha,
+                'industry_registered_sinas' => $terdaftarSiinas,
+                'year' => $this->year,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ];
         }
 
-        return new Industry([
-            'industry_ptname' => $row['nama_perusahaan'] ?? null,
-            'industry_headoffice_address' => $row['alamat_kantor_pusat'] ?? null,
-            'industry_office_province' => $row['provinsi_kantor'] ?? null,
-            'industry_city_office' => $row['kabkota_kantor'] ?? null,
-            'industry_factory_address' => $row['alamat_pabrik'] ?? null,
-            'industry_factory_province' => $row['provinsi_pabrik'] ?? null,
-            'region_id' => $matchingRegion->region_id,
-            'industry_kd_kbli' => $row['kbli'] ?? null,
-            'industry_business_fields' => $row['bidang_usaha'] ?? null,
-            'industry_business_scale' => $row['skala_usaha'] ?? null,
-            'industry_registered_sinas' => $row['terdaftar_di_siinas_yatidak'] ?? null
-        ]);
+        if (!empty($insertData)) {
+            Industry::insertOrIgnore($insertData);
+        }
     }
 
     public function getErrors()

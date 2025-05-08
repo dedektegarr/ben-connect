@@ -38,6 +38,8 @@ class Industry extends Model
             });
         })->when($filters["skala"] ?? null, function ($query, $skala) {
             $query->where("industry_business_scale", $skala);
+        })->when($filters["year"] ?? null, function ($query, $year) {
+            $query->where("year", $year);
         });
     }
 

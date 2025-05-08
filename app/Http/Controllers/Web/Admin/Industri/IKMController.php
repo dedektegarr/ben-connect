@@ -22,7 +22,7 @@ class IKMController extends Controller
 
         $this->apiClient->setToken(request()->session()->get("auth_token"));
 
-        $filters = $request->only(["region"]);
+        $filters = $request->only(["region", "year"]);
 
         try {
             $ikms = $this->apiClient->get("/disperindag/ikm", $filters);

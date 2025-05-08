@@ -73,7 +73,18 @@
                                 @endforeach
                             </select>
                         </div>
-
+                        <div class="w-full">
+                            <label for="year" class="sr-only">Tahun</label>
+                            <select id="year" name="year"
+                                class="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
+                                <option value="" {{ request('year') == '' ? 'selected' : '' }}>Semua Tahun
+                                </option>
+                                @foreach (range(\Carbon\Carbon::now()->year, \Carbon\Carbon::now()->subYears(10)->year) as $year)
+                                    <option value="{{ $year }}" {{ request('year') == $year ? 'selected' : '' }}>
+                                        {{ $year }}</option>
+                                @endforeach
+                            </select>
+                        </div>
                     </div>
 
                     {{-- Tombol Filter --}}

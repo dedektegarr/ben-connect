@@ -105,7 +105,8 @@ class ExcelImportController extends Controller
     {
         // Validasi file dan tahun
         $validator = Validator::make($request->all(), [
-            'file' => 'required|file|mimes:xlsx,xls'
+            'file' => 'required|file|mimes:xlsx,xls',
+            'year' => 'required|integer'
         ]);
 
         if ($validator->fails()) {
@@ -117,7 +118,7 @@ class ExcelImportController extends Controller
         }
 
         try {
-            $import = new IndustryImport();
+            $import = new IndustryImport($request->year);
             Excel::import($import, $request->file('file'));
 
             if (!empty($import->getErrors())) {

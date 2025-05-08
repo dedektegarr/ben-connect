@@ -22,7 +22,7 @@ class IndustriNasionalController extends Controller
     {
         $this->apiClient->setToken(request()->session()->get("auth_token"));
 
-        $filters = $request->only(["region", "skala"]);
+        $filters = $request->only(["region", "skala", "year"]);
 
         try {
             $industries = $this->apiClient->get("/disperindag/industries", $filters);
@@ -79,14 +79,17 @@ class IndustriNasionalController extends Controller
         try {
             $request->validate([
                 "file" => "required|file|mimes:xls,xlsx|max:5000",
+                "year" => "required|integer"
             ], [
                 "file.required" => "File data SIINas tidak boleh kosong",
                 'file.file' => 'Data SIInas harus berupa file',
                 'file.mimes' => 'File data SIInas harus berformat .xls atau .xlsx',
                 'file.max' => 'File data SIInas maksimal 5 Mb ',
+                "year.required" => "Tahun tidak boleh kosong",
+                "year.integer" => "Tahun harus berupa angka"
             ]);
 
-            $import = $this->apiClient->post("/disperindag/indusrty/import", [], $request->files);
+            $import = $this->apiClient->post("/disperindag/indusrty/import", ["year" => $request->year], $request->files);
 
             if ($import["status"] === "error") {
                 flash($import["errors"], "error");

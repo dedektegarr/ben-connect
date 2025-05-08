@@ -22,8 +22,10 @@ return new class extends Migration
             $table->foreignUuid('region_id')->references('region_id')->on('region')->onDelete('cascade');
             $table->string('industry_kd_kbli')->nullable();
             $table->text('industry_business_fields')->nullable();
+            $table->year('year');
             $table->string('industry_business_scale')->nullable();
             $table->string('industry_registered_sinas')->nullable();
+            $table->unique(['industry_ptname', 'industry_business_scale', 'region_id', 'year'], 'unique_industry');
             $table->timestamps();
         });
     }
