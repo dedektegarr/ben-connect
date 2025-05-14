@@ -57,51 +57,127 @@
                 </div>
             </div>
 
-            <!-- Table Section -->
-            <div class="bg-white rounded-xl shadow-lg overflow-hidden dark:bg-gray-800">
-                <div class="overflow-x-auto">
-                    <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-                        <thead class="bg-gray-50 dark:bg-gray-700">
-                            <tr>
-                                <th class="table-header">Kelas Kamar</th>
-                                <th class="table-header">Kapasitas</th>
-                                <th class="table-header">Terisi</th>
-                                <th class="table-header">Tersedia</th>
-                                <th class="table-header">Utilisasi</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
-                            @foreach ($ketersediaan_kamar as $kamar)
-                                @php
-                                    $available = $kamar['Kapasitas'] - $kamar['Terisi'];
-                                    if ($kamar['Kapasitas'] == 0) {
-                                        $percentage = 0;
-                                    } else {
-                                        $percentage = round(($kamar['Terisi'] / $kamar['Kapasitas']) * 100, 2);
-                                    }
-                                @endphp
-                                <tr class="hover:bg-gray-50 dark:hover:bg-gray-700/50">
-                                    <td class="table-data font-medium">{{ $kamar['Kelas_kamar'] }}</td>
-                                    <td class="table-data">{{ $kamar['Kapasitas'] }}</td>
-                                    <td class="table-data text-red-600 dark:text-red-400">{{ $kamar['Terisi'] }}</td>
-                                    <td class="table-data text-green-600 dark:text-green-400">{{ $available }}</td>
-                                    <td class="table-data">
-                                        <div class="flex items-center">
-                                            {{-- <span class="mr-2">{{ $percentage }}%</span> --}}
-                                            <div class="relative w-24">
-                                                <div class="overflow-hidden h-2 text-xs flex rounded bg-blue-200">
-                                                    <div style="width:{{ $percentage }}%"
-                                                        class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500">
-                                                    </div>
-                                                </div>
-                                            </div>
+            <div class="space-y-6">
+                @foreach (collect($ketersediaan_kamar)->groupBy('name_of_clinic') as $clinic => $classes)
+                    <div
+                        class="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200">
+                        <div class="p-6 border-b border-gray-200 dark:border-gray-700">
+                            <div class="flex items-center justify-between">
+                                <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
+                                    {{ $clinic }}
+                                </h2>
+                                <div class="flex items-center space-x-4">
+                                    <div class="flex items-center space-x-2">
+                                        <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                                        </svg>
+                                        <span class="text-gray-600 dark:text-gray-300">
+                                            Total Kamar: {{ $classes->sum('cap') }}
+                                        </span>
+                                    </div>
+                                    <div class="flex items-center space-x-2">
+                                        <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                        </svg>
+                                        <span class="text-gray-600 dark:text-gray-300">
+                                            Terisi: {{ $classes->sum('ISI') }}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-6 space-y-4">
+                            @foreach ($classes as $class)
+                                <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
+                                    <div class="flex items-center justify-between mb-3">
+                                        <h3 class="font-semibold text-gray-800 dark:text-gray-200">
+                                            {{ $class['NAME_OF_CLASS'] }}
+                                        </h3>
+                                        <span
+                                            class="px-3 py-1 rounded-full text-xs font-medium 
+                                    @if ($class['cap'] == 0) bg-red-100 dark:bg-red-800 text-red-800 dark:text-red-200
+                                    @elseif($class['ISI'] >= $class['cap']) bg-yellow-100 dark:bg-yellow-800 text-yellow-800 dark:text-yellow-200
+                                    @else bg-green-100 dark:bg-green-800 text-green-800 dark:text-green-200 @endif">
+                                            @if ($class['cap'] == 0)
+                                                Tidak Tersedia
+                                            @elseif($class['ISI'] >= $class['cap'])
+                                                Penuh
+                                            @else
+                                                Tersedia
+                                            @endif
+                                        </span>
+                                    </div>
+
+                                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                        <div class="flex items-center space-x-2">
+                                            <svg class="w-5 h-5 text-purple-500" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M4 6h16M4 12h16m-7 6h7" />
+                                            </svg>
+                                            <span class="text-gray-600 dark:text-gray-300">Kapasitas:</span>
+                                            <span class="font-semibold dark:text-gray-200">{{ $class['cap'] }}</span>
                                         </div>
-                                    </td>
-                                </tr>
+
+                                        <div class="flex items-center space-x-2">
+                                            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                            </svg>
+                                            <span class="text-gray-600 dark:text-gray-300">Terisi:</span>
+                                            <span class="font-semibold dark:text-gray-200">{{ $class['ISI'] }}</span>
+                                        </div>
+
+                                        <div class="flex items-center space-x-2">
+                                            <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                            <span class="text-gray-600 dark:text-gray-300">Tarif:</span>
+                                            <span class="font-semibold dark:text-gray-200">
+                                                @php
+                                                    echo number_format((float) $class['TARIF'], 0, ',', '.');
+                                                @endphp
+                                            </span>
+                                        </div>
+
+                                        <div class="flex items-center space-x-2">
+                                            <svg class="w-5 h-5 text-yellow-500" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                            </svg>
+                                            <span class="text-gray-600 dark:text-gray-300">Persentase:</span>
+                                            <span class="font-semibold dark:text-gray-200">
+                                                @php
+                                                    $percentage =
+                                                        $class['cap'] > 0 ? ($class['ISI'] / $class['cap']) * 100 : 0;
+                                                    echo number_format($percentage, 1) . '%';
+                                                @endphp
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="mt-3 w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-600">
+                                        <div class="h-2.5 rounded-full 
+                                    @if ($percentage >= 90) bg-red-500
+                                    @elseif($percentage >= 50) bg-yellow-500
+                                    @else bg-green-500 @endif"
+                                            style="width: {{ $percentage }}%">
+                                        </div>
+                                    </div>
+                                </div>
                             @endforeach
-                        </tbody>
-                    </table>
-                </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </x-panel.panel-body>
     </x-panel.panel>

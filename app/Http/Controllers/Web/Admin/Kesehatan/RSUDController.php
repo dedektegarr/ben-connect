@@ -85,16 +85,6 @@ class RSUDController extends Controller
         try {
             $kamar = $this->rsClient->get("/cc/getKetersediaanKamar");
 
-            $kamar = collect($kamar)->map(function ($item) {
-                return [
-                    "Kapasitas" => $item["cap"],
-                    "Kelas_kamar" => $item["name_of_clinic"],
-                    "Terisi" => $item["ISI"]
-                ];
-            })->filter(function ($item) {
-                return $item["Kapasitas"] > 0;
-            })->sortByDesc("Kapasitas")->toArray();
-
             return view("admin.kesehatan.rsud.kamar", [
                 "ketersediaan_kamar" => $kamar
             ]);
