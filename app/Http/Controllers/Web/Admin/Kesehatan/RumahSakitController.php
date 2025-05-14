@@ -32,12 +32,28 @@ class RumahSakitController extends Controller
             $ownerships = $this->apiClient->get("/kesehatan/rs/kepemilikan");
 
             if ($data["status_code"] === 200) {
+                $hospitals = collect($data["data"]);
+
+                // Siapkan data untuk chart
+                $chartData = [
+                    'category' => $hospitals->groupBy('category_hospital.category_hospital_name')->map->count(),
+                    'accreditation' => $hospitals->groupBy('hospital_acreditation.hospital_acreditation_name')->map->count(),
+                    'class' => $hospitals->groupBy('hospital_data_class')->map->count(),
+                    'region' => $hospitals->groupBy('region.region_name')->map->count(),
+                    'ownership' => $hospitals->groupBy('hospital_ownership.hospital_ownership_name')->map->count()
+                ];
+
+                // Hitung jumlah RS per region
+                $regionCounts = $hospitals->groupBy('region_id')->map->count();
+
                 return view("admin.kesehatan.rs.index", [
-                    "rumah_sakit" => $data["data"],
+                    "rumah_sakit" => $hospitals,
                     "acreditations" => $acreditations["data_akreditasi_rs"],
                     "categories" => $categories["data_kategori_rs"],
                     "ownerships" => $ownerships["data"],
                     "regions" => $regions["data"],
+                    "regionCounts" => $regionCounts,
+                    "chartData" => $chartData
                 ]);
             }
 

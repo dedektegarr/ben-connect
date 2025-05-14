@@ -107,6 +107,39 @@
                 </div>
             </form>
 
+            {{-- Charts --}}
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 dark:text-gray-100">
+                <!-- Distribusi Kategori Rumah Sakit -->
+                <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow">
+                    <h3 class="text-lg font-semibold mb-4">Distribusi Kategori</h3>
+                    <div id="categoryChart" wire:ignore></div>
+                </div>
+
+                <!-- Akreditasi Rumah Sakit -->
+                <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow">
+                    <h3 class="text-lg font-semibold mb-4">Level Akreditasi</h3>
+                    <div id="accreditationChart" wire:ignore></div>
+                </div>
+
+                <!-- Kelas Rumah Sakit -->
+                <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow col-span-full">
+                    <h3 class="text-lg font-semibold mb-4">Distribusi Kelas</h3>
+                    <div id="regionChart" wire:ignore></div>
+                </div>
+
+                <!-- Distribusi Regional -->
+                <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow">
+                    <h3 class="text-lg font-semibold mb-4">Distribusi Wilayah</h3>
+                    <div id="classChart" wire:ignore></div>
+                </div>
+
+                <!-- Kepemilikan Rumah Sakit -->
+                <div class="p-6 bg-white dark:bg-gray-800 rounded-lg shadow">
+                    <h3 class="text-lg font-semibold mb-4">Bentuk Kepemilikan</h3>
+                    <div id="ownershipChart" wire:ignore></div>
+                </div>
+            </div>
+
             <div
                 class="overflow-hidden rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-white/[0.03]">
                 <table id="default-table">
@@ -275,3 +308,160 @@
         </div>
     </div>
 @endsection
+
+@push('scripts')
+    <script>
+        function renderChart() {
+            const getThemeOptions = () => {
+                const isDark = document.documentElement.classList.contains('dark');
+                return {
+                    chart: {
+                        foreColor: isDark ? '#D1D5DB' : '#374151',
+                        background: isDark ? '#1F2937' : '#FFFFFF'
+                    },
+                    grid: {
+                        borderColor: isDark ? '#4B5563' : '#E5E7EB'
+                    }
+                };
+            };
+
+            // Chart Kategori
+            const categoryChart = new ApexCharts(document.querySelector('#categoryChart'), {
+                chart: {
+                    type: 'donut',
+                    height: 350,
+                    ...getThemeOptions().chart
+                },
+                series: @json($chartData['category']->values()),
+                labels: @json($chartData['category']->keys()),
+                colors: ['#3B82F6', '#10B981', '#F59E0B'],
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        colors: getThemeOptions().chart.foreColor
+                    }
+                }
+            });
+
+            // Chart Akreditasi
+            const accreditationChart = new ApexCharts(document.querySelector('#accreditationChart'), {
+                chart: {
+                    type: 'bar',
+                    height: 350,
+                    ...getThemeOptions().chart
+                },
+                series: [{
+                    name: 'Jumlah',
+                    data: @json($chartData['accreditation']->values())
+                }],
+                xaxis: {
+                    categories: @json($chartData['accreditation']->keys())
+                },
+                colors: ['#10B981']
+            });
+
+            // Chart Kelas
+            const classChart = new ApexCharts(document.querySelector('#classChart'), {
+                chart: {
+                    type: 'bar',
+                    height: 350,
+                    stacked: true,
+                    ...getThemeOptions().chart
+                },
+                plotOptions: {
+                    bar: {
+                        horizontal: true
+                    }
+                },
+                series: [{
+                    name: 'Jumlah',
+                    data: @json($chartData['class']->values())
+                }],
+                xaxis: {
+                    categories: @json($chartData['class']->keys())
+                },
+                colors: ['#3B82F6']
+            });
+
+            // Chart Wilayah
+            const regionChart = new ApexCharts(document.querySelector('#regionChart'), {
+                chart: {
+                    type: 'line',
+                    height: 350,
+                    ...getThemeOptions().chart
+                },
+                series: [{
+                    name: 'Jumlah RS',
+                    data: @json($chartData['region']->values())
+                }],
+                xaxis: {
+                    categories: @json($chartData['region']->keys())
+                },
+                stroke: {
+                    curve: 'smooth'
+                },
+                colors: ['#F59E0B']
+            });
+
+            // Chart Kepemilikan
+            const ownershipChart = new ApexCharts(document.querySelector('#ownershipChart'), {
+                chart: {
+                    type: 'pie',
+                    height: 350,
+                    ...getThemeOptions().chart
+                },
+                series: @json($chartData['ownership']->values()),
+                labels: @json($chartData['ownership']->keys()),
+                colors: ['#3B82F6', '#10B981', '#F59E0B', '#EF4444']
+            });
+
+            // Render semua chart
+            categoryChart.render();
+            accreditationChart.render();
+            classChart.render();
+            regionChart.render();
+            ownershipChart.render();
+
+            // Update tema saat dark mode berubah
+            const observer = new MutationObserver(() => {
+                const theme = getThemeOptions();
+
+                [categoryChart, accreditationChart, classChart, regionChart, ownershipChart].forEach(
+                    chart => {
+                        chart.updateOptions({
+                            chart: theme.chart,
+                            grid: theme.grid,
+                            legend: {
+                                labels: {
+                                    colors: theme.chart.foreColor
+                                }
+                            }
+                        });
+                    });
+            });
+
+            observer.observe(document.documentElement, {
+                attributes: true,
+                attributeFilter: ['class']
+            });
+        }
+    </script>
+
+    <script>
+        const errors = @json($errors->any());
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const modalEl = document.getElementById("import-modal");
+            const modal = new Modal(modalEl, {}, {
+                id: 'modalEl',
+                override: true
+            });
+
+            if (errors) {
+                modal.show();
+            }
+
+            renderChart();
+        });
+    </script>
+@endpush
