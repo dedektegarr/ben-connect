@@ -123,100 +123,46 @@
                 </div>
             </form>
 
-            <div
-                class="overflow-hidden rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-white/[0.03]">
-                <table id="default-table">
-                    <thead>
-                        <tr>
-                            <th>
-                                <span class="flex items-center">
-                                    Wilayah
-                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                    </svg>
-                                </span>
-                            </th>
-                            <th>
-                                <span class="flex items-center">
-                                    Negeri
-                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                    </svg>
-                                </span>
-                            </th>
-                            <th>
-                                <span class="flex items-center">
-                                    Swasta
-                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                    </svg>
-                                </span>
-                            </th>
-                            <th>
-                                <span class="flex items-center">
-                                    Total Sekolah
-                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                    </svg>
-                                </span>
-                            </th>
-                            <th>
-                                <span class="flex items-center">
-                                    Action
-                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                    </svg>
-                                </span>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($sekolah as $region => $item)
-                            <tr>
-                                <td class="font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    {{ $region }}</td>
-                                <td>{{ $item['total_negeri'] }}</td>
-                                <td>{{ $item['total_swasta'] }}</td>
-                                <td class="text-gray-900 dark:text-white font-bold">{{ $item['total'] }}</td>
-                                <td>
-                                    <div class="flex items-center justify-center col-span-1">
-                                        <div x-data="{ openDropDown: false }" class="relative">
-                                            <button x-on:click="openDropDown = !openDropDown"
-                                                class="text-gray-500 dark:text-gray-400">
-                                                <svg class="fill-current" width="24" height="24"
-                                                    viewBox="0 0 24 24" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                        d="M5.99902 10.245C6.96552 10.245 7.74902 11.0285 7.74902 11.995V12.005C7.74902 12.9715 6.96552 13.755 5.99902 13.755C5.03253 13.755 4.24902 12.9715 4.24902 12.005V11.995C4.24902 11.0285 5.03253 10.245 5.99902 10.245ZM17.999 10.245C18.9655 10.245 19.749 11.0285 19.749 11.995V12.005C19.749 12.9715 18.9655 13.755 17.999 13.755C17.0325 13.755 16.249 12.9715 16.249 12.005V11.995C16.249 11.0285 17.0325 10.245 17.999 10.245ZM13.749 11.995C13.749 11.0285 12.9655 10.245 11.999 10.245C11.0325 10.245 10.249 11.0285 10.249 11.995V12.005C10.249 12.9715 11.0325 13.755 11.999 13.755C12.9655 13.755 13.749 12.9715 13.749 12.005V11.995Z"
-                                                        fill=""></path>
-                                                </svg>
-                                            </button>
-                                            <div x-show="openDropDown" x-on:click.outside="openDropDown = false"
-                                                class="absolute right-0 z-40 w-40 p-2 space-y-1 bg-white border border-gray-200 top-full rounded-2xl shadow-theme-lg dark:border-gray-800 dark:bg-gray-dark"
-                                                style="">
-                                                <a href="{{ route('admin.kependudukan.statistik', ['region' => $region]) }}"
-                                                    class="flex w-full px-3 py-2 font-medium text-left text-gray-500 rounded-lg text-theme-xs hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-gray-300">
-                                                    Lihat Detail
-                                                </a>
-                                            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                @foreach ($regions as $regionName => $regionData)
+                    <div
+                        class="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200">
+                        <!-- Region Header -->
+                        <div class="p-6 border-b border-gray-200 dark:border-gray-700">
+                            <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
+                                {{ $regionName }}
+                            </h2>
+                            <p class="text-gray-600 dark:text-gray-400 mt-1 text-sm">
+                                Total Sekolah: {{ $regionData->sum('negeri_count') + $regionData->sum('swasta_count') }}
+                            </p>
+                        </div>
+
+                        <!-- School Levels -->
+                        <div class="p-6 space-y-4">
+                            @foreach ($regionData as $school)
+                                <div class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
+                                    <div class="flex justify-between items-start mb-3">
+                                        <h3 class="font-semibold text-gray-800 dark:text-gray-200">
+                                            {{ $school['school_level_name'] }}
+                                        </h3>
+                                        <div class="flex space-x-2">
+                                            <span
+                                                class="px-2 py-1 text-xs rounded-full bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200">
+                                                Negeri: {{ $school['negeri_count'] }}
+                                            </span>
+                                            <span
+                                                class="px-2 py-1 text-xs rounded-full bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200">
+                                                Swasta: {{ $school['swasta_count'] }}
+                                            </span>
                                         </div>
                                     </div>
-                                </td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                @endforeach
             </div>
+
         </x-panel.panel-body>
     </x-panel.panel>
 
@@ -238,25 +184,25 @@
                     enctype="multipart/form-data">
                     @csrf
                     <div class="grid gap-4 mb-4 grid-cols-2">
-                            <div class="col-span-2">
-                                <label for="year" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                                    {{ __('Tahun') }}
-                                </label>
-                                <select id="year" name="year"
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                    <option value="" selected>{{ __('Pilih tahun') }}</option>
-                                    @foreach (range(\Carbon\Carbon::now()->year, \Carbon\Carbon::now()->subYears(10)->year) as $year)
-                                        <option value="{{ $year }}">{{ $year }}</option>
-                                    @endforeach
-                                </select>
-                                @error('year')
-                                    <p class="mt-2 text-sm text-red-600 dark:text-red-500">
-                                        <span class="font-medium">{{ $message }}</span>
-                                    </p>
-                                @enderror
-                            </div>
+                        <div class="col-span-2">
+                            <label for="year" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                                {{ __('Tahun') }}
+                            </label>
+                            <select id="year" name="year"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                <option value="" selected>{{ __('Pilih tahun') }}</option>
+                                @foreach (range(\Carbon\Carbon::now()->year, \Carbon\Carbon::now()->subYears(10)->year) as $year)
+                                    <option value="{{ $year }}">{{ $year }}</option>
+                                @endforeach
+                            </select>
+                            @error('year')
+                                <p class="mt-2 text-sm text-red-600 dark:text-red-500">
+                                    <span class="font-medium">{{ $message }}</span>
+                                </p>
+                            @enderror
+                        </div>
 
-                                <div class="col-span-2">
+                        <div class="col-span-2">
                             <label for="school_file"
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">{{ __('File') }}</label>
                             <input name="school_file" id="school_file"

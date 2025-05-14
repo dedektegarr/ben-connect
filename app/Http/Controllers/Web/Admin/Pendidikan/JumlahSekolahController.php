@@ -27,20 +27,22 @@ class JumlahSekolahController extends Controller
 
         try {
             $sekolah = $this->apiClient->get("/pendidikan/sekolah", $filters);
+            $sekolahByRegion = collect($sekolah["data"])->groupBy('region_name');
 
-            $sekolahByRegion = collect($sekolah["data"])->groupBy("region_name");
-            $getTotalPerRegion = $sekolahByRegion->map(function ($sekolah) {
-                return [
-                    "total" => $sekolah->sum("negeri_count") + $sekolah->sum("swasta_count"),
-                    "total_negeri" => $sekolah->sum("negeri_count"),
-                    "total_swasta" => $sekolah->sum("swasta_count"),
-                    "tahun" => $sekolah[0]["school_year"]
-                ];
-            });
+            // $sekolahByRegion = collect($sekolah["data"])->groupBy("region_name");
+            // $getTotalPerRegion = $sekolahByRegion->map(function ($sekolah) {
+            //     return [
+            //         "total" => $sekolah->sum("negeri_count") + $sekolah->sum("swasta_count"),
+            //         "total_negeri" => $sekolah->sum("negeri_count"),
+            //         "total_swasta" => $sekolah->sum("swasta_count"),
+            //         "tahun" => $sekolah[0]["school_year"]
+            //     ];
+            // });
 
             if ($sekolah["status_code"] === 200) {
                 return view("admin.pendidikan.sekolah.index", [
-                    "sekolah" => $getTotalPerRegion,
+                    "sekolah" => $sekolah["data"],
+                    "regions" => $sekolahByRegion,
                     "total_negeri" => collect($sekolah["data"])->sum("negeri_count"),
                     "total_swasta" => collect($sekolah["data"])->sum("swasta_count"),
                 ]);

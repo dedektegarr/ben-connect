@@ -114,99 +114,99 @@
                 </div>
             </form>
 
-            <div
-                class="overflow-hidden rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-white/[0.03]">
-                <table id="default-table">
-                    <thead>
-                        <tr>
-                            <th>
-                                <span class="flex items-center">
-                                    Wilayah
-                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                    </svg>
-                                </span>
-                            </th>
-                            <th>
-                                <span class="flex items-center">
-                                    Pria
-                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                    </svg>
-                                </span>
-                            </th>
-                            <th>
-                                <span class="flex items-center">
-                                    Wanita
-                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                    </svg>
-                                </span>
-                            </th>
-                            <th>
-                                <span class="flex items-center">
-                                    Total Peserta Didik
-                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                    </svg>
-                                </span>
-                            </th>
-                            <th>
-                                <span class="flex items-center">
-                                    Action
-                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                    </svg>
-                                </span>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($peserta_didik as $region => $item)
-                            <tr>
-                                <td class="font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    {{ $region }}</td>
-                                <td>{{ $item['total_male'] }}</td>
-                                <td>{{ $item['total_female'] }}</td>
-                                <td class="text-gray-900 dark:text-white font-bold">{{ $item['total'] }}</td>
-                                <td>
-                                    <div class="flex items-center justify-center col-span-1">
-                                        <div x-data="{ openDropDown: false }" class="relative">
-                                            <button x-on:click="openDropDown = !openDropDown"
-                                                class="text-gray-500 dark:text-gray-400">
-                                                <svg class="fill-current" width="24" height="24"
-                                                    viewBox="0 0 24 24" fill="none"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path fill-rule="evenodd" clip-rule="evenodd"
-                                                        d="M5.99902 10.245C6.96552 10.245 7.74902 11.0285 7.74902 11.995V12.005C7.74902 12.9715 6.96552 13.755 5.99902 13.755C5.03253 13.755 4.24902 12.9715 4.24902 12.005V11.995C4.24902 11.0285 5.03253 10.245 5.99902 10.245ZM17.999 10.245C18.9655 10.245 19.749 11.0285 19.749 11.995V12.005C19.749 12.9715 18.9655 13.755 17.999 13.755C17.0325 13.755 16.249 12.9715 16.249 12.005V11.995C16.249 11.0285 17.0325 10.245 17.999 10.245ZM13.749 11.995C13.749 11.0285 12.9655 10.245 11.999 10.245C11.0325 10.245 10.249 11.0285 10.249 11.995V12.005C10.249 12.9715 11.0325 13.755 11.999 13.755C12.9655 13.755 13.749 12.9715 13.749 12.005V11.995Z"
-                                                        fill=""></path>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                @foreach ($regions as $regionName => $regionData)
+                    <div
+                        class="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200 group">
+                        <!-- Region Header -->
+                        <div
+                            class="p-6 border-b border-gray-200 dark:border-gray-700 bg-blue-50 dark:bg-gray-900 rounded-t-xl">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h2 class="text font-semibold text-gray-800 dark:text-gray-200 flex items-center gap-2">
+                                        <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                        </svg>
+                                        {{ $regionName }}
+                                    </h2>
+                                    <p class="text-gray-600 dark:text-gray-400 mt-2 text-sm">
+                                        Total Peserta Didik:
+                                        {{ number_format($regionData->sum('male_count') + $regionData->sum('female_count')) }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- School Levels -->
+                        <div class="p-6 space-y-4">
+                            @foreach ($regionData as $school)
+                                <div
+                                    class="bg-gray-50 dark:bg-gray-700 rounded-lg p-4 transition-colors duration-200 hover:bg-gray-100 dark:hover:bg-gray-600">
+                                    <div class="flex justify-between items-start mb-3">
+                                        <h3 class="font-semibold text-gray-800 dark:text-gray-200 text-sm">
+                                            {{ $school['schoollevel']['school_level_name'] }}
+                                        </h3>
+                                        <div class="flex items-center gap-2">
+                                            <div class="flex items-center gap-1 text-blue-600 dark:text-blue-300">
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                                                 </svg>
-                                            </button>
-                                            <div x-show="openDropDown" x-on:click.outside="openDropDown = false"
-                                                class="absolute right-0 z-40 w-40 p-2 space-y-1 bg-white border border-gray-200 top-full rounded-2xl shadow-theme-lg dark:border-gray-800 dark:bg-gray-dark"
-                                                style="">
-                                                <a href="{{ route('admin.kependudukan.statistik', ['region' => $region]) }}"
-                                                    class="flex w-full px-3 py-2 font-medium text-left text-gray-500 rounded-lg text-theme-xs hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-gray-300">
-                                                    Lihat Detail
-                                                </a>
+                                                <span class="text-xs font-medium">{{ $school['male_count'] }}</span>
+                                            </div>
+                                            <div class="flex items-center gap-1 text-pink-600 dark:text-pink-300">
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                        d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                                                </svg>
+                                                <span class="text-xs font-medium">{{ $school['female_count'] }}</span>
                                             </div>
                                         </div>
                                     </div>
-                                </td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+
+                                    <!-- Progress Bar -->
+                                    @php
+                                        $total = $school['male_count'] + $school['female_count'];
+                                        $malePercent = $total > 0 ? ($school['male_count'] / $total) * 100 : 0;
+                                        $femalePercent = $total > 0 ? ($school['female_count'] / $total) * 100 : 0;
+                                    @endphp
+
+                                    <div class="w-full bg-gray-200 rounded-full h-2 dark:bg-gray-600">
+                                        <div class="flex h-2 rounded-full">
+                                            <div class="bg-blue-500" style="width: {{ $malePercent }}%"></div>
+                                            <div class="bg-pink-500" style="width: {{ $femalePercent }}%"></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Percentage Info -->
+                                    <div class="flex justify-between mt-2 text-xs">
+                                        <span class="text-blue-600 dark:text-blue-300">
+                                            {{ round($malePercent) }}% Laki-laki
+                                        </span>
+                                        <span class="text-pink-600 dark:text-pink-300">
+                                            {{ round($femalePercent) }}% Perempuan
+                                        </span>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+
+                        <!-- Footer Summary -->
+                        <div
+                            class="p-4 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 rounded-b-xl">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-gray-600 dark:text-gray-400">Rata-rata per Jenjang:</span>
+                                <span class="font-medium text-gray-800 dark:text-gray-200">
+                                    {{ number_format(($regionData->sum('male_count') + $regionData->sum('female_count')) / $regionData->count(), 0) }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </x-panel.panel-body>
     </x-panel.panel>

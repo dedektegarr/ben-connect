@@ -3,7 +3,20 @@
 @section('title', 'Ketersediaan Kamar RSMY')
 @section('content')
     <x-panel.panel>
-        <x-panel.panel-header title="Ketersediaan Kamar"></x-panel.panel-header>
+        <x-panel.panel-header title="Ketersediaan Kamar">
+            <form method="POST" action="{{ route('admin.kesehatan.rsud.synchronize') }}">
+                @csrf
+                <button type="submit"
+                    class="md:inline-flex text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                    </svg>
+                    <span class="hidden lg:block lg:ms-2">{{ __('Perbarui Data') }}</span>
+                </button>
+            </form>
+        </x-panel.panel-header>
 
         <x-panel.panel-body>
             <!-- Summary Cards -->
@@ -141,7 +154,7 @@
                                                     d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                                             </svg>
                                             <span class="text-gray-600 dark:text-gray-300">Tarif:</span>
-                                            <span class="font-semibold dark:text-gray-200">
+                                            <span class="font-semibold dark:text-gray-200">Rp
                                                 @php
                                                     echo number_format((float) $class['TARIF'], 0, ',', '.');
                                                 @endphp

@@ -28,17 +28,18 @@ class JumlahGuruController extends Controller
         try {
             $guru = $this->apiClient->get("/pendidikan/guru", $filters);
             $guruByRegion = collect($guru["data"])->groupBy("region.region_name");
-            $getTotalPerRegion = $guruByRegion->map(function ($guru) {
-                return [
-                    "total" => $guru->sum("male_count") + $guru->sum("female_count"),
-                    "total_male" => $guru->sum("male_count"),
-                    "total_female" => $guru->sum("female_count")
-                ];
-            });
+            // $getTotalPerRegion = $guruByRegion->map(function ($guru) {
+            //     return [
+            //         "total" => $guru->sum("male_count") + $guru->sum("female_count"),
+            //         "total_male" => $guru->sum("male_count"),
+            //         "total_female" => $guru->sum("female_count")
+            //     ];
+            // });
 
             if ($guru["status_code"] === 200) {
                 return view("admin.pendidikan.guru.index", [
-                    "guru" => $getTotalPerRegion,
+                    "guru" => $guru["data"],
+                    "regions" => $guruByRegion,
                     "total_male" => collect($guru["data"])->sum("male_count"),
                     "total_female" => collect($guru["data"])->sum("female_count"),
                 ]);
