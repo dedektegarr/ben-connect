@@ -135,169 +135,92 @@
                 </div>
             </form>
 
-            <div
-                class="overflow-hidden rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-white/[0.03]">
-                <table id="default-table">
-                    <thead>
-                        <tr>
-                            <th>
-                                <span class="flex items-center">
-                                    Nama Ruas Jalan
-                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                    </svg>
+            <div class="grid grid-cols-1 xl:grid-cols-2 gap-6">
+                @foreach ($roads as $ruas)
+                    <div
+                        class="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200">
+                        <!-- Header -->
+                        <div class="p-6 border-b border-gray-200 dark:border-gray-700">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
+                                        {{ $ruas['nama_ruas'] }}
+                                    </h2>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                                        Panjang: {{ $ruas['panjang_ruas'] }} km • Tahun: {{ $ruas['tahun'] }}
+                                    </p>
+                                </div>
+                                <span
+                                    class="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm">
+                                    {{ $ruas['dari_km'] }} - {{ $ruas['sampai_km'] }}
                                 </span>
-                            </th>
-                            <th>
-                                <span class="flex items-center">
-                                    Tahun
-                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                    </svg>
-                                </span>
-                            </th>
-                            <th>
-                                <span class="flex items-center">
-                                    Panjang Aktual (Km)
-                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                    </svg>
-                                </span>
-                            </th>
-                            <th>
-                                <span class="flex items-center">
-                                    DARI
-                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                    </svg>
-                                </span>
-                            </th>
-                            <th>
-                                <span class="flex items-center">
-                                    KE
-                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                    </svg>
-                                </span>
-                            </th>
-                            <th>
-                                <span class="flex items-center">
-                                    Baik
-                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                    </svg>
-                                </span>
-                            </th>
-                            <th>
-                                <span class="flex items-center">
-                                    Sedang
-                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                    </svg>
-                                </span>
-                            </th>
-                            <th>
-                                <span class="flex items-center">
-                                    Rusak Ringan
-                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                    </svg>
-                                </span>
-                            </th>
-                            <th>
-                                <span class="flex items-center">
-                                    Rusak Berat
-                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                    </svg>
-                                </span>
-                            </th>
-                            <th>
-                                <span class="flex items-center">
-                                    Baik
-                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                    </svg>
-                                </span>
-                            </th>
-                            <th>
-                                <span class="flex items-center">
-                                    Sedang
-                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                    </svg>
-                                </span>
-                            </th>
-                            <th>
-                                <span class="flex items-center">
-                                    Rusak Ringan
-                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                    </svg>
-                                </span>
-                            </th>
-                            <th>
-                                <span class="flex items-center">
-                                    Rusak Berat
-                                    <svg class="w-4 h-4 ms-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2" d="m8 15 4 4 4-4m0-6-4-4-4 4" />
-                                    </svg>
-                                </span>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($roads as $key => $road)
-                            <tr class=" text-center">
-                                {{-- <td class="border px-4 py-2">{{ $key + 1 }}</td> --}}
-                                <td class=" px-4 py-2">{{ $road['nama_ruas'] ?? '-' }}</td>
-                                <td class=" px-4 py-2">{{ $road['tahun'] ?? '-' }}</td>
-                                <td class=" px-4 py-2">{{ $road['panjang_ruas'] ?? '0' }}</td>
-                                <td class=" px-4 py-2">{{ $road['dari_km'] ?? '0' }}</td>
-                                <td class=" px-4 py-2">{{ $road['sampai_km'] ?? '0' }}</td>
-                                <td class=" px-4 py-2">{{ $road['kondisi_baik_km'] ?? '0' }}</td>
-                                <td class=" px-4 py-2">{{ $road['kondisi_sedang_km'] ?? '0' }}</td>
-                                <td class=" px-4 py-2">{{ $road['kondisi_rusak_ringan_km'] ?? '0' }}</td>
-                                <td class=" px-4 py-2">{{ $road['kondisi_rusak_berat_km'] ?? '0' }}</td>
-                                <td class=" px-4 py-2">
-                                    {{ number_format($road['kondisi_baik_persentase'], 2) ?? '0' }}%
-                                </td>
-                                <td class=" px-4 py-2">{{ number_format($road['kondisi_sedang_persentase'], 2) ?? '0' }}%
-                                </td>
-                                <td class=" px-4 py-2">
-                                    {{ number_format($road['kondisi_rusak_ringan_persentase'], 2) ?? '0' }}%</td>
-                                <td class=" px-4 py-2">
-                                    {{ number_format($road['kondisi_rusak_berat_persentase'], 2) ?? '0' }}%</td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+                            </div>
+                        </div>
+
+                        <!-- Progress Bars -->
+                        <div class="p-6 space-y-4">
+                            <div class="space-y-2">
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-green-600 dark:text-green-400">Baik</span>
+                                    <span class="text-gray-600 dark:text-gray-300">
+                                        {{ number_format($ruas['kondisi_baik_persentase'], 1) }}%
+                                    </span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2 dark:bg-gray-700">
+                                    <div class="bg-green-500 h-2 rounded-full"
+                                        style="width: {{ $ruas['kondisi_baik_persentase'] }}%"></div>
+                                </div>
+                            </div>
+
+                            <div class="space-y-2">
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-yellow-600 dark:text-yellow-400">Sedang</span>
+                                    <span class="text-gray-600 dark:text-gray-300">
+                                        {{ number_format($ruas['kondisi_sedang_persentase'], 1) }}%
+                                    </span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2 dark:bg-gray-700">
+                                    <div class="bg-yellow-500 h-2 rounded-full"
+                                        style="width: {{ $ruas['kondisi_sedang_persentase'] }}%"></div>
+                                </div>
+                            </div>
+
+                            <div class="space-y-2">
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-orange-600 dark:text-orange-400">Rusak Ringan</span>
+                                    <span class="text-gray-600 dark:text-gray-300">
+                                        {{ number_format($ruas['kondisi_rusak_ringan_persentase'], 1) }}%
+                                    </span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2 dark:bg-gray-700">
+                                    <div class="bg-orange-500 h-2 rounded-full"
+                                        style="width: {{ $ruas['kondisi_rusak_ringan_persentase'] }}%"></div>
+                                </div>
+                            </div>
+
+                            <div class="space-y-2">
+                                <div class="flex justify-between text-sm">
+                                    <span class="text-red-600 dark:text-red-400">Rusak Berat</span>
+                                    <span class="text-gray-600 dark:text-gray-300">
+                                        {{ number_format($ruas['kondisi_rusak_berat_persentase'], 1) }}%
+                                    </span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2 dark:bg-gray-700">
+                                    <div class="bg-red-500 h-2 rounded-full"
+                                        style="width: {{ $ruas['kondisi_rusak_berat_persentase'] }}%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Footer -->
+                        <div class="p-4 bg-gray-50 dark:bg-gray-900 rounded-b-xl">
+                            <div class="flex justify-between text-sm text-gray-600 dark:text-gray-400">
+                                <span>Update Terakhir:</span>
+                                <span>{{ \Carbon\Carbon::parse($ruas['updated_at'])->format('d M Y') }}</span>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </x-panel.panel-body>
     </x-panel.panel>
@@ -372,6 +295,53 @@
 
 @push('scripts')
     <script>
+        function renderCharts() {
+            const getChartOptions = (data, isDark) => ({
+                chart: {
+                    type: 'donut',
+                    height: 200,
+                    foreColor: isDark ? '#D1D5DB' : '#374151'
+                },
+                series: [
+                    data.kondisi_baik_persentase,
+                    data.kondisi_sedang_persentase,
+                    data.kondisi_rusak_ringan_persentase,
+                    data.kondisi_rusak_berat_persentase
+                ],
+                labels: ['Baik', 'Sedang', 'Rusak Ringan', 'Rusak Berat'],
+                colors: ['#10B981', '#F59E0B', '#F97316', '#EF4444'],
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        colors: isDark ? '#D1D5DB' : '#374151'
+                    }
+                },
+                dataLabels: {
+                    enabled: false
+                }
+            });
+
+            // Initialize charts
+            @foreach ($roads as $index => $ruas)
+                (() => {
+                    const isDark = document.documentElement.classList.contains('dark');
+                    const chartEl = document.createElement('div');
+                    chartEl.id = `chart-{{ $index }}`;
+
+                    const options = getChartOptions(@json($ruas), isDark);
+                    const chart = new ApexCharts(chartEl, options);
+                    chart.render();
+
+                    // Insert chart into the card
+                    document.querySelectorAll('.ruas-card')[{{ $index }}].querySelector('.progress-bars')
+                        .prepend(
+                            chartEl);
+                })();
+            @endforeach
+        }
+    </script>
+
+    <script>
         const errors = @json($errors->any());
 
         document.addEventListener("DOMContentLoaded", function() {
@@ -385,6 +355,7 @@
                 modal.show();
             }
 
+            renderCharts();
         });
     </script>
 @endpush
