@@ -138,6 +138,103 @@
                 </div>
             </form>
 
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                @foreach ($irigations as $item)
+                    <div
+                        class="bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-200">
+                        <!-- Header -->
+                        <div class="p-6 border-b border-gray-200 dark:border-gray-700">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h2 class="text-lg font-semibold text-gray-800 dark:text-gray-200">
+                                        {{ $item['daerah'] }}
+                                    </h2>
+                                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                                        {{ $item['region']['region_name'] }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="p-6 space-y-4">
+                            <!-- Luas Lahan -->
+                            <div class="space-y-2">
+                                <div class="flex items-center justify-between text-sm">
+                                    <div class="flex items-center gap-2 text-gray-600 dark:text-gray-300">
+                                        <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                                        </svg>
+                                        Luas Lahan
+                                    </div>
+                                    <span class="text-gray-700 dark:text-gray-300 font-medium">
+                                        {{ number_format($item['luas_fungsional'], 2) }} Ha
+                                    </span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2 dark:bg-gray-700">
+                                    <div class="bg-green-500 h-2 rounded-full"
+                                        style="width: {{ ($item['luas_fungsional'] / $item['luas_potensial']) * 100 }}%">
+                                    </div>
+                                </div>
+                                <div class="flex justify-between text-xs text-gray-600 dark:text-gray-400">
+                                    <span>Potensial: {{ number_format($item['luas_potensial'], 2) }} Ha</span>
+                                    <span>{{ number_format(($item['luas_fungsional'] / $item['luas_potensial']) * 100, 1) }}%</span>
+                                </div>
+                            </div>
+
+                            <!-- Panjang Saluran -->
+                            <div class="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                                <div class="flex items-center gap-2 text-gray-600 dark:text-gray-300">
+                                    <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+                                    </svg>
+                                    <span class="text-sm">Panjang Saluran</span>
+                                </div>
+                                <span class="text-lg font-bold text-blue-600 dark:text-blue-300">
+                                    {{ number_format($item['panjang_saluran'], 0, ',', '.') }} m
+                                </span>
+                            </div>
+
+                            <!-- Status -->
+                            <div class="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
+                                <div class="flex items-center gap-2 text-gray-600 dark:text-gray-300">
+                                    <svg class="w-5 h-5 text-purple-500" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    <span class="text-sm">Status Fungsional</span>
+                                </div>
+                                <span
+                                    class="px-3 py-1 rounded-full text-xs font-medium 
+                    @if ($item['luas_fungsional'] / $item['luas_potensial'] >= 0.8) bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200
+                    @elseif($item['luas_fungsional'] / $item['luas_potensial'] >= 0.5) bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200
+                    @else bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 @endif">
+                                    @if ($item['luas_fungsional'] / $item['luas_potensial'] >= 0.8)
+                                        Optimal
+                                    @elseif($item['luas_fungsional'] / $item['luas_potensial'] >= 0.5)
+                                        Cukup
+                                    @else
+                                        Perlu Perbaikan
+                                    @endif
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Footer -->
+                        <div class="p-4 border-t border-gray-200 dark:border-gray-700">
+                            <div class="flex justify-between text-xs text-gray-600 dark:text-gray-400">
+                                <span>Terakhir Update</span>
+                                <span>{{ \Carbon\Carbon::parse($item['updated_at'])->format('d M Y H:i') }}</span>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
 
             <div
                 class="overflow-hidden rounded-xl border border-gray-200 bg-white p-4 dark:border-gray-800 dark:bg-white/[0.03]">
